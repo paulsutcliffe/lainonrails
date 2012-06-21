@@ -1,0 +1,25 @@
+<h1>Listing metas</h1>
+
+<table>
+  <tr>
+    <th>Keywords</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @metas.each do |meta| %>
+  <tr>
+    <td><%= meta.keywords %></td>
+    <td><%= meta.description %></td>
+    <td><%= link_to 'Show', meta %></td>
+    <td><%= link_to 'Edit', edit_meta_path(meta) %></td>
+    <td><%= link_to 'Destroy', meta, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Meta', new_meta_path %>
