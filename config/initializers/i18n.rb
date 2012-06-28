@@ -1,7 +1,11 @@
 #encoding: utf-8
-I18n.default_locale = :es
+I18n.default_locale = :per
 
 LANGUAGES = [
-  ['English',                  'en'],
-  ["Espa&ntilde;ol".html_safe, 'es']
+  ["Peru", 'per'],
+  ["Costa Rica", 'crc'],
+  ["Uruguay", 'uru'],
+  ["Bolivia", 'bol'],
+  ["El Salvador", 'esa'],
+  ["Guatemala", 'gua']
 ]

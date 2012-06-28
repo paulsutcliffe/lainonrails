@@ -1,64 +1,51 @@
 Lainonrails::Application.routes.draw do
-  resources :metas
+  
+  scope '(:locale)', :locale => /#{I18n.available_locales.join("|")}/ do
+  
+    resources :ofertas
 
-  get "home/index"
+    resources :recetas
 
-  root :to => "home#index"
+    resources :productos
 
-  # The priority is based upon order of creation:
-  # first created -> highest priority.
+    resources :cabecera_banners
 
-  # Sample of regular route:
-  #   match 'products/:id' => 'catalog#view'
-  # Keep in mind you can assign values other than :controller and :action
+    match '/politicas' => "politicas#index"
 
-  # Sample of named route:
-  #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
-  # This route can be invoked with purchase_url(:id => product.id)
+    resources :contactos
+    
+    match '/blog' => "entradas#index"
 
-  # Sample resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
+    resources :entradas
 
-  # Sample resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
+    resources :sucursales
 
-  # Sample resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
+    match '/metodo' => "metodo#index"
 
-  # Sample resource route with more complex sub-resources
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', :on => :collection
-  #     end
-  #   end
+    resources :testimonios
 
-  # Sample resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
+    match '/nosotros' => "nosostros#index"
 
-  # You can have the root of your site routed with "root"
-  # just remember to delete public/index.html.
-  # root :to => "welcome#index"
+    resources :computests
 
-  # See how all your routes lay out with "rake routes"
+    resources :informaciones
 
-  # This is a legacy wild controller route that's not recommended for RESTful applications.
-  # Note: This route will make all actions in every controller accessible via GET requests.
-  # match ':controller(/:action(/:id(.:format)))'
+    resources :ads
+
+    resources :banners
+
+    resources :slides
+
+    devise_for :admins
+
+    devise_for :usuarios
+
+    resources :metas
+  
+    root :to => "home#index"
+  end
+  
+  #match '*path', :to => redirect("/#{I18n.default_locale}/%{path}"), :constraints => lambda { |req| !req.path.starts_with? "/#{I18n.default_locale}/" }
+  #match '', :to => redirect("/#{I18n.default_locale}")
+
 end

@@ -1,0 +1,27 @@
+<h1>Listing computests</h1>
+
+<table>
+  <tr>
+    <th>Imc</th>
+    <th>Peso ideal</th>
+    <th>Usuario</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @computests.each do |computest| %>
+  <tr>
+    <td><%= computest.imc %></td>
+    <td><%= computest.peso_ideal %></td>
+    <td><%= computest.usuario_id %></td>
+    <td><%= link_to 'Show', computest %></td>
+    <td><%= link_to 'Edit', edit_computest_path(computest) %></td>
+    <td><%= link_to 'Destroy', computest, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Computest', new_computest_path %>

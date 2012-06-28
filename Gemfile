@@ -19,6 +19,7 @@ gem "friendly_id", "~>4.0.0.beta14"
 gem "devise"
 gem "nifty-generators"
 gem "therubyracer"
+gem "globalize3"
 
 # Use unicorn as the web server
 # gem 'unicorn'

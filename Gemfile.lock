@@ -71,6 +71,10 @@ GEM
     friendly_id (4.0.7)
     gherkin (2.11.0)
       json (>= 1.4.6)
+    globalize3 (0.2.0)
+      activemodel (>= 3.0.0)
+      activerecord (>= 3.0.0)
+      paper_trail (~> 2)
     has_scope (0.5.1)
     highline (1.6.13)
     i18n (0.6.0)
@@ -179,6 +183,7 @@ DEPENDENCIES
   devise
   dynamic_sitemaps
   friendly_id (~> 4.0.0.beta14)
+  globalize3
   inherited_resources
   jquery-rails
   metamagic

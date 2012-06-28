@@ -1,0 +1,29 @@
+<h1>Listing testimonios</h1>
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Descripcion</th>
+    <th>Video link</th>
+    <th>Tipo</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @testimonios.each do |testimonio| %>
+  <tr>
+    <td><%= testimonio.nombre %></td>
+    <td><%= testimonio.descripcion %></td>
+    <td><%= testimonio.video_link %></td>
+    <td><%= testimonio.tipo %></td>
+    <td><%= link_to 'Show', testimonio %></td>
+    <td><%= link_to 'Edit', edit_testimonio_path(testimonio) %></td>
+    <td><%= link_to 'Destroy', testimonio, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Testimonio', new_testimonio_path %>

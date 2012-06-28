@@ -1,0 +1,17 @@
+<%= form_for(@cabecera_banner) do |f| %>
+  <% if @cabecera_banner.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cabecera_banner.errors.count, "error") %> prohibited this cabecera_banner from being saved:</h2>
+
+      <ul>
+      <% @cabecera_banner.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

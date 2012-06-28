@@ -1,0 +1,27 @@
+<h1>Listing sucursales</h1>
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Direccion</th>
+    <th>Telefonos</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @sucursales.each do |sucursal| %>
+  <tr>
+    <td><%= sucursal.nombre %></td>
+    <td><%= sucursal.direccion %></td>
+    <td><%= sucursal.telefonos %></td>
+    <td><%= link_to 'Show', sucursal %></td>
+    <td><%= link_to 'Edit', edit_sucursal_path(sucursal) %></td>
+    <td><%= link_to 'Destroy', sucursal, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Sucursal', new_sucursal_path %>

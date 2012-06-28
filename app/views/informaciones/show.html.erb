@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Telefono fijo:</b>
+  <%= @informacion.telefono_fijo %>
+</p>
+
+<p>
+  <b>Llamada gratuita:</b>
+  <%= @informacion.llamada_gratuita %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @informacion.email %>
+</p>
+
+<p>
+  <b>Facebook:</b>
+  <%= @informacion.facebook %>
+</p>
+
+
+<%= link_to 'Edit', edit_informacion_path(@informacion) %> |
+<%= link_to 'Back', informaciones_path %>

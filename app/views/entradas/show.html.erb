@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Titulo:</b>
+  <%= @entrada.titulo %>
+</p>
+
+<p>
+  <b>Contenido:</b>
+  <%= @entrada.contenido %>
+</p>
+
+
+<%= link_to 'Edit', edit_entrada_path(@entrada) %> |
+<%= link_to 'Back', entradas_path %>

@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Imc:</b>
+  <%= @computest.imc %>
+</p>
+
+<p>
+  <b>Peso ideal:</b>
+  <%= @computest.peso_ideal %>
+</p>
+
+<p>
+  <b>Usuario:</b>
+  <%= @computest.usuario_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_computest_path(@computest) %> |
+<%= link_to 'Back', computests_path %>
