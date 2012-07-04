@@ -9,13 +9,15 @@
 
 <% @cabecera_banners.each do |cabecera_banner| %>
   <tr>
-    <td><%= link_to 'Show', cabecera_banner %></td>
-    <td><%= link_to 'Edit', edit_cabecera_banner_path(cabecera_banner) %></td>
-    <td><%= link_to 'Destroy', cabecera_banner, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to image_tag(cabecera_banner.cabecera_banner(:thumb)), cabecera_banner %></td>
+    <td><%= link_to 'Editar', edit_cabecera_banner_path(cabecera_banner) %></td>
+    <td><%= link_to 'Eliminar', cabecera_banner, :confirm => '¿Estás seguro?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Cabecera banner', new_cabecera_banner_path %>
+<% if @cabecera_banners.empty? %>
+  <%= link_to 'Nuevo banner', new_cabecera_banner_path %>
+<% end %>

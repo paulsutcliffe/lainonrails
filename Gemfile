@@ -20,6 +20,7 @@ gem "devise"
 gem "nifty-generators"
 gem "therubyracer"
 gem "globalize3"
+gem "geocoder"
 
 # Use unicorn as the web server
 # gem 'unicorn'

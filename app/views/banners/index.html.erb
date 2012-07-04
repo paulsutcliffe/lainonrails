@@ -9,13 +9,15 @@
 
 <% @banners.each do |banner| %>
   <tr>
-    <td><%= link_to 'Show', banner %></td>
-    <td><%= link_to 'Edit', edit_banner_path(banner) %></td>
-    <td><%= link_to 'Destroy', banner, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to image_tag(banner.banner(:thumb)), banner %></td>
+    <td><%= link_to 'Editar', edit_banner_path(banner) %></td>
+    <td><%= link_to 'Eliminar', banner, :confirm => '¿Estás seguro?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Banner', new_banner_path %>
+<% if @banners.empty? %>
+  <%= link_to 'Nuevo banner', new_banner_path %>
+<% end %>

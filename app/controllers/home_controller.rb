@@ -1,15 +1,13 @@
 class HomeController < ApplicationController
   def index
-    if current_admin
+    @banner = Banner.first
+    if current_usuario
       @oferta = Oferta.limit(1)
       @receta = Receta.order("RAND()").first
     else
       @slides = Slide.all
-      @ad = Ad.limit(1)
-      @cabecera_banner = CabeceraBanner.limit(1)
-      @entrada = Entrada.limit(1)
+      @ad = Ad.first
+      @entrada = Entrada.last
     end
-    @banner = Banner.limit(1)
   end
-
 end

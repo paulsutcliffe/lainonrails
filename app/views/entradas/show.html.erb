@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <b>Titulo:</b>
   <%= @entrada.titulo %>
@@ -10,6 +8,10 @@
   <%= @entrada.contenido %>
 </p>
 
+<p>
+  <%= image_tag @entrada.foto(:regular) %>
+</p>
 
-<%= link_to 'Edit', edit_entrada_path(@entrada) %> |
-<%= link_to 'Back', entradas_path %>
+
+<%= link_to 'Editar', edit_entrada_path(@entrada) %> |
+<%= link_to 'Atrás', entradas_path %>

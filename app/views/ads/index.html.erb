@@ -9,13 +9,15 @@
 
 <% @ads.each do |ad| %>
   <tr>
-    <td><%= link_to 'Show', ad %></td>
-    <td><%= link_to 'Edit', edit_ad_path(ad) %></td>
-    <td><%= link_to 'Destroy', ad, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to image_tag(ad.ad(:thumb)) %></td>
+    <td><%= link_to 'Editar', edit_ad_path(ad) %></td>
+    <td><%= link_to 'Eliminar', ad, :confirm => '¿Estás seguro?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Ad', new_ad_path %>
+<% if @ads.empty? %>
+  <%= link_to 'Nuevo anuncio', new_ad_path %>
+<% end %>

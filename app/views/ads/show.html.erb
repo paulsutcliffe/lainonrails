@@ -1,5 +1,7 @@
-<p id="notice"><%= notice %></p>
 
 
-<%= link_to 'Edit', edit_ad_path(@ad) %> |
-<%= link_to 'Back', ads_path %>
+<%= image_tag @ad.ad(:regular) %>
+
+
+<%= link_to 'Editar', edit_ad_path(@ad) %> |
+<%= link_to 'Atrás', ads_path %>

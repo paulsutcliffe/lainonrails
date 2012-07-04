@@ -9,12 +9,25 @@
   </head>
   <body>
     <div id="container">
+	
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, :id => "flash_#{name}" %>
       <% end %>
+
       <%= content_tag :h1, yield(:title) if show_title? %>
+
+      <%= @country %>
+      <%= @city %>
+      <%= @ip %>
+      <%= @country_code %>
+
+      <% if @cabecera_banner %>
+        <%= image_tag @cabecera_banner.cabecera_banner(:regular) %>
+      <% end %>
+
       <%= render :partial => '/layouts/menu' %>
       <%= render :partial => '/layouts/sidebar' %>
+
       <%= yield %>
     </div>
   </body>

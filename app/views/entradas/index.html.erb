@@ -6,16 +6,14 @@
     <th>Contenido</th>
     <th></th>
     <th></th>
-    <th></th>
   </tr>
 
 <% @entradas.each do |entrada| %>
   <tr>
-    <td><%= entrada.titulo %></td>
+	 <td><%= link_to entrada.titulo, entrada %></td>
     <td><%= entrada.contenido %></td>
-    <td><%= link_to 'Show', entrada %></td>
-    <td><%= link_to 'Edit', edit_entrada_path(entrada) %></td>
-    <td><%= link_to 'Destroy', entrada, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Editar', edit_entrada_path(entrada) %></td>
+    <td><%= link_to 'Eliminar', entrada, :confirm => '¿Estás seguro?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

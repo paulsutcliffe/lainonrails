@@ -1,2 +1,16 @@
 <h1>Home#index</h1>
 <p>Find me in app/views/home/index.html.erb</p>
+
+<% if @banner %>
+  <%= image_tag @banner.banner(:regular) %>
+<% end %>
+
+<% if @ad %>
+  <%= image_tag @ad.ad(:regular) %>
+<% end %>
+
+<% if @entrada %>
+  <%= image_tag @entrada.foto(:regular) %>
+  <%= @entrada.titulo %>
+  <%= @entrada.contenido %>
+<% end %>

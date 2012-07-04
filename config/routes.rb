@@ -25,6 +25,8 @@ Lainonrails::Application.routes.draw do
     resources :testimonios
 
     match '/nosotros' => "nosostros#index"
+    
+    match '/computest' => "computests#index"
 
     resources :computests
 
@@ -36,14 +38,15 @@ Lainonrails::Application.routes.draw do
 
     resources :slides
 
+    resources :metas
+    
     devise_for :admins
 
-    devise_for :usuarios
-
-    resources :metas
-  
     root :to => "home#index"
   end
+  
+  devise_for :usuarios, :path => "usuarios", :path_names => { :sign_in => 'ingresar', :sign_out => 'salir', :password => 'secreto', :confirmation => 'verificacion', :unlock => 'desbloquear', :registration => 'registro', :sign_up => 'inscribirse' }
+  
   
   #match '*path', :to => redirect("/#{I18n.default_locale}/%{path}"), :constraints => lambda { |req| !req.path.starts_with? "/#{I18n.default_locale}/" }
   #match '', :to => redirect("/#{I18n.default_locale}")

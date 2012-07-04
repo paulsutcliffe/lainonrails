@@ -2,14 +2,25 @@ class ApplicationController < ActionController::Base
   before_filter :set_i18n_locale_from_params 
   
   before_filter :load_general_information
+  before_filter :detect_ip_location
   
   protect_from_forgery
   
-  protected
+  public 
   
+  def detect_ip_location
+    @city = request.location.city
+    @country_code = request.location.country_code
+    @country = request.location.country
+    @ip = request.ip
+  end
+  
+  protected
+    
     def load_general_information
-      @informacion = Informacion.limit(1)
-      @metas = Meta.limit(1)
+      @cabecera_banner = CabeceraBanner.first
+      @informacion = Informacion.first
+      @metas = Meta.first
     end
     
     def set_i18n_locale_from_params

@@ -5,5 +5,5 @@ class Testimonio < ActiveRecord::Base
   validates :nombre, :presence => true
   validates :descripcion, :presence => true
   
-  has_attached_file :foto, :styles => { :medium => "300x300>", :thumb => "100x100>" }
+  #has_attached_file :foto, :styles => { :medium => "300x300>", :thumb => "100x100>" }
 end

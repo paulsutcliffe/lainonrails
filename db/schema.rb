@@ -51,10 +51,10 @@ ActiveRecord::Schema.define(:version => 20120628060252) do
   create_table "cabecera_banners", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "banner_file_name"
-    t.string   "banner_content_type"
-    t.integer  "banner_file_size"
-    t.datetime "banner_updated_at"
+    t.string   "cabecera_banner_file_name"
+    t.string   "cabecera_banner_content_type"
+    t.integer  "cabecera_banner_file_size"
+    t.datetime "cabecera_banner_updated_at"
   end
 
   create_table "computests", :force => true do |t|
@@ -124,10 +124,10 @@ ActiveRecord::Schema.define(:version => 20120628060252) do
     t.string   "slug"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "foto_file_name"
-    t.string   "foto_content_type"
-    t.integer  "foto_file_size"
-    t.datetime "foto_updated_at"
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
   end
 
   add_index "productos", ["slug"], :name => "index_productos_on_slug"
@@ -139,10 +139,10 @@ ActiveRecord::Schema.define(:version => 20120628060252) do
     t.string   "slug"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "foto_file_name"
-    t.string   "foto_content_type"
-    t.integer  "foto_file_size"
-    t.datetime "foto_updated_at"
+    t.string   "snapshot_file_name"
+    t.string   "snapshot_content_type"
+    t.integer  "snapshot_file_size"
+    t.datetime "snapshot_updated_at"
   end
 
   add_index "recetas", ["slug"], :name => "index_recetas_on_slug"
@@ -162,10 +162,10 @@ ActiveRecord::Schema.define(:version => 20120628060252) do
     t.string   "nombre"
     t.string   "direccion"
     t.string   "telefonos"
-    t.string   "foto_file_name"
-    t.string   "foto_content_type"
-    t.integer  "foto_file_size"
-    t.datetime "foto_updated_at"
+    t.string   "local_file_name"
+    t.string   "local_content_type"
+    t.integer  "local_file_size"
+    t.datetime "local_updated_at"
   end
 
   create_table "testimonios", :force => true do |t|
@@ -176,10 +176,10 @@ ActiveRecord::Schema.define(:version => 20120628060252) do
     t.string   "slug"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "foto_file_name"
-    t.string   "foto_content_type"
-    t.integer  "foto_file_size"
-    t.datetime "foto_updated_at"
+    t.string   "imagen_file_name"
+    t.string   "imagen_content_type"
+    t.integer  "imagen_file_size"
+    t.datetime "imagen_updated_at"
   end
 
   add_index "testimonios", ["slug"], :name => "index_testimonios_on_slug"

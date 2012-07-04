@@ -1,4 +1,4 @@
-<%= form_for(@cabecera_banner) do |f| %>
+<%= form_for(@cabecera_banner, :html => { :multipart => true }) do |f| %>
   <% if @cabecera_banner.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@cabecera_banner.errors.count, "error") %> prohibited this cabecera_banner from being saved:</h2>
@@ -11,7 +11,12 @@
     </div>
   <% end %>
 
+  <div class="field">
+    <%= f.label :cabecera_banner, "Imagen" %><br />
+    <%= f.file_field :cabecera_banner %>
+  </div>
+
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Guardar" %>
   </div>
 <% end %>
