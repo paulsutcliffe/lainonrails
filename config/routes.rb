@@ -11,6 +11,8 @@ Lainonrails::Application.routes.draw do
     resources :cabecera_banners
 
     match '/politicas' => "politicas#index"
+    
+    match '/contacto' => "contactos#new"
 
     resources :contactos
     
