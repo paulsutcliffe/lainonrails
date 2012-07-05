@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<%= image_tag @receta.snapshot(:regular) %>
 
 <p>
   <b>Nombre:</b>
@@ -16,5 +16,5 @@
 </p>
 
 
-<%= link_to 'Edit', edit_receta_path(@receta) %> |
-<%= link_to 'Back', recetas_path %>
+<%= link_to 'Editar', edit_receta_path(@receta) %> |
+<%= link_to 'Atrás', recetas_path %>

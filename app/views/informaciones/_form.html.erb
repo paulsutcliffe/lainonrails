@@ -12,11 +12,11 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :telefono_fijo %><br />
+    <%= f.label :telefono_fijo, "Teléfono" %><br />
     <%= f.text_field :telefono_fijo %>
   </div>
   <div class="field">
-    <%= f.label :llamada_gratuita %><br />
+    <%= f.label :llamada_gratuita, "Número gratuito" %><br />
     <%= f.text_field :llamada_gratuita %>
   </div>
   <div class="field">
@@ -28,6 +28,6 @@
     <%= f.text_field :facebook %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Guardar" %>
   </div>
 <% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120628060252) do
+ActiveRecord::Schema.define(:version => 20120705082647) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false
@@ -93,6 +93,20 @@ ActiveRecord::Schema.define(:version => 20120628060252) do
 
   add_index "entradas", ["slug"], :name => "index_entradas_on_slug"
 
+  create_table "informacion_translations", :force => true do |t|
+    t.integer  "informacion_id"
+    t.string   "locale"
+    t.text     "llamada_gratuita"
+    t.text     "facebook"
+    t.text     "email"
+    t.text     "telefono_fijo"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "informacion_translations", ["informacion_id"], :name => "index_informacion_translations_on_informacion_id"
+  add_index "informacion_translations", ["locale"], :name => "index_informacion_translations_on_locale"
+
   create_table "informaciones", :force => true do |t|
     t.string   "telefono_fijo"
     t.string   "llamada_gratuita"
@@ -155,6 +169,19 @@ ActiveRecord::Schema.define(:version => 20120628060252) do
     t.integer  "slide_file_size"
     t.datetime "slide_updated_at"
   end
+
+  create_table "sucursal_translations", :force => true do |t|
+    t.integer  "sucursal_id"
+    t.string   "locale"
+    t.string   "telefonos"
+    t.string   "nombre"
+    t.string   "direccion"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "sucursal_translations", ["locale"], :name => "index_sucursal_translations_on_locale"
+  add_index "sucursal_translations", ["sucursal_id"], :name => "index_sucursal_translations_on_sucursal_id"
 
   create_table "sucursales", :force => true do |t|
     t.datetime "created_at"

@@ -9,8 +9,29 @@
   <%= image_tag @ad.ad(:regular) %>
 <% end %>
 
+<% if current_usuario %>
+  <% if @oferta %>
+    <%= image_tag @oferta.oferta(:regular) %>
+  <% end %>
+<% end %>
+
+<% if current_usuario %>
+  <% if @receta %>
+    <%= image_tag @receta.snapshot(:regular) %>
+    <%= @receta.nombre %>
+    <%= @receta.ingredientes %>
+    <%= @receta.preparacion %>
+  <% end %>
+<% end %>
+
 <% if @entrada %>
   <%= image_tag @entrada.foto(:regular) %>
   <%= @entrada.titulo %>
   <%= @entrada.contenido %>
 <% end %>
+
+<% if @slides %>
+  <% @slides.each do |slide| %>
+    <%= image_tag slide.slide(:regular) %>
+  <% end %>
+<% end%>

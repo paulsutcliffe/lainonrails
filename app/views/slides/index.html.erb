@@ -9,13 +9,12 @@
 
 <% @slides.each do |slide| %>
   <tr>
-    <td><%= link_to 'Show', slide %></td>
-    <td><%= link_to 'Edit', edit_slide_path(slide) %></td>
-    <td><%= link_to 'Destroy', slide, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to image_tag(slide.slide(:thumb)), slide %></td>
+    <td><%= link_to 'Editar', edit_slide_path(slide) %></td>
+    <td><%= link_to 'Eliminar', slide, :confirm => '¿Estás seguro?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
-
-<%= link_to 'New Slide', new_slide_path %>
+<%= link_to 'Nuevo slide', new_slide_path %>

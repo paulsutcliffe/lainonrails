@@ -8,21 +8,22 @@ class ApplicationController < ActionController::Base
   
   public 
   
-  def detect_ip_location
-    @city = request.location.city
-    @country_code = request.location.country_code
-    @country = request.location.country
-    @ip = request.ip
-  end
+    def detect_ip_location
+      @city = request.location.city
+      @country_code = request.location.country_code
+      @country = request.location.country
+      @ip = request.ip
+    end
   
-  protected
-    
     def load_general_information
       @cabecera_banner = CabeceraBanner.first
       @informacion = Informacion.first
-      @metas = Meta.first
+      @meta_tags = Meta.first
     end
     
+    
+  protected
+  
     def set_i18n_locale_from_params
       if params[:locale]
         if I18n.available_locales.include?(params[:locale].to_sym)

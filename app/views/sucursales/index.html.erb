@@ -16,12 +16,12 @@
     <td><%= sucursal.direccion %></td>
     <td><%= sucursal.telefonos %></td>
     <td><%= link_to 'Show', sucursal %></td>
-    <td><%= link_to 'Edit', edit_sucursal_path(sucursal) %></td>
-    <td><%= link_to 'Destroy', sucursal, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Editar', edit_sucursal_path(sucursal) %></td>
+    <td><%= link_to 'Eliminar', sucursal, :confirm => '¿Estás seguro?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Sucursal', new_sucursal_path %>
+<%= link_to 'Nueva sucursal', new_sucursal_path %>

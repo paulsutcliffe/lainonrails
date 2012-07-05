@@ -1,4 +1,4 @@
-<%= form_for(@receta) do |f| %>
+<%= form_for(@receta, :html => { :multipart => true }) do |f| %>
   <% if @receta.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@receta.errors.count, "error") %> prohibited this receta from being saved:</h2>
@@ -20,10 +20,14 @@
     <%= f.text_area :ingredientes %>
   </div>
   <div class="field">
-    <%= f.label :preparacion %><br />
+    <%= f.label :preparacion, "Preparación" %><br />
     <%= f.text_area :preparacion %>
   </div>
+  <div class="field">
+    <%= f.label :snapshot, "Imagen" %><br />
+    <%= f.file_field :snapshot %>
+  </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Guardar" %>
   </div>
 <% end %>

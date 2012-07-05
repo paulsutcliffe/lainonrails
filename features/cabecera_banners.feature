@@ -12,6 +12,8 @@ Feature: Creating Cabecera Banners to be displayed on layout header
   And I should see the image "picture.jpg"
   Given that I am on the home page
   Then I should see the image "picture.jpg"
+  When I visit the "/cabecera_banners" page
+  Then I should not see "Nuevo banner"
 
   
   Scenario: editing banners

@@ -1,11 +1,11 @@
 #encoding: utf-8
-I18n.default_locale = :per
+I18n.default_locale = :pe
 
 LANGUAGES = [
-  ["Peru", 'per'],
-  ["Costa Rica", 'crc'],
-  ["Uruguay", 'uru'],
-  ["Bolivia", 'bol'],
-  ["El Salvador", 'esa'],
-  ["Guatemala", 'gua']
+  ["Peru", 'pe'],
+  ["Costa Rica", 'cr'],
+  ["Uruguay", 'uy'],
+  ["Bolivia", 'bo'],
+  ["El Salvador", 'sv'],
+  ["Guatemala", 'gt']
 ]

@@ -15,13 +15,15 @@
     <td><%= receta.nombre %></td>
     <td><%= receta.ingredientes %></td>
     <td><%= receta.preparacion %></td>
-    <td><%= link_to 'Show', receta %></td>
-    <td><%= link_to 'Edit', edit_receta_path(receta) %></td>
-    <td><%= link_to 'Destroy', receta, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to image_tag(receta.snapshot(:thumb)), receta %></td>
+    <td><%= link_to 'Editar', edit_receta_path(receta) %></td>
+    <td><%= link_to 'Eliminar', receta, :confirm => '¿Estás seguro?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Receta', new_receta_path %>
+<% if @recetas.empty? %>
+  <%= link_to 'Nueva receta', new_receta_path %>
+<% end %>

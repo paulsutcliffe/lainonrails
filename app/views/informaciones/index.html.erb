@@ -25,5 +25,6 @@
 </table>
 
 <br />
-
-<%= link_to 'New Informacion', new_informacion_path %>
+<% if @informaciones.empty? %>
+  <%= link_to 'Ingresar Información', new_informacion_path %>
+<% end %>

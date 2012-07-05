@@ -1,47 +1,48 @@
 #encoding: utf-8
 @javascript
 
-Feature: Creating Banners to be displayed on the home page
-  Scenario: creating banners
+Feature: Creating Ofertas to be displayed on the home page
+  Scenario: creating ofertas
   Given that I am on the home page
-  When I visit the "/banners" page
-  And I follow "Nuevo banner"
+  When I visit the "/ofertas" page
+  And I follow "Nueva oferta"
   When I attach the file "features/support/picture.jpg" to "Imagen"
   And I press "Guardar"
-  Then I should see "Banner guardado correctamente."
+  Then I should see "Oferta guardada correctamente."
   And I should see the image "picture.jpg"
+  Then I should not see "Nueva oferta"
   Given that I am on the home page
+  Given I am a new, authenticated user
   Then I should see the image "picture.jpg"
-  When I visit the "/banners" page
-  Then I should not see "Nuevo banner"
 
   
-  Scenario: editing banners
+  Scenario: editing ofertas
   Given that I am on the home page
-  When I visit the "/banners" page
-  And I follow "Nuevo banner"
+  When I visit the "/ofertas" page
+  And I follow "Nueva oferta"
   When I attach the file "features/support/picture.jpg" to "Imagen"
   And I press "Guardar"
-  Then I should see "Banner guardado correctamente."
+  Then I should see "Oferta guardada correctamente."
   And I should see the image "picture.jpg"
   Then I follow "Editar"
   When I attach the file "features/support/picture.jpg" to "Imagen"
   And I press "Guardar"
-  Then I should see "Banner actualizado correctamente."
+  Then I should see "Oferta actualizada correctamente."
   And I should see the image "picture.jpg"
   Given that I am on the home page
+  Given I am a new, authenticated user
   Then I should see the image "picture.jpg"
   
   
-  Scenario: deleting banners
+  Scenario: deleting ofertas
   Given that I am on the home page
-  When I visit the "/banners" page
-  And I follow "Nuevo banner"
+  When I visit the "/ofertas" page
+  And I follow "Nueva oferta"
   When I attach the file "features/support/picture.jpg" to "Imagen"
   And I press "Guardar"
-  Then I should see "Banner guardado correctamente."
+  Then I should see "Oferta guardada correctamente."
   And I should see the image "picture.jpg"
-  Then I visit the "/banners" page
+  Then I visit the "/ofertas" page
   Then I follow "Eliminar"
   When I accept the "¿Estás seguro?" alert
-  Then I should see "Banner eliminado correctamente."
+  Then I should see "Oferta eliminada correctamente."

@@ -12,6 +12,8 @@ Feature: Creating Ads to be displayed on the home page
   And I should see the image "picture.jpg"
   Given that I am on the home page
   Then I should see the image "picture.jpg"
+  When I visit the "/ads" page
+  Then I should not see "Nuevo anuncio"
 
   
   Scenario: editing ads

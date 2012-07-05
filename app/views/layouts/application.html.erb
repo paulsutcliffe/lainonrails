@@ -4,7 +4,27 @@
     <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
     <%= stylesheet_link_tag "application" %>
     <%= javascript_include_tag :defaults %>
-    <%= csrf_meta_tag %>
+    
+    <% if @meta_tags %>
+    <meta name="description" content="<%= @meta_tags.description %>" />
+    <meta name="keywords" content="<%= @meta_tags.keywords %>" />
+    <% end %>
+	<meta name="robot" content="index,follow" />
+	<meta name="copyright" content="Copyright &copy; 2012 Kosmyka." />
+	<meta name="author" content="Kosmyka.com" />
+	<meta name="language" content="Spanish" />
+	<meta name="revisit-after" content="1" />
+	<meta name="googlebot" content="index,follow" />
+	<meta name="city" content="Lima" />
+	<meta name="country" content="Peru" />
+	<meta name="state" content="Lima" />
+	<meta name="zip code" content="Lima 18" />
+	<meta name="subject" content="Komsyka" />
+	<meta name="geo.position" content="-9;-75" />
+	<meta name="geo.country" content="PE" />
+	<meta name="geo.region" content="PE-LIM" />
+	<meta name="geo.placename" content="Miraflores" />
+
     <%= yield(:head) %>
   </head>
   <body>

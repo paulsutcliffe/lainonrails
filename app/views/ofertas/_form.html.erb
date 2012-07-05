@@ -1,4 +1,4 @@
-<%= form_for(@oferta) do |f| %>
+<%= form_for(@oferta, :html => { :multipart => true }) do |f| %>
   <% if @oferta.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@oferta.errors.count, "error") %> prohibited this oferta from being saved:</h2>
@@ -11,7 +11,12 @@
     </div>
   <% end %>
 
+  <div class="field">
+    <%= f.label :oferta, "Imagen" %><br />
+    <%= f.file_field :oferta %>
+  </div>
+
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Guardar" %>
   </div>
 <% end %>

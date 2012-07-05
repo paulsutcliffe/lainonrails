@@ -1,3 +1,13 @@
 class SucursalesController < InheritedResources::Base
-  before_filter :authenticate_admin!, :except => :index
+  def create
+    create!(:notice => "Sucursal guardada correctamente.")
+  end
+  
+  def update
+    update!(:notice => "Sucursal actualizada correctamente.")
+  end
+  
+  def destroy
+    destroy!(:notice => "Sucursal eliminada correctamente.")
+  end
 end

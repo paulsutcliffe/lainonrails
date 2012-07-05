@@ -9,13 +9,15 @@
 
 <% @ofertas.each do |oferta| %>
   <tr>
-    <td><%= link_to 'Show', oferta %></td>
-    <td><%= link_to 'Edit', edit_oferta_path(oferta) %></td>
-    <td><%= link_to 'Destroy', oferta, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to image_tag(oferta.oferta(:thumb)), oferta %></td>
+    <td><%= link_to 'Editar', edit_oferta_path(oferta) %></td>
+    <td><%= link_to 'Eliminar', oferta, :confirm => '¿Estás seguro?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Oferta', new_oferta_path %>
+<% if @ofertas.empty? %>
+  <%= link_to 'Nueva oferta', new_oferta_path %>
+<% end %>

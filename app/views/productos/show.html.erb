@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<%= image_tag @producto.picture(:regular) %>
 
 <p>
   <b>Nombre:</b>
@@ -11,5 +11,5 @@
 </p>
 
 
-<%= link_to 'Edit', edit_producto_path(@producto) %> |
-<%= link_to 'Back', productos_path %>
+<%= link_to 'Editar', edit_producto_path(@producto) %> |
+<%= link_to 'Atrás', productos_path %>

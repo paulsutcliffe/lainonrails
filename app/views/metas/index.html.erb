@@ -22,4 +22,6 @@
 
 <br />
 
-<%= link_to 'New Meta', new_meta_path %>
+<% if @metas.empty? %>
+  <%= link_to 'Nuevos Metas', new_meta_path %>
+<% end %>
