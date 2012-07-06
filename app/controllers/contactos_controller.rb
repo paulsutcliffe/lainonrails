@@ -1,7 +1,8 @@
 class ContactosController < InheritedResources::Base
-  
+  before_filter :authenticate_admin!, :except => [ :new, :create ]
   def create
     @contacto = Contacto.new(params[:contacto])
+    @contacto.pais = params[:locale]
     if @contacto.valid?
       case I18n.locale
       when :uy
@@ -20,9 +21,7 @@ class ContactosController < InheritedResources::Base
         ContactMailer.contact_registration(@contacto).deliver
       end
       ContactMailer.contact_confirmation(@contacto).deliver
-      redirect_to(new_contacto_path, :notice => "Su mensaje fue enviado con éxito.")
-    else
-      redirect_to(new_contacto_path, :notice => "Por favor corriga los errores y vuélvalo a intentar.")
+      create!(:notice => "Su mensaje fue enviado con éxito.") { new_contacto_path }
     end
   end
 end

@@ -35,3 +35,16 @@
     <%= image_tag slide.slide(:regular) %>
   <% end %>
 <% end%>
+
+<% if @testimonio %>
+  <%= image_tag @testimonio.imagen(:regular) %>
+  <%= @testimonio.nombre %>
+  <%= @testimonio.descripcion %>
+<% end %>
+
+<% if @informacion %>
+    <%= @informacion.telefono_fijo %>
+    <%= @informacion.llamada_gratuita %>
+    <%= @informacion.email %>
+    <%= @informacion.facebook %>
+<% end %>

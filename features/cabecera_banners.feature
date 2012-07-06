@@ -3,6 +3,7 @@
 
 Feature: Creating Cabecera Banners to be displayed on layout header
   Scenario: creating banners
+  Given I am a new, authenticated admin
   Given that I am on the home page
   When I visit the "/cabecera_banners" page
   And I follow "Nuevo banner"
@@ -10,13 +11,15 @@ Feature: Creating Cabecera Banners to be displayed on layout header
   And I press "Guardar"
   Then I should see "Banner guardado correctamente."
   And I should see the image "picture.jpg"
-  Given that I am on the home page
-  Then I should see the image "picture.jpg"
   When I visit the "/cabecera_banners" page
   Then I should not see "Nuevo banner"
+  Given I am an admin not authenticated
+  Given that I am on the home page
+  Then I should see the image "picture.jpg"
 
   
   Scenario: editing banners
+  Given I am a new, authenticated admin
   Given that I am on the home page
   When I visit the "/cabecera_banners" page
   And I follow "Nuevo banner"
@@ -34,6 +37,7 @@ Feature: Creating Cabecera Banners to be displayed on layout header
   
   
   Scenario: deleting banners
+  Given I am a new, authenticated admin
   Given that I am on the home page
   When I visit the "/cabecera_banners" page
   And I follow "Nuevo banner"

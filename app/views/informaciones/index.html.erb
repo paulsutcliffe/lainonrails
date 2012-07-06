@@ -8,7 +8,6 @@
     <th>Facebook</th>
     <th></th>
     <th></th>
-    <th></th>
   </tr>
 
 <% @informaciones.each do |informacion| %>
@@ -17,9 +16,8 @@
     <td><%= informacion.llamada_gratuita %></td>
     <td><%= informacion.email %></td>
     <td><%= informacion.facebook %></td>
-    <td><%= link_to 'Show', informacion %></td>
-    <td><%= link_to 'Edit', edit_informacion_path(informacion) %></td>
-    <td><%= link_to 'Destroy', informacion, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Editar', edit_informacion_path(informacion) %></td>
+    <td><%= link_to 'Eliminar', informacion, :confirm => '¿Estás seguro?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

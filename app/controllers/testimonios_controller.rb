@@ -6,8 +6,20 @@ class TestimoniosController < InheritedResources::Base
   
   def find_tipo
     if params[:tipo]
-      @testimonios = Testimonio.where("tipo = ?", :tipo => params[:tipo])
+      @testimonios = Testimonio.where("tipo = ?", params[:tipo])
     end
+  end
+  
+  def create
+    create!(:notice => "Testimonio guardado correctamente.")
+  end
+  
+  def update
+    update!(:notice => "Testimonio actualizado correctamente.")
+  end
+  
+  def destroy
+    destroy!(:notice => "Testimonio eliminado correctamente.")
   end
   
 end

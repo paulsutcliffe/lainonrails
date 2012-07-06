@@ -10,6 +10,7 @@ class CreateContactos < ActiveRecord::Migration
       t.string :ciudad
       t.string :provincia
       t.text :mensaje
+      t.string :pais
 
       t.timestamps
     end

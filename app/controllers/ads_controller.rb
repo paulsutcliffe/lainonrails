@@ -1,5 +1,5 @@
 class AdsController < InheritedResources::Base
-  #before_filter :authenticate_admin!
+  before_filter :authenticate_admin!
   def create
       create!(:notice => "Anuncio guardado correctamente.")
   end

@@ -57,14 +57,6 @@ ActiveRecord::Schema.define(:version => 20120705082647) do
     t.datetime "cabecera_banner_updated_at"
   end
 
-  create_table "computests", :force => true do |t|
-    t.float    "imc"
-    t.float    "peso_ideal"
-    t.integer  "usuario_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "contactos", :force => true do |t|
     t.string   "nombre"
     t.string   "apellido"
@@ -75,6 +67,7 @@ ActiveRecord::Schema.define(:version => 20120705082647) do
     t.string   "ciudad"
     t.string   "provincia"
     t.text     "mensaje"
+    t.string   "pais"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -96,10 +89,10 @@ ActiveRecord::Schema.define(:version => 20120705082647) do
   create_table "informacion_translations", :force => true do |t|
     t.integer  "informacion_id"
     t.string   "locale"
-    t.text     "llamada_gratuita"
-    t.text     "facebook"
-    t.text     "email"
-    t.text     "telefono_fijo"
+    t.string   "llamada_gratuita"
+    t.string   "facebook"
+    t.string   "email"
+    t.string   "telefono_fijo"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -173,9 +166,9 @@ ActiveRecord::Schema.define(:version => 20120705082647) do
   create_table "sucursal_translations", :force => true do |t|
     t.integer  "sucursal_id"
     t.string   "locale"
-    t.string   "telefonos"
     t.string   "nombre"
     t.string   "direccion"
+    t.string   "telefonos"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -189,10 +182,6 @@ ActiveRecord::Schema.define(:version => 20120705082647) do
     t.string   "nombre"
     t.string   "direccion"
     t.string   "telefonos"
-    t.string   "local_file_name"
-    t.string   "local_content_type"
-    t.integer  "local_file_size"
-    t.datetime "local_updated_at"
   end
 
   create_table "testimonios", :force => true do |t|

@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<%= image_tag @testimonio.imagen(:regular) %>
 
 <p>
   <b>Nombre:</b>
@@ -21,5 +21,5 @@
 </p>
 
 
-<%= link_to 'Edit', edit_testimonio_path(@testimonio) %> |
-<%= link_to 'Back', testimonios_path %>
+<%= link_to 'Editar', edit_testimonio_path(@testimonio) %> |
+<%= link_to 'Atrás', testimonios_path %>

@@ -1,5 +1,5 @@
 class CabeceraBannersController < InheritedResources::Base
-  #before_filter :authenticate_admin!
+  before_filter :authenticate_admin!
   def create
       create!(:notice => "Banner guardado correctamente.")
   end

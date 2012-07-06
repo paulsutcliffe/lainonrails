@@ -3,6 +3,7 @@
 
 Feature: Creating Ads to be displayed on the home page
   Scenario: creating ads
+  Given I am a new, authenticated admin
   Given that I am on the home page
   When I visit the "/ads" page
   And I follow "Nuevo anuncio"
@@ -10,13 +11,15 @@ Feature: Creating Ads to be displayed on the home page
   And I press "Guardar"
   Then I should see "Anuncio guardado correctamente."
   And I should see the image "picture.jpg"
-  Given that I am on the home page
-  Then I should see the image "picture.jpg"
   When I visit the "/ads" page
   Then I should not see "Nuevo anuncio"
-
+  Given I am an admin not authenticated
+  Given that I am on the home page
+  Then I should see the image "picture.jpg"
+  
   
   Scenario: editing ads
+  Given I am a new, authenticated admin
   Given that I am on the home page
   When I visit the "/ads" page
   And I follow "Nuevo anuncio"
@@ -34,6 +37,7 @@ Feature: Creating Ads to be displayed on the home page
   
   
   Scenario: deleting ads
+  Given I am a new, authenticated admin
   Given that I am on the home page
   When I visit the "/ads" page
   And I follow "Nuevo anuncio"

@@ -1,4 +1,5 @@
 class RecetasController < InheritedResources::Base
+  before_filter :authenticate_admin!, :except => [ :index, :show ]
   def create
     create!(:notice => "Receta guardada correctamente.")
   end

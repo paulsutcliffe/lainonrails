@@ -4,6 +4,7 @@
 Feature: Contactos
 
   Scenario Outline: creating a new contact
+  Given I am not authenticated
   When I visit the "/<country>/contacto" page
   And I fill in "Nombre" with "<nombre>"
   And I fill in "Apellido" with "<apellido>"
@@ -16,6 +17,19 @@ Feature: Contactos
   And I fill in "Mensaje" with "<mensaje>"
   And I press "Envíar"
   Then I should see "Su mensaje fue enviado con éxito."
+  Given I am a new, authenticated admin
+  When I visit the "/<country>/contactos" page
+  Then I should see "<nombre>"
+  Then I should see "<apellido>"
+  Then I should see "<telefono>"
+  Then I should see "<email>"
+  Then I should see "<direccion>"
+  Then I should see "<distrito>"
+  Then I should see "<ciudad>"
+  Then I should see "<provincia>"
+  Then I should see "<country>"
+  Then I should see "<mensaje>"
+  
 
   Examples:
     | country | nombre | apellido | telefono  | email             | direccion      | distrito  | ciudad      | provincia | mensaje         |

@@ -3,6 +3,7 @@
 
 Feature: Entradas
   Scenario: creating posts on the blog
+  Given I am a new, authenticated admin
   Given that I am on the home page
   When I visit the "/blog" page
   And I follow "Nueva Entrada"
@@ -13,12 +14,16 @@ Feature: Entradas
   Then I should see "Entrada publicada correctamente."
   And I should see "Infarto al corazón y obesidad"
   And I should see the image "picture.jpg"
+  Given I am an admin not authenticated
+  When I visit the "/blog" page
+  Then I should see "Infarto al corazón y obesidad"
   Given that I am on the home page
   And I should see "Infarto al corazón y obesidad"
   And I should see the image "picture.jpg"
 
   
   Scenario: editing posts on the blog
+  Given I am a new, authenticated admin
   Given that I am on the home page
   When I visit the "/blog" page
   And I follow "Nueva Entrada"
@@ -40,6 +45,7 @@ Feature: Entradas
   
   
   Scenario: deleting posts on the blog
+  Given I am a new, authenticated admin
   Given that I am on the home page
   When I visit the "/blog" page
   And I follow "Nueva Entrada"

@@ -41,13 +41,13 @@ Lainonrails::Application.routes.draw do
     resources :slides
 
     resources :metas
-    
-    devise_for :admins
 
     root :to => "home#index"
   end
   
   devise_for :usuarios, :path => "usuarios", :path_names => { :sign_in => 'ingresar', :sign_out => 'salir', :password => 'secreto', :confirmation => 'verificacion', :unlock => 'desbloquear', :registration => 'registro', :sign_up => 'inscribirse' }
+  
+  devise_for :admins, :path => "admins", :path_names => { :sign_in => 'ingresar', :sign_out => 'salir', :password => 'secreto', :confirmation => 'verificacion', :unlock => 'desbloquear', :registration => 'registro', :sign_up => 'inscribirse' }
   
   
   #match '*path', :to => redirect("/#{I18n.default_locale}/%{path}"), :constraints => lambda { |req| !req.path.starts_with? "/#{I18n.default_locale}/" }

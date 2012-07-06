@@ -3,27 +3,18 @@
 
 $(document).ready(function(){
 
-/*
-==============================================================
-Form Testimonios
-==============================================================
-*/
-$('#testimonio_video_link').hide();
-$('#testimonio_foto').hide();
+	/*
+	==============================================================
+	Form Testimonios
+	==============================================================
+	*/
 
-$('#testimonio_tipo_testimonio').click(function() {
-	$('#testimonio_video_link').show();
-	$('#testimonio_foto').hide();
-});
+	$('#testimonio_tipo_testimonio').click(function() {
+		$('#testimonio_video_link').show();
+	});
 
-$('#testimonio_tipo_antesydespues').click(function() {
-	$('#testimonio_video_link').hide();
-	$('#testimonio_foto').show();
-});
-
-
-
-
-
+	$('#testimonio_tipo_antesydespues').click(function() {
+		$('#testimonio_video_link').hide();
+	});
 
 }) // END: document ready
