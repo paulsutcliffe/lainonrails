@@ -13,6 +13,26 @@ class ApplicationController < ActionController::Base
       @country_code = request.location.country_code
       @country = request.location.country
       @ip = request.ip
+      case @country_code
+      when "PE"
+        I18n.locale = :pe
+      when "BO"
+        I18n.locale = :bo
+      when "RD"
+        I18n.locale = :rd
+      when "BO"
+        I18n.locale = :bo
+      when "CR"
+        I18n.locale = :cr
+      when "GT"
+        I18n.locale = :gt
+      when "SV"
+        I18n.locale = :sv
+      when "UY"
+        I18n.locale = :uy
+      else
+        I18n.locale = :pe
+      end
     end
   
     def load_general_information
