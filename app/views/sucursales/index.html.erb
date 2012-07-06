@@ -5,6 +5,7 @@
     <th>Nombre</th>
     <th>Direccion</th>
     <th>Telefonos</th>
+    <th>País</th>
     <th></th>
     <th></th>
     <th></th>
@@ -15,7 +16,8 @@
     <td><%= sucursal.nombre %></td>
     <td><%= sucursal.direccion %></td>
     <td><%= sucursal.telefonos %></td>
-    <td><%= link_to 'Show', sucursal %></td>
+    <td><%= sucursal.pais %></td>
+    <td><%= link_to image_tag(sucursal.local(:thumb)), sucursal %></td>
     <td><%= link_to 'Editar', edit_sucursal_path(sucursal) %></td>
     <td><%= link_to 'Eliminar', sucursal, :confirm => '¿Estás seguro?', :method => :delete %></td>
   </tr>

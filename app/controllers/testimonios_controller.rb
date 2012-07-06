@@ -6,12 +6,17 @@ class TestimoniosController < InheritedResources::Base
   
   def find_tipo
     if params[:tipo]
-      @testimonios = Testimonio.where("tipo = ?", params[:tipo])
+      @testimonios = Testimonio.where("tipo = ? AND pais = ?", params[:tipo], params[:locale])
     end
+    @testimonios = Testimonio.where("pais = ?", params[:locale])
   end
-  
+
   def create
-    create!(:notice => "Testimonio guardado correctamente.")
+    @testimonio = Testimonio.new(params[:testimonio])
+    if @testimonio.valid?
+      @testimonio.pais = params[:locale]
+      create!(:notice => "Testimonio guardado correctamente.")
+    end
   end
   
   def update

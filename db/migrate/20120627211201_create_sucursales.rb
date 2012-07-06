@@ -5,6 +5,7 @@ class CreateSucursales < ActiveRecord::Migration
       t.string :nombre
       t.string :direccion
       t.string :telefonos
+      t.string :pais
     end
   end
 

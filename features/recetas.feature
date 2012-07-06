@@ -3,6 +3,7 @@
 
 Feature: Creating Recetas to be displayed on the home page
   Scenario: creating recetas
+  Given I am a new, authenticated admin
   Given that I am on the home page
   When I visit the "/recetas" page
   And I follow "Nueva receta"
@@ -15,8 +16,9 @@ Feature: Creating Recetas to be displayed on the home page
   And I should see the image "picture.jpg"
   And I should see "Queijo catupiri e calabresa"
   And I should see "Bater tudo e comer"
-  Given that I am on the home page
+  Given I am an admin not authenticated
   Given I am a new, authenticated user
+  Given that I am on the home page
   Then I should see the image "picture.jpg"
   And I should see "Pizza"
   And I should see "Queijo catupiri e calabresa"
@@ -24,6 +26,7 @@ Feature: Creating Recetas to be displayed on the home page
 
   
   Scenario: editing recetas
+  Given I am a new, authenticated admin
   Given that I am on the home page
   When I visit the "/recetas" page
   And I follow "Nueva receta"
@@ -48,12 +51,14 @@ Feature: Creating Recetas to be displayed on the home page
   And I should see "Pizza"
   And I should see "Queijo catupiri e calabresa"
   And I should see "Bater tudo e comer"
-  Given that I am on the home page
+  Given I am an admin not authenticated
   Given I am a new, authenticated user
+  Given that I am on the home page
   Then I should see the image "picture.jpg"
   
   
   Scenario: deleting recetas
+  Given I am a new, authenticated admin
   Given that I am on the home page
   When I visit the "/recetas" page
   And I follow "Nueva receta"

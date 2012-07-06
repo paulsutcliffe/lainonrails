@@ -15,7 +15,7 @@
   <tr>
     <td><%= testimonio.nombre %></td>
     <td><%= testimonio.descripcion %></td>
-    <td><%= testimonio.video_link %></td>
+    <td><%= testimonio.video_link_html %></td>
     <td><%= testimonio.tipo %></td>
     <td><%= link_to image_tag(testimonio.imagen(:thumb)), testimonio %></td>
     <td><%= link_to 'Editar', edit_testimonio_path(testimonio) %></td>

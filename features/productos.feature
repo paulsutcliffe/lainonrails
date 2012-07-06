@@ -3,6 +3,7 @@
 
 Feature: Creating productos
   Scenario: creating productos
+  Given I am a new, authenticated admin
   Given that I am on the home page
   When I visit the "/productos" page
   And I follow "Nuevo producto"
@@ -14,9 +15,15 @@ Feature: Creating productos
   And I should see "Sacián"
   And I should see "Sonríe en vez de comer."
   And I should see the image "picture.jpg"
+  Given I am an admin not authenticated
+  When I visit the "/productos" page
+  Then I should see "Sacián"
+  And I should see "Sonríe en vez de comer."
+  And I should see the image "picture.jpg"
 
   
   Scenario: editing productos
+  Given I am a new, authenticated admin
   Given that I am on the home page
   When I visit the "/productos" page
   And I follow "Nuevo producto"
@@ -40,6 +47,7 @@ Feature: Creating productos
 
   
   Scenario: deleting productos
+  Given I am a new, authenticated admin
   Given that I am on the home page
   When I visit the "/productos" page
   And I follow "Nuevo producto"

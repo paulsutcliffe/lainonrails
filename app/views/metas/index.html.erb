@@ -6,16 +6,14 @@
     <th>Description</th>
     <th></th>
     <th></th>
-    <th></th>
   </tr>
 
 <% @metas.each do |meta| %>
   <tr>
     <td><%= meta.keywords %></td>
     <td><%= meta.description %></td>
-    <td><%= link_to 'Show', meta %></td>
-    <td><%= link_to 'Edit', edit_meta_path(meta) %></td>
-    <td><%= link_to 'Destroy', meta, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Editar', edit_meta_path(meta) %></td>
+    <td><%= link_to 'Eliminar', meta, :confirm => '¿Estás seguro?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

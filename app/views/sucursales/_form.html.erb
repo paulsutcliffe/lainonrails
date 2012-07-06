@@ -1,4 +1,4 @@
-<%= form_for(@sucursal) do |f| %>
+<%= form_for(@sucursal, :html => { :multipart => true }) do |f| %>
   <% if @sucursal.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@sucursal.errors.count, "error") %> prohibited this sucursal from being saved:</h2>
@@ -22,6 +22,10 @@
   <div class="field">
     <%= f.label :telefonos, "Teléfonos" %><br />
     <%= f.text_field :telefonos %>
+  </div>
+  <div class="field">
+    <%= f.label :local, "Imagen" %><br />
+    <%= f.file_field :local %>
   </div>
   <div class="actions">
     <%= f.submit "Guardar" %>

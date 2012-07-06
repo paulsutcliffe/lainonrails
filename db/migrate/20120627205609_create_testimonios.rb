@@ -6,6 +6,7 @@ class CreateTestimonios < ActiveRecord::Migration
       t.string :video_link
       t.string :tipo
       t.string :slug
+      t.string :pais
 
       t.timestamps
     end

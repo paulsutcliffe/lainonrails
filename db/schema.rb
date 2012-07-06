@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120705082647) do
+ActiveRecord::Schema.define(:version => 20120706045936) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false
@@ -89,10 +89,10 @@ ActiveRecord::Schema.define(:version => 20120705082647) do
   create_table "informacion_translations", :force => true do |t|
     t.integer  "informacion_id"
     t.string   "locale"
-    t.string   "llamada_gratuita"
-    t.string   "facebook"
     t.string   "email"
     t.string   "telefono_fijo"
+    t.string   "llamada_gratuita"
+    t.string   "facebook"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -163,25 +163,17 @@ ActiveRecord::Schema.define(:version => 20120705082647) do
     t.datetime "slide_updated_at"
   end
 
-  create_table "sucursal_translations", :force => true do |t|
-    t.integer  "sucursal_id"
-    t.string   "locale"
-    t.string   "nombre"
-    t.string   "direccion"
-    t.string   "telefonos"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "sucursal_translations", ["locale"], :name => "index_sucursal_translations_on_locale"
-  add_index "sucursal_translations", ["sucursal_id"], :name => "index_sucursal_translations_on_sucursal_id"
-
   create_table "sucursales", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "nombre"
     t.string   "direccion"
     t.string   "telefonos"
+    t.string   "pais"
+    t.string   "local_file_name"
+    t.string   "local_content_type"
+    t.integer  "local_file_size"
+    t.datetime "local_updated_at"
   end
 
   create_table "testimonios", :force => true do |t|
@@ -190,6 +182,7 @@ ActiveRecord::Schema.define(:version => 20120705082647) do
     t.string   "video_link"
     t.string   "tipo"
     t.string   "slug"
+    t.string   "pais"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "imagen_file_name"

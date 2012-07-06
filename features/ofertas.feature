@@ -3,6 +3,7 @@
 
 Feature: Creating Ofertas to be displayed on the home page
   Scenario: creating ofertas
+  Given I am a new, authenticated admin
   Given that I am on the home page
   When I visit the "/ofertas" page
   And I follow "Nueva oferta"
@@ -10,13 +11,16 @@ Feature: Creating Ofertas to be displayed on the home page
   And I press "Guardar"
   Then I should see "Oferta guardada correctamente."
   And I should see the image "picture.jpg"
+  When I visit the "/ofertas" page
   Then I should not see "Nueva oferta"
-  Given that I am on the home page
+  Given I am an admin not authenticated
   Given I am a new, authenticated user
+  Given that I am on the home page
   Then I should see the image "picture.jpg"
 
   
   Scenario: editing ofertas
+  Given I am a new, authenticated admin
   Given that I am on the home page
   When I visit the "/ofertas" page
   And I follow "Nueva oferta"
@@ -29,12 +33,15 @@ Feature: Creating Ofertas to be displayed on the home page
   And I press "Guardar"
   Then I should see "Oferta actualizada correctamente."
   And I should see the image "picture.jpg"
-  Given that I am on the home page
+  Given I am an admin not authenticated
   Given I am a new, authenticated user
+  Given that I am on the home page
   Then I should see the image "picture.jpg"
+
   
   
   Scenario: deleting ofertas
+  Given I am a new, authenticated admin
   Given that I am on the home page
   When I visit the "/ofertas" page
   And I follow "Nueva oferta"

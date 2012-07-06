@@ -3,6 +3,7 @@
 
 Feature: Creating Slides to be displayed on the home page
   Scenario: creating slides
+  Given I am a new, authenticated admin
   Given that I am on the home page
   When I visit the "/slides" page
   And I follow "Nuevo slide"
@@ -16,12 +17,14 @@ Feature: Creating Slides to be displayed on the home page
   And I press "Guardar"
   Then I should see "Slide guardado correctamente."
   And I should see the image "picture2.jpg"
+  Given I am an admin not authenticated
   Given that I am on the home page
   Then I should see the image "picture.jpg"
   And I should see the image "picture2.jpg"
 
 
   Scenario: editing slides
+  Given I am a new, authenticated admin
   Given that I am on the home page
   When I visit the "/slides" page
   And I follow "Nuevo slide"
@@ -34,11 +37,13 @@ Feature: Creating Slides to be displayed on the home page
   And I press "Guardar"
   Then I should see "Slide actualizado correctamente."
   And I should see the image "picture.jpg"
+  Given I am an admin not authenticated
   Given that I am on the home page
   Then I should see the image "picture.jpg"
   
   
   Scenario: deleting slides
+  Given I am a new, authenticated admin
   Given that I am on the home page
   When I visit the "/slides" page
   And I follow "Nuevo slide"
