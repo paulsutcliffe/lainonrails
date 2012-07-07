@@ -4,7 +4,8 @@
 Feature: Usuarios
 
   Scenario Outline: creating a new account
-  Given I am not authenticated
+  #Given I am not authenticated
+  Given I am on the home page
   When I visit the "/usuarios/registro/inscribirse" page
   And I fill in "Nombre" with "<nombre>"
   And I fill in "Apellido" with "<apellido>"

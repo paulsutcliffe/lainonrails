@@ -10,6 +10,7 @@
   <%= @producto.descripcion %>
 </p>
 
-
-<%= link_to 'Editar', edit_producto_path(@producto) %> |
-<%= link_to 'Atrás', productos_path %>
+<% if current_admin %>
+<%= link_to 'Editar', edit_producto_path(@producto) %>
+<% end %>
+| <%= link_to 'Atrás', productos_path %>

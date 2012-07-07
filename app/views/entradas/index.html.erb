@@ -12,12 +12,18 @@
   <tr>
 	 <td><%= link_to entrada.titulo, entrada %></td>
     <td><%= entrada.contenido %></td>
+
+    <% if current_admin %>
     <td><%= link_to 'Editar', edit_entrada_path(entrada) %></td>
     <td><%= link_to 'Eliminar', entrada, :confirm => '¿Estás seguro?', :method => :delete %></td>
+    <% end %>
+
   </tr>
 <% end %>
 </table>
 
 <br />
 
+<% if current_admin %>
 <%= link_to 'Nueva Entrada', new_entrada_path %>
+<% end %>

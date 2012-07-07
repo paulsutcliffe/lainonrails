@@ -15,6 +15,7 @@
   <%= @receta.preparacion %>
 </p>
 
-
-<%= link_to 'Editar', edit_receta_path(@receta) %> |
-<%= link_to 'Atrás', recetas_path %>
+<% if current_admin %>
+<%= link_to 'Editar', edit_receta_path(@receta) %>
+<% end %>
+| <%= link_to 'Atrás', recetas_path %>

@@ -14,8 +14,12 @@
     <td><%= producto.nombre %></td>
     <td><%= producto.descripcion %></td>
     <td><%= link_to image_tag(producto.picture(:regular)), producto %></td>
+
+    <% if current_admin %>
     <td><%= link_to 'Editar', edit_producto_path(producto) %></td>
     <td><%= link_to 'Eliminar', producto, :confirm => '¿Estás seguro?', :method => :delete %></td>
+    <% end %>
+
   </tr>
 <% end %>
 </table>
@@ -23,5 +27,7 @@
 <br />
 
 <% if @productos.empty? %>
-  <%= link_to 'Nuevo producto', new_producto_path %>
+  <% if current_admin %>
+    <%= link_to 'Nuevo producto', new_producto_path %>
+  <% end %>
 <% end %>

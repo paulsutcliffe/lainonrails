@@ -20,6 +20,7 @@
   <%= @testimonio.tipo %>
 </p>
 
-
-<%= link_to 'Editar', edit_testimonio_path(@testimonio) %> |
-<%= link_to 'Atrás', testimonios_path %>
+<% if current_admin %>
+<%= link_to 'Editar', edit_testimonio_path(@testimonio) %>
+<% end %>
+| <%= link_to 'Atrás', testimonios_path %>

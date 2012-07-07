@@ -16,8 +16,12 @@
     <td><%= receta.ingredientes %></td>
     <td><%= receta.preparacion %></td>
     <td><%= link_to image_tag(receta.snapshot(:thumb)), receta %></td>
+
+    <% if current_admin %>
     <td><%= link_to 'Editar', edit_receta_path(receta) %></td>
     <td><%= link_to 'Eliminar', receta, :confirm => '¿Estás seguro?', :method => :delete %></td>
+    <% end %>
+
   </tr>
 <% end %>
 </table>
@@ -25,5 +29,7 @@
 <br />
 
 <% if @recetas.empty? %>
+  <% if current_admin %>
   <%= link_to 'Nueva receta', new_receta_path %>
+  <% end %>
 <% end %>

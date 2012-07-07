@@ -12,6 +12,7 @@
   <%= image_tag @entrada.foto(:regular) %>
 </p>
 
-
-<%= link_to 'Editar', edit_entrada_path(@entrada) %> |
-<%= link_to 'Atrás', entradas_path %>
+<% if current_admin %>
+<%= link_to 'Editar', edit_entrada_path(@entrada) %>
+<% end %>
+| <%= link_to 'Atrás', entradas_path %>

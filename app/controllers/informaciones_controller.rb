@@ -4,9 +4,10 @@ class InformacionesController < InheritedResources::Base
   
   def find_pais
     if params[:locale]
-      @informaciones = Infomacion.where("pais = ?", params[:locale])
+      @informaciones = Informacion.where("pais = ?", params[:locale])
     end
   end
+  
   def create
     @informacion = Informacion.new(params[:informacion])
     if @informacion.valid?
