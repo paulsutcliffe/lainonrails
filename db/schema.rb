@@ -86,25 +86,12 @@ ActiveRecord::Schema.define(:version => 20120706045936) do
 
   add_index "entradas", ["slug"], :name => "index_entradas_on_slug"
 
-  create_table "informacion_translations", :force => true do |t|
-    t.integer  "informacion_id"
-    t.string   "locale"
-    t.string   "email"
-    t.string   "telefono_fijo"
-    t.string   "llamada_gratuita"
-    t.string   "facebook"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "informacion_translations", ["informacion_id"], :name => "index_informacion_translations_on_informacion_id"
-  add_index "informacion_translations", ["locale"], :name => "index_informacion_translations_on_locale"
-
   create_table "informaciones", :force => true do |t|
     t.string   "telefono_fijo"
     t.string   "llamada_gratuita"
     t.string   "email"
     t.string   "facebook"
+    t.string   "pais"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

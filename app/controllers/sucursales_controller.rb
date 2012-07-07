@@ -11,7 +11,9 @@ class SucursalesController < InheritedResources::Base
   def create
     @sucursal = Sucursal.new(params[:sucursal])
     @sucursal.pais = params[:locale]
-    create!(:notice => "Sucursal guardada correctamente.")
+    if @sucursal.valid?
+      create!(:notice => "Sucursal guardada correctamente.")
+    end
   end
   
   def update

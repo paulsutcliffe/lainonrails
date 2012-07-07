@@ -5,6 +5,7 @@ class CreateInformaciones < ActiveRecord::Migration
       t.string :llamada_gratuita
       t.string :email
       t.string :facebook
+      t.string :pais
 
       t.timestamps
     end

@@ -4,7 +4,6 @@
 Feature: add and modify general information for the layout
 Scenario Outline: add general information
   Given I am a new, authenticated admin
-  Given that I am on the home page
   When I visit the "/<country>/informaciones" page
   And I follow "Ingresar Información"
   And I fill in "Teléfono" with "<telefono>"
@@ -24,9 +23,8 @@ Scenario Outline: add general information
   When I press "Guardar"
   Then I should see "Información actualizada correctamente."
   And I should see "<telefono>"
-
   Given I am an admin not authenticated
-  Given that I am on the home page
+  When I visit the "/?locale=<country>" page
   Then I should see "<telefono>"
   And I should see "<gratuito>"
   And I should see "<email>"
