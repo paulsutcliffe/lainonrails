@@ -1,0 +1,35 @@
+.range_test {
+  /* Default */
+  display: none;
+  font-weight: bold;
+}
+
+html#range_0 #p_0 {
+  /* Style overrides for: 0px to 760px */
+  display: block;
+}
+
+html#range_1 #p_1 {
+  /* Style overrides for: 760px to 980px */
+  display: block;
+}
+
+html#range_2 #p_2 {
+  /* Style overrides for: 980px to 1280px */
+  display: block;
+}
+
+html#range_3 #p_3 {
+  /* Style overrides for: 1280px to 1600px */
+  display: block;
+}
+
+html#range_4 #p_4 {
+  /* Style overrides for: 1600px to 1920px */
+  display: block;
+}
+
+html#range_5 #p_5 {
+  /* Style overrides for: above 1920px */
+  display: block;
+}

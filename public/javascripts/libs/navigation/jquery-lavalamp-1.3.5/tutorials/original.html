@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<title>jQuery LavaLamp Demos - Original Demo Sets</title>
+
+<meta http-equiv="Expires" content="never">
+<meta name="Revisit-After" content="3 Days">
+<meta name="author" content="Jolyon Terwilliger jolyon@nixbox.com">
+<meta name="Robots" content="INDEX,NOFOLLOW">
+
+<script type="text/javascript" src="original_files/jquery.js"></script>
+<script type="text/javascript" src="original_files/jquery_003.js"></script>
+<script type="text/javascript" src="original_files/jquery_002.js"></script>
+<script type="text/javascript">
+</script>
+<link type="text/css" href="original_files/original.css" rel="stylesheet" media="all">
+</head>
+
+<body>
+
+<script type="text/javascript">
+<!--
+	var query = new Object();
+	window.location.search.replace(
+	new RegExp( "([^?=&]+)(=([^&]*))?", 'g' ),
+		function( $0, $1, $2, $3 ){
+			query[ $1 ] = $3;
+		}
+	);
+	easing = query['e'] || 'Expo';
+	
+	function loadEasing(e) {
+		location.href = location.pathname+'?e='+e;
+	}
+	
+	function setEasing(e) {
+		loadLamps(e);
+	}
+
+// for dynamic easing changes		
+	function loadLamps(easing) {
+		$('#returnHomeDemo').lavaLamp({
+			fx: 'easeIn'+easing,
+			speed: 800,
+			homeTop:-1,
+			homeLeft:-1
+		});
+
+		$('#bgImageStartItemDemo').lavaLamp({
+			fx: 'easeOut'+easing,
+			speed: 800,
+			startItem:1
+		});
+
+		$('#returnDelayDemo').lavaLamp({
+			fx: 'easeInOut'+easing,
+			speed: 1000,
+			returnDelay:1000
+		});
+
+		$('#clickVerticalDemo').lavaLamp({
+			fx: 'easeOut'+easing,
+			speed: 1000,
+			click: function() {return false;},
+			setOnClick: false
+		});
+
+		$('#baseBallImageDemo').lavaLamp({
+			fx: 'easeInOut'+easing,
+			speed: 1000,
+			autoReturn: false
+		});
+
+		$('#homingDemo').lavaLamp({
+			fx: 'easeInOut'+easing,
+			speed: 1000,
+			returnHome: true,
+			homeLeft: -100,
+			homeTop: -25,
+			homeWidth:700,
+			homeHeight:10
+		});
+
+		$('#multiLayerDemo').lavaLamp({
+			fx: 'easeInOut'+easing,
+			speed: 500
+		});
+
+		$('#multiLayerDemo2').lavaLamp({
+			target: 'li > a',
+			container: 'li',
+			fx: 'easeInOut'+easing,
+			speed: 500
+		});
+
+		$('#multiLayerDemo3').lavaLamp({
+			target: 'li > a',
+			container: 'li',
+			includeMargins: true,
+			fx: 'easeInOut'+easing,
+			speed: 500
+		});
+
+	}
+	
+// jquery initialize:
+	$(function() {
+		$('ul#demoNav').lavaLamp({fx: 'swing', speed: 333});
+		loadLamps(easing);
+		
+		$('select#easing option[value='+easing+']').attr('selected','selected');
+		$('span.easingLabel').text(easing);
+	});
+//console.log();
+-->
+</script>
+	
+<div>
+	<h1>jQuery LavaLamp Demos - a jQuery animated menu plugin</h1>
+	Choose an Easing Style for all demos
+	<select name="easing" id="easing" onchange="loadEasing(this.value)">
+	<option value="Back">Back</option>
+	<option value="Quad">Quad</option>
+	<option value="Cubic">Cubic</option>
+	<option value="Quart">Quart</option>
+	<option value="Quint">Quint</option>
+	<option value="Sine">Sine</option>
+	<option selected="selected" value="Expo">Expo</option>
+	<option value="Circ">Circ</option>
+	<option value="Elastic">Elastic</option>
+	<option value="Bounce">Bounce</option>
+	</select>
+</div>
+<div>
+	<ul id="demoNav"><li style="position: absolute; display: block; margin: 0px; padding: 0px; left: 130px; top: 10px; width: 88px; height: 21px; overflow: hidden;" class="backLava"><div class="leftLava"></div><div class="bottomLava"></div><div class="cornerLava"></div></li>
+		<li class="noLava"><a href="#" onclick="return false">Select a Demo &#8594;</a></li>
+		<li class="selectedLava"><a href="#classic">returnHome</a></li>
+		<li><a href="#startitem">starting item</a></li>
+		<li><a href="#returndelay">returnDelay</a></li>
+		<li><a href="#customclick">custom click</a></li>
+		<li><a href="#autoreturn">autoReturn</a></li>
+		<li><a href="#homing">homing features</a></li>
+		<li><a href="#multi">multi-layer menu</a></li>
+		<li><a href="#autohome">auto home demo</a></li>
+	</ul>
+<p><a href="http://nixboxdesigns.com/projects/jquery-lavalamp/demos.php" title="jQuery LavaLamp Home Page">jQuery LavaLamp Demos Page</a></p>
+</div>
+<div id="classic">
+	<h2>ReturnHome - <i>Ease In</i> - <span class="easingLabel">Expo</span></h2>
+	<h3><code>returnHome</code> is set to <code>false</code> by default, 
+this keeps the lavalamp where you last clicked.  The absolute home 
+position (in relation to the parent UL) and size is set up via <code>homeLeft, homeTop, homeWidth</code> and <code>homeHeight</code>.
+   Clicking the link below the menu will tell the lavalamp to move back 
+to the home position, but does not change the selectedLava class.</h3>
+	<pre>$('#returnHomeDemo').lavaLamp({
+	fx: 'easeIn<span class="easingLabel">Expo</span>',
+	speed: 800,
+	homeTop:-1,
+	homeLeft:-1
+});
+	</pre>
+	<ul id="returnHomeDemo" class="lamp"><li style="position: absolute; display: block; margin: 0px; padding: 0px; left: -1px; top: -1px; width: 0px; height: 0px; overflow: hidden;" class="backLava"><div class="leftLava"></div><div class="bottomLava"></div><div class="cornerLava"></div></li><li style="left: -1px; top: -1px; width: 0px; height: 0px; position: absolute; display: block;" class="homeLava selectedLava"></li>
+		<li><a href="#PhoneHome">Phone Home</a></li>
+		<li><a href="#Contact">Make Contact</a></li>
+		<li><a href="#Ride">Ride spaceship</a></li>
+	</ul>
+	<a href="#" onclick="$('#spaceshipHomeDemo li.homeLava').mouseover();return false;">ET, go home!</a> <code>$('#spaceshipHomeDemo li.homeLava').mouseover()</code></div>
+<div id="startitem">
+	<h2>startItem demo - <i>Ease Out</i> - <span class="easingLabel">Expo</span></h2>
+	<h3>setting <code>startItem: 1</code> defaults to the 2nd menu element upon page load; menu arrays start with index of 0.</h3>
+	<pre>$("#bgImageStartItemDemo").lavaLamp({
+	fx: 'easeOut<span class="easingLabel">Expo</span>',
+	speed: 800,
+	startItem: 1
+});
+	</pre>
+	<ul id="bgImageStartItemDemo" class="lamp"><li style="position: absolute; display: block; margin: 0px; padding: 0px; left: 142px; top: 15px; width: 179px; height: 68px;" class="backLava"><div class="leftLava"></div><div class="bottomLava"></div><div class="cornerLava"></div></li>
+		<li><a href="#Zaphod">Vote Zaphod</a></li> 
+		<li class="selectedLava"><a href="#Ford">On second thought,<br>Vote Ford</a></li> 
+		<li><a href="#Trillian">Or Better Yet, <br>Vote Trillian!</a></li> 
+		<li><a href="#Arthur">Vote Arthur</a></li>
+	</ul>
+</div>
+<div id="returndelay">
+	<h2>returnDelay demo - <i>Ease In/Out</i> - <span class="easingLabel">Expo</span></h2>
+	<h3><code>returnDelay</code> is set to 1000 milliseconds; 1 second.  The <code>returnDelay</code> starts counting down after the last move animation is completed, or <code>returnDelay + speed</code>. Because of this, the timing is not perfect with this method.</h3>
+	<pre>$('#returnDelayDemo').lavaLamp({
+	fx: 'easeInOut<span class="easingLabel">Expo</span>',
+	speed: 1000,
+	returnDelay:1000
+});
+	</pre>
+	<ul id="returnDelayDemo" class="lamp"><li style="position: absolute; display: block; margin: 0px; padding: 0px; left: 15px; top: 15px; width: 81px; height: 27px;" class="backLava"><div class="leftLava"></div><div class="bottomLava"></div><div class="cornerLava"></div></li>
+		<li class="selectedLava"><a href="#Home">Home</a></li>
+		<li><a href="#About">About</a></li>
+		<li><a href="#Order">Order<br>Something</a></li>
+		<li><a href="#Contact">Contact<br>Now!</a></li>
+		<li><a href="#FAQ">FAQ</a></li>
+	</ul>
+</div>
+<div id="customclick">
+	<h2>click &amp; setOnClick:false demo - <i>Ease Out</i> - <span class="easingLabel">Expo</span></h2>
+	<h3>the <code>click</code> function just returns <code>false</code>: links will not activate when clicked; watch your address bar for verification. <code>setOnClick</code> is set to <code>false</code>, so clicking will <b>not</b> set new element as default return.</h3>
+	<pre>$("#clickVerticalDemo").lavaLamp({
+	fx: 'easeOut<span class="easingLabel">Expo</span>',
+	speed: 1000,
+	click: function() {return false;},
+	setOnClick: false
+});
+	</pre>
+	<ul id="clickVerticalDemo" class="lamp"><li style="position: absolute; display: block; margin: 0px; padding: 0px; left: 15px; top: 15px; width: 200px; height: 29px;" class="backLava"><div class="leftLava"></div><div class="bottomLava"></div><div class="cornerLava"></div></li>
+		<li class="selectedLava"><a href="#Wizard">Wizard</a></li>
+		<li><a href="#Cartographer">Cartographer</a></li>
+		<li><a href="#Ranger">Ranger</a></li>
+		<li><a href="#Warlock">Warlock</a></li>
+		<li><a href="#NerfHerder">Nerf Herder</a></li>
+	</ul>
+</div>
+<div id="autoreturn">
+	<h2>autoReturn:false demo - <em>Ease In/Out</em> - <span class="easingLabel">Expo</span></h2>
+	<h3><code>autoReturn</code> is set to <code>false</code>, whatever menu item the mouse pointer was last over keeps the hover</h3>
+	<pre>$('#baseBallImageDemo').lavaLamp({
+	fx: 'easeInOut<span class="easingLabel">Expo</span>',
+	speed: 1000,
+	autoReturn: false
+});
+	</pre>
+	<ul id="baseBallImageDemo" class="lamp"><li style="position: absolute; display: block; margin: 0px; padding: 0px; left: 20px; top: 15px; width: 188px; height: 30px;" class="backLava"><div class="leftLava"></div><div class="bottomLava"></div><div class="cornerLava"></div></li>
+		<li class="selectedLava"><a href="#Swing">Swing bada Swing!</a></li>
+		<li><a href="#Run">Run to First</a></li>
+		<li><a href="#Steal">Steal Second</a></li>
+		<li><a href="#Home">Go for Home!</a></li>
+	</ul>
+	<a href="#" onclick="$('#baseBallImageDemo li.selectedLava').mouseover();return false;">Click to Return to last selected</a> <code>$('#baseBallImageDemo li.selectedLava').mouseover()</code></div>
+
+<div id="homing">
+	<h2>returnHome and homing demo - <em>Ease In</em> - <span class="easingLabel">Expo</span></h2>
+	<h3><code>returnHome</code> is <code>true</code>, telling lavalamp to return to the home position, even if a menu item is clicked. <code>homeLeft, homeTop, homeWidth</code> and <code>homeHeight</code> settings create the appropriate starting point, which is a shape larger than the parent <code>ul</code> for effect. <code>overflow: hidden</code> on <code>ul</code> is necessary CSS for this effect to work.</h3>
+	<pre>$('#homingDemo').lavaLamp({
+	fx: 'easeIn<span class="easingLabel">Expo</span>',
+	speed: 1000,
+	returnHome:true,
+	homeLeft: -100,
+	homeTop: -25,
+	homeWidth:700,
+	homeHeight:10
+});
+	</pre>
+	<ul id="homingDemo" class="lamp"><li style="position: absolute; display: block; margin: 0px; padding: 0px; left: -100px; top: -25px; width: 700px; height: 10px;" class="backLava"><div class="leftLava"></div><div class="bottomLava"></div><div class="cornerLava"></div></li><li style="left: -100px; top: -25px; width: 700px; height: 10px; position: absolute; display: block;" class="homeLava selectedLava"></li>
+		<li><a href="#Pizza">Pizza</a></li>
+		<li><a href="#Ravioli">Ravioli</a></li>
+		<li><a href="#Putanesca">Putanesca</a></li>
+		<li><a href="#HotLava">Hot Lava Salad</a></li>
+	</ul>
+</div>
+
+
+<div id="multi">
+	<h2>multi-layer menu demos - <em>Ease In</em> - <span class="easingLabel">Expo</span></h2>
+	<h3>Demonstrating multi-layer menu support.</h3>
+	<h3>Examples:</h3>
+	<ol>
+		<li>Using <code>noLava</code> class to skip highlighting applicable elements.  This is a custom application, with a separate <code>li</code> element to contain the sub list.</li>
+		<li>Using <code>target</code> and <code>container</code> options to target sub-elements for hover effect.  Be sure to use the appropriate container to match the parent container; <code>li</code> elements for <code>ul</code> or <code>ol</code> parents, <code>dd</code> or <code>dt</code> elements for <code>dl</code> parents, <code>p</code> or <code>div</code> for <code>div</code> parents, <code>span</code> for <code>p</code> parents, etcetera. This embeds the sub-<code>ul</code> container in the same <code>li</code> as the parent <code>li</code>.
+  This seems to be how CMS software like Wordpress and Joomla are 
+creating their menus, so we must target and style the link sub-element 
+to float the hover correctly.</li>
+		<li>Using <code>target, container</code> and <code>includeMargins</code> for custom hover effects.  Uses the same HTML format as #2.</li>
+	</ol>
+
+	<div id="multiGroup">
+		<div class="multiSub">
+			<h3><code>noLava</code> class example,<br> using separate <code>li</code> for sub-menus</h3>
+			<pre>$('#multiLayerDemo').lavaLamp({
+	fx: 'easeIn<span class="easingLabel">Expo</span>',
+	speed: 500
+});
+			</pre>
+			<ul id="multiLayerDemo" class="lamp"><li style="position: absolute; display: block; margin: 0px; padding: 0px; left: 0px; top: 10px; width: 200px; height: 27px;" class="backLava"><div class="leftLava"></div><div class="bottomLava"></div><div class="cornerLava"></div></li>
+				<li class="selectedLava"><a href="#OrderPizza">Order Pizza</a></li>
+				<li class="noLava">
+					<p>Pizza Toppings</p>
+					<ul>
+						<li><a href="#wPepperoni">With Pepperoni</a></li>
+						<li><a href="#wMushrooms">With Mushrooms</a></li>
+						<li><a href="#wRedOnions">With Red Onions</a></li>
+					</ul>
+				</li>
+				<li><a href="#OrderPasta">Order Pasta</a></li>
+				<li class="noLava">
+					<p>Pasta Blend</p>
+					<ul>
+						<li><a href="#wRedSauce">With Red Sauce</a></li>
+						<li><a href="#wWhiteSauce">With White Sauce</a></li>
+						<li><a href="#wAnchovies">Anchovies?</a></li>
+						<li class="noLava">
+							<ul>
+								<li><a href="#YesAnchovies">You betchya!</a></li>
+								<li><a href="#NoAnchovies">Hell, no!</a></li>
+							</ul>
+						</li>		
+					</ul>
+				</li>
+			</ul>
+		</div>
+
+		<div class="multiSub">
+		<h3>Wordpress/Joomla example<br><br></h3>
+			<pre>$('#multiLayerDemo').lavaLamp({
+	target: 'li &gt; a',
+	container: 'li',
+	fx: 'easeIn<span class="easingLabel">Expo</span>',
+	speed: 500
+});
+			</pre>
+			<ul id="multiLayerDemo2" class="lamp"><li style="position: absolute; display: block; margin: 0px; padding: 0px; left: 10px; top: 10px; width: 180px; height: 27px;" class="backLava"><div class="leftLava"></div><div class="bottomLava"></div><div class="cornerLava"></div></li>
+				<li><a class="selectedLava" href="#OrderPizza">Order Pizza</a>
+					<p>Pizza Toppings</p>
+					<ul>
+						<li><a href="#wPepperoni">With Pepperoni</a></li>
+						<li><a href="#wMushrooms">With Mushrooms</a></li>
+						<li><a href="#wRedOnions">With Red Onions</a></li>
+					</ul>
+				</li>
+				<li><a href="#OrderPasta">Order Pasta</a>
+					<p>Pasta Blend</p>
+					<ul>
+						<li><a href="#wRedSauce">With Red Sauce</a></li>
+						<li><a href="#wWhiteSauce">With White Sauce</a></li>
+						<li><a href="#wAnchovies">Anchovies?</a></li>
+						<li class="noLava">
+							<ul>
+								<li><a href="#YesAnchovies">You betchya!</a></li>
+								<li><a href="#NoAnchovies">Hell, no!</a></li>
+							</ul>
+						</li>		
+					</ul>
+				</li>
+			</ul>
+		</div>
+
+		<div class="multiSub">
+		<h3>Wordpress/Joomla example<br> + <code>includeMargins</code></h3>
+			<pre>$('#multiLayerDemo').lavaLamp({
+	target: 'li &gt; a',
+	container: 'li',
+	includeMargins: true,
+	fx: 'easeIn<span class="easingLabel">Expo</span>',
+	speed: 500
+});
+			</pre>
+			<ul id="multiLayerDemo3" class="lamp"><li style="position: absolute; display: block; margin: 0px; padding: 0px; left: 0px; top: 0px; width: 200px; height: 47px;" class="backLava"><div class="leftLava"></div><div class="bottomLava"></div><div class="cornerLava"></div></li>
+				<li><a class="selectedLava" href="#OrderPizza">Order Pizza</a>
+					<p>Pizza Toppings</p>
+					<ul>
+						<li><a href="#wPepperoni">With Pepperoni</a></li>
+						<li><a href="#wMushrooms">With Mushrooms</a></li>
+						<li><a href="#wRedOnions">With Red Onions</a></li>
+					</ul>
+				</li>
+				<li><a href="#OrderPasta">Order Pasta</a>
+					<p>Pasta Blend</p>
+					<ul>
+						<li><a href="#wRedSauce">With Red Sauce</a></li>
+						<li><a href="#wWhiteSauce">With White Sauce</a></li>
+						<li><a href="#wAnchovies">Anchovies?</a></li>
+						<li class="noLava">
+							<ul>
+								<li><a href="#YesAnchovies">You betchya!</a></li>
+								<li><a href="#NoAnchovies">Hell, no!</a></li>
+							</ul>
+						</li>		
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div style="clear:both;height:0px;line-height:0px">&nbsp;</div>
+	</div>
+</div>
+
+
+<div id="autohome">
+	<h2>Auto Homing Demo</h2>
+	<h3>Lavalamp has a newly modified algorithm which automatically places 
+the LavaLamp hover over on the appropriate link in your menu given the 
+current location address. See the <a href="http://nixboxdesigns.com/projects/jquery-lavalamp/demos/urltest/">Automatic start location demos</a>.</h3>
+</div> 
+<p>return to the <a href="http://nixboxdesigns.com/projects/jquery-lavalamp/demos.php" title="jQuery LavaLamp Home Page">jQuery LavaLamp Demos Page</a></p>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="original_files/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-711155-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script>
+
+</body></html>

@@ -1,4 +1,24 @@
 class ApplicationController < ActionController::Base
+  
+  def body_id
+    @body_id = params[:controller].parameterize    
+  end
+  
+  def body_class
+    @body_class = params[:action].parameterize
+    
+    if params[:controller] == 'home'
+      @front = 'front'  
+    else
+      @front = 'not-front'  
+    end 
+    
+    @body_class = @body_class + ' ' + @front
+  end
+  
+  helper_method :body_id
+  helper_method :body_class
+  
   before_filter :set_i18n_locale_from_params 
   
   before_filter :load_general_information

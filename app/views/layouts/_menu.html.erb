@@ -1,7 +1,15 @@
-<%= link_to 'Inicio', root_path %>
-<%= link_to 'Nosotros', nosotros_path %>
-<%= link_to 'Testimonios', testimonios_path(:tipo => 'video') %>
-<%= link_to 'Antes y después', testimonios_path(:tipo => 'antesydespues') %>
-<%= link_to 'Método', metodo_path %>
-<%= link_to 'Blog', blog_path %>
-<%= link_to 'Contacto', new_contacto_path %>
+<nav>
+  <ul id="menu">
+    <li class="selectedLava">
+      <%= link_to_unless_current 'Inicio', root_path do %>
+        <span>Inicio</span>
+      <% end %>
+	</li>
+    <li><%= link_to 'Nosotros', nosotros_path %></li>
+    <li><%= link_to 'Testimonios', testimonios_path(:tipo => 'video') %></li>
+    <li><%= link_to 'Antes y después', testimonios_path(:tipo => 'antesydespues') %></li>
+    <li class='selectedLava'><%= link_to 'Método', metodo_path %></li>
+    <li><%= link_to 'Blog', blog_path %></li>
+    <li><%= link_to 'Contacto', new_contacto_path %></li>
+  </ul>
+</nav>
