@@ -1,62 +1,52 @@
+<% if !current_usuario %>
 <div id="preface-top" class="region">
-        <div id="slider-ajax-container" class="grid_7 alpha omega">
-	      <div id="banner-rotator" class="royalSlider default">    
-            <ul class="royalSlidesContainer">
-	          <li class="royalSlide">  
-		        <img src="images/images/slide-1.png" />
-		      </li>
-              <li class="royalSlide">  
-		        <img src="images/images/slide-2.png" />
-		      </li>
-              <li class="royalSlide">  
-		        <img src="images/images/slide-3.png" />
-		      </li>
-            </ul>  
-          </div>
-        </div>		 
-        <script>     	
-	jQuery(document).ready(function() {		
-		$('#banner-rotator').royalSlider({			
-	   		imageAlignCenter:true,
-	   		imageScaleMode: "fill",
-	   		
-	   		hideArrowOnLastSlide:true,
-	   		slideSpacing:20,
-	   		
-	   		autoScaleSlider: true,
-	   		autoScaleSliderWidth: 540,
-	   		autoScaleSliderHeight: 280
-	    });		
-	});
-    </script>
-	<style>
-	  #banner-rotator {
-	width: 100%;
-	height: 400px;
-
-	margin: 0 auto;
-}
-	</style>
-      </div><!-- END: preface-top -->
+  <%= render 'home/slides' %>
+</div><!-- END: preface-top -->
+<% end %>
 
 <div id="content" class="region">
   <div class="block">
     <h2 class="title">Lanzamientos Lain</h2>
-    <a class="block"><img src="images/images/box-1.png" /></a>
-    <a class="block"><img src="images/images/box-2.png" /></a>
-  </div>  
+    <%= render 'home/banner' %>
+    <%= render 'home/ad' %>
+  </div>
 </div>
 
-<div id="content-bottom" class="region">
-  <div class="block">
-    <img src="images/images/box-3.png" />
-    <h2>TESTIMONIOS</h2>
-    <p>
-      "El tratamiento cubrio mis expectativas, 
-            siempre me sentí satisfecha con la variedad de alimentos...
+<% if current_usuario %>
+<div id="content-bottom">
+  <div id="content-bottom-inner">
+    <div id="block-promociones" class="block">
+      <h2 class="title">Promociones</h2>
+      <div class="content">      
+      </div>
+    </div>
+    <div id="block-receta" class="block">
+      <h2 class="title">La Receta Saludable</h2>
+      <div class="inner">
+        <div class="content">
+          <h3>Ingredientes</h3>
+          <p>
+            <%= @recetas.ingredientes %>
           </p>
-          <a class="btn read-more">Leer M&aacute;s</a>
+          <h3>Preparación</h3>
+          <p>
+            <%= @recetas.preparacion %>
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
+  <div id="sidebar-second" class="grid_3 alpha omega">
+    <div id="oferta-mes" class="block">
+      <h2 class="title">Oferta del Mes</h2>
+    </div>
+  </div>
+</div>
+<% end %>
+
+<% if !current_usuario %>
+ <div id="postscript-top" class="region">
+  <%=  render 'home/testimonio' %>
   <div class="block">
     <img src="images/images/box-4.png" />
     <h2>SPECTROPACH</h2>
@@ -74,67 +64,35 @@
             de su aplicación y al día... disminuyendo las zonas flácidas y ayudando a la tonificación muscular.
           </p>
           <a class="btn read-more">Leer M&aacute;s</a>
-    </div>
   </div>
-      
-  <div id="postscript-top" class="region">
-    <div class="block">
-      <p>
-            LAIN, es un Centro Médico que realiza tratamientos contra la obesidad. 
-            La obesidad es una patología médica que se define como un exceso de tejido 
-            graso en el organismo de una persona. En esta acumulación de tejido graso influyen dos 
-            factores que son determinantes en esta condición; que son la predisposición genética a ser 
-            obeso y un desajuste en los hábitos alimenticios del individuo que le hace perder el equilibrio 
-            necesario que debe existir entre el volumen (cantidad) y la composición (variedad de nutrientes) 
-            que debe existir en la alimentación de cualquier persona.          
-      </p>
-    </div>
-  </div>  
-
-<% if @banner %>
-  <%= image_tag @banner.banner(:regular) %>
+</div>
 <% end %>
-
-<% if @ad %>
-  <%= image_tag @ad.ad(:regular) %>
-<% end %>
-
-<% if current_usuario %>
-  <% if @oferta %>
-    <%= image_tag @oferta.oferta(:regular) %>
+    
+<div id="postscript-bottom" class="region">
+  <% if !current_usuario %>
+  <div class="block">
+    <p>
+      LAIN, es un Centro Médico que realiza tratamientos contra la obesidad. 
+      La obesidad es una patología médica que se define como un exceso de tejido 
+      graso en el organismo de una persona. En esta acumulación de tejido graso influyen dos 
+      factores que son determinantes en esta condición; que son la predisposición genética a ser 
+      obeso y un desajuste en los hábitos alimenticios del individuo que le hace perder el equilibrio 
+      necesario que debe existir entre el volumen (cantidad) y la composición (variedad de nutrientes) 
+      que debe existir en la alimentación de cualquier persona.          
+    </p>
+  </div>
   <% end %>
-<% end %>
+</div>  
 
-<% if current_usuario %>
-  <% if @receta %>
-    <%= image_tag @receta.snapshot(:regular) %>
-    <%= @receta.nombre %>
-    <%= @receta.ingredientes %>
-    <%= @receta.preparacion %>
-  <% end %>
-<% end %>
 
-<% if @entrada %>
-  <%= image_tag @entrada.foto(:regular) %>
-  <%= @entrada.titulo %>
-  <%= @entrada.contenido %>
-<% end %>
 
-<% if @slides %>
-  <% @slides.each do |slide| %>
-    <%= image_tag slide.slide(:regular) %>
-  <% end %>
-<% end%>
 
-<% if @testimonio %>
-  <%= image_tag @testimonio.imagen(:regular) %>
-  <%= @testimonio.nombre %>
-  <%= @testimonio.descripcion %>
-<% end %>
 
-<% if @informacion %>
-    <%= @informacion.telefono_fijo %>
-    <%= @informacion.llamada_gratuita %>
-    <%= @informacion.email %>
-    <%= @informacion.facebook %>
-<% end %>
+
+
+
+
+
+
+
+

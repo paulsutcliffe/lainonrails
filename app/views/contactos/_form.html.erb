@@ -12,40 +12,43 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :nombre %><br />
+    <%= f.label :nombre %>
     <%= f.text_field :nombre %>
   </div>
   <div class="field">
-    <%= f.label :apellido %><br />
+    <%= f.label :apellido %>
     <%= f.text_field :apellido %>
   </div>
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email %>
     <%= f.text_field :email %>
   </div>
   <div class="field">
-    <%= f.label :telefono %><br />
+    <%= f.label :telefono %>
     <%= f.text_field :telefono %>
   </div>
   <div class="field">
-    <%= f.label :direccion, "Dirección" %><br />
+    <%= f.label :direccion, "Dirección" %>
     <%= f.text_field :direccion %>
   </div>
   <div class="field">
-    <%= f.label :distrito %><br />
+    <%= f.label :distrito %>
     <%= f.text_field :distrito %>
   </div>
   <div class="field">
-    <%= f.label :ciudad %><br />
+    <%= f.label :ciudad %>
     <%= f.text_field :ciudad %>
   </div>
   <div class="field">
-    <%= f.label :provincia %><br />
+    <%= f.label :provincia %>
     <%= f.text_field :provincia %>
   </div>
   <div class="field">
-    <%= f.label :mensaje %><br />
+    <%= f.label :mensaje %>
     <%= f.text_area :mensaje %>
+    <div>
+      <input type="checkbox" /><label>Acepto que he leído el documento de <a>Políticas de privacidad</a> y estoy de acuerdo con sus términos.</label>
+    </div>
   </div>
   <div class="actions">
     <%= f.submit "Envíar" %>

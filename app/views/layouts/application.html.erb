@@ -54,12 +54,13 @@
         <%= image_tag @cabecera_banner.cabecera_banner(:regular) %>
       <% end %>
     </div>
+    <% if !current_usuario %>
     <div id="login" class="grid_6 omega">
     <form>
       <div class="field">
         <label></label>
         <input type="text" value="Usuario" />
-        <a href="">Crear Cuenta</a>
+        <%= link_to 'Crear Cuenta', '/usuarios/registro/inscribirse' %>
       </div>
       <div class="field">
         <label></label>
@@ -71,6 +72,10 @@
       </div>
     </form>
     </div>
+    <% end %>
+    <% if current_usuario %>
+      <%= link_to 'Desc', {:controller=>"devise/sessions", :action=>"destroy"} %>
+    <% end %>
   </div>
 </div>
 <header>

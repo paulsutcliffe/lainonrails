@@ -1,0 +1,11 @@
+<% if @testimonio %>
+<div class="block">
+    <%= image_tag @testimonio.imagen(:regular) %>
+    <h2>TESTIMONIOS</h2>
+    <p>
+      <%= @testimonio.nombre %>
+      <%= @testimonio.descripcion %>
+    </p>
+    <%= link_to 'Leer Más', @testimonio, :class => 'btn read-more' %>
+</div>
+<% end %>

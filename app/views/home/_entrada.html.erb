@@ -1,0 +1,5 @@
+<% if @entrada %>
+  <%= image_tag @entrada.foto(:regular) %>
+  <%= @entrada.titulo %>
+  <%= @entrada.contenido %>
+<% end %>

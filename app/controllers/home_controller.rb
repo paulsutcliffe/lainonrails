@@ -34,6 +34,7 @@ class HomeController < ApplicationController
   
   def index
     @banner = Banner.first
+    @recetas = Receta.last
     @informacion = Informacion.where("pais = ?", params[:locale]).first
     if current_usuario
       @oferta = Oferta.order("RAND()").first
@@ -43,6 +44,7 @@ class HomeController < ApplicationController
       @slides = Slide.all
       @ad = Ad.first
       @entrada = Entrada.last
+      
     end
   end
 end

@@ -11,8 +11,8 @@ html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-
 body { margin: 0; font-size: 13px; line-height: 1.231; }
 body, button, input, select, textarea { font-family: sans-serif; color: #222; }
 
-::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
-::selection { background: #fe57a1; color: #fff; text-shadow: none; }
+::-moz-selection { background: #27BAC6; color: #fff; text-shadow: none; }
+::selection { background: #27BAC6; color: #fff; text-shadow: none; }
 
 a { color: #00e; }
 a:visited { color: #551a8b; }
@@ -199,6 +199,8 @@ h1.title,
 h2.title,
 h6.title{font-size:28px; font-weight:lighter}
 
+.not-front h1.title,
+.not-front h2.title{padding:50px 0; background:#1c3179}
 
 
 /*
@@ -208,6 +210,7 @@ HEADER-TOP
 */
 
 #header-top{height:100px;
+  
   background: #95e2f6;
   background: -webkit-gradient(linear, 0 0, 0 bottom, from(#95e2f6), to(#ffffff));
   background: -webkit-linear-gradient(#95e2f6, #ffffff);
@@ -222,12 +225,12 @@ HEADER-TOP
 
 /* LOGIN FORM */
 #header-top #login{float:right; padding-top:30px; text-align:right}
-#header-top .field{margin-right:5px; float:none; clear:none}
-#header-top .field input{width:150px; float:left; line-height/*\**/:200%\9}
+#header-top .field{margin-right:5px}
+#header-top .field input{float:left; line-height/*\**/:200%\9}
 #header-top .field a{font-size:0.8em; color:#22a3b5; float:left; clear:left}
 #header-top .field,
 #header-top .actions{display:inline-block; *display:inline; *zoom:1; vertical-align:top}
-#header-top .actions input{*width:30px; *text-align:center; background:#ff3f83}
+#header-top .actions input{*width:30px; *text-align:center}
 
 /*
 =============================================
@@ -281,21 +284,15 @@ form
 =============================================
 */
 
-#content label{width:120px; float:left; color:#1a7f98}
-.field{float:left; clear:left}
-.field input,
-.field textarea{width:240px; height:20px; padding:0 10px; background:white; border:1px solid #4ab2c0; color:#bcbcbc;
+.field input{width:150px; height:20px; padding:0 10px; background:white; border:1px solid #4ab2c0; color:#bcbcbc;
 font-size:0.6em}
-
-.field textarea{width:400px; min-height:100px}
 
 .actions input{height:22px; background:#ff3f83; border:0; font-size:0.9em; color:white;
 -moz-box-shadow:0 0 5px #333; -webkit-box-shadow:0 0 5px #333; -o-box-shadow:0 0 5px #333;
 -khtml-box-shadow:0 0 5px #333; box-shadow:0 0 5px #333}
 
 .field input,
-.field textarea,
-#header-top .actions input{-moz-border-radius:5px; -webkit-border-radius:5px; -o-border-radius:5px; text-transform:uppercase;
+.actions input{-moz-border-radius:5px; -webkit-border-radius:5px; -o-border-radius:5px; text-transform:uppercase;
 -khtml-border-radius:5px; border-radius:5px; behavior: url(javascripts/libs/ie-support/PIE-1.0.0/PIE.htc);  position:relative}
 
 
@@ -331,7 +328,7 @@ SIDEBAR-FIRST
 #sidebar-first{position:relative; z-index:100; margin-bottom:0}
 #sidebar-first{padding-top:15px}
 
-#sidebar-first .block{width:215px; border-top:1px solid white}
+#sidebar-first .block{width:215px; border-top:1px solid white; margin:0}
 #sidebar-first .block:first-child{border:0}
 #sidebar-first-inner{margin:0 5%; float:left}
 
@@ -340,27 +337,15 @@ SIDEBAR-FIRST
 
 /*
 =============================================
-SIDEBAR-SECOND
-=============================================
-*/
-
-#sidebar-second{float:right}
-
-/*
-=============================================
 CONTENT
 =============================================
 */
 
+#content{margin:0}
 #content-wrapper{height:auto !important; height:800px; min-height:800px; float:right; position:relative; z-index:50; margin-bottom:0; 
 background:#fff url(../images/backgrounds/bg-content.gif) repeat}
-#content-wrapper-inner{margin:0 30px 0 50px; padding-top:20px; float:right}
-.not-front #content-wrapper-inner{padding-top:60px}
+#content-wrapper-inner{margin:0 30px 0 50px; float:right}
 #content-top{width:100%; position:absolute; top:0; left:0; text-align:center; color:#1a7f98; background:url(../images/backgrounds/top-bar.jpg) repeat-x left top}
-
-#content .block:last-child{margin-bottom:0}
-#content-bottom-inner{width:410px; float:left}
-
 
 /*
 =============================================
@@ -371,6 +356,14 @@ PREFACE-TOP
 #preface-top{margin-top:42px; float:right}
 #preface-top #slider-ajax-container{width:550px; height:280px; float:right}
 #preface-top .royalSlider .royalSlide, #preface-top .royalSlider .royalWrapper{background:none}
+
+#preface-top .royalSlider .grab-cursor{cursor:url(../javascripts/libs/royal-slider/img/cursors/grab.png) 8px 8px !important,-moz-grab;}
+#preface-top .royalSlider .grab-cursor{*cursor:url(../javascripts/libs/royal-slider/img/cursors/grab.cur) !important}
+#preface-top .royalSlider .grab-cursor{cursor:move\0/;} /* ie8 hack */
+
+#preface-top .royalSlider .grabbing-cursor{cursor:move;}
+#preface-top .royalSlider .grabbing-cursor{cursor:url(../javascripts/libs/royal-slider/img/cursors/grabbing.png) 8px 8px  !important,-moz-grabbing;}
+#preface-top .royalSlider .grabbing-cursor{*cursor:url(../javascripts/libs/royal-slider/img/cursors/grabbing.cur) !important}
 
 /*
 =============================================
@@ -415,16 +408,8 @@ CONTENT TYPES
 =============================================
 */
 
-.list-type ul{width:100%}
-.list-type li{width:300px; height:220px; padding:15px 20px 20px; text-align:center; color:white; float:left; margin:0 12px 30px 0; background:white;
--moz-box-sizing:border-box; -webkit-box-sizing:border-box; -o-box-sizing:border-box; -ms-box-sizing:box-sizing; box-sizing:border-box;
-*behavior:url(javascripts/ie-support/Schepp-box-sizing-polyfill/boxsizing.htc)}
-.list-type li:nth-of-type(odd){clear:left}
-.list-type li:nth-of-type(even){margin-right:0}
-.list-type li h3{border-bottom:2px solid}
-.list-type li h3,
-.list-type li img{padding-bottom:5px}
-.list-type li p{color:#636363; text-align:left}
+.list-type{}
+.list-type li{text-align:center; color:white}
 
 .gallery-type{}
 .gallery-type li{border:15px solid white; margin:0 55px 55px 0; float:left;
@@ -435,12 +420,7 @@ CONTENT TYPES
 box-shadow:4px 4px 0 #363636, -4px -4px 0 #363636, 4px -4px 0 #363636, -4px 4px 0 #363636 }
 .video-type{}
 
-#content.tab{overflow:hidden}
-#content.tab h2.title{padding:0 20px; border-bottom:0; display:inline-block; *display:inline; *zoom:1; position:relative;
--moz-border-radius:10px 10px 0 0; -webkit-border-radius:10px 10px 0 0; -o-border-radius:10px 10px 0 0; 
--khtml-border-radius:10px 10px 0 0; border-radius:10px 10px 0 0 }
-#content.tab h2.title:after{content:""; width:488px; height:2px; background:#1B6F7E;
-position:absolute; bottom:0px; left:122px}
+
 
 /*
 =============================================
@@ -452,44 +432,18 @@ PAGES
 .index #content-bottom .block{-moz-box-flex:1}
 .index #content-bottom .block:nth-of-type(2){-moz-box-flex:2}*/
 
-#home.index #postscript-top .block{width:30%; float:left}
-#home.index #postscript-top .block:nth-of-type(even){width:36%; margin:0 10px}
-#home.index #postscript-bottom .block{
+#home.index #content-bottom .block{width:30%; float:left}
+#home.index #content-bottom .block:nth-of-type(even){width:36%; margin:0 10px}
+#home.index #postscript-top .block{
 background:url(../images/backgrounds/bg-llave-left.png) no-repeat 0 0, 
 url(../images/backgrounds/bg-llave-right.png) no-repeat 100% 0;
 *-pie-background:url(../images/backgrounds/bg-llave-left.png) no-repeat top left,
 url(../images/backgrounds/bg-llave-right.png) no-repeat top right;
 behavior: url(javascripts/libs/ie-support/PIE-1.0.0/PIE.htc); position:relative; z-index:10}
 
+#home.index #postscript-top .block p{margin:10px 50px}
+	
 #home.index #content-bottom h2{font-size:1em; margin:10px 0 0}
-
-/* usuario index */
-
-
-/* contact form */
-#contactos.new #content form{width:100%; float:left}
-#contactos.new #content form .field,
-#contactos.new #content form .actions{float:left; clear:left}
-#contactos.new #content form .field input{float:left}
-
-/* términos de uso */
-#contactos.new #content form .field div input,
-#contactos.new #content form .field div label{width:auto; color:#636363; font-size:12px}
-#contactos.new #content form .field div label a{color:#1a7f98}
-#contactos.new #content form .field div input{margin:0 10px 0 120px}
-#contactos.new #content form .field div label{width:400px}
-
-/* contact form campos obligatorios */
-#contactos.new #content form .field:nth-of-type(1) label:after,
-#contactos.new #content form .field:nth-of-type(2) label:after,
-#contactos.new #content form .field:nth-of-type(3) label:after,
-#contactos.new #content form .field:nth-of-type(4) label:after{content:"*"; color:red}
-
-/* método */
-#metodo.index img{float:left; margin:0 10px 10px 0}
-
-/* nosostros */
-#nosostros.index img{float:left; margin:0 10px 10px 0}
 
 /*
 =============================================
@@ -498,7 +452,6 @@ BLOCKS
 */
 
 *:first-child+html #sidebar-first #block-registrate{width:320px}
-.not-front #block-registrate{display:none}
 #sidebar-first #block-registrate{height:165px; position:relative; border:0; padding:0}
 #block-registrate .inner{margin:0; position:absolute; top:0; left:0}
 #block-registrate img{position:absolute; top:0; left:0}
@@ -506,13 +459,6 @@ BLOCKS
 #sidebar-first #block-contactanos{border:0}
 
 .region{float:left}
-
-/* user page */
-#block-promociones .content{height:170px; background:url(../images/backgrounds/bg-promociones.png) no-repeat 0 0}
-#block-receta .inner{height:auto !important; height:400px; min-height:400px;  
-background:url(../images/backgrounds/bg-recetas.png) no-repeat 0 -1px; margin-right:7px; margin-left:0}
-#block-receta .inner .content{padding:60px 40px 30px}
-#block-receta .inner .content h3{margin:0}
 
 /*
 =============================================
@@ -525,7 +471,7 @@ DEFAULT BLOCKS
 .block h2.title,
 .block h6.title{}
 .block .inner{margin:0 10px}
-.block .inner .content{}
+.block .inner .content{background:white; padding:10px; border:4px solid #363636}
 
 .mtop-1{margin-top:5px}
 .mtop-2{margin-top:10px}
@@ -559,9 +505,9 @@ DEFAULT BLOCKS
 .mtop-30{margin-top:150px}
 
 .mbottom-1{margin-bottom:5px}
-.mbottom-2, #contacts.index #content form .field textarea{margin-bottom:10px}
-.mbottom-3, p{margin-bottom:15px}
-.mbottom-4, .not-front #content.region, #content-wrapper .block, .field, .actions{margin-bottom:20px}
+.mbottom-2{margin-bottom:10px}
+.mbottom-3, p, .block{margin-bottom:15px}
+.mbottom-4{margin-bottom:20px}
 .mbottom-5{margin-bottom:25px}
 .mbottom-6{margin-bottom:30px}
 .mbottom-7{margin-bottom:35px}
@@ -660,9 +606,7 @@ BUTTONS
 =============================================
 */
 
-.btn{text-transform:uppercase; font-size:0.8em; padding:3px 6px}
-.btn,
-#content .actions input{color:white; 
+.btn{color:white; text-transform:uppercase; font-size:0.8em; padding:3px 6px;
   background: #95e2f6;
   background: -webkit-gradient(linear, 0 0, 0 bottom, from(#27bac6), to(#1b8099));
   background: -webkit-linear-gradient(#27bac6, #1b8099);
@@ -726,9 +670,7 @@ X fancy (borders, radius, shadows,...)
 
 .radius-1,
 .block .inner .content{-moz-border-radius:5px; -webkit-border-radius:5px; -o-border-radius:5px; -khtml-border-radius:5px; border-radius:5px}
-.radius-2,
-#block-receta .inner,
-.list-type li{-moz-border-radius:10px; -webkit-border-radius:10px; -o-border-radius:10px; -khtml-border-radius:10px; border-radius:10px}
+.radius-2{-moz-border-radius:10px; -webkit-border-radius:10px; -o-border-radius:10px; -khtml-border-radius:10px; border-radius:10px}
 .radius-3{-moz-border-radius:15px; -webkit-border-radius:15px; -o-border-radius:15px; -khtml-border-radius:15px; border-radius:15px}
 .radius-4{-moz-border-radius:20px; -webkit-border-radius:20px; -o-border-radius:20px; -khtml-border-radius:20px; border-radius:20px}
 .radius-5{-moz-border-radius:25px; -webkit-border-radius:25px; -o-border-radius:25px; -khtml-border-radius:25px; border-radius:25px}
@@ -740,9 +682,7 @@ X fancy (borders, radius, shadows,...)
 /* default color #2 (#6dcff6) */
 #null{border:0px solid #6dcff6}
 
-#block-receta .inner,
-.list-type li,
-.tab h2.title{border:2px solid #1b6f7e}
+
 
 #null{-moz-transition:none;  /* FF3.7+ */ -o-transition:none;  /* Opera 10.5 */ -webkit-transition:none;  /* Saf3.2+, Chrome */ transition:none}
 

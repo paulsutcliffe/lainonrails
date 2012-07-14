@@ -1,0 +1,38 @@
+<div id="slider-ajax-container" class="grid_7 alpha omega">
+	      <div id="banner-rotator" class="royalSlider default">    
+            <ul class="royalSlidesContainer">
+	          <% if @slides %>
+                <% @slides.each do |slide| %>
+                  <li class="royalSlide">  
+		            <%= image_tag slide.slide(:regular) %>
+		          </li>
+                <% end %>
+              <% end%>
+            </ul>  
+          </div>
+        </div>		 
+        <script>     	
+	jQuery(document).ready(function() {		
+		$('#banner-rotator').royalSlider({			
+	   		imageAlignCenter:true,
+	   		imageScaleMode: "fill",
+	   		
+	   		hideArrowOnLastSlide:true,
+	   		slideSpacing:20,
+	   		
+	   		autoScaleSlider: true,
+	   		autoScaleSliderWidth: 540,
+	   		autoScaleSliderHeight: 280
+	    });		
+	});
+    </script>
+	<style>
+	  #banner-rotator {
+	width: 100%;
+	height: 400px;
+
+	margin: 0 auto;
+}
+	</style>
+
+
