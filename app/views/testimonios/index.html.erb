@@ -1,35 +1,30 @@
-<h1>Listing testimonios</h1>
-
-<table>
-  <tr>
-    <th>Nombre</th>
-    <th>Descripcion</th>
-    <th>Video link</th>
-    <th>Tipo</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @testimonios.each do |testimonio| %>
-  <tr>
-    <td><%= testimonio.nombre %></td>
-    <td><%= testimonio.descripcion %></td>
-    <td><%= testimonio.video_link_html %></td>
-    <td><%= testimonio.tipo %></td>
-    <td><%= link_to image_tag(testimonio.imagen(:thumb)), testimonio %></td>
-    
-    <% if current_admin %>
-    <td><%= link_to 'Editar', edit_testimonio_path(testimonio) %></td>
-    <td><%= link_to 'Eliminar', testimonio, :confirm => '¿Estás seguro?', :method => :delete %></td>
-    <% end %>
-
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<% if current_admin %>
-  <%= link_to 'Nuevo testimonio', new_testimonio_path %>
-<% end %>
+<div id="content" class="region grid_8 alpha omega tab">
+        <h2 class="title">Videos y Spots</h2>
+        
+        <p>
+          SACIAN es un producto exclusivo de Lain y es un saciante natural que te permite realizar tus actividades normales si sentir la ansiedad por comer. Todo lo que tienes que hacer es disover un sobre de SACIAN en 200 cc de agua y beberlo una hora antes de almorzar o cenar. Almuerza o cena en las cantidades habituales y te llenarás rapidamente.
+Con SACIAN, sonríe en vez de comer.
+        </p>       
+      </div>
+      
+      <div id="content-bottom" class="region list-type">
+	    <% if current_admin %>
+          <%= link_to 'Nuevo testimonio', new_testimonio_path %>
+        <% end %>
+        <ul>
+	      <% @testimonios.each do |testimonio| %>
+          <li>
+            <h3><%= testimonio.nombre %></h3>
+            <%= link_to image_tag(testimonio.imagen(:regular)), testimonio %>
+            <%= testimonio.video_link_html %>
+            <p><%= testimonio.descripcion %></p>
+            <% if current_admin %>
+              <div>
+                <%= link_to 'Editar', edit_testimonio_path(testimonio) %>
+                <%= link_to 'Eliminar', testimonio, :confirm => '¿Estás seguro?', :method => :delete %>
+              </div>
+            <% end %>
+          </li>
+          <% end %>
+        </ul>
+      </div>

@@ -461,7 +461,7 @@ url(../images/backgrounds/bg-llave-right.png) no-repeat 100% 0;
 url(../images/backgrounds/bg-llave-right.png) no-repeat top right;
 behavior: url(javascripts/libs/ie-support/PIE-1.0.0/PIE.htc); position:relative; z-index:10}
 
-#home.index #content-bottom h2{font-size:1em; margin:10px 0 0}
+#home.index #postscript-top h2{font-size:1em; margin:10px 0 0}
 
 /* usuario index */
 
