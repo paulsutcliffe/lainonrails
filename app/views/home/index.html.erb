@@ -12,61 +12,73 @@
   </div>
 </div>
 
-<% if current_usuario %>
+
+<% if !current_usuario %>
+ <div id="postscript-top" class="region">
+  <%=  render 'home/testimonio' %>
+  <div class="block">
+    <img src="/images/images/box-4.png" />
+    <h2>SPECTROPACH</h2>
+          <p>
+            El "parche", es nuestro exclusivo gel fitoactivo que complementa 
+            el adelgazamiento coordinado por nuestro equipo profesional...
+          </p>
+          <a class="btn read-more">Leer M&aacute;s</a>
+  </div>
+  <div class="block">
+          <img src="/images/images/box-5.png" />
+          <h2>TERMOGÉNESIS</h2>
+          <p>            
+            Es una solución criogénica de acción residual, que opera el día 
+            de su aplicación disminuyendo las zonas...
+          </p>
+          <a class="btn read-more">Leer M&aacute;s</a>
+  </div>
+</div>
+<% end %>
+
+
 <div id="content-bottom">
   <div id="content-bottom-inner">
+
+	<% if current_usuario %>
     <div id="block-promociones" class="block">
       <h2 class="title">Promociones</h2>
       <div class="content">      
       </div>
     </div>
+    <% end %>
+
+    <% if current_usuario or I18n.locale == :cr %>
+    <% if @receta %>
     <div id="block-receta" class="block">
       <h2 class="title">La Receta Saludable</h2>
       <div class="inner">
         <div class="content">
           <h3>Ingredientes</h3>
           <p>
-            <%= @recetas.ingredientes %>
+            <%= @receta.ingredientes %>
           </p>
           <h3>Preparación</h3>
           <p>
-            <%= @recetas.preparacion %>
+            <%= @receta.preparacion %>
           </p>
         </div>
       </div>
     </div>
   </div>
+  <% end %>
+  <% end %>
+
+  <% if current_usuario %>
   <div id="sidebar-second" class="grid_3 alpha omega">
     <div id="oferta-mes" class="block">
       <h2 class="title">Oferta del Mes</h2>
     </div>
   </div>
-</div>
-<% end %>
+  <% end %>
 
-<% if !current_usuario %>
- <div id="postscript-top" class="region">
-  <%=  render 'home/testimonio' %>
-  <div class="block">
-    <img src="images/images/box-4.png" />
-    <h2>SPECTROPACH</h2>
-          <p>
-            El "parche", es nuestro exclusivo gel fitoactivo que complementa 
-            el adelgazamiento coordinado por nuestro equipo profesional,...
-          </p>
-          <a class="btn read-more">Leer M&aacute;s</a>
-  </div>
-  <div class="block">
-          <img src="images/images/box-5.png" />
-          <h2>TERMOGÉNESIS</h2>
-          <p>            
-            Es una solución criogénica de acción residual, que opera el día 
-            de su aplicación y al día... disminuyendo las zonas flácidas y ayudando a la tonificación muscular.
-          </p>
-          <a class="btn read-more">Leer M&aacute;s</a>
-  </div>
 </div>
-<% end %>
     
 <div id="postscript-bottom" class="region">
   <% if !current_usuario %>

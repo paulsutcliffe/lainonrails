@@ -50,10 +50,15 @@
     <div id="header-top">
   <div class="container_12">
     <div id="banner" class="grid_6 alpha">
+     
       <% if @cabecera_banner %>
         <%= image_tag @cabecera_banner.cabecera_banner(:regular) %>
       <% end %>
+    
     </div>
+
+    <% case I18n.locale %> 
+    <% when :pe %>
     <% if !current_usuario %>
     <div id="login" class="grid_6 omega">
     <form>
@@ -76,6 +81,29 @@
     <% if current_usuario %>
       <%= link_to 'Desc', {:controller=>"devise/sessions", :action=>"destroy"} %>
     <% end %>
+  
+    <% when :cr %>
+
+    <%= image_tag '/images/images/logo-lain-costarica.png' %>
+
+    <% when :gt %>
+
+    <!-- Logo Lain -->
+
+    <% when :sv %>
+
+    <!-- Logo Lain -->
+
+    <% when :bo %>
+
+    <!-- Logo Lain -->
+
+    <% when :uy %>
+
+    <!-- Logo Lain -->
+
+    <% end %>
+
   </div>
 </div>
 <header>
@@ -91,7 +119,7 @@
   <div id="main">
     <div id="sidebar-first" class="grid_3 region">
       <div id="sidebar-first-inner">
-	  <%= link_to image_tag('/images/logo.png'), root_path, :class => 'block'  %>
+	  <%= link_to image_tag('/images/logo.png'), home_path, :class => 'block'  %>
       <%= render :partial => '/layouts/sidebar' %>
       </div>
     </div><!-- END: sidebar-first -->
@@ -121,16 +149,6 @@
 
       <%= content_tag :h1, yield(:title) if show_title? %>
 
-      <%= @country %>
-      <%= @city %>
-      <%= @ip %>
-      <%= @country_code %>
-
-      
-
-      
-
-      
     
   </body>
 </html>

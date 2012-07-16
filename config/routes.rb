@@ -1,6 +1,10 @@
 Lainonrails::Application.routes.draw do
   
+  match '/paises' => "paises#index"
+
   scope '(:locale)', :locale => /#{I18n.available_locales.join("|")}/ do
+  
+    match '/home' => "home#index"
   
     resources :ofertas
 
@@ -46,7 +50,7 @@ Lainonrails::Application.routes.draw do
     
     devise_for :admins, :path => "admins", :path_names => { :sign_in => 'ingresar', :sign_out => 'salir', :password => 'secreto', :confirmation => 'verificacion', :unlock => 'desbloquear', :registration => 'registro', :sign_up => 'inscribirse' }
 
-    root :to => "home#index"
+    root :to => "paises#index"
   end
   
   

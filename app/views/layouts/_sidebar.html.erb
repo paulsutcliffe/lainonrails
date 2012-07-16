@@ -1,21 +1,27 @@
-      <% if !current_usuario %>
-      <!-- block 1 -->
-      <div id="block-registrate" class="block">
-        <div class="inner grid_4">
-          <img src="images/images/sidebar-registrate.png" />
+     <% if I18n.locale == :cr %>
+       <%= image_tag '/images/images/sidebar-costarica.png' %> 
+     <% else %>
+       <% if !current_usuario %>
+        <!-- block 1 -->
+        <div id="block-registrate" class="block">
+          <div class="inner grid_4">
+            <img src="/images/images/sidebar-registrate.png" />
+          </div>
         </div>
-      </div>
+        <% end %>
       <% end %>
       
       <!-- block 2 -->
       <div id="block-contactanos" class="block">
         <span>Cont&aacute;ctanos</span>
         <div class="content">
+          <% if @informacion %>
           <p>          
-            206 3400<br />
-            0-800-77-810<br />
-            contacto@lainadelgaza.net
+            <%= @informacion.telefono_fijo %><br />
+            <%= @informacion.llamada_gratuita %><br />
+            <%= @informacion.email %>
           </p>
+          <% end %>
         </div>
       </div>
       
@@ -39,5 +45,5 @@
       
       <!-- block 6 -->
       <div id="block-facebook" class="block">
-        <img src="images/images/sidebar-facebook.png" />
+        <img src="/images/images/sidebar-facebook.png" />
       </div>

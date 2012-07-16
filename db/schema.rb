@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120706045936) do
+ActiveRecord::Schema.define(:version => 20120716161810) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false
@@ -148,6 +148,7 @@ ActiveRecord::Schema.define(:version => 20120706045936) do
     t.string   "slide_content_type"
     t.integer  "slide_file_size"
     t.datetime "slide_updated_at"
+    t.string   "pais"
   end
 
   create_table "sucursales", :force => true do |t|
