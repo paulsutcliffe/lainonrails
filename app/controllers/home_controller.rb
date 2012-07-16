@@ -10,7 +10,9 @@ class HomeController < ApplicationController
       @oferta = Oferta.order("RAND()").first
     else
       @testimonio = Testimonio.order("RAND()").first
-      @slides = Slide.all
+      if params[:locale]
+        @slides = Slide.where("pais = ?", params[:locale])
+      end
       @entrada = Entrada.last
     end
   end
