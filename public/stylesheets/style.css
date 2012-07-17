@@ -197,7 +197,7 @@ h4, h5, h6{color:#1d8ea4; font-weight:normal; font-family: 'Signika', sans-serif
 
 h1.title,
 h2.title,
-h6.title{font-size:38px; font-weight:lighter}
+h6.title{font-size:28px; font-weight:lighter}
 
 
 
@@ -240,7 +240,9 @@ header{height:65px; text-align:center; position:relative; background:url(../imag
 #logo a{width:340p}
 #logo img{position:relative; z-index:500}
 #logo span{display:block; text-indent:-99999px}
-header h1{margin:5px 0 0 0; font-size:1em}
+header h1{margin:5px 0 0 0; font-size:1em; font-weight:normal}
+
+img[alt="Logo-lain-costarica"]{float:right !important}
 
 
 /*
@@ -401,6 +403,7 @@ POSTSCRIPT
 #postscript-bottom{}
 #content-bottom{width:100%; float:left}
 
+.front #postscript-top .block:nth-of-type(1) img{width:193px; height:101px}
 
 /*
 =============================================
@@ -473,14 +476,16 @@ PAGES
 
 #home.index #postscript-top .block{width:30%; float:left}
 #home.index #postscript-top .block:nth-of-type(even){width:36%; margin:0 10px}
-#home.index #postscript-bottom .block{
+#home.index #postscript-bottom .block{/*
 background:url(../images/backgrounds/bg-llave-left.png) no-repeat 0 0, 
 url(../images/backgrounds/bg-llave-right.png) no-repeat 100% 0;
 *-pie-background:url(../images/backgrounds/bg-llave-left.png) no-repeat top left,
 url(../images/backgrounds/bg-llave-right.png) no-repeat top right;
-behavior: url(javascripts/libs/ie-support/PIE-1.0.0/PIE.htc); position:relative; z-index:10}
+behavior: url(javascripts/libs/ie-support/PIE-1.0.0/PIE.htc); position:relative; z-index:10*/}
 
 #home.index #postscript-top h2{font-size:1em; margin:10px 0 0}
+
+p{color:#6f7070 !important}
 
 /* usuario index */
 
@@ -529,7 +534,8 @@ BLOCKS
 .not-front #block-registrate{display:none}
 
 #sidebar-first #block-contactanos{border:0}
-
+#sidebar-first #block-contactanos span{display:block; margin-bottom:20px}
+#sidebar-first #block-contactanos p{font-size:18px; font-weight:normal}
 .region{float:left}
 
 /* user page */

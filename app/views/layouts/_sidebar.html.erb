@@ -1,15 +1,15 @@
-     <% if I18n.locale == :cr %>
-       <%= image_tag '/images/images/sidebar-costarica.png' %> 
-     <% else %>
-       <% if !current_usuario %>
-        <!-- block 1 -->
-        <div id="block-registrate" class="block">
-          <div class="inner grid_4">
+     <!-- block 1 -->
+     <div id="block-registrate" class="block">
+       <div class="inner grid_4">
+         <% if I18n.locale == :cr %>
+           <%= image_tag '/images/images/sidebar-costarica.png' %> 
+         <% else %>
+         <% if !current_usuario %>
             <img src="/images/images/sidebar-registrate.png" />
-          </div>
-        </div>
-        <% end %>
+          <% end %>
       <% end %>
+     </div>
+        </div>
       
       <!-- block 2 -->
       <div id="block-contactanos" class="block">
