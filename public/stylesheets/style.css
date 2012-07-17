@@ -526,6 +526,7 @@ BLOCKS
 #sidebar-first #block-registrate{height:165px; position:relative; border:0; padding:0}
 #block-registrate .inner{margin:0; position:absolute; top:0; left:0}
 #block-registrate img{position:absolute; top:0; left:0}
+.not-front #block-registrate{display:none}
 
 #sidebar-first #block-contactanos{border:0}
 

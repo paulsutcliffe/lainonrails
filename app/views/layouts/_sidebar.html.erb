@@ -44,6 +44,8 @@
       </div>
       
       <!-- block 6 -->
+      <% if @informacion %>
       <div id="block-facebook" class="block">
         <%= link_to image_tag("/images/images/sidebar-facebook.png"), @informacion.facebook, :target => '_blank' %>
       </div>
+      <% end %>
