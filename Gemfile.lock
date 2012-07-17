@@ -111,6 +111,8 @@ GEM
     nifty-generators (0.4.6)
     nokogiri (1.5.4)
     orm_adapter (0.0.7)
+    page_title_helper (2.1.0)
+      rails (>= 3.0.0)
     paper_trail (2.6.3)
       activerecord (~> 3.0)
       railties (~> 3.0)
@@ -197,6 +199,7 @@ DEPENDENCIES
   metamagic
   mysql (~> 2.8.1)
   nifty-generators
+  page_title_helper
   paper_trail
   paperclip (~> 2.0)
   rails (= 3.0.3)

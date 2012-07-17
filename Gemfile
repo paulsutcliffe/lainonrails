@@ -22,6 +22,7 @@ gem "therubyracer"
 gem "globalize3"
 gem "geocoder"
 gem "auto_html"
+gem "page_title_helper"
 
 # Use unicorn as the web server
 # gem 'unicorn'

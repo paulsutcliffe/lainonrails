@@ -354,7 +354,7 @@ CONTENT
 
 #content-wrapper{height:auto !important; height:800px; min-height:800px; float:right; position:relative; z-index:50; margin-bottom:0; 
 background:#fff url(../images/backgrounds/bg-content.gif) repeat}
-#content-wrapper-inner{margin:0 30px 0 50px; padding-top:20px; float:right}
+#content-wrapper-inner{height:auto !important; height:800px; min-height:800px; margin:0 30px 0 50px; padding-top:20px; float:right}
 .not-front #content-wrapper-inner{padding-top:60px}
 #content-top{width:100%; position:absolute; top:0; left:0; text-align:center; color:#1a7f98; background:url(../images/backgrounds/top-bar.jpg) repeat-x left top}
 

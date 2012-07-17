@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+    <title><%= page_title %></title>
 
     <% if @meta_tags %>
     <meta name="description" content="<%= @meta_tags.description %>" />

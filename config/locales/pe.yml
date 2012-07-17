@@ -1,2 +1,5 @@
 pe:
-  hello: "Hello world"
+  title: Lain Adelgaza
+  pages:
+    index:
+      title: All pages
