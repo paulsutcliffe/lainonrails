@@ -1,5 +1,20 @@
 class BannersController < InheritedResources::Base
   before_filter :authenticate_admin!
+  before_filter :find_pais
+  
+  def find_pais
+    if params[:locale]
+      @banners = Banner.where("pais = ?", params[:locale])
+    end
+  end
+  
+  def create
+    @banner = Banner.new(params[:banner])
+    if @banner.valid?
+      @banner.pais = params[:locale]
+      create!(:notice => "Información guardada correctamente.")
+    end
+  end
   def create
       create!(:notice => "Banner guardado correctamente.")
   end

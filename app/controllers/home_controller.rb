@@ -3,7 +3,7 @@ class HomeController < ApplicationController
   protect_from_forgery
   
   def index
-    @banner = Banner.first
+    @banners = Banner.where("pais = ?", params[:locale])
     @ad = Ad.first
     @receta = Receta.order("RAND()").first
     if current_usuario
