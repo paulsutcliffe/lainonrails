@@ -4,7 +4,7 @@ Feature: When a user access the website from a not listed country, the user must
   Scenario Outline: Accessing from different countries
   Given I visit the "/" page
   When I follow "<pais>"
-  Then I should be on "/<country>/home"
+  Then I must be on "/<country>/home"
 
   Examples:
     | pais        | country |
