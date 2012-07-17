@@ -1,5 +1,5 @@
 class ComputestsController < ApplicationController
-  before_filter :authenticate_usuario!
+  #before_filter :authenticate_usuario!
   def index
     weight = current_usuario.peso
     height = current_usuario.altura

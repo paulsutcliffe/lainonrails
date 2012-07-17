@@ -1,7 +1,9 @@
 <h2 class="title"><%= page_title! "Computest" %></h2>
 
+<% if current_usuario %>
 <div id="computest-resultado">
 <span id="indice">Índice de Masa Corporal (IMC) <%= @bmi %></span>
 <span id="weight"><%= @ideal_weight_percent %></span>
 <span id="tipo" class="<%= @tipo.downcase %>"><%= @tipo %></span>
 </div>
+<% end %>
