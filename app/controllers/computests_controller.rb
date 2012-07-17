@@ -8,7 +8,7 @@ class ComputestsController < ApplicationController
     
     if bmi
       prime = ( bmi / 25 )
-      @bmi = "Tu indice de masa corporal es: #{bmi.round}"
+      @bmi = bmi.round
       prti = prime.to_s.match(/\d+/)
       ceros = prime.to_s.match(/\.(0+)/)
 
@@ -21,9 +21,9 @@ class ComputestsController < ApplicationController
 
         prcnt = prime.to_s.match(/\.(\d{1,2})/)
       if prti[0].to_i <= 0
-        @ideal_weight = "Estas #{(100)*(ceros[1].length) - (prcnt[1].to_i)}% debajo de tu peso ideal"
+        @ideal_weight_percent = "Estas #{(100)*(ceros[1].length) - (prcnt[1].to_i)}% debajo de tu peso ideal"
       else
-        @ideal_weight = "Estas #{prcnt[1].to_i + (100*(prti[0].to_i-1)) }% sobre tu peso ideal"
+        @ideal_weight_percent = "Estas #{prcnt[1].to_i + (100*(prti[0].to_i-1)) }% sobre tu peso ideal"
       end
 
       case
