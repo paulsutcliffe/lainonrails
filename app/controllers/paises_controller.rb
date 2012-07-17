@@ -1,8 +1,10 @@
 class PaisesController < ApplicationController
   
   before_filter :detect_ip_location
+  layout 'paises'
   
   def index
+  
   end
   
   public 

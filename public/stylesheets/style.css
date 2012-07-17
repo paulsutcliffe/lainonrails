@@ -491,6 +491,11 @@ behavior: url(javascripts/libs/ie-support/PIE-1.0.0/PIE.htc); position:relative;
 /* nosostros */
 #nosostros.index img{float:left; margin:0 10px 10px 0}
 
+/* países */
+#paises.index #header-top{height:110px; text-align:center}
+#paises.index header{height:12px}
+#paises.index #main{background:none}
+
 /*
 =============================================
 BLOCKS
