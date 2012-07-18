@@ -258,34 +258,27 @@ NAVIGATION
 
 nav{width:100%; display:block}
 #menu,
-#menu {
-list-style:none;
-}
-#menu li{
-height:35px;
-float:left;
-}
+#menu li{height:35px;}
 
 #menu h2{display:none}
 
 #menu{margin:0}
+#menu li{float:left}
 #menu li a,
 #menu li span{font-family:Tahoma, Verdana, Arial, sans-serif; font-weight:normal; padding:10px 15px 0; float:left; color:#fff; 
 font-size:1em; line-height:100%; text-transform:uppercase; position:relative; z-index:50}
-#menu li span,
-footer,
-footer p,
-footer a{color:#1D8EA4}
+#menu li span{color:#1D8EA4}
 
-#menu li.backLava {
+
+#menu li.backLava{
     background:#45ffff;
 }
 
-#menu li.selectedLava a {
+#menu li.selectedLava a{
 	color:#1D8EA4;
 }
 
-#menu li a:hover {
+#menu li a:hover{
 	color:#1D8EA4;
 }
 
@@ -296,8 +289,11 @@ FOOTER
 =============================================
 */
 
+footer,
+footer p,
+footer a{color:#1D8EA4}
 footer{width:100%; float:left; background:#ccc}
-footer p{padding:10px 0 5px 50px;}
+footer p{padding:10px 0 10px 50px;}
 
 /*
 =============================================
