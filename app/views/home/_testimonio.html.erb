@@ -4,7 +4,7 @@
     <h2>TESTIMONIOS</h2>
     <p>
       <%= @testimonio.nombre %>
-      <%= truncate(@testimonio.descripcion, :length => 105) %>
+      <%= truncate(@testimonio.descripcion, :length => 95) %>
     </p>
     <%= link_to 'Leer Más', @testimonio, :class => 'btn read-more' %>
 </div>

@@ -15,8 +15,8 @@ body, button, input, select, textarea { font-family: sans-serif; color: #222; }
 ::selection { background: #fe57a1; color: #fff; text-shadow: none; }
 
 a { color: #00e; }
-a:visited { color: #551a8b; }
-a:hover { color: #da0280; }
+a:visited { color: #da0280; }
+a:hover { color: #da0280; }*/
 a:focus { outline: thin dotted; }
 a:hover, a:active { outline: 0; }
 
@@ -403,7 +403,7 @@ CONTENT
 background:#fff}
 #content-wrapper-inner{height:auto !important; height:800px; min-height:800px; margin:0 30px 0 50px; padding-top:20px; float:right}
 .not-front #content-wrapper-inner{width:620px; padding-top:60px}
-#content-top{width:100%; position:absolute; top:0; left:0; text-align:center; color:#1a7f98; background:url(../images/backgrounds/top-bar.jpg) repeat-x left top}
+#content-top{width:100%; position:absolute; top:0; left:0; text-align:center; color:#1a7f98; background:#CCCCCC; /*background:url(../images/backgrounds/top-bar.jpg) repeat-x left top*/}
 
 #content .block:last-child{margin-bottom:0}
 #content-bottom-inner{width:410px; float:left}
@@ -605,7 +605,7 @@ BLOCKS
 /* user page */
 #block-promociones .content{height:170px; background:url(../images/backgrounds/bg-promociones.png) no-repeat 0 0}
 #block-receta .inner{height:auto !important; height:400px; min-height:400px;  
-background:url(../images/backgrounds/bg-recetas.png) no-repeat 0 -1px; margin-right:7px; margin-left:0}
+background:url(../images/backgrounds/bg-recetas.png) no-repeat 0 -1px; margin-right:9px; margin-left:0}
 #block-receta .inner .content{padding:60px 40px 30px}
 #block-receta .inner .content h3{margin:0}
 
@@ -782,7 +782,7 @@ BUTTONS
 */
 #categories.category-list .btn:after{content:url('../images/backgrounds/scotch.png'); display:block; width:100px; height:30px; position:absolute; top:-14px; left:15%}
 
-#read-more a:hover { font-color: #da0280; }
+/*#read-more a:hover{font-color: #da0280;}*/
 
 
 /*
