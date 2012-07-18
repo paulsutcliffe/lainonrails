@@ -297,7 +297,7 @@ FOOTER
 */
 
 footer{width:100%; float:left; background:#ccc}
-footer p{padding:10px 0 5px 50px; font-size:1.05em}
+footer p{padding:10px 0 5px 50px;}
 
 /*
 =============================================
@@ -444,8 +444,8 @@ POSTSCRIPT
 =============================================
 */
 
-#postscript-top{}
-#postscript-bottom{}
+#postscript-top{border-bottom:1px solid #1D8EA4; margin-bottom:40px}
+#postscript-bottom{margin-top:40px}
 #content-bottom{width:100%; float:left}
 
 #spectropach img{width:236px}
@@ -656,7 +656,7 @@ DEFAULT BLOCKS
 .mbottom-1{margin-bottom:5px}
 .mbottom-2, #contacts.index #content form .field textarea{margin-bottom:10px}
 .mbottom-3, p{margin-bottom:15px}
-.mbottom-4, .not-front #content.region, #content-wrapper .block, .field, .actions{margin-bottom:20px}
+.mbottom-4, .not-front #content.region, #content-wrapper .block, .field, .actions{margin-bottom:48px}
 .mbottom-5{margin-bottom:25px}
 .mbottom-6{margin-bottom:30px}
 .mbottom-7{margin-bottom:35px}
