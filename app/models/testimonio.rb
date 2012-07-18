@@ -16,7 +16,7 @@ class Testimonio < ActiveRecord::Base
 
   def self.convert_options
     trans = ""
-    px = 10
+    px = 6
     trans << " \\( +clone  -threshold -1 "
     trans << "-draw 'fill black polygon 0,0 0,#{px} #{px},0 fill white circle #{px},#{px} #{px},0' "
     trans << "\\( +clone -flip \\) -compose Multiply -composite "

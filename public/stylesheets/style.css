@@ -16,7 +16,7 @@ body, button, input, select, textarea { font-family: sans-serif; color: #222; }
 
 a { color: #00e; }
 a:visited { color: #551a8b; }
-a:hover { color: #06e; }
+a:hover { color: #da0280; }
 a:focus { outline: thin dotted; }
 a:hover, a:active { outline: 0; }
 
@@ -260,7 +260,6 @@ nav{width:100%; display:block}
 #menu,
 #menu {
 list-style:none;
-overflow:auto; /* makes sure the container fits the floated list-items below */
 }
 #menu li{
 height:35px;
@@ -452,8 +451,8 @@ POSTSCRIPT
 #spectropach img{width:236px}
 
 .front #postscript-top .block img{border:1px solid #1D8EA4;
--moz-border-radius:15px; -webkit-border-radius:15px; -o-border-radius:15px; 
--khtml-border-radius:15px; border-radius:15px}
+-moz-border-radius:10px; -webkit-border-radius:10px; -o-border-radius:10px; 
+-khtml-border-radius:10px; border-radius:10px}
 
 .front #postscript-top .block:nth-of-type(1n+2) img{border:0; height:103px;
 -moz-border-radius:0px; -webkit-border-radius:0px; -o-border-radius:0px; 
@@ -783,6 +782,7 @@ BUTTONS
 */
 #categories.category-list .btn:after{content:url('../images/backgrounds/scotch.png'); display:block; width:100px; height:30px; position:absolute; top:-14px; left:15%}
 
+#read-more a:hover { font-color: #da0280; }
 
 
 /*
