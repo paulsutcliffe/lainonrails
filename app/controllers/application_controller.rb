@@ -4,7 +4,6 @@ class ApplicationController < ActionController::Base
   
   before_filter :load_general_information
   
-  
     def load_general_information
       @cabecera_banner = CabeceraBanner.first
       @informacion = Informacion.where("pais = ?", params[:locale]).first

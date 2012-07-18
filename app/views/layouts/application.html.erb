@@ -69,7 +69,7 @@
 	      <div class="field">
 	        <%= f.label :password %>
 	        <%= f.password_field :password %>
-	        <a href="">Recuperar Contraseña</a>
+	        <%= link_to "¿Te olvidaste tu contraseña?", '/usuarios/secreto/new' %>
 	      </div>
 	      <div class="actions">
 	        <%= f.submit "Ir" %>
@@ -79,7 +79,7 @@
     </div>
     <% end %>
     <% if current_usuario %>
-      <%= link_to 'Cerrar Sesión', {:controller=>"devise/sessions", :action=>"destroy"} %>
+      <p>Hola, <%= current_usuario.nombre %></p>
     <% end %>
   
     <% when :cr %>

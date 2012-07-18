@@ -182,7 +182,7 @@ MAIN
 =============================================
 */
 
-body{font:normal normal 16px/145% 'Signika', sans-serif; background:#ffffff}
+body{font:normal normal 16px/145% 'Signika', sans-serif; background:#f1f1f1}
 a{color:#2d2d2d}
 p{font-size:0.8em}
 
@@ -230,8 +230,8 @@ HEADER-TOP
 #header-top .actions{display:inline-block; *display:inline; *zoom:1; vertical-align:top}
 #header-top .actions input{*width:30px; *text-align:center; background:#ff3f83}
 #header-top .field label{display:none}
-#header-top a,
-#header-top a:visited{color:#22A3B5; float:right; margin-top:5px}
+#header-top p,
+#header-top p:visited{color:#22A3B5; float:right; line-height:100px; font-size:1em}
 
 /*
 =============================================
@@ -258,14 +258,20 @@ NAVIGATION
 
 nav{width:100%; display:block}
 #menu,
-#menu li{height:35px}
+#menu {
+list-style:none;
+overflow:auto; /* makes sure the container fits the floated list-items below */
+}
+#menu li{
+height:35px;
+float:left;
+}
 
 #menu h2{display:none}
 
 #menu{margin:0}
-#menu li{float:left}
 #menu li a,
-#menu li span{font-family:Arial, Helvetica, sans-serif;font-weight:normal; padding:10px 15px 0; float:left; color:#fff; 
+#menu li span{font-family:Tahoma, Verdana, Arial, sans-serif; font-weight:normal; padding:10px 15px 0; float:left; color:#fff; 
 font-size:1em; line-height:100%; text-transform:uppercase; position:relative; z-index:50}
 #menu li span,
 footer,
@@ -273,7 +279,15 @@ footer p,
 footer a{color:#1D8EA4}
 
 #menu li.backLava {
-    background:#45ffff
+    background:#45ffff;
+}
+
+#menu li.selectedLava a {
+	color:#1D8EA4;
+}
+
+#menu li a:hover {
+	color:#1D8EA4;
 }
 
 
@@ -359,7 +373,6 @@ SIDEBAR-SECOND
 #sidebar-second{float:right}
 
 
-
 #block-registrate,
 .bo #block-registrate{margin-top:16px}
 .cr #block-registrate{margin-top:14.5px}
@@ -374,6 +387,7 @@ SIDEBAR-SECOND
 
 
 .front.pe #content-wrapper-inner{min-height:1200px}
+.not-front.pe #content-wrapper-inner{min-height:1200px}
 
 
 
@@ -581,7 +595,10 @@ BLOCKS
 #sidebar-first #block-contactanos span{display:block; margin-bottom:20px; float:left}
 #sidebar-first #block-contactanos .content{float:left; clear:left}
 #sidebar-first #block-contactanos p{color:white; font-size:1.5em; font-weight:normal}
-#sidebar-first #block-contactanos p span.email{font-size:0.7em; margin:0}
+
+.pe #sidebar-first #block-contactanos p span.email{font-size:0.7em; margin:0}
+.cr #sidebar-first #block-contactanos p span.email{font-size:0.5em; margin:0; margin-top:-20px}
+
 #block-computest span{margin-bottom:25px; display:block}
 
 .region{float:left}
@@ -842,6 +859,15 @@ zoom: 1
 filter: progid:DXImageTransform.Microsoft.Matrix(
 M11=0.984807753012208, M12=0.17364817766693033, M21=-0.17364817766693033, M22=0.984807753012208, sizingMethod='auto expand');
 zoom: 1}
+
+
+/*
+=============================================
+Crazy stuff
+=============================================
+*/
+
+#facebook-widget{float:right}
 
 
 /*

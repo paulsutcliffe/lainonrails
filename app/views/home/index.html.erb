@@ -69,6 +69,16 @@
     </div>
   </div>
   <% end %>
+
+
+    <div id="facebook-widget" class="grid_3 alpha omega">
+      <h2 class="title">Socializemos</h2>
+
+	<div class="fb-like-box" data-href="https://www.facebook.com/pages/LAIN-L%C3%ADder-mundial-en-adelgazamiento/118838274816444" data-width="237" data-show-faces="true" data-stream="false" data-header="true"></div>
+
+    </div>
+
+
   <% end %>
 
   <% if current_usuario %>
@@ -100,6 +110,14 @@
 </div>  
 
 
+
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/pt_BR/all.js#xfbml=1&appId=171330932924716";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 
 

@@ -14,5 +14,8 @@
     <li class='<% if request.path_parameters[:controller] == 'blog' %>selectedLava<% end %>'><%= link_to 'Método', metodo_path %></li>
     <li><%= link_to 'Blog', blog_path %></li>
     <li><%= link_to 'Contacto', new_contacto_path %></li>
+    <% if current_usuario %>
+    <li><%= link_to 'Cerrar Sesión', {:controller=>"devise/sessions", :action=>"destroy"} %></li>
+    <% end %>
   </ul>
 </nav>
