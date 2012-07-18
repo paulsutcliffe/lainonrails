@@ -6,7 +6,7 @@
 
 <div id="content" class="region">
   <div class="block">
-    <h2 class="title">Lanzamientos Lain</h2>
+    <h2 class="title">Lanzamientos LAIN</h2>
     <%= render 'home/banner' %>
     <%= render 'home/ad' %>
   </div>
@@ -17,7 +17,7 @@
 <% if !current_usuario %>
  <div id="postscript-top" class="region">
   <%=  render 'home/testimonio' %>
-  <div class="block">
+  <div id="spectropach" class="block">
     <img src="/images/images/box-4.png" />
     <h2>SPECTROPACH</h2>
           <p>
@@ -84,6 +84,7 @@
 <div id="postscript-bottom" class="region">
   <% if !current_usuario %>
   <div class="block">
+	<div class="inner">
     <p>
       LAIN, es un Centro Médico que realiza tratamientos contra la obesidad. 
       La obesidad es una patología médica que se define como un exceso de tejido 
@@ -93,6 +94,7 @@
       necesario que debe existir entre el volumen (cantidad) y la composición (variedad de nutrientes) 
       que debe existir en la alimentación de cualquier persona.          
     </p>
+    </div>
   </div>
   <% end %>
 </div>  

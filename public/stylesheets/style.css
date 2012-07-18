@@ -182,7 +182,7 @@ MAIN
 =============================================
 */
 
-body{font:normal normal 16px/145% 'Signika', sans-serif; background:#f1f1f1}
+body{font:normal normal 16px/145% 'Signika', sans-serif; background:#ffffff}
 a{color:#2d2d2d}
 p{font-size:0.8em}
 
@@ -193,11 +193,12 @@ HEADINGS
 */
 
 h1, h2, h3,
-h4, h5, h6{color:#1d8ea4; font-weight:normal; font-family: 'Signika', sans-serif; font-weight:bold; text-align:left}
+h4, h5, h6{color:#1d8ea4; font-weight:normal; font-family: 'Signika', sans-serif; font-weight:lighter; text-align:left}
 
 h1.title,
 h2.title,
-h6.title{font-size:28px; font-weight:lighter}
+h6.title,
+#sidebar-first .block span{font-size:1.5em; font-weight:lighter}
 
 
 
@@ -242,7 +243,8 @@ header{height:65px; text-align:center; position:relative; background:url(../imag
 #logo span{display:block; text-indent:-99999px}
 header h1{margin:5px 0 0 0; font-size:1em; font-weight:normal}
 
-img[alt="Logo-lain-costarica"]{float:right !important}
+#foreign-logo{margin-top:8px; float:right !important}
+
 
 
 /*
@@ -262,7 +264,10 @@ nav{width:100%; display:block}
 #menu li a,
 #menu li span{font-family:Arial, Helvetica, sans-serif;font-weight:normal; padding:10px 15px 0; float:left; color:#fff; 
 font-size:1em; line-height:100%; text-transform:uppercase; position:relative; z-index:50}
-#menu li span{color:#1D8EA4}
+#menu li span,
+footer,
+footer p,
+footer a{color:#1D8EA4}
 
 #menu li.backLava {
     background:#45ffff
@@ -276,6 +281,7 @@ FOOTER
 */
 
 footer{width:100%; float:left; background:#ccc}
+footer p{padding:10px 0 5px 50px; font-size:1.05em}
 
 /*
 =============================================
@@ -333,12 +339,13 @@ SIDEBAR-FIRST
 #sidebar-first{position:relative; z-index:100; margin-bottom:0}
 #sidebar-first{padding-top:15px}
 
-#sidebar-first .block{width:215px; border-top:1px solid white}
+#sidebar-first .block{width:200px; border-top:1px solid white}
+#sidebar-first #block-facebook.block{border-bottom:1px solid white}
 #sidebar-first .block:first-child{border:0}
-#sidebar-first-inner{margin:0 5%; float:left}
+#sidebar-first-inner{margin:0 0 0 9.5%; float:left}
 
 #sidebar-first .block *{color:#fff}
-#sidebar-first .block span{font-size:1.4em; line-height:0}
+
 
 /*
 =============================================
@@ -348,14 +355,36 @@ SIDEBAR-SECOND
 
 #sidebar-second{float:right}
 
+
+
+#block-registrate,
+.bo #block-registrate{margin-top:16px}
+.cr #block-registrate{margin-top:14.5px}
+.gt #block-registrate{margin-top:16px}
+.pe #block-registrate{margin-top:15.5px}
+.sv #block-registrate{margin-top:16px}
+.uy #block-registrate{margin-top:16px}
+
+
+#sidebar-first #block-registrate,
+.pe #sidebar-first #block-registrate{margin-bottom:6.5px}
+
+
+.front.pe #content-wrapper-inner{min-height:1200px}
+
+
+
 /*
 =============================================
 CONTENT
 =============================================
 */
 
+
+
+
 #content-wrapper{height:auto !important; height:800px; min-height:800px; float:right; position:relative; z-index:50; margin-bottom:0; 
-background:#fff url(../images/backgrounds/bg-content.gif) repeat}
+background:#fff}
 #content-wrapper-inner{height:auto !important; height:800px; min-height:800px; margin:0 30px 0 50px; padding-top:20px; float:right}
 .not-front #content-wrapper-inner{width:620px; padding-top:60px}
 #content-top{width:100%; position:absolute; top:0; left:0; text-align:center; color:#1a7f98; background:url(../images/backgrounds/top-bar.jpg) repeat-x left top}
@@ -403,7 +432,15 @@ POSTSCRIPT
 #postscript-bottom{}
 #content-bottom{width:100%; float:left}
 
-.front #postscript-top .block:nth-of-type(1) img{width:193px; height:101px}
+#spectropach img{width:236px}
+
+.front #postscript-top .block img{border:1px solid #1D8EA4;
+-moz-border-radius:15px; -webkit-border-radius:15px; -o-border-radius:15px; 
+-khtml-border-radius:15px; border-radius:15px}
+
+.front #postscript-top .block:nth-of-type(1n+2) img{border:0; height:103px;
+-moz-border-radius:0px; -webkit-border-radius:0px; -o-border-radius:0px; 
+-khtml-border-radius:0px; border-radius:0px}
 
 /*
 =============================================
@@ -476,16 +513,20 @@ PAGES
 
 #home.index #postscript-top .block{width:30%; float:left}
 #home.index #postscript-top .block:nth-of-type(even){width:36%; margin:0 10px}
-#home.index #postscript-bottom .block{/*
+#home.index #postscript-top .block p{height:80px; overflow:hidden}
+
+#home.index #postscript-bottom .block{
 background:url(../images/backgrounds/bg-llave-left.png) no-repeat 0 0, 
 url(../images/backgrounds/bg-llave-right.png) no-repeat 100% 0;
 *-pie-background:url(../images/backgrounds/bg-llave-left.png) no-repeat top left,
 url(../images/backgrounds/bg-llave-right.png) no-repeat top right;
-behavior: url(javascripts/libs/ie-support/PIE-1.0.0/PIE.htc); position:relative; z-index:10*/}
+behavior: url(javascripts/libs/ie-support/PIE-1.0.0/PIE.htc); position:relative; z-index:10}
+#home.index #postscript-bottom .block .inner{margin:15px 40px 20px}
+#home.index #postscript-bottom .block .inner p{text-align:justify}
 
 #home.index #postscript-top h2{font-size:1em; margin:10px 0 0}
 
-p{color:#6f7070 !important}
+p{color:#6f7070}
 
 /* usuario index */
 
@@ -510,10 +551,10 @@ p{color:#6f7070 !important}
 #contactos.new #content form .field:nth-of-type(4) label:after{content:"*"; color:red}
 
 /* método */
-#metodo.index img{float:left; margin:0 10px 10px 0}
+#metodo.index #content-wrapper img{float:left; margin:0 10px 10px 0; border:1px solid #1b6f7e}
 
 /* nosostros */
-#nosostros.index img{float:left; margin:0 10px 10px 0}
+#nosostros.index #content-wrapper img{float:left; margin:0 10px 10px 0; border:1px solid #1b6f7e}
 
 /* países */
 #paises.index #header-top{height:110px; text-align:center}
@@ -534,8 +575,12 @@ BLOCKS
 .not-front #block-registrate{display:none}
 
 #sidebar-first #block-contactanos{border:0}
-#sidebar-first #block-contactanos span{display:block; margin-bottom:20px}
-#sidebar-first #block-contactanos p{font-size:18px; font-weight:normal}
+#sidebar-first #block-contactanos span{display:block; margin-bottom:20px; float:left}
+#sidebar-first #block-contactanos .content{float:left; clear:left}
+#sidebar-first #block-contactanos p{color:white; font-size:1.5em; font-weight:normal}
+#sidebar-first #block-contactanos p span.email{font-size:0.7em; margin:0}
+#block-computest span{margin-bottom:25px; display:block}
+
 .region{float:left}
 
 /* user page */
@@ -691,6 +736,7 @@ BUTTONS
 =============================================
 */
 
+.btn:visited{color:white}
 .btn{text-transform:uppercase; font-size:0.8em; padding:3px 6px}
 .btn,
 #content .actions input{color:white; 
@@ -773,7 +819,7 @@ X fancy (borders, radius, shadows,...)
 
 #block-receta .inner,
 .list-type li,
-.tab h2.title{border:2px solid #1b6f7e}
+.tab h2.title{border:1px solid #1b6f7e}
 
 #null{-moz-transition:none;  /* FF3.7+ */ -o-transition:none;  /* Opera 10.5 */ -webkit-transition:none;  /* Saf3.2+, Chrome */ transition:none}
 

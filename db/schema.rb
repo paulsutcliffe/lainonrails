@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120717035419) do
+ActiveRecord::Schema.define(:version => 20120717171150) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false
@@ -56,6 +56,22 @@ ActiveRecord::Schema.define(:version => 20120717035419) do
     t.string   "cabecera_banner_content_type"
     t.integer  "cabecera_banner_file_size"
     t.datetime "cabecera_banner_updated_at"
+  end
+
+  create_table "computests", :force => true do |t|
+    t.string   "nombre"
+    t.string   "apellido"
+    t.string   "email"
+    t.string   "telefono"
+    t.string   "sexo"
+    t.float    "altura"
+    t.float    "peso"
+    t.integer  "imc"
+    t.string   "estado"
+    t.string   "peso_ideal"
+    t.string   "pais"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "contactos", :force => true do |t|
@@ -203,7 +219,6 @@ ActiveRecord::Schema.define(:version => 20120717035419) do
     t.datetime "confirmation_sent_at"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "pais"
   end
 
   add_index "usuarios", ["confirmation_token"], :name => "index_usuarios_on_confirmation_token", :unique => true

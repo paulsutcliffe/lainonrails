@@ -24,7 +24,7 @@
 	<meta name="geo.placename" content="Miraflores" />
 	
 	
-    <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Signika:400,600', '/javascripts/libs/adapt/styles/960.css', 'style.css' %>
+    <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Signika:300,400,600', '/javascripts/libs/adapt/styles/960.css', 'style.css' %>
     <%= javascript_include_tag '/javascripts/libs/modernizr/development-modernizr.js' %>
     <%= javascript_include_tag :defaults %>
 
@@ -83,7 +83,7 @@
   
     <% when :cr %>
 
-    <%= image_tag '/images/images/logo-lain-costarica.png' %>
+    <%= image_tag '/images/images/logo-lain-costarica.png', :id => 'foreign-logo' %>
 
     <% when :gt %>
 
@@ -118,7 +118,7 @@
   <div id="main">
     <div id="sidebar-first" class="grid_3 region">
       <div id="sidebar-first-inner">
-	  <%= link_to image_tag('/images/logo.png'), home_path, :class => 'block'  %>
+	  <%= link_to image_tag('/images/logo.png'), home_path, :id => 'logo', :class => 'block'  %>
       <%= render :partial => '/layouts/sidebar' %>
       </div>
     </div><!-- END: sidebar-first -->
@@ -134,10 +134,11 @@
       
             
      </div><!-- END: content-wrapper-inner -->
-      <footer>
+      
+    </div><!-- END: content-wrapper -->
+	<footer>
          <p>Copyright © 2012. Lain Intercorp S.A. Todos los derechos reservados.</p>
       </footer>
-    </div><!-- END: content-wrapper -->
   </div><!-- END: main -->
 </div><!-- END: main-wrapper -->
 
