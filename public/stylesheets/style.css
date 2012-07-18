@@ -229,6 +229,9 @@ HEADER-TOP
 #header-top .field,
 #header-top .actions{display:inline-block; *display:inline; *zoom:1; vertical-align:top}
 #header-top .actions input{*width:30px; *text-align:center; background:#ff3f83}
+#header-top .field label{display:none}
+#header-top a,
+#header-top a:visited{color:#22A3B5; float:right; margin-top:5px}
 
 /*
 =============================================

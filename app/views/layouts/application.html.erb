@@ -60,25 +60,26 @@
     <% when :pe %>
     <% if !current_usuario %>
     <div id="login" class="grid_6 omega">
-    <form>
-      <div class="field">
-        <label></label>
-        <input type="text" value="Usuario" />
-        <%= link_to 'Crear Cuenta', '/usuarios/registro/inscribirse' %>
-      </div>
-      <div class="field">
-        <label></label>
-        <input type="text" value="Contraseña" />
-        <a href="">Recuperar Contraseña</a>
-      </div>
-      <div class="actions">
-        <input type="submit" value="Ir" />
-      </div>
-    </form>
+	  	<%= form_for("usuario", :url => usuario_session_path) do |f| %>
+	      <div class="field">
+	        <%= f.label :email %>
+	        <%= f.email_field :email %>
+	        <%= link_to 'Crear Cuenta', '/usuarios/registro/inscribirse' %>
+	      </div>
+	      <div class="field">
+	        <%= f.label :password %>
+	        <%= f.password_field :password %>
+	        <a href="">Recuperar Contraseña</a>
+	      </div>
+	      <div class="actions">
+	        <%= f.submit "Ir" %>
+	      </div>
+	    <% end %>
+  
     </div>
     <% end %>
     <% if current_usuario %>
-      <%= link_to 'Desc', {:controller=>"devise/sessions", :action=>"destroy"} %>
+      <%= link_to 'Cerrar Sesión', {:controller=>"devise/sessions", :action=>"destroy"} %>
     <% end %>
   
     <% when :cr %>
