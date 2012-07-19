@@ -48,6 +48,14 @@ Lainonrails::Application.routes.draw do
     
     devise_for :admins, :path => "admins", :path_names => { :sign_in => 'ingresar', :sign_out => 'salir', :password => 'secreto', :confirmation => 'verificacion', :unlock => 'desbloquear', :registration => 'registro', :sign_up => 'inscribirse' }
 
+    authenticated :usuario do
+      root :to => 'home#index'
+    end
+    
+    authenticated :admin do
+      root :to => 'home#index'
+    end
+
     root :to => "paises#index"
   end
   
