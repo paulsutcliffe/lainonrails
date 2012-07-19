@@ -6,7 +6,7 @@ Feature: Admins
   Scenario Outline: creating a new admin account
   Given I am an admin not authenticated
   When I visit the "/admins/registro/inscribirse" page
-  And I fill in "Email" with "<email>"
+  And I fill in "E-mail" with "<email>"
   And I fill in "Contraseña" with "<password>"
   And I fill in "Confirmar contraseña" with "<password>"
   And I press "Inscribirse"
