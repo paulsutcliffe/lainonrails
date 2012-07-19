@@ -1,18 +1,46 @@
-<p>
-  <b>Titulo:</b>
-  <%= @entrada.titulo %>
-</p>
+<section id="content" class="region">
+<h2 class="title"><%= 'Blog' %></h2>
 
-<p>
-  <b>Contenido:</b>
-  <%= @entrada.contenido %>
-</p>
+  <article>
+	<header>
+      <h3><%= page_title! @entrada.titulo %></h3>
+      <span class="date"><%= @entrada.created_at.strftime("%A, %d de %B") %></span>
+      <div class="social">
+	    <span class="label">
+	      Compartir en:
+	    </span>
+	  <ul>
+	    <li class="facebook"><%= link_to '', 'peru.com' %></li>
+	  </ul>
+	  </div>
+      <% if current_admin %>
+        <div class="admin-controls">
+          <%= link_to 'Editar', edit_entrada_path(@entrada), :class => 'btn edit' %>
+        </div>
+      <% end %>
+    </header>
+    <figure>
+	  <%= image_tag @entrada.foto(:regular) %>
+	</figure>
+    <%= sanitize(simple_format(@entrada.contenido), :tags => %w(p i br b)) %>
+    
+	<footer>
+	  <%= link_to 'Volver', entradas_path, :class => 'btn back' %>
+	  <% if current_admin %>
+        <div class="admin-controls">
+          <%= link_to 'Editar', edit_entrada_path(@entrada), :class => 'btn edit' %>
+        </div>
+      <% end %>	
+	</footer>
+  </article>
+  
+  <div id="comments">
+    <h6 class="title">Comentarios</h6>
+    <%= render 'fbcomments' %>
+  </div>
 
-<p>
-  <%= image_tag @entrada.foto(:regular) %>
-</p>
 
-<% if current_admin %>
-<%= link_to 'Editar', edit_entrada_path(@entrada) %>
-<% end %>
-| <%= link_to 'Atrás', entradas_path %>
+
+
+
+</section>

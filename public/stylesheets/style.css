@@ -257,6 +257,7 @@ NAVIGATION
 */
 
 nav{width:100%; display:block}
+#menu{width:100%; overflow:hidden}
 #menu,
 #menu li{height:35px;}
 
@@ -462,23 +463,22 @@ SOCIAL LINKS
 
 
 .social{width:200px; height:70px; background:url(../images/global.png) no-repeat 0 0px}
-.social li{float:left; margin-right:3px; margin-top:25px}
-.social li a{width:25px; height:20px; display:block; background:url(../images/global.png) no-repeat 0 -3px;
+.social li{float:left}
+.social li a{width:31px; height:30px; display:block; background:url(../images/global.png) no-repeat 0 -3px;
 -moz-transition:none; -webkit-transition:none; transition:none}
 
-.social li:first-of-type{margin-left:97px}
 
-.social li.facebook a{width:20px; background-position:-233px -4px}
+.social li.facebook a{background:url(../images/icons/ico-facebook.png) no-repeat}
 .social li.twitter a{background-position:-205px -4px}
 .social li.rss a{background-position:-107px -3px}
 .social li.pinterest a{background-position:-255px -4px}
 .social li.soundcloud a{background-position:0 -3px}
-
+/*
 .social li.facebook a:hover{background-position:-233px -29px}
 .social li.twitter a:hover{background-position:-205px -29px}
 .social li.rss a:hover{background-position:-107px -29px}
 .social li.pinterest a:hover{background-position:-255px -29px}
-.social li.soundcloud a:hover{background-position:0 -29px}
+.social li.soundcloud a:hover{background-position:0 -29px}*/
 
 /*
 =============================================
@@ -573,6 +573,32 @@ p{color:#6f7070}
 #paises.index header{height:12px}
 #paises.index #main{background:none}
 
+/* entradas */
+#entradas.index #content article{float:left; clear:left; border-bottom:1px solid #6F7070}
+#entradas #content article img{float:left; margin-right:45px; border:1px solid #1D8EA4;
+  -moz-border-radius:15px; -webkit-border-radius:15px; -o-border-radius:15px; 
+  -khtml-border-radius:15px; border-radius:15px}
+#entradas #content article h3,
+#entradas #content article h3 a{text-transform:uppercase; font-size:1.1em; color:#1D8EA4}
+#entradas #content article .date{display:block; color:#6F7070; margin-bottom:25px}
+#entradas #content article .date,
+#entradas #content article p{font-size:0.8em; text-align:justify}
+#entradas.index #content article .read-more{float:right}
+#entradas.index #content article .btn:hover{color:white}
+
+#entradas.show #content article,
+#entradas.show #content article header{width:100%; float:left; clear:left; border-bottom:1px solid #6F7070}
+#entradas.show #content article header h3{margin-bottom:0}
+#entradas.show #content article header,
+#entradas.show #content article footer{height:auto; background:none; text-align:left}
+#entradas.show #content article .date{margin-bottom:0}
+#entradas.show #content article img{float:right; margin:0 0 20px 45px}
+#entradas.show #content article .back{float:right}
+
+#entradas.show #content article header .social{float:right; width:auto; height:auto; background:none; text-align:right; vertical-align:middle}
+#entradas.show #content article header .social *{vertical-align:middle; display:inline-block; *display:inline; *zoom:1; float:none}
+#entradas.show #content article header .social .label{line-height:140%; margin-right:5px; color:#1D8EA4}
+
 /*
 =============================================
 BLOCKS
@@ -654,7 +680,7 @@ DEFAULT BLOCKS
 .mbottom-3, p{margin-bottom:15px}
 .mbottom-4, .not-front #content.region, #content-wrapper .block, .field, .actions{margin-bottom:48px}
 .mbottom-5{margin-bottom:25px}
-.mbottom-6{margin-bottom:30px}
+.mbottom-6, #entradas.show #content article header, #entradas.show #content article{margin-bottom:30px}
 .mbottom-7{margin-bottom:35px}
 .mbottom-8, .region{margin-bottom:40px}
 .mbottom-9{margin-bottom:45px}
@@ -688,7 +714,7 @@ DEFAULT BLOCKS
 .ptop-6{padding-top:30px}
 .ptop-7{padding-top:35px}
 .ptop-8{padding-top:40px}
-.ptop-9{padding-top:45px}
+.ptop-9, #entradas.index #content article{padding-top:45px}
 .ptop-10{padding-top:50px}
 .ptop-11{padding-top:55px}
 .ptop-12{padding-top:60px}
@@ -713,7 +739,7 @@ DEFAULT BLOCKS
 
 .pbottom-1{padding-bottom:5px}
 .pbottom-2{padding-bottom:10px}
-.pbottom-3{padding-bottom:15px}
+.pbottom-3, #entradas #content article, #entradas.show #content article header{padding-bottom:15px}
 .pbottom-4{padding-bottom:20px}
 .pbottom-5, #logo, #sidebar-first .block{padding-bottom:25px}
 .pbottom-6{padding-bottom:30px}
