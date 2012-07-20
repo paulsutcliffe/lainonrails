@@ -15,9 +15,9 @@ Con SACIAN, sonríe en vez de comer.
 	      <% @testimonios.each do |testimonio| %>
           <li>
             <h3><%= testimonio.nombre %></h3>
-            <%= link_to image_tag(testimonio.imagen(:regular)), testimonio %>
+            <%= link_to image_tag(testimonio.imagen(:thumb)), testimonio %>
             <%= testimonio.video_link_html %>
-            <p><%= testimonio.descripcion %></p>
+            <p><%= sanitize(simple_format(truncate(testimonio.descripcion, :length => 50, :omission => '...')), :tags => %w(p i br b)) %></p>
             <% if current_admin %>
               <div>
                 <%= link_to 'Editar', edit_testimonio_path(testimonio) %>
