@@ -257,7 +257,7 @@ NAVIGATION
 */
 
 nav{width:100%; display:block}
-#menu{width:100%; /*overflow:hidden*/}
+#menu{width:100%; overflow:hidden}
 #menu,
 #menu li{height:35px;}
 
