@@ -4,11 +4,11 @@ class ApplicationController < ActionController::Base
   
   before_filter :load_general_information
   
-    def load_general_information
-      @cabecera_banner = CabeceraBanner.first
-      @informacion = Informacion.where("pais = ?", params[:locale]).first
-      @meta_tags = Meta.first
-    end
+  def load_general_information
+    @cabecera_banner = CabeceraBanner.first
+    @informacion = Informacion.where("pais = ?", params[:locale]).first
+    @meta_tags = Meta.first
+  end
     
     
   protected

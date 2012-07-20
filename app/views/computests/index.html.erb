@@ -1,9 +1,37 @@
 <h2 class="title"><%= page_title! "Computest" %></h2>
 
-<% if current_usuario %>
-<div id="computest-resultado">
-<span id="indice">Índice de Masa Corporal (IMC) <%= @bmi %></span>
-<span id="weight"><%= @ideal_weight_percent %></span>
-<span id="tipo" class="<%= @tipo.downcase %>"><%= @tipo %></span>
-</div>
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <th>Email</th>
+    <th>Telefono</th>
+    <th>Altura</th>
+    <th>Peso</th>
+    <th>IMC</th>
+    <th>Peso Ideal</th>
+    <th>Estado</th>
+    <th>País</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @computests.each do |computest| %>
+  <tr>
+    <td><%= computest.nombre %></td>
+    <td><%= computest.apellido %></td>
+    <td><%= computest.email %></td>
+    <td><%= computest.telefono %></td>
+    <td><%= computest.peso %></td>
+    <td><%= computest.altura %></td>
+    <td><%= computest.imc %></td>
+    <td><%= computest.peso_ideal %></td>
+    <td><%= computest.estado %></td>
+    <td><%= computest.pais %></td>
+    <td><%= link_to 'Ver', computest %></td>
+    <td><%= link_to 'Editar', edit_computest_path(computest) %></td>
+    <td><%= link_to 'Eliminar', computest, :confirm => '¿Estás seguro?', :method => :delete %></td>
+  </tr>
 <% end %>
+</table>

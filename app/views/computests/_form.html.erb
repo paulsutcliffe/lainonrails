@@ -20,7 +20,7 @@
     <%= f.text_field :apellido %>
   </div>
   <div class="field">
-    <%= f.label :email %>
+    <%= f.label :email, "E-mail" %>
     <%= f.text_field :email %>
   </div>
   <div class="field">
@@ -29,7 +29,7 @@
   </div>
   <div class="field">
     <%= f.label :sexo %>
-    <%= f.text_field :sexo %>
+    <%= f.select(:sexo, options_for_select( ['Masculino', 'Femenino'], 'Masculino' ) ) %>
   </div>
   <div class="field">
     <%= f.label :peso %>

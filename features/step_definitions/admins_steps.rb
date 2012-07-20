@@ -8,7 +8,7 @@ Given /^I am a new, authenticated admin$/ do
   Admin.new(:email => email, :password => password, :password_confirmation => password).save!
 
   visit '/admins/ingresar'
-  fill_in "Email", :with => email
+  fill_in "E-mail", :with => email
   fill_in "Contraseña", :with => password
   click_button "Ingresar"
 
