@@ -510,8 +510,8 @@ box-shadow:4px 4px 0 #363636, -4px -4px 0 #363636, 4px -4px 0 #363636, -4px 4px 
 #content.tab h2.title{padding:0 20px; border-bottom:0; display:inline-block; *display:inline; *zoom:1; position:relative;
 -moz-border-radius:10px 10px 0 0; -webkit-border-radius:10px 10px 0 0; -o-border-radius:10px 10px 0 0; 
 -khtml-border-radius:10px 10px 0 0; border-radius:10px 10px 0 0 }
-#content.tab h2.title:after{content:""; width:488px; height:2px; background:#1B6F7E;
-position:absolute; bottom:0px; left:122px}
+#content.tab h2.title:after{content:""; width:448px; height:2px; background:#1B6F7E;
+position:absolute; bottom:0px; left:185px}
 
 /*
 =============================================
