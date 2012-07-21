@@ -1,6 +1,5 @@
-
-    <% if @banner %>
-      <%= link_to image_tag(@banner.banner(:regular)), banner, :class => 'block' %>
-    <% end %>   
+<% if @banner %>
+  <%= image_tag @banner.banner(:regular), :class => 'block' %>
+<% end %>   
 
 

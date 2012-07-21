@@ -3,17 +3,16 @@ class HomeController < ApplicationController
   protect_from_forgery
   
   def index
-    @banner = Banner.first
+    @banner = Banner.where("pais = ?", params[:locale]).first
     @ad = Ad.first
     @receta = Receta.order("RAND()").first
     if current_usuario
-      @oferta = Oferta.order("RAND()").first
+      @oferta = Oferta.first
     else
-      @testimonio = Testimonio.order("RAND()").first
       if params[:locale]
         @slides = Slide.where("pais = ?", params[:locale])
+        @testimonio = Testimonio.where("pais = ?", params[:locale]).first
       end
-      @entrada = Entrada.last
     end
   end
 end

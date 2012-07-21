@@ -15,9 +15,6 @@ class BannersController < InheritedResources::Base
       create!(:notice => "Información guardada correctamente.")
     end
   end
-  def create
-      create!(:notice => "Banner guardado correctamente.")
-  end
   
   def update
       update!(:notice => "Banner actualizado correctamente.")

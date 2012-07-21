@@ -73,9 +73,9 @@
 
     <div id="facebook-widget" class="grid_3 alpha omega">
       <h2 class="title">Socializemos</h2>
-
-	<div class="fb-like-box" data-href="https://www.facebook.com/pages/LAIN-L%C3%ADder-mundial-en-adelgazamiento/118838274816444" data-width="237" data-height="472" data-show-faces="true" data-stream="false" data-header="true"></div>
-
+	<% if @informacion %>
+	  <div class="fb-like-box" data-href="<%= @informacion.facebook %>" data-width="237" data-height="472" data-show-faces="true" data-stream="false" data-header="true"></div>
+    <% end %>
     </div>
 
 

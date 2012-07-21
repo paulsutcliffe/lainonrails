@@ -29,13 +29,9 @@
     <td><%= contacto.provincia %></td>
     <td><%= contacto.pais %></td>
     <td><%= contacto.mensaje %></td>
-    <td><%= link_to 'Show', contacto %></td>
-    <td><%= link_to 'Edit', edit_contacto_path(contacto) %></td>
-    <td><%= link_to 'Destroy', contacto, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Ver', contacto %></td>
+    <td><%= link_to 'Editar', edit_contacto_path(contacto) %></td>
+    <td><%= link_to 'Eliminar', contacto, :confirm => '¿Estás seguro?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
-
-<br />
-
-<%= link_to 'New Contacto', new_contacto_path %>

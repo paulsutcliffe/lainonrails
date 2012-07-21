@@ -33,11 +33,11 @@
     <%= f.select(:sexo, options_for_select( ['Masculino', 'Femenino'], 'Masculino' ) ) %>
   </div>
   <div class="field">
-    <%= f.label :peso %>
+    <%= f.label :peso, "Peso (Kg)" %>
     <%= f.text_field :peso %>
   </div>
   <div class="field">
-    <%= f.label :altura %>
+    <%= f.label :altura, "Altura (Mt)" %>
     <%= f.text_field :altura %>
   </div>
   <div class="actions">

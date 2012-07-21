@@ -1,5 +1,5 @@
 Given /^that I am on the home page$/ do
-  visit '/home'
+  visit home_path
 end
 
 When /^I visit the "(.*?)" page$/ do |page|

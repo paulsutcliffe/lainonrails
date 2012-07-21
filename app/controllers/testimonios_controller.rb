@@ -15,12 +15,12 @@ class TestimoniosController < InheritedResources::Base
     @testimonio = Testimonio.new(params[:testimonio])
     if @testimonio.valid?
       @testimonio.pais = params[:locale]
-      create!(:notice => "Testimonio guardado correctamente.") { testimonios_path(:tipo => params[:tipo]) }
+      create!(:notice => "Testimonio guardado correctamente.") { testimonios_path }
     end
   end
   
   def update
-    update!(:notice => "Testimonio actualizado correctamente.") { testimonios_path(:tipo => params[:tipo]) }
+    update!(:notice => "Testimonio actualizado correctamente.") { testimonios_path }
   end
   
   def destroy

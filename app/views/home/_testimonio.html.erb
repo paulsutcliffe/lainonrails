@@ -1,11 +1,11 @@
-<% if @testimonio %>
 <div class="block">
+  <% if @testimonio %>
     <%= image_tag @testimonio.imagen(:thumb_front) %>
     <h2>TESTIMONIOS</h2>
     <p>
       <%= @testimonio.nombre %>
       <%= truncate(@testimonio.descripcion, :length => 95) %>
     </p>
-    <%= link_to 'Leer Más', @testimonio, :class => 'btn read-more' %>
+    <%= link_to 'Leer Más', testimonios_path(:tipo => 'video'), :class => 'btn read-more' %>
+  <% end %>
 </div>
-<% end %>

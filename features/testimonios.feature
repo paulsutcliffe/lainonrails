@@ -15,7 +15,7 @@ Feature: Creating Testimonios
   Then I should see "Testimonio guardado correctamente."
   And I should see "<nombre>"
   And I should see "<descripcion>"
-  And I should see the image "picture.jpg"
+  And I should see the image "picture.png"
   
   When I visit the "/<country>/testimonios/?tipo=video" page
   And I follow "Nuevo testimonio"
@@ -28,22 +28,22 @@ Feature: Creating Testimonios
   Then I should see "Testimonio guardado correctamente."
   And I should see "<nombre>"
   And I should see "<descripcion>"
-  And I should see the image "picture.jpg"
+  And I should see the image "picture.png"
  
   Given I am an admin not authenticated
-  Given that I am on the home page
-  Then I should see the image "picture.jpg"
+  When I visit the "/<country>/home" page
+  Then I should see the image "picture.png"
   And I should see "<nombre>"
   And I should see "<descripcion>"
-  When I visit the "/<country>/testimonios?tipo=video" page
-  Then I should see the image "picture.jpg"
+  When I visit the "/<country>/testimonios/?tipo=antesydespues" page
+  Then I should see the image "picture.png"
   And I should see "<nombre>"
   And I should see "<descripcion>"
-  When I visit the "/<country>/testimonios?tipo=video" page
-  Then I should see the image "picture.jpg"
+  When I visit the "/<country>/testimonios/?tipo=video" page
+  Then I should see the image "picture.png"
   And I should see "<nombre>"
   And I should see "<descripcion>"
-  When I visit the "/testimonios?locale=xx" page
+  When I visit the "/home/?locale=xx" page
   And I should not see "<nombre>"
   And I should not see "<descripcion>"
   

@@ -8,7 +8,7 @@
   </script>
 <% end %>
 
-<div id="content" class="region grid_8 alpha omega tab  <%= 'testimonios-' + params[:tipo] %>">
+<div id="content" class="region grid_8 alpha omega tab  <%= 'testimonios-' + params[:tipo] unless params[:tipo] == nil %>">
         <h2 class="title">
 	      <a href="/<%= I18n.locale %>/testimonios/?tipo=video"><%= page_title! "Videos y Spots" %></a>
 	      <a href="/<%= I18n.locale %>/testimonios/?tipo=antesydespues">Antes y después</a>
