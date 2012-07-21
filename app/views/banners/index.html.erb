@@ -9,7 +9,7 @@
 
 <% @banners.each do |banner| %>
   <tr>
-    <td><%= link_to image_tag(banner.banner(:thumb)), banner %></td>
+    <td><%= image_tag banner.banner(:regular) %></td>
     <td><%= link_to 'Editar', edit_banner_path(banner) %></td>
     <td><%= link_to 'Eliminar', banner, :confirm => '¿Estás seguro?', :method => :delete %></td>
   </tr>

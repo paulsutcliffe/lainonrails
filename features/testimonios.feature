@@ -5,7 +5,7 @@ Feature: Creating Testimonios
   Scenario Outline: creating antes y después testimonios
   Given I am a new, authenticated admin
   Given that I am on the home page
-  When I visit the "/<country>/testimonios" page
+  When I visit the "/<country>/testimonios/?tipo=antesydespues" page
   And I follow "Nuevo testimonio"
   And I fill in "Nombre" with "<nombre>"
   And I fill in "Descripción" with "<descripcion>"
@@ -17,7 +17,7 @@ Feature: Creating Testimonios
   And I should see "<descripcion>"
   And I should see the image "picture.jpg"
   
-  When I visit the "/<country>/testimonios" page
+  When I visit the "/<country>/testimonios/?tipo=video" page
   And I follow "Nuevo testimonio"
   And I fill in "Nombre" with "<nombre>"
   And I fill in "Descripción" with "<descripcion>"
@@ -35,7 +35,7 @@ Feature: Creating Testimonios
   Then I should see the image "picture.jpg"
   And I should see "<nombre>"
   And I should see "<descripcion>"
-  When I visit the "/<country>/testimonios?tipo=antesydespues" page
+  When I visit the "/<country>/testimonios?tipo=video" page
   Then I should see the image "picture.jpg"
   And I should see "<nombre>"
   And I should see "<descripcion>"

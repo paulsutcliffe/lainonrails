@@ -1,21 +1,6 @@
-<h2 class="title"><%= page_title! "Computest" %></h2>
+<div id="content" class="region grid_8 omega region">
+  <h2 class="title"><%= page_title! "Computest" %></h2>
 
-<table>
-  <tr>
-    <th>Nombre</th>
-    <th>Apellido</th>
-    <th>Email</th>
-    <th>Telefono</th>
-    <th>Altura</th>
-    <th>Peso</th>
-    <th>IMC</th>
-    <th>Peso Ideal</th>
-    <th>Estado</th>
-    <th>País</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
 <% @computests.each do |computest| %>
   <tr>
@@ -34,4 +19,3 @@
     <td><%= link_to 'Eliminar', computest, :confirm => '¿Estás seguro?', :method => :delete %></td>
   </tr>
 <% end %>
-</table>

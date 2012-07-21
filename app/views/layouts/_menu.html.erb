@@ -5,15 +5,34 @@
         <span>Inicio</span>
       <% end %>
 	</li>
-    <li class="<% if request.path_parameters[:controller] == 'nosotros' %>selectedLava<% end %>">
-      <%= link_to 'Nosotros', nosotros_path %>
+    <li class="<% if request.path_parameters[:controller] == 'nosostros' %>selectedLava<% end %>">
+      <%= link_to_unless_current 'Nosotros', nosotros_path do %>
+        <span>Nosotros</span>
+      <% end %>
     </li>
     <li class="<% if request.path_parameters[:controller] == 'testimonios' %>selectedLava<% end %>">
-      <%= link_to 'Testimonios', testimonios_path %>
+      <%= link_to_unless_current 'Testimonios', testimonios_path(:tipo => 'video') do %>
+        <span>Testimonios</span>
+      <% end %>
     </li>
-    <li class='<% if request.path_parameters[:controller] == 'blog' %>selectedLava<% end %>'><%= link_to 'Método', metodo_path %></li>
-    <li><%= link_to 'Blog', blog_path %></li>
-    <li><%= link_to 'Contacto', new_contacto_path %></li>
+   
+    <li class="<% if request.path_parameters[:controller] == 'metodo' %>selectedLava<% end %>">
+      <%= link_to_unless_current 'Método', metodo_path do %>
+        <span>Método</span>
+      <% end %>
+    </li>
+    <li class="<% if request.path_parameters[:controller] == 'entradas' %>selectedLava<% end %>">
+      <%= link_to_unless_current 'Blog', blog_path do %>
+        <span>Blog</span>
+      <% end %>
+    </li>
+    <li class="<% if request.path_parameters[:controller] == 'contactos' %>selectedLava<% end %>">
+      <%= link_to_unless_current 'Contacto', new_contacto_path do %>
+        <span>Contacto</span>
+      <% end %>
+    </li>
+
+
     <% if current_usuario %>
     <li><%= link_to 'Cerrar Sesión', {:controller=>"devise/sessions", :action=>"destroy"} %></li>
     <% end %>

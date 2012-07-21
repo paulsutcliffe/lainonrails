@@ -1,5 +1,18 @@
-<div id="content" class="region grid_8 alpha omega tab">
-        <h2 class="title"><%= page_title! "Videos y Spots" %></h2>
+<% content_for :javascript do %>
+  <%= stylesheet_link_tag '/javascripts/libs/lightbox/themes/white-green/jquery.lightbox.css' %>
+  <%= javascript_include_tag '/javascripts/libs/lightbox/jquery.lightbox.min.js' %>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      jQuery('.lightbox').lightbox();
+    })
+  </script>
+<% end %>
+
+<div id="content" class="region grid_8 alpha omega tab  <%= 'testimonios-' + params[:tipo] %>">
+        <h2 class="title">
+	      <a href="/<%= I18n.locale %>/testimonios/?tipo=video"><%= page_title! "Videos y Spots" %></a>
+	      <a href="/<%= I18n.locale %>/testimonios/?tipo=antesydespues">Antes y después</a>
+	    </h2>
         
         <p>
           SACIAN es un producto exclusivo de Lain y es un saciante natural que te permite realizar tus actividades normales si sentir la ansiedad por comer. Todo lo que tienes que hacer es disover un sobre de SACIAN en 200 cc de agua y beberlo una hora antes de almorzar o cenar. Almuerza o cena en las cantidades habituales y te llenarás rapidamente.
@@ -15,9 +28,12 @@ Con SACIAN, sonríe en vez de comer.
 	      <% @testimonios.each do |testimonio| %>
           <li>
             <h3><%= testimonio.nombre %></h3>
-            <%= link_to image_tag(testimonio.imagen(:thumb)), testimonio %>
-            <%= testimonio.video_link_html %>
-            <p><%= sanitize(simple_format(truncate(testimonio.descripcion, :length => 50, :omission => '...')), :tags => %w(p i br b)) %></p>
+            <% if testimonio.tipo == 'antesydespues' %>
+              <%= link_to image_tag(testimonio.imagen(:thumb)), testimonio.imagen(:regular), :class => 'lightbox', :rel => 'gallery', :title => testimonio.descripcion %>
+            <% else %>
+              <%= link_to image_tag(testimonio.imagen(:thumb)), testimonio.video_link, :class => 'lightbox', :rel => 'gallery' %>
+            <% end %>
+            <%= sanitize(simple_format(truncate(testimonio.descripcion, :length => 50, :omission => '...')), :tags => %w(p i br b)) %>
             <% if current_admin %>
               <div>
                 <%= link_to 'Editar', edit_testimonio_path(testimonio) %>

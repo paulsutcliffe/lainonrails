@@ -1,44 +1,26 @@
-<p id="notice"><%= notice %></p>
+<div id="content" class="region grid_8 omega region">
+  <h2 class="title"><%= page_title! "Computest" %></h2>
+  <h3>Resultado</h3>
+  
+  <div class="field">
+    <p><%= @computest.nombre + ' ' + @computest.apellido %></p>	
+  </div>
 
-<p>
-  <b>Nombre:</b>
-  <%= @computest.nombre %>
-</p>
+  <div class="field">
+    <p>Índice de Masa Corporal (IMC)<span><%= @imc %></span></p>	
+  </div>
+  
+  <div class="field">
+    <p>Índice de Masa Corporal (IMC)<span><%= @computest.peso %></span></p>	
+  </div>
 
-<p>
-  <b>Apellido:</b>
-  <%= @computest.apellido %>
-</p>
-
-<p>
-  <b>Email:</b>
-  <%= @computest.email %>
-</p>
-
-<p>
-  <b>Peso:</b>
-  <%= @computest.peso %>
-</p>
-
-<p>
-  <b>Altura:</b>
-  <%= @computest.altura %>
-</p>
-
-<p>
-  <b>Índice de masa corporal (IMC):</b>
-  <%= @imc %>
-</p>
-
-<p>
-  <b>Peso ideal:</b>
-  <%= @peso_ideal %>
-</p>
-
-<p>
-  <b>Estado:</b>
-  <%= @estado %>
-</p>
+  <div class="field">
+    <p><%= @peso_ideal %><br />Tu estado es <span><%= @estado %></span></p>	
+  </div>
 
 
-<%= link_to 'Atrás', computests_path %>
+<%= link_to 'Atrás', computests_path, :class => 'btn back' %>
+
+</div>
+
+
