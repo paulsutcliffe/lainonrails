@@ -1,6 +1,6 @@
 require "bundler/capistrano"
 
-set :gateway, "190.41.229.186"
+set :gateway, "walterweb@190.41.229.186"
 set :user, "walter"
 set :domain, "www.lainadelgaza.net"
 set :project, "lainonrails"
