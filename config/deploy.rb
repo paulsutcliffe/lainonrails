@@ -2,7 +2,7 @@ require "bundler/capistrano"
 
 set :gateway, "walterweb@190.41.229.186"
 set :user, "walter"
-set :domain, "www.lainadelgaza.net"
+set :domain, "192.168.0.2"
 set :project, "lainonrails"
 set :application, "lainonrails"
 set :applicationdir, "~/#{project}"
