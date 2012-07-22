@@ -1,13 +1,11 @@
 require "bundler/capistrano"
 
-default_environment['PATH']='/usr/lib/ruby/gems/1.8/bin:/home/lainonrails/.gems/bin:/usr/local/bin:/usr/bin:/bin'
-default_environment['GEM_PATH']='/home/lainonrails/.gems:/usr/lib/ruby/gems/1.8'
-
-set :user, "lainonrails"
-set :domain, "yorkville.dreamhost.com"
+set :gateway, "190.41.229.186"
+set :user, "walter"
+set :domain, "www.lainadelgaza.net"
 set :project, "lainonrails"
 set :application, "lainonrails"
-set :applicationdir, "/home/#{user}/#{user}"
+set :applicationdir, "~/#{project}"
 set :repository,  "git@github.com:paulsutcliffe/lainonrails.git"
 default_run_options[:pty] = true
 
