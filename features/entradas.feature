@@ -17,9 +17,6 @@ Feature: Entradas
   Given I am an admin not authenticated
   When I visit the "/blog" page
   Then I should see "Infarto al corazón y obesidad"
-  #Given that I am on the home page
-  #And I should see "Infarto al corazón y obesidad"
-  #And I should see the image "picture.jpg"
 
   
   Scenario: editing posts on the blog
@@ -39,9 +36,6 @@ Feature: Entradas
   And I press "Publicar"
   Then I should see "Entrada actualizada correctamente."
   And I should see "Infarto al corazón y obesidad"
-  #Given that I am on the home page
-  #And I should see "Infarto al corazón y obesidad"
-  #And I should see the image "picture.jpg"
   
   
   Scenario: deleting posts on the blog

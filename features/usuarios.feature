@@ -4,15 +4,15 @@
 Feature: Usuarios
 
   Scenario Outline: creating a new account
-  #Given I am not authenticated
-  Given I am on the home page
-  When I visit the "/usuarios/registro/inscribirse" page
+  Given I am not authenticated
+  When I go to the "/pe/home" page
+  When I follow "Crear Cuenta"
   And I fill in "Nombre" with "<nombre>"
   And I fill in "Apellido" with "<apellido>"
   And I fill in "Telefono" with "<telefono>"
-  And I fill in "Altura" with "<altura>"
-  And I fill in "Peso" with "<peso>"
-  And I fill in "Email" with "<email>"
+  And I fill in "Altura (Mt)" with "<altura>"
+  And I fill in "Peso (Kg)" with "<peso>"
+  And I fill in "E-mail" with "<email>"
   And I fill in "Contraseña" with "<password>"
   And I fill in "Confirmación de contraseña" with "<password>"
   And I press "Inscribirse"

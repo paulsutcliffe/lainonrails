@@ -12,7 +12,7 @@ class BannersController < InheritedResources::Base
     @banner = Banner.new(params[:banner])
     if @banner.valid?
       @banner.pais = params[:locale]
-      create!(:notice => "Información guardada correctamente.")
+      create!(:notice => "Banner guardado correctamente.")
     end
   end
   

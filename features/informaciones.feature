@@ -15,7 +15,7 @@ Scenario Outline: add general information
   Then I should see "<telefono>"
   And I should see "<gratuito>"
   And I should see "<email>"
-  And I should see "<facebook>"
+  And I should see the link "<facebook>"
   When I visit the "/<country>/informaciones" page
   And I should not see "Ingresar Información"
   And I follow "Editar"
@@ -24,11 +24,11 @@ Scenario Outline: add general information
   Then I should see "Información actualizada correctamente."
   And I should see "<telefono>"
   Given I am an admin not authenticated
-  When I visit the "/?locale=<country>" page
+  When I visit the "/<country>/home" page
   Then I should see "<telefono>"
   And I should see "<gratuito>"
   And I should see "<email>"
-  And I should see "<facebook>"
+  And I should see the link "<facebook>"
 
 
   

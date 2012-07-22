@@ -12,15 +12,15 @@ class InformacionesController < InheritedResources::Base
     @informacion = Informacion.new(params[:informacion])
     if @informacion.valid?
       @informacion.pais = params[:locale]
-      create!(:notice => "Información guardada correctamente.")
+      create!(:notice => "Información guardada correctamente.") { home_path }
     end
   end
   
   def update
-    update!(:notice => "Información actualizada correctamente.")
+    update!(:notice => "Información actualizada correctamente.") { home_path }
   end
    
   def destroy
-    destroy!(:notice => "Información eliminada correctamente.")
+    destroy!(:notice => "Información eliminada correctamente.") { home_path }
   end
 end

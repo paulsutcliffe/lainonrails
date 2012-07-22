@@ -324,7 +324,7 @@ font-size:0.6em}
 
 .field input,
 .field textarea,
-#header-top .actions input{-moz-border-radius:5px; -webkit-border-radius:5px; -o-border-radius:5px; text-transform:uppercase;
+#header-top .actions input{-moz-border-radius:5px; -webkit-border-radius:5px; -o-border-radius:5px; /*text-transform:uppercase*/;
 -khtml-border-radius:5px; border-radius:5px; behavior: url(javascripts/libs/ie-support/PIE-1.0.0/PIE.htc);  position:relative}
 
 

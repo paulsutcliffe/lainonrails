@@ -23,7 +23,7 @@ set :deploy_to, applicationdir
 
 role :web, domain                          # Your HTTP server, Apache/etc
 role :app, domain                          # This may be the same as your `Web` server
-role :db,  domain, :primary => true # This is where Rails migrations will run
+role :db,  domain, :primary => true        # This is where Rails migrations will run
 
 set :use_sudo, false
 

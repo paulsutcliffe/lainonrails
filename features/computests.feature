@@ -18,10 +18,9 @@ Feature: Calculating the Body Mass Index
   And I should see "<estado>"
   And I should see "<nombre>"
   And I should see "<apellido>"
-  And I should see "<email>"
 
   Examples:
     | nombre | apellido  | telefono  | email             | sexo         | altura | peso | imc | peso_ideal | estado        |
     | paul   | sutcliffe | 998355383 | paul@kosmyka.com  | Masculino    | 1.82   | 95   | 29  | 14%        | Con Sobrepeso |
-    | miles  | davis     | 123456789 | im@milesdavis.com | Masculino    | 1.75   | 85   | 28  | 11%        | Peso ideal    |
+    | miles  | davis     | 123456789 | im@milesdavis.com | Masculino    | 1.75   | 85   | 28  | 11%        | Con Sobrepeso |
   
