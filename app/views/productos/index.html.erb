@@ -14,9 +14,7 @@
 	    </h2>
         
         <% if @productos.empty? %>
-          <% if current_admin %>
-            <%= link_to 'Nuevo producto', new_producto_path %>
-          <% end %>
+        No hay ningún producto.
         <% end %>
         <p>
           SACIAN es un producto exclusivo de Lain y es un saciante natural que te permite realizar tus actividades normales si sentir la ansiedad por comer. Todo lo que tienes que hacer es disover un sobre de SACIAN en 200 cc de agua y beberlo una hora antes de almorzar o cenar. Almuerza o cena en las cantidades habituales y te llenarás rapidamente.
@@ -26,7 +24,7 @@ Con SACIAN, sonríe en vez de comer.
       
       <div id="content-bottom" class="region list-type">
 	    <% if current_admin %>
-          <%= link_to 'Nuevo testimonio', new_producto_path %>
+          <%= link_to 'Nuevo Producto', new_producto_path %>
         <% end %>
         <ul>
 	      <% @productos.each do |producto| %>
