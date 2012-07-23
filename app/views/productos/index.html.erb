@@ -1,33 +1,49 @@
-<h1>Listing productos</h1>
-
-<table>
-  <tr>
-    <th>Nombre</th>
-    <th>Descripcion</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @productos.each do |producto| %>
-  <tr>
-    <td><%= producto.nombre %></td>
-    <td><%= producto.descripcion %></td>
-    <td><%= link_to image_tag(producto.picture(:regular)), producto %></td>
-
-    <% if current_admin %>
-    <td><%= link_to 'Editar', edit_producto_path(producto) %></td>
-    <td><%= link_to 'Eliminar', producto, :confirm => '¿Estás seguro?', :method => :delete %></td>
-    <% end %>
-
-  </tr>
+<% content_for :javascript do %>
+  <%= stylesheet_link_tag '/javascripts/libs/lightbox/themes/white-green/jquery.lightbox.css' %>
+  <%= javascript_include_tag '/javascripts/libs/lightbox/jquery.lightbox.min.js' %>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      jQuery('.lightbox').lightbox();
+    })
+  </script>
 <% end %>
-</table>
 
-<br />
+<div id="content" class="region grid_8 alpha omega tab  <%= 'testimonios-' + params[:tipo] unless params[:tipo] == nil %>">
+        <h2 class="title">
+	      <%= page_title! 'Productos' %>
+	    </h2>
+        
+        <% if @productos.empty? %>
+          <% if current_admin %>
+            <%= link_to 'Nuevo producto', new_producto_path %>
+          <% end %>
+        <% end %>
+        <p>
+          SACIAN es un producto exclusivo de Lain y es un saciante natural que te permite realizar tus actividades normales si sentir la ansiedad por comer. Todo lo que tienes que hacer es disover un sobre de SACIAN en 200 cc de agua y beberlo una hora antes de almorzar o cenar. Almuerza o cena en las cantidades habituales y te llenarás rapidamente.
+Con SACIAN, sonríe en vez de comer.
+        </p>       
+      </div>
+      
+      <div id="content-bottom" class="region list-type">
+	    <% if current_admin %>
+          <%= link_to 'Nuevo testimonio', new_producto_path %>
+        <% end %>
+        <ul>
+	      <% @productos.each do |producto| %>
+          <li>
+            <h3><%= producto.nombre %></h3>
+              <%= link_to image_tag(producto.picture(:thumb)), producto.picture(:regular), :class => 'lightbox', :rel => 'gallery', :title => producto.descripcion %>
+            <%= sanitize(simple_format(truncate(producto.descripcion, :length => 50, :omission => '...')), :tags => %w(p i br b)) %>
+            <% if current_admin %>
+              <div>
+                <%= link_to 'Editar', edit_producto_path(producto) %>
+                <%= link_to 'Eliminar', producto, :confirm => '¿Estás seguro?', :method => :delete %>
+              </div>
+            <% end %>
+          </li>
+          <% end %>
+        </ul>
+      </div>
 
-<% if @productos.empty? %>
-  <% if current_admin %>
-    <%= link_to 'Nuevo producto', new_producto_path %>
-  <% end %>
-<% end %>
+
+

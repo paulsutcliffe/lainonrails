@@ -41,8 +41,15 @@ class ApplicationController < ActionController::Base
       else
         @front = 'not-front'  
       end 
-
-      @body_class = @body_class + ' ' + @front
+      
+      if current_usuario
+        @logged = 'logged-in'  
+      else
+        @logged = 'not-logged-in'
+      end
+      
+      @body_class = @body_class + ' ' + @front + ' ' + @logged
+      
     end
 
     helper_method :body_id
