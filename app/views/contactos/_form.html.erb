@@ -47,7 +47,7 @@
     <%= f.label :mensaje %>
     <%= f.text_area :mensaje %>
     <div>
-      <input type="checkbox" /><label>Acepto que he leído el documento de <%= link_to 'Políticas de privacidad', politicas_path %> y estoy de acuerdo con sus términos.</label>
+      <input type="checkbox" /><label>Acepto que he leído el documento de <%= link_to 'Políticas de privacidad', politicas_path, :target => '_blank' %> y estoy de acuerdo con sus términos.</label>
     </div>
   </div>
   <div class="actions">
