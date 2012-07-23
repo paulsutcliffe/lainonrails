@@ -465,6 +465,7 @@ POSTSCRIPT
 -moz-border-radius:10px; -webkit-border-radius:10px; -o-border-radius:10px; 
 -khtml-border-radius:10px; border-radius:10px}
 
+.front #postscript-top .block:nth-of-type(2) img{width:234px}
 .front #postscript-top .block:nth-of-type(1n+2) img{border:0; height:103px;
 -moz-border-radius:0px; -webkit-border-radius:0px; -o-border-radius:0px; 
 -khtml-border-radius:0px; border-radius:0px}
