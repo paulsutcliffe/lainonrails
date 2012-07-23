@@ -15,7 +15,7 @@ Feature: Creating Ofertas to be displayed on the home page
   Then I should not see "Nueva oferta"
   Given I am an admin not authenticated
   Given I am a new, authenticated user
-  Given that I am on the home page
+  When I visit the "/pe/home" page
   Then I should see the image "picture.png"
 
   
@@ -35,7 +35,7 @@ Feature: Creating Ofertas to be displayed on the home page
   And I should see the image "picture.png"
   Given I am an admin not authenticated
   Given I am a new, authenticated user
-  Given that I am on the home page
+  When I visit the "/pe/home" page
   Then I should see the image "picture.png"
 
   

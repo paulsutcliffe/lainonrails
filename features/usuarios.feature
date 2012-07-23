@@ -5,7 +5,7 @@ Feature: Usuarios
 
   Scenario Outline: creating a new account
   Given I am not authenticated
-  When I go to the "/pe/home" page
+  When I visit the "/pe/home" page
   When I follow "Crear Cuenta"
   And I fill in "Nombre" with "<nombre>"
   And I fill in "Apellido" with "<apellido>"

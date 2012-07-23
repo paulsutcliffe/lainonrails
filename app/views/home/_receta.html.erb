@@ -1,8 +1,0 @@
-<% if current_usuario %>
-  <% if @receta %>
-    <%= image_tag @receta.snapshot(:regular) %>
-    <%= @receta.nombre %>
-    <%= @receta.ingredientes %>
-    <%= @receta.preparacion %>
-  <% end %>
-<% end %>

@@ -12,9 +12,9 @@ Given /^I am a new, authenticated user$/ do
   peso = '85'
   Usuario.new(:nombre => nombre, :apellido => apellido, :telefono => telefono, :altura => altura, :peso => peso, :email => email, :password => password, :password_confirmation => password).save!
 
-  visit '/usuarios/ingresar'
+  visit '/pe/home'
   fill_in "Email", :with => email
   fill_in "Password", :with => password
-  click_button "Sign in"
+  click_button "Ir"
 
 end
