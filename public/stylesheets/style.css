@@ -403,7 +403,7 @@ CONTENT
 */
 
 
-
+#content{width:100%}
 
 #content-wrapper{height:auto !important; height:800px; min-height:800px; float:right; position:relative; z-index:50; margin-bottom:0; 
 background:#fff}
