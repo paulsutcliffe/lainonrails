@@ -413,6 +413,7 @@ background:#fff}
 
 #content .block:last-child{margin-bottom:0}
 #content-bottom-inner{width:410px; float:left}
+.front #content-bottom-inner{width:400px}
 
 #computests.index #computest-resultado,
 #computests.new #new_computest{height:400px; border-bottom:1px solid #999; color:#1a7f98; background-repeat:no-repeat; background-position:100% 100%}
