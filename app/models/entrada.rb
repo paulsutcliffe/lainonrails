@@ -1,5 +1,8 @@
 class Entrada < ActiveRecord::Base
   
+  extend FriendlyId
+  friendly_id :titulo, :use => :slugged
+  
   validates_attachment_content_type :foto, :content_type =>  ['image/png', 'image/jpg', 'image/jpeg']
   validates_attachment_size :foto, :less_than => 4.megabytes
   validates :foto, :titulo, :contenido, :presence => true

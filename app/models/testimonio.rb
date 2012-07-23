@@ -1,5 +1,8 @@
 class Testimonio < ActiveRecord::Base
   
+  extend FriendlyId
+  friendly_id :nombre, :use => :slugged
+  
   validates :nombre, :descripcion, :imagen, :presence => true
   
   validates_attachment_content_type :imagen, :content_type =>  ['image/png', 'image/jpg', 'image/jpeg']

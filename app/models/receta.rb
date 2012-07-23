@@ -1,5 +1,10 @@
 class Receta < ActiveRecord::Base
 
+  extend FriendlyId
+  friendly_id :nombre, :use => :slugged
+
+  validates :nombre, :ingredientes, :preparacion, :presence => true
+
   validates_attachment_content_type :snapshot, :content_type =>  ['image/png', 'image/jpg', 'image/jpeg']
   validates_attachment_size :snapshot, :less_than => 4.megabytes
   
