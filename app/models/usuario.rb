@@ -1,5 +1,7 @@
 class Usuario < ActiveRecord::Base
-  has_one :computest
+  
+  validates :nombre, :apellido, :telefono, :altura, :peso, :presence => true
+  
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,

@@ -4,7 +4,6 @@ class Ad < ActiveRecord::Base
   validates_attachment_size :ad, :less_than => 4.megabytes
   validates_presence_of :ad
   
-  has_attached_file :ad, :styles => { :regular => ["633x120>", :png], :thumb => ["83x32>", :png] },
-                           :convert_options => { :thumb => "-quality 100", :regular => "-quality 100" }
+  has_attached_file :ad, :styles => { :regular => ["633x120>", :png], :thumb => ["83x32>", :png] }
   
 end
