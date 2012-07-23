@@ -738,7 +738,7 @@ DEFAULT BLOCKS
 
 .mbottom-1{margin-bottom:5px}
 .mbottom-2, #contacts.index #content form .field textarea{margin-bottom:10px}
-.mbottom-3, p, #computests #content .field{margin-bottom:15px}
+.mbottom-3, p, #computests #content .field, #contactos #content .field{margin-bottom:15px}
 .mbottom-4, .not-front #content.region, #content-wrapper .block{margin-bottom:20px}
 .mbottom-5{margin-bottom:25px}
 .mbottom-6, #entradas.show #content article header, #entradas.show #content article{margin-bottom:30px}
