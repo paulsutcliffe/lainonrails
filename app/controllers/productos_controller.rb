@@ -1,5 +1,5 @@
 class ProductosController < InheritedResources::Base
-  before_filter :authenticate_admin!, :except => [ :index, :show ]
+  before_filter :authenticate_admin!, :except => [ :index ]
   def create
     create!(:notice => "Producto guardado correctamente.")
   end
