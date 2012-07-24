@@ -9,9 +9,17 @@ class DeviseCreateUsuarios < ActiveRecord::Migration
       # lain specific fields
       t.string :nombre
       t.string :apellido
+      t.string :sexo
+      t.integer :edad
       t.string :telefono
+      t.string :pais
+      
       t.float :altura
       t.float :peso
+      t.string :fuma
+      t.string :hobbies
+      t.string :hizodieta
+      t.string :dondehizodieta
       
       # t.encryptable
       t.confirmable
