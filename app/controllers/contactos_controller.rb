@@ -17,8 +17,6 @@ class ContactosController < InheritedResources::Base
         ContactMailer.contact_registration_sv(@contacto).deliver
       when :cr
         ContactMailer.contact_registration_cr(@contacto).deliver
-      else
-        ContactMailer.contact_registration(@contacto).deliver
       end
       ContactMailer.contact_confirmation(@contacto).deliver
       create!(:notice => "Su mensaje fue enviado con éxito.") { new_contacto_path }
