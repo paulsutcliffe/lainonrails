@@ -15,7 +15,11 @@
         <span>Testimonios</span>
       <% end %>
     </li>
-   
+    <li class="<% if request.path_parameters[:controller] == 'productos' %>selectedLava<% end %>">
+      <%= link_to_unless_current 'Productos', productos_path do %>
+        <span>Productos</span>
+      <% end %>
+    </li>
     <li class="<% if request.path_parameters[:controller] == 'metodo' %>selectedLava<% end %>">
       <%= link_to_unless_current 'Método', metodo_path do %>
         <span>Método</span>
@@ -32,9 +36,5 @@
       <% end %>
     </li>
 
-
-    <% if current_usuario %>
-    <li><%= link_to 'Cerrar Sesión', {:controller=>"devise/sessions", :action=>"destroy"} %></li>
-    <% end %>
   </ul>
 </nav>

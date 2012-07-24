@@ -14,10 +14,7 @@ body, button, input, select, textarea { font-family: sans-serif; color: #222; }
 ::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
 ::selection { background: #fe57a1; color: #fff; text-shadow: none; }
 
-a { color: #00e; }
-a:visited { color: #da0280; }
-a:hover { color: #da0280; }*/
-a:focus { outline: thin dotted; }
+
 a:hover, a:active { outline: 0; }
 
 abbr[title] { border-bottom: 1px dotted; }
@@ -193,7 +190,9 @@ HEADINGS
 */
 
 h1, h2, h3,
-h4, h5, h6{color:#1d8ea4; font-weight:normal; font-family: 'Signika', sans-serif; font-weight:lighter; text-align:left}
+h4, h5, h6,
+.btn,
+#content .actions input{color:#1d8ea4; font-weight:normal; font-family: 'Signika', sans-serif; font-weight:lighter; text-align:left}
 
 h1.title,
 h2.title,
@@ -229,8 +228,11 @@ HEADER-TOP
   filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#95e2f6', endColorstr='#ffffff');  
 }
 
+#user-controls{text-align:right; margin-top:7px}
+
 /* LOGIN FORM */
-#header-top #login{float:right; padding-top:30px; text-align:right}
+#header-top #login{float:right; padding-top:20px; text-align:right}
+#header-top #login legend{text-align:left; color:#1D8EA4; padding-left:77px}
 #header-top .field{margin-right:5px; float:none; clear:none}
 #header-top .field input{width:150px; float:left; line-height/*\**/:200%\9}
 #header-top .field a{font-size:0.8em; color:#22a3b5; float:left; clear:left}
@@ -292,6 +294,7 @@ font-size:1em; line-height:100%; text-transform:uppercase; position:relative; z-
 }
 
 #computests .backLava{display:none !important}
+#computests #menu li.selectedLava a{color:white}
 
 /*
 =============================================
@@ -316,15 +319,17 @@ form
 .field input,
 .field textarea{width:240px; height:20px; padding:0 10px; background:white; border:1px solid #4ab2c0; color:#bcbcbc;
 font-size:0.6em}
+.field select{background:white; padding:3px 0 3px 10px; border:1px solid #4ab2c0; color:#bcbcbc; font-size:0.7em}
 
 .field textarea{width:400px; min-height:100px}
 
-.actions input{height:22px; background:#ff3f83; border:0; font-size:0.9em; color:white;
+#header-top .actions input{height:22px; background:#ff3f83; border:0; font-size:0.9em; color:white;
 -moz-box-shadow:0 0 5px #333; -webkit-box-shadow:0 0 5px #333; -o-box-shadow:0 0 5px #333;
 -khtml-box-shadow:0 0 5px #333; box-shadow:0 0 5px #333}
 
 .field input,
 .field textarea,
+.field select,
 #header-top .actions input{-moz-border-radius:5px; -webkit-border-radius:5px; -o-border-radius:5px; /*text-transform:uppercase*/;
 -khtml-border-radius:5px; border-radius:5px; behavior: url(javascripts/libs/ie-support/PIE-1.0.0/PIE.htc);  position:relative}
 
@@ -394,6 +399,20 @@ SIDEBAR-SECOND
 .front.pe #content-wrapper-inner{min-height:1200px}
 .not-front.pe #content-wrapper-inner{min-height:1200px}
 
+
+/*
+=============================================
+LIGHTBOX
+=============================================
+*/
+
+#productos .jquery-lightbox-button-close,
+#productos .jquery-lightbox-buttons .jquery-lightbox-button-max,
+#productos .jquery-lightbox-buttons .jquery-lightbox-buttons-init,
+#productos .jquery-lightbox-buttons .jquery-lightbox-button-left,
+#productos .jquery-lightbox-buttons .jquery-lightbox-button-right,
+#productos .jquery-lightbox-buttons .jquery-lightbox-buttons-end{background-image:url(../images/icons/jquery-lightbox-theme.png);
+	-moz-transition:none; -webkit-transition:none; -o-transition:none; transition:none}
 
 
 /*
@@ -568,6 +587,7 @@ p{color:#6f7070}
 #contactos.new #content form .field div input,
 #contactos.new #content form .field div label{width:auto; color:#636363; font-size:12px}
 #contactos.new #content form .field div label a{color:#1a7f98}
+#contactos.new #content form .field div label a:hover{text-decoration:underline}
 #contactos.new #content form .field div input{margin:0 10px 0 120px}
 #contactos.new #content form .field div label{width:400px}
 
@@ -838,10 +858,12 @@ BUTTONS
 =============================================
 */
 
-.btn:visited{color:white}
-.btn{text-transform:uppercase; font-size:0.8em; padding:3px 6px}
+
 .btn,
-#content .actions input{color:white; 
+#content .actions input{text-transform:uppercase; font-size:13px; padding:3px 6px}
+.btn,
+#content .actions input{color:white; border:0;
+  -moz-transition:none; -webkit-transition:none; -o-transition:none; transition:none;
   background: #95e2f6;
   background: -webkit-gradient(linear, 0 0, 0 bottom, from(#27bac6), to(#1b8099));
   background: -webkit-linear-gradient(#27bac6, #1b8099);
@@ -853,6 +875,11 @@ BUTTONS
   behavior: url(javascripts/libs/ie-support/PIE-1.0.0/PIE.htc);
   filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#27bac6', endColorstr='#1b8099');  
 }
+.btn:hover,
+#content .actions input:hover{background:#1A7F98; color:white}
+
+.btn:visited{color:white}
+
 /*
 .btn{
 *zoom: expression( 

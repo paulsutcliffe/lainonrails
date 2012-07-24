@@ -56,19 +56,20 @@
     
     </div>
 
-    <% case I18n.locale %> 
-    <% when :pe %>
+    <% if I18n.locale == :pe  %> 
+
     <% if !current_usuario %>
     <div id="login" class="grid_6 omega">
 	  	<%= form_for("usuario", :url => usuario_session_path) do |f| %>
+	      <legend>Ingresa a tu cuenta</legend>
 	      <div class="field">
 	        <%= f.label :email %>
-	        <%= f.email_field :email %>
+	        <%= f.email_field :email, :placeholder => 'Email' %>
 	        <%= link_to 'Crear Cuenta', '/usuarios/registro/inscribirse' %>
 	      </div>
 	      <div class="field">
 	        <%= f.label :password %>
-	        <%= f.password_field :password %>
+	        <%= f.password_field :password, :placeholder => 'Contraseña' %>
 	        <%= link_to "¿Te olvidaste tu contraseña?", '/usuarios/secreto/new' %>
 	      </div>
 	      <div class="actions">
@@ -79,29 +80,17 @@
     </div>
     <% end %>
     <% if current_usuario %>
-      <p>Hola, <%= current_usuario.nombre %></p>
+      <div id="user-controls">
+        <%= link_to 'Cerrar Sesión', {:controller=>"devise/sessions", :action=>"destroy"}, :class => 'btn' %>
+      </div>
+      <p>
+	    Hola, <%= current_usuario.nombre %> <%= image_tag '/images/countries-flags/flag-' + I18n.locale.to_s  + '.png' %>
+	  </p>
     <% end %>
   
-    <% when :cr %>
+    <% else %>
 
-    <%= image_tag '/images/images/logo-lain-costarica.png', :id => 'foreign-logo' %>
-
-    <% when :gt %>
-
-    <!-- Logo Lain -->
-
-    <% when :sv %>
-
-    <!-- Logo Lain -->
-
-    <% when :bo %>
-
-    <!-- Logo Lain -->
-
-    <% when :uy %>
-
-    <!-- Logo Lain -->
-
+      <%= image_tag '/images/logospaiseslain/lain-' + I18n.locale.to_s  + '.png', :id => 'foreign-logo' %>
     <% end %>
 
   </div>
@@ -110,7 +99,7 @@
   <div id="header-inner" class="container_12">
     <%= render 'layouts/menu' %>
     <h1>
-      LAIN, L&iacute;der mundial en Adelgazamiento
+      LAIN, L&iacute;der mundial en Adelgazamiento 
     </h1>
   </div>
 </header>
@@ -119,7 +108,7 @@
   <div id="main">
     <div id="sidebar-first" class="grid_3 region">
       <div id="sidebar-first-inner">
-	  <%= link_to image_tag('/images/logo.png'), home_path, :id => 'logo', :class => 'block'  %>
+	  <%= link_to image_tag('/images/logospaiseslain/lain-pe.png'), home_path, :id => 'logo', :class => 'block'  %>
       <%= render :partial => '/layouts/sidebar' %>
       </div>
     </div><!-- END: sidebar-first -->
