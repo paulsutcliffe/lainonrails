@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120717171150) do
+ActiveRecord::Schema.define(:version => 20120725174022) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false
@@ -142,6 +142,20 @@ ActiveRecord::Schema.define(:version => 20120717171150) do
   end
 
   add_index "productos", ["slug"], :name => "index_productos_on_slug"
+
+  create_table "promociones", :force => true do |t|
+    t.string   "nombre"
+    t.string   "pais"
+    t.string   "slug"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "publicidad_file_name"
+    t.string   "publicidad_content_type"
+    t.integer  "publicidad_file_size"
+    t.datetime "publicidad_updated_at"
+  end
+
+  add_index "promociones", ["slug"], :name => "index_promociones_on_slug", :unique => true
 
   create_table "recetas", :force => true do |t|
     t.string   "nombre"

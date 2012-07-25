@@ -7,7 +7,7 @@ class CreateProductos < ActiveRecord::Migration
 
       t.timestamps
     end
-    add_index :productos, :slug, :use => true
+    add_index :productos, :slug, :unique => true
   end
 
   def self.down

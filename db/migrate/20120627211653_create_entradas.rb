@@ -7,7 +7,7 @@ class CreateEntradas < ActiveRecord::Migration
 
       t.timestamps
     end
-    add_index :entradas, :slug, :use => true
+    add_index :entradas, :slug, :unique => true
   end
 
   def self.down

@@ -8,7 +8,7 @@ class CreateRecetas < ActiveRecord::Migration
 
       t.timestamps
     end
-    add_index :recetas, :slug, :use => true
+    add_index :recetas, :slug, :unique => true
   end
 
   def self.down

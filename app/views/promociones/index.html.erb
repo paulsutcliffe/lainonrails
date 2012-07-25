@@ -1,0 +1,33 @@
+<div id="content" class="region grid_8 alpha omega tab">
+  <h2 class="title">
+    <%= page_title! 'Promociones' %>
+  </h2>
+  <% if @promociones.empty? %>
+  <p>	
+    No hay ninguna promoción.
+  </p>
+  <% end %>
+</div>
+      
+<div id="content-bottom" class="region">
+  <% if current_admin %>
+    <%= link_to 'Nueva Promoción', new_promocion_path, :class => 'btn' %>
+  <% end %>
+  <ul>
+    <% @promociones.each do |promocion| %>
+      <li>
+        <h3><%= promocion.nombre %></h3>
+        <%= link_to image_tag(promocion.publicidad(:regular)), promocion %>
+        <% if current_admin %>
+        <div>
+          <%= link_to 'Editar', edit_promocion_path(promocion), :class => 'btn' %>
+          <%= link_to 'Eliminar', promocion, :confirm => '¿Estás seguro?', :method => :delete, :class => 'btn' %>
+        </div>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+
+

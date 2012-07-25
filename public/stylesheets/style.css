@@ -209,6 +209,11 @@ h6.title,
 #testimonios .testimonios-video h2.title a:nth-child(1),
 #testimonios .testimonios-antesydespues h2.title a:nth-child(2){font-size:1em; color:#1D8EA4; margin-right:10px}
 
+#promociones h3{border-top:1px solid #ccc; padding-top:15px; margin-top:30px}
+#promociones h2.title{border-bottom:1px solid #ccc; margin-right:40px; padding-bottom:15px}{border-bottom:1px solid #ccc; margin-right:40px; padding-bottom:15px}
+
+
+
 /*
 =============================================
 HEADER-TOP

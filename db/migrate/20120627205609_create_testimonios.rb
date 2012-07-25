@@ -10,7 +10,7 @@ class CreateTestimonios < ActiveRecord::Migration
 
       t.timestamps
     end
-    add_index :testimonios, :slug, :use => true
+    add_index :testimonios, :slug, :unique => true
   end
 
   def self.down

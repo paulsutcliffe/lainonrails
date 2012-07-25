@@ -1,0 +1,25 @@
+<%= form_for(@promocion, :html => { :multipart => true }) do |f| %>
+  <% if @promocion.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@promocion.errors.count, "error") %> prohibited this promocion from being saved:</h2>
+
+      <ul>
+      <% @promocion.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nombre %><br />
+    <%= f.text_field :nombre %>
+  </div>
+  <div class="field">
+    <%= f.label :publicidad, "Imagen" %><br />
+    <%= f.file_field :publicidad %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Guardar" %>
+  </div>
+<% end %>

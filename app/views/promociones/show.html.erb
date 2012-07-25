@@ -1,0 +1,32 @@
+<% content_for :javascript do %>
+  <%= stylesheet_link_tag '/javascripts/libs/lightbox/themes/white-green/jquery.lightbox.css' %>
+  <%= javascript_include_tag '/javascripts/libs/lightbox/jquery.lightbox.min.js' %>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      jQuery('.lightbox').lightbox();
+    })
+  </script>
+<% end %>
+
+<div id="content" class="region grid_8 alpha omega tab">
+        <h2 class="title">
+	      <%= page_title! @promocion.nombre %>
+	    </h2>
+        <p>
+	    
+	    </p>
+        
+      </div>
+      
+      <div id="content-bottom" class="region list-type">
+
+        <%= link_to image_tag(@promocion.publicidad(:regular)), @promocion.publicidad(:facebook), :class => 'lightbox', :rel => 'gallery' %>
+
+        <div>
+	      <% if current_admin %>
+            <%= link_to 'Editar', edit_promocion_path(@promocion), :class => 'btn' %>
+           <% end %>
+          <%= link_to 'Atrás', promociones_path, :class => 'btn' %>
+        </div>
+    
+      </div>
