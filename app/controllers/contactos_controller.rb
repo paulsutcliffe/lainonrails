@@ -1,5 +1,13 @@
 class ContactosController < InheritedResources::Base
-  before_filter :authenticate_admin!, :except => [ :new, :create ]
+  before_filter :authenticate_admin!, :except => [ :new ]
+  before_filter :find_pais, :except => [ :new ]
+  
+  def find_pais
+    if params[:locale]
+      @contactos = Contacto.where("pais = ?", params[:locale])
+    end
+  end
+  
   def create
     @contacto = Contacto.new(params[:contacto])
     @contacto.pais = params[:locale]
