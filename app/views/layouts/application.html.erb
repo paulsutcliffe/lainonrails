@@ -84,13 +84,13 @@
         <%= link_to 'Cerrar Sesión', {:controller=>"devise/sessions", :action=>"destroy"}, :class => 'btn' %>
       </div>
       <p>
-	    Hola, <%= current_usuario.nombre %> <%= image_tag '/images/countries-flags/flag-' + I18n.locale.to_s  + '.png' %>
+	    Hola, <%= current_usuario.nombre %> <%= image_tag '/images/countries-flags/flag-' + I18n.locale.to_s  + '.jpg' %>
 	  </p>
     <% end %>
   
     <% else %>
 
-      <%= image_tag '/images/logospaiseslain/lain-' + I18n.locale.to_s  + '.jpg', :id => 'foreign-logo' %>
+      <%= image_tag '/images/logospaiseslain/lain-' + I18n.locale.to_s  + '.png', :id => 'foreign-logo' %>
     <% end %>
 
   </div>
