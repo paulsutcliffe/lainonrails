@@ -319,10 +319,20 @@ form
 =============================================
 */
 
-#content label{width:120px; float:left; color:#1a7f98}
+#devise-registrations #content-wrapper form{width:100%}
+#devise-registrations #content-wrapper form div,
+#devise-registrations #content-wrapper form a{float:left; clear:left}
+#content label,
+#devise-registrations #content-wrapper label{width:120px; float:left; color:#1a7f98}
+#devise-registrations #content-wrapper br{display:none}
 .field{width:100%; 	float:left; clear:left}
 .field input,
-.field textarea{width:240px; height:20px; padding:0 10px; background:white; border:1px solid #4ab2c0; color:#bcbcbc;
+.field textarea,
+#devise-registrations #content-wrapper input[type="text"],
+#devise-registrations #content-wrapper input[type="password"],
+#devise-registrations #content-wrapper select,
+#devise-registrations #content-wrapper input[type="email"],
+#devise-registrations #content-wrapper textarea{width:240px; height:20px; padding:0 10px; background:white; border:1px solid #4ab2c0; color:#bcbcbc;
 font-size:0.6em}
 .field select{background:white; padding:3px 0 3px 10px; border:1px solid #4ab2c0; color:#bcbcbc; font-size:0.7em}
 
@@ -701,6 +711,7 @@ BLOCKS
 #sidebar-first #block-contactanos{border:0}
 #sidebar-first #block-contactanos span{display:block; margin-bottom:20px; float:left}
 #sidebar-first #block-contactanos .content{float:left; clear:left}
+#sidebar-first #block-contactanos .flag{position:relative; right:-35px}
 #sidebar-first #block-contactanos p{color:white; font-size:1.5em; font-weight:normal}
 
 .pe #sidebar-first #block-contactanos p span.email{font-size:0.7em; margin:0}
@@ -763,7 +774,7 @@ DEFAULT BLOCKS
 
 .mbottom-1{margin-bottom:5px}
 .mbottom-2, #contacts.index #content form .field textarea{margin-bottom:10px}
-.mbottom-3, p, #computests #content .field, #contactos #content .field{margin-bottom:15px}
+.mbottom-3, p, #computests #content .field, #contactos #content .field, #devise-registrations #content-wrapper form div{margin-bottom:15px}
 .mbottom-4, .not-front #content.region, #content-wrapper .block{margin-bottom:20px}
 .mbottom-5{margin-bottom:25px}
 .mbottom-6, #entradas.show #content article header, #entradas.show #content article{margin-bottom:30px}
