@@ -5,7 +5,8 @@ class ApplicationController < ActionController::Base
   before_filter :load_general_information
   
   def load_general_information
-    @cabecera_banner = CabeceraBanner.first
+    @cabecera_banner = CabeceraBanner.where("pais = ?", params[:locale]).first
+    @promocion_link = Promocion.where("pais = ?", params[:locale]).first
     @informacion = Informacion.where("pais = ?", params[:locale]).first
     @meta_tags = Meta.first
   end

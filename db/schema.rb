@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(:version => 20120725174022) do
   end
 
   create_table "cabecera_banners", :force => true do |t|
+    t.string   "pais"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "cabecera_banner_file_name"
@@ -101,7 +102,7 @@ ActiveRecord::Schema.define(:version => 20120725174022) do
     t.datetime "foto_updated_at"
   end
 
-  add_index "entradas", ["slug"], :name => "index_entradas_on_slug"
+  add_index "entradas", ["slug"], :name => "index_entradas_on_slug", :unique => true
 
   create_table "informaciones", :force => true do |t|
     t.string   "telefono_fijo"
@@ -141,7 +142,7 @@ ActiveRecord::Schema.define(:version => 20120725174022) do
     t.datetime "picture_updated_at"
   end
 
-  add_index "productos", ["slug"], :name => "index_productos_on_slug"
+  add_index "productos", ["slug"], :name => "index_productos_on_slug", :unique => true
 
   create_table "promociones", :force => true do |t|
     t.string   "nombre"
@@ -170,7 +171,7 @@ ActiveRecord::Schema.define(:version => 20120725174022) do
     t.datetime "snapshot_updated_at"
   end
 
-  add_index "recetas", ["slug"], :name => "index_recetas_on_slug"
+  add_index "recetas", ["slug"], :name => "index_recetas_on_slug", :unique => true
 
   create_table "slides", :force => true do |t|
     t.datetime "created_at"
@@ -210,7 +211,7 @@ ActiveRecord::Schema.define(:version => 20120725174022) do
     t.datetime "imagen_updated_at"
   end
 
-  add_index "testimonios", ["slug"], :name => "index_testimonios_on_slug"
+  add_index "testimonios", ["slug"], :name => "index_testimonios_on_slug", :unique => true
 
   create_table "usuarios", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false

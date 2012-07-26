@@ -10,7 +10,7 @@
 </div>
       
 <div id="content-bottom" class="region">
-  <% if current_admin %>
+  <% if @promociones.empty? and current_admin %>
     <%= link_to 'Nueva Promoción', new_promocion_path, :class => 'btn' %>
   <% end %>
   <ul>

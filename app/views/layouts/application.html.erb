@@ -51,7 +51,7 @@
     <div id="banner" class="grid_6 alpha">
      
       <% if @cabecera_banner %>
-        <%= image_tag @cabecera_banner.cabecera_banner(:regular) %>
+        <%= link_to image_tag(@cabecera_banner.cabecera_banner(:regular)), @promocion_link %>
       <% end %>
     
     </div>

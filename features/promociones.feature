@@ -18,6 +18,7 @@ Feature: Creating Promociones for every country
     Given I am an admin not authenticated
     When I visit the "/<country>/promociones" page
     Then I should see the image "picture.jpg"
+    And I should not see "Nueva Promoción"
     When I visit the "/<other_country>/promociones" page
     Then I should not see the image "picture.jpg"
 
