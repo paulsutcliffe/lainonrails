@@ -1,11 +1,13 @@
 require "bundler/capistrano"
 
-set :gateway, "walterweb@190.41.229.186"
-set :user, "walter"
-set :domain, "192.168.0.2"
+default_environment['PATH']='/usr/lib/ruby/gems/1.8/bin:/home/lainonrails/.gems/bin:/usr/local/bin:/usr/bin:/bin'
+default_environment['GEM_PATH']='/home/lainonrails/.gems:/usr/lib/ruby/gems/1.8'
+
+set :user, "lainonrails"
+set :domain, "yorkville.dreamhost.com"
 set :project, "lainonrails"
 set :application, "lainonrails"
-set :applicationdir, "/var/www/lainadelgaza_rubyrails"
+set :applicationdir, "/home/#{user}/#{user}"
 set :repository,  "git@github.com:paulsutcliffe/lainonrails.git"
 default_run_options[:pty] = true
 
@@ -21,7 +23,7 @@ set :deploy_to, applicationdir
 
 role :web, domain                          # Your HTTP server, Apache/etc
 role :app, domain                          # This may be the same as your `Web` server
-role :db,  domain, :primary => true        # This is where Rails migrations will run
+role :db,  domain, :primary => true # This is where Rails migrations will run
 
 set :use_sudo, false
 
