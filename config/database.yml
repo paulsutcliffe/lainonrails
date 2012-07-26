@@ -19,11 +19,11 @@ production:
   adapter: mysql
   encoding: utf8
   reconnect: false
-  host: lainonrailsdb.avance.kosmyka.com
+  host: localhost
   database: lainonrails_production
   pool: 5
   username: lainonrailsdb
-  password: chimpance99
+  password: lainonrails99
   #socket: /tmp/mysql.sock
 
 cucumber:
