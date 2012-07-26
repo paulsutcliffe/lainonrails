@@ -19,8 +19,8 @@ production:
   adapter: mysql
   encoding: utf8
   reconnect: false
-  host: localhost
-  database: lainonrailsdb.avance.kosmyka.com
+  host: lainonrailsdb.avance.kosmyka.com
+  database: lainonrails_production
   pool: 5
   username: lainonrailsdb
   password: chimpance99
