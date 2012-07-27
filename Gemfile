@@ -6,7 +6,7 @@ gem 'rails', '3.0.3'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 #gem "mysql", "~> 2.8.1"
-gem "mysql2"
+gem "mysql2", "~> 0.2.7"
 gem "paperclip", "~>2.0"
 gem "will_paginate"
 gem "inherited_resources"
