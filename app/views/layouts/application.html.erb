@@ -23,9 +23,10 @@
 	<meta name="geo.region" content="PE-LIM" />
 	<meta name="geo.placename" content="Miraflores" />
 	
+	<%= favicon_link_tag '/images/icons/favicon.png' %>
 	
-    <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Signika:300,400,600', '/javascripts/libs/adapt/styles/960.css', 'style.css' %>
-    <%= javascript_include_tag '/javascripts/libs/modernizr/development-modernizr.js' %>
+    <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Signika:300,400,600' %>
+    <%= javascript_include_tag '/javascripts/libs/modernizr/modernizr.js' %>
     <%= javascript_include_tag :defaults %>
 
 <!-- jQuery easing dependant
@@ -128,7 +129,7 @@
       
     </div><!-- END: content-wrapper -->
 	<footer>
-         <p>Copyright © 2012. Lain Intercorp S.A. Todos los derechos reservados.</p>
+         <p>Copyright ©<%= Time.now.year %>. Lain Intercorp S.A. Todos los derechos reservados.</p>
       </footer>
   </div><!-- END: main -->
 </div><!-- END: main-wrapper -->
