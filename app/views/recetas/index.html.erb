@@ -12,10 +12,9 @@
 
 <% @recetas.each do |receta| %>
   <tr>
-    <td><%= receta.nombre %></td>
+    <td><%= link_to receta.nombre, receta %></td>
     <td><%= receta.ingredientes %></td>
     <td><%= receta.preparacion %></td>
-    <td><%= link_to image_tag(receta.snapshot(:thumb)), receta %></td>
 
     <% if current_admin %>
     <td><%= link_to 'Editar', edit_receta_path(receta) %></td>

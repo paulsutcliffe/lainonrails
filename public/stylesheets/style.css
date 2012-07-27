@@ -230,7 +230,7 @@ HEADER-TOP
   background: -o-linear-gradient(#95e2f6, #ffffff);
   background: linear-gradient(#95e2f6, #ffffff);
   -pie-background: linear-gradient(#95e2f6, #ffffff);
-  behavior: url(javascripts/libs/ie-support/PIE-1.0.0/PIE.htc);
+  behavior: url(/javascripts/libs/ie-support/PIE-1.0.0/PIE.htc);
   filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#95e2f6', endColorstr='#ffffff');  
 }
 
@@ -347,7 +347,7 @@ font-size:0.6em}
 .field textarea,
 .field select,
 #header-top .actions input{-moz-border-radius:5px; -webkit-border-radius:5px; -o-border-radius:5px; /*text-transform:uppercase*/;
--khtml-border-radius:5px; border-radius:5px; behavior: url(javascripts/libs/ie-support/PIE-1.0.0/PIE.htc);  position:relative}
+-khtml-border-radius:5px; border-radius:5px; behavior: url(/javascripts/libs/ie-support/PIE-1.0.0/PIE.htc);  position:relative}
 
 
 /*
@@ -370,7 +370,7 @@ MAIN
   background: -o-linear-gradient(#28c0ca, #1a7f98);
   background: linear-gradient(#28c0ca, #1a7f98);
   -pie-background: linear-gradient(#28c0ca, #1a7f98);
-  behavior: url(javascripts/libs/ie-support/PIE-1.0.0/PIE.htc);
+  behavior: url(/javascripts/libs/ie-support/PIE-1.0.0/PIE.htc);
   filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#28c0ca', endColorstr='#1a7f98'); } 
 
 /*
@@ -582,7 +582,7 @@ background:url(../images/backgrounds/bg-llave-left.png) no-repeat 0 0,
 url(../images/backgrounds/bg-llave-right.png) no-repeat 100% 0;
 *-pie-background:url(../images/backgrounds/bg-llave-left.png) no-repeat top left,
 url(../images/backgrounds/bg-llave-right.png) no-repeat top right;
-behavior: url(javascripts/libs/ie-support/PIE-1.0.0/PIE.htc); position:relative; z-index:10}
+behavior: url(/javascripts/libs/ie-support/PIE-1.0.0/PIE.htc); position:relative; z-index:10}
 #home.index #postscript-bottom .block .inner{margin:15px 40px 20px}
 #home.index #postscript-bottom .block .inner p{text-align:justify}
 
@@ -912,7 +912,7 @@ BUTTONS
   background: -o-linear-gradient(#27bac6, #1b8099);
   background: linear-gradient(#27bac6, #1b8099);
   -pie-background: linear-gradient(#27bac6, #1b8099);
-  behavior: url(javascripts/libs/ie-support/PIE-1.0.0/PIE.htc);
+  behavior: url(/javascripts/libs/ie-support/PIE-1.0.0/PIE.htc);
   filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#27bac6', endColorstr='#1b8099');  
 }
 .btn:hover,
