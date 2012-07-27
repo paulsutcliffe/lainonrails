@@ -453,14 +453,14 @@ background:#fff}
 #computests.index #computest-resultado,
 #computests.new #new_computest{height:400px; border-bottom:1px solid #999; color:#1a7f98; background-repeat:no-repeat; background-position:100% 100%}
 #computests.index.bo #computest-resultado,
-#computests.new.bo #new_computest{background-image:url(../images/backgrounds/bg-computest-bo.png)}
+#computests.new.bo #new_computest{background-image:url(../images/backgrounds/bg-computest-pe.png)}
 #computests.index.cr #computest-resultado,
-#computests.new #new_computest{background-image:url(../images/backgrounds/bg-computest-cr.png)}
-#computests.index.gt #computest-resultado{background-image:url(../images/backgrounds/bg-computest-gt.png)}
+#computests.new #new_computest{background-image:url(../images/backgrounds/bg-computest-pe.png)}
+#computests.index.gt #computest-resultado{background-image:url(../images/backgrounds/bg-computest-pe.png)}
 #computests.index.pe #computest-resultado,
 #computests.new.pe #new_computest{background-image:url(../images/backgrounds/bg-computest-pe.png)}
-#computests.index.sv #computest-resultado{background-image:url(../images/backgrounds/bg-computest-sv.png)}
-#computests.index.uy #computest-resultado{background-image:url(../images/backgrounds/bg-computest-uy.png)}
+#computests.index.sv #computest-resultado{background-image:url(../images/backgrounds/bg-computest-pe.png)}
+#computests.index.uy #computest-resultado{background-image:url(../images/backgrounds/bg-computest-pe.png)}
 
 #computests.index #computest-resultado span{display:block}
 #computest-resultado span#indice{font-size:24px}

@@ -22,7 +22,7 @@
     <figure>
 	  <%= image_tag @entrada.foto(:regular) %>
 	</figure>
-    <%= sanitize(simple_format(@entrada.contenido), :tags => %w(p i br b)) %>
+    <%= sanitize(simple_format(truncate(@entrada.contenido, :length => 2500, :omission => '...')), :tags => %w(p i br b)) %>
     
 	<footer>
 	  <%= link_to 'Volver', entradas_path, :class => 'btn back' %>

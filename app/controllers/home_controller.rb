@@ -5,7 +5,7 @@ class HomeController < ApplicationController
   def index
     @banner = Banner.where("pais = ?", params[:locale]).first
     @ad = Ad.first
-    @receta = Receta.order("RAND()").first
+    @receta = Receta.where("pais = ?", params[:locale]).first
     if current_usuario
       @oferta = Oferta.first
     else

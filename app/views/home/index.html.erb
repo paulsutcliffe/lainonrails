@@ -50,7 +50,7 @@
     </div>
     <% end %>
 
-    <% if current_usuario or I18n.locale == :cr %>
+    <% if current_usuario or I18n.locale != :pe %>
     <% if @receta %>
     <div id="block-receta" class="block">
       <h2 class="title">La Receta Saludable</h2>

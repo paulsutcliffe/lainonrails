@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120727013408) do
+ActiveRecord::Schema.define(:version => 20120727042050) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false
@@ -172,6 +172,7 @@ ActiveRecord::Schema.define(:version => 20120727013408) do
     t.string   "snapshot_content_type"
     t.integer  "snapshot_file_size"
     t.datetime "snapshot_updated_at"
+    t.string   "pais"
   end
 
   add_index "recetas", ["slug"], :name => "index_recetas_on_slug", :unique => true
