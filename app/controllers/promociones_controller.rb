@@ -1,3 +1,4 @@
+#encoding: utf-8
 class PromocionesController < InheritedResources::Base
   
   before_filter :authenticate_admin!, :except => [ :index, :show ]

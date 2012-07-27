@@ -1,3 +1,4 @@
+#encoding: utf-8
 class InformacionesController < InheritedResources::Base
   before_filter :authenticate_admin!
   before_filter :find_pais
