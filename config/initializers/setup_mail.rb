@@ -1,11 +1,11 @@
  ActionMailer::Base.smtp_settings = {
-  :address              => "smtp.gmail.com",
+  :address              => "smtp.lainadelgaza.net",
   :port                 => 587,
-  :domain               => "kosmyka.com",
-  :user_name            => "paulyoyo",
-  :password             => "UTd-BIAvBs=n",
+  :domain               => "lainadelgaza.net",
+  :user_name            => "info@lainadelgaza.net",
+  :password             => "ugEIwjJ9",
   :authentication       => "plain",
   :enable_starttls_auto => true
 }
 
-ActionMailer::Base.default_url_options[:host] = "localhost:3000"
+ActionMailer::Base.default_url_options[:host] = "localhost"

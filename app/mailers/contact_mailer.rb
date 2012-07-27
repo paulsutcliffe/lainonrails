@@ -1,5 +1,5 @@
 class ContactMailer < ActionMailer::Base
-  default :from => "contacto@lainadelgaza.net"
+  default :from => "info@lainadelgaza.net"
   
   def contact_confirmation(contact)
     @contacto = contact
