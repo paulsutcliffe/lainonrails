@@ -1,3 +1,4 @@
+#encoding: utf-8
 class ContactMailer < ActionMailer::Base
   default :from => "info@lainadelgaza.net"
   
