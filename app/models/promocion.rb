@@ -7,6 +7,6 @@ class Promocion < ActiveRecord::Base
   validates_attachment_size :publicidad, :less_than => 4.megabytes
   validates_presence_of :publicidad
   
-  has_attached_file :publicidad, :styles => { :facebook => ["851x315#", :jpg], :regular => ["630x233#", :jpg] }
+  has_attached_file :publicidad, :styles => { :facebook => ["851x315#", :jpg], :regular => ["600x222#", :jpg] }
   
 end

@@ -200,7 +200,8 @@ h6.title,
 #sidebar-first .block span{font-size:1.5em; font-weight:lighter}
 
 #computests h2.title,
-#testimonios h2.title{border-bottom:1px solid #ccc; margin-right:40px; padding-bottom:15px}{border-bottom:1px solid #ccc; margin-right:40px; padding-bottom:15px}
+#testimonios h2.title,
+#productos h2.title{border-bottom:1px solid #ccc; margin-right:40px; padding-bottom:15px}{border-bottom:1px solid #ccc; margin-right:40px; padding-bottom:15px}
 
 #testimonios h2.title{margin-right:0px}
 #testimonios h2.title a,
@@ -696,6 +697,27 @@ p{color:#6f7070}
 
 #computests.show .btn.back{float:left; clear:left}
 
+
+/* productos */
+#productos .list-product li{border-bottom:1px solid #ccc; float:left; clear:left}
+
+/* remover cuando se corrija */
+.list-product li p,
+#productos.show #content p{width:600px}
+#productos.show #content-bottom .lightbox{float:left}
+.list-product li a.lightbox{float:left; margin-bottom:5px}
+/* remover cuando se corrija */
+#productos .list-product li .social{width:auto; height:auto; float:right}
+#productos .list-product li .social span{position:relative; top:-8px; margin-right:5px}
+#productos .list-product li .social ul span,
+#productos .list-product li .social ul{display:inline-block; *display:inline; *zoom:1}
+#productos .list-product li .social ul li{border-bottom:0; margin:0; padding:0}
+
+.video-light{position:relative; float:left; margin:20px 15px 10px 0}
+.video-light:nth-of-type(3){margin-right:0}
+.video-light iframe{position:relative; z-index:1}
+.video-light a{position:absolute; top:0; left:0; z-index:500; width:190px; height:119px}
+
 /*
 =============================================
 BLOCKS
@@ -774,7 +796,8 @@ DEFAULT BLOCKS
 
 .mbottom-1{margin-bottom:5px}
 .mbottom-2, #contacts.index #content form .field textarea{margin-bottom:10px}
-.mbottom-3, p, #computests #content .field, #contactos #content .field, #devise-registrations #content-wrapper form div{margin-bottom:15px}
+.mbottom-3, p, #computests #content .field, #contactos #content .field, #devise-registrations #content-wrapper form div,
+#productos .list-product li{margin-bottom:15px}
 .mbottom-4, .not-front #content.region, #content-wrapper .block{margin-bottom:20px}
 .mbottom-5{margin-bottom:25px}
 .mbottom-6, #entradas.show #content article header, #entradas.show #content article{margin-bottom:30px}
@@ -811,7 +834,7 @@ DEFAULT BLOCKS
 .ptop-6{padding-top:30px}
 .ptop-7{padding-top:35px}
 .ptop-8{padding-top:40px}
-.ptop-9, #entradas.index #content article{padding-top:45px}
+.ptop-9, #entradas.index #content article, #productos.index #content article{padding-top:45px}
 .ptop-10{padding-top:50px}
 .ptop-11{padding-top:55px}
 .ptop-12{padding-top:60px}
@@ -836,7 +859,8 @@ DEFAULT BLOCKS
 
 .pbottom-1{padding-bottom:5px}
 .pbottom-2{padding-bottom:10px}
-.pbottom-3, #entradas #content article, #entradas.show #content article header{padding-bottom:15px}
+.pbottom-3, #entradas #content article, #entradas.show #content article header, #productos #content article,
+#productos .list-product li{padding-bottom:15px}
 .pbottom-4{padding-bottom:20px}
 .pbottom-5, #logo, #sidebar-first .block{padding-bottom:25px}
 .pbottom-6{padding-bottom:30px}

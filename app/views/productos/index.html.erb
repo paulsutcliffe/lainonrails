@@ -8,38 +8,88 @@
   </script>
 <% end %>
 
-<div id="content" class="region grid_8 alpha omega tab  <%= 'testimonios-' + params[:tipo] unless params[:tipo] == nil %>">
-        <h2 class="title">
-	      <%= page_title! 'Productos' %>
-	    </h2>
-        
-        <% if @productos.empty? %>
-        No hay ningún producto.
-        <% end %>
-        <p>
-        </p>       
-      </div>
-      
-      <div id="content-bottom" class="region list-type">
-	    <% if current_admin %>
-          <%= link_to 'Nuevo Producto', new_producto_path %>
-        <% end %>
-        <ul>
-	      <% @productos.each do |producto| %>
-          <li>
-            <h3><%= producto.nombre %></h3>
-              <%= link_to image_tag(producto.picture(:thumb)), producto.picture(:regular), :class => 'lightbox', :rel => 'gallery', :title => producto.descripcion %>
-            <%= sanitize(simple_format(truncate(producto.descripcion, :length => 50, :omission => '...')), :tags => %w(p i br b)) %>
-            <% if current_admin %>
-              <div>
-                <%= link_to 'Editar', edit_producto_path(producto) %>
-                <%= link_to 'Eliminar', producto, :confirm => '¿Estás seguro?', :method => :delete %>
-              </div>
-            <% end %>
-          </li>
-          <% end %>
-        </ul>
-      </div>
+
+<section id="content" class="region">
+<h2 class="title"><%= page_title! 'Productos' %></h2>
+
+<% if current_admin %>
+  <div class="admin-controls">
+    <%= link_to 'Nuevo Producto', new_producto_path, :class => 'btn new' %>
+  </div>
+<% end %>
+<p>
+	<% if @productos.empty? %>
+    No hay ningún producto.
+    <% end %>	
+</p>	
+
+
+<div class="region list-product">
+<ul>
+  <% @productos.each do |producto| %>
+  <li>
+	<div class="social">
+	  <span>Compartir en</span>
+      <ul>
+	    <li class="facebook"><a href="http://www.facebook.com/sharer.php?u=<%= request.protocol + request.host_with_port + producto_path(producto) %>"></a></li>
+	  </ul>
+	</div>
+    <h3><%= producto.nombre %></h3>
+    
+
+    <p>
+      <%= producto.descripcion %>
+    </p>
+    <%= link_to image_tag(producto.picture(:regular)), producto.picture(:facebook), :class => 'lightbox', :rel => 'gallery-' + producto.nombre, :title => producto.nombre  %>
+  
+   
+    <div class="video-light">
+      <%= producto.video_link1_html %>
+      <%= link_to '', producto.video_link1, :class => 'over lightbox', :rel => 'gallery-' + producto.nombre, :title => producto.nombre  %>
+    </div>
+
+
+
+    <div class="video-light">
+      <%= producto.video_link2_html %>
+      <%= link_to '', producto.video_link1, :class => 'over lightbox', :rel => 'gallery' + producto.nombre, :title => producto.nombre %>
+    </div>
+
+
+
+    <div class="video-light">
+      <%= producto.video_link3_html %>
+      <%= link_to '', producto.video_link1, :class => 'over lightbox', :rel => 'gallery' + producto.nombre, :title => producto.nombre %>
+    </div>
+
+
+    <div>
+      <% if current_admin %>
+        <%= link_to 'Editar', edit_producto_path(producto), :class => 'btn edit' %>
+        <%= link_to 'Eliminar', producto, :confirm => '¿Estás seguro?', :method => :delete, :class => 'btn del' %>
+       <% end %>
+    </div>
+    
+
+  </li>
+<% end %>
+</ul>
+
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

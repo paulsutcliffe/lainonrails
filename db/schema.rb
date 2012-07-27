@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120725174022) do
+ActiveRecord::Schema.define(:version => 20120727013408) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false
@@ -140,6 +140,9 @@ ActiveRecord::Schema.define(:version => 20120725174022) do
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
+    t.string   "video_link1"
+    t.string   "video_link2"
+    t.string   "video_link3"
   end
 
   add_index "productos", ["slug"], :name => "index_productos_on_slug", :unique => true

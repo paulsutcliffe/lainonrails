@@ -19,7 +19,7 @@ Feature: Creating productos
   When I visit the "/productos" page
   Then I should see "Sacián"
   And I should see "Sonríe en vez de comer."
-  And I should see the image "picture.png"
+  And I should see the image "picture.jpg"
 
   
   Scenario: editing productos
