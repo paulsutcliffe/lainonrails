@@ -1,40 +1,89 @@
+<div id="content">
+	
 <h2><%= page_title! 'Editar' %> <%= resource_name.to_s.humanize %></h2>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
   <%= devise_error_messages! %>
 
-  <div><%= f.label :nombre %><br />
-  <%= f.text_field :nombre %></div>
+  <div class="field">
+    <%= f.label :nombre %>
+    <%= f.text_field :nombre %>
+  </div>
 
-  <div><%= f.label :apellido %><br />
-  <%= f.text_field :apellido %></div>
+  <div class="field">
+    <%= f.label :apellido %>
+    <%= f.text_field :apellido %>
+  </div>
 
-  <div><%= f.label :telefono %><br />
-  <%= f.text_field :telefono %></div>
+  <div class="field">
+    <%= f.label :sexo %>
+    <%= f.select(:sexo, options_for_select( ['Masculino', 'Femenino'], 'Masculino' ) ) %>
+  </div>
 
-  <div><%= f.label :altura %><br />
-  <%= f.text_field :altura %></div>
+  <div class="field">
+    <%= f.label :edad %>
+    <%= f.text_field :edad %>
+  </div>  
 
-  <div><%= f.label :peso %><br />
-  <%= f.text_field :peso %></div>
+  <div class="field">
+    <%= f.label :email, "E-Mail" %>
+    <%= f.email_field :email %>
+  </div>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
+  <div class="field">
+    <%= f.label :telefono, "Teléfono" %>
+    <%= f.text_field :telefono %>
+  </div>
 
-  <div><%= f.label :password, "Contraseña" %> <i>(déjela en blanco si no quiere cambiarla)</i><br />
-  <%= f.password_field :password %></div>
+  <div class="field"><%= f.label :password, "Contraseña" %> <i>(déjela en blanco si no quiere cambiarla)</i>
+    <%= f.password_field :password %>
+  </div>
 
-  <div><%= f.label :password_confirmation, "Confirmación de contraseña" %><br />
-  <%= f.password_field :password_confirmation %></div>
+  <div class="field"><%= f.label :password_confirmation, "Confirmación de contraseña" %>
+    <%= f.password_field :password_confirmation %>
+  </div>
 
-  <div><%= f.label :current_password, "Contraseña actual" %> <i>(necesitamos tu contraseña actual para realizar los cambios)</i><br />
-  <%= f.password_field :current_password %></div>
+  <div class="field">
+    <%= f.label :current_password, "Contraseña actual" %> <i>(necesitamos tu contraseña actual para realizar los cambios)</i>
+    <%= f.password_field :current_password %>
+  </div>
+
+  <div class="field"><%= f.label :altura, "Altura (Mt)" %>
+    <%= f.text_field :altura %>
+  </div>
+
+  <div class="field">
+    <%= f.label :peso, "Peso (Kg)" %>
+    <%= f.text_field :peso %>
+  </div>
+
+  <div class="field">
+    <%= f.label :fuma, "¿Fuma?" %>
+    <%= f.select(:fuma, options_for_select( ['Si', 'No'], 'Si' ) ) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :hobbies %>
+    <%= f.text_area :hobbies %>
+  </div>
+
+  <div class="field">
+    <%= f.label :hizodieta, "¿Hizo dieta antes?" %>
+	<%= f.select(:hizodieta, options_for_select( ['Si', 'No'], 'Si' ) ) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :dondehizodieta, "¿Dónde hizo dieta?" %>
+    <%= f.text_area :dondehizodieta %>
+  </div>
 
   <div><%= f.submit "Actualizar" %></div>
 <% end %>
 
 <h3>Cancelar mi cuenta</h3>
 
-<p>¿No estás feliz? <%= link_to "Cancelar mi cuenta", registration_path(resource_name), :confirm => "¿Estás seguro?", :method => :delete %>.</p>
+<p>¿No estás feliz? <%= link_to "Cancelar mi cuenta", registration_path(resource_name), :confirm => "¿Estás seguro?", :method => :delete , :class= => 'btn' %>.</p>
 
 <%= link_to "Atrás", :back %>
+
+<div id="content">

@@ -1,15 +1,23 @@
+<div id="content">
 <h2><%= page_title! 'Ingresar' %></h2>
 
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <div><%= f.label :email, "E-mail" %><br />
-  <%= f.email_field :email %></div>
+  <div class="field">
+    <%= f.label :email, "E-mail" %>
+    <%= f.email_field :email %>
+  </div>
 
-  <div><%= f.label :password, "Contraseña" %><br />
-  <%= f.password_field :password %></div>
+  <div class="field">
+    <%= f.label :password, "Contraseña" %>
+    <%= f.password_field :password %>
+  </div>
 
   <% if devise_mapping.rememberable? -%>
-    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+    <div class="field">
+      <%= f.check_box :remember_me %> <%= f.label :remember_me, "No volver a preguntar" %>
+    </div>
   <% end -%>
 
-  <div><%= f.submit "Ingresar" %></div>
+  <div class="actions"><%= f.submit "Ingresar" %></div>
 <% end %>
+</div>

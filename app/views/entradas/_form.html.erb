@@ -1,7 +1,7 @@
 <%= form_for(@entrada, :html => { :multipart => true }) do |f| %>
   <% if @entrada.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@entrada.errors.count, "error") %> prohibited this entrada from being saved:</h2>
+      <h3>No se pudo guardar la entrada por <%= pluralize(@contacto.errors.count, "error") %>:</h3>
 
       <ul>
       <% @entrada.errors.full_messages.each do |msg| %>

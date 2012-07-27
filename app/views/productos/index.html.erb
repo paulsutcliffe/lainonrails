@@ -31,10 +31,10 @@
 	<div class="social">
 	  <span>Compartir en</span>
       <ul>
-	    <li class="facebook"><a href="http://www.facebook.com/sharer.php?u=<%= request.protocol + request.host_with_port + producto_path(producto) %>"></a></li>
+	    <li class="facebook"><a href="http://www.facebook.com/sharer.php?u=<%= request.protocol + request.host_with_port + producto_path(producto) %>" target="_blank"></a></li>
 	  </ul>
 	</div>
-    <h3><%= producto.nombre %></h3>
+    <h3><%= link_to producto.nombre, producto %></h3>
     
 
     <p>

@@ -7,6 +7,7 @@ ActiveSupport::Inflector.inflections do |inflect|
 #   inflect.singular /^(ox)en/i, '\1'
 #   inflect.irregular 'person', 'people'
 inflect.irregular 'informacion', 'informaciones'
+inflect.irregular 'error', 'errores'
 inflect.irregular 'promocion', 'promociones'
 inflect.irregular 'sucursal', 'sucursales'
 inflect.uncountable %w( nosotros nosotros )

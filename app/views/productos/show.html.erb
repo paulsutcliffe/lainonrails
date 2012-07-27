@@ -13,7 +13,14 @@
 
 
 <div id="content" class="region grid_8 alpha omega tab">
-        <h2 class="title">
+        <div class="region list-product">
+			<div class="social">
+			  <span>Compartir en</span>
+		      <ul>
+			    <li class="facebook"><a href="http://www.facebook.com/sharer.php?u=<%= request.url %>" target="_blank"></a></li>
+			  </ul>
+			</div>
+			<h2 class="title">
 	      <%= page_title! @producto.nombre %>
 	    </h2>
         <p>
@@ -40,9 +47,9 @@
         </div>
         <div>
 	      <% if current_admin %>
-            <%= link_to 'Editar', edit_producto_path(@producto), :class => 'btn' %>
-            <%= link_to 'Atrás', productos_path, :class => 'btn' %>
-           <% end %>
+            <%= link_to 'Editar', edit_producto_path(@producto), :class => 'btn' %>  
+          <% end %>
+          <%= link_to 'Atrás', productos_path, :class => 'btn' %>
         </div>
     
       </div>

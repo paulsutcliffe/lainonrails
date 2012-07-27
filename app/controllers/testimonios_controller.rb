@@ -6,9 +6,10 @@ class TestimoniosController < InheritedResources::Base
   
   def find_tipo
     if params[:tipo]
-      @testimonios = Testimonio.where("tipo = ? AND pais = ?", params[:tipo], params[:locale])
+      @testimonios = Testimonio.where("tipo = ? AND pais = ?", params[:tipo], params[:locale]).order("created_at").paginate(:page => params[:page], :per_page => 8)
+    else
+      @testimonios = Testimonio.where("pais = ?", params[:locale]).order("created_at").paginate(:page => params[:page], :per_page => 8)
     end
-    #@testimonios = Testimonio.where("pais = ?", params[:locale])
   end
 
   def create

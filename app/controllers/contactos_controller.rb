@@ -1,6 +1,6 @@
 #encoding: utf-8
 class ContactosController < InheritedResources::Base
-  before_filter :authenticate_admin!, :except => [ :new ]
+  before_filter :authenticate_admin!, :except => [ :new, :create ]
   before_filter :find_pais, :except => [ :new ]
   
   def find_pais

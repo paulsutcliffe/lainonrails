@@ -12,4 +12,8 @@ class EntradasController < InheritedResources::Base
       destroy!(:notice => "Entrada eliminada correctamente.")
   end
   
+  protected
+    def collection
+      @entradas ||= end_of_association_chain.order("created_at").paginate(:page => params[:page], :per_page => 8)
+    end
 end

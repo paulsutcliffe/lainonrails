@@ -1,60 +1,84 @@
-<h2><%= page_title! 'Inscribirse' %></h2>>
+<div id="content">
+
+<h2><%= page_title! 'Inscribirse' %></h2>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-  <div><%= f.label :nombre %><br />
-  <%= f.text_field :nombre %></div>
+  <div class="field">
+    <%= f.label :nombre %>
+    <%= f.text_field :nombre %>
+  </div>
 
-  <div><%= f.label :apellido %><br />
-  <%= f.text_field :apellido %></div>
+  <div class="field">
+    <%= f.label :apellido %>
+    <%= f.text_field :apellido %>
+  </div>
 
-  <div>
+  <div class="field">
     <%= f.label :sexo %>
     <%= f.select(:sexo, options_for_select( ['Masculino', 'Femenino'], 'Masculino' ) ) %>
   </div>
 
-  <div><%= f.label :edad %><br />
-  <%= f.text_field :edad %></div>  
+  <div class="field">
+    <%= f.label :edad %>
+    <%= f.text_field :edad %>
+  </div>  
 
-  <div><%= f.label :email, "E-Mail" %><br />
-  <%= f.email_field :email %></div>
+  <div class="field">
+    <%= f.label :email, "E-Mail" %>
+    <%= f.email_field :email %>
+  </div>
 
-  <div><%= f.label :telefono, "Teléfono" %><br />
-  <%= f.text_field :telefono %></div>
+  <div class="field">
+    <%= f.label :telefono, "Teléfono" %>
+    <%= f.text_field :telefono %>
+  </div>
 
-  <div><%= f.label :password, "Contraseña" %><br />
-  <%= f.password_field :password %></div>
+  <div class="field">
+    <%= f.label :password, "Contraseña" %>
+    <%= f.password_field :password %>
+  </div>
 
-  <div><%= f.label :password_confirmation, "Confirmación de contraseña" %><br />
-  <%= f.password_field :password_confirmation %></div>
+  <div class="field">
+    <%= f.label :password_confirmation, "Confirmación de contraseña" %>
+    <%= f.password_field :password_confirmation %>
+  </div>
 
+  <div class="field"><%= f.label :altura, "Altura (Mt)" %>
+    <%= f.text_field :altura %>
+  </div>
 
-  <div><%= f.label :altura, "Altura (Mt)" %><br />
-  <%= f.text_field :altura %></div>
+  <div class="field">
+    <%= f.label :peso, "Peso (Kg)" %>
+    <%= f.text_field :peso %>
+  </div>
 
-  <div><%= f.label :peso, "Peso (Kg)" %><br />
-  <%= f.text_field :peso %></div>
-
-  <div>
+  <div class="field">
     <%= f.label :fuma, "¿Fuma?" %>
     <%= f.select(:fuma, options_for_select( ['Si', 'No'], 'Si' ) ) %>
   </div>
 
-  <div>
+  <div class="field">
     <%= f.label :hobbies %>
     <%= f.text_area :hobbies %>
   </div>
 	
-  <div>
+  <div class="field">
     <%= f.label :hizodieta, "¿Hizo dieta antes?" %>
 	<%= f.select(:hizodieta, options_for_select( ['Si', 'No'], 'Si' ) ) %>
   </div>
 
-  <div>
+  <div class="field">
     <%= f.label :dondehizodieta, "¿Dónde hizo dieta?" %>
     <%= f.text_area :dondehizodieta %>
   </div>
 
-  <div><%= f.submit "Inscribirse" %></div>
+  <div class="actions">
+    <%= f.submit "Inscribirse" %>
+  </div>
 <% end %>
+
+<%= render :partial => "devise/shared/links" %>
+
+</div>

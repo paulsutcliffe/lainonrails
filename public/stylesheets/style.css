@@ -451,11 +451,11 @@ background:#fff}
 .front #content-bottom-inner{width:400px}
 
 #computests.index #computest-resultado,
-#computests.new #new_computest{height:400px; border-bottom:1px solid #999; color:#1a7f98; background-repeat:no-repeat; background-position:100% 100%}
+#computests.new #new_computest{height:413px; border-bottom:1px solid #999; color:#1a7f98; background-repeat:no-repeat; background-position:100% 100%}
 #computests.index.bo #computest-resultado,
 #computests.new.bo #new_computest{background-image:url(../images/backgrounds/bg-computest-pe.png)}
 #computests.index.cr #computest-resultado,
-#computests.new #new_computest{background-image:url(../images/backgrounds/bg-computest-pe.png)}
+#computests.new #new_computest{background-image:url(../images/backgrounds/bg-computest-cr.png)}
 #computests.index.gt #computest-resultado{background-image:url(../images/backgrounds/bg-computest-pe.png)}
 #computests.index.pe #computest-resultado,
 #computests.new.pe #new_computest{background-image:url(../images/backgrounds/bg-computest-pe.png)}
@@ -700,6 +700,24 @@ p{color:#6f7070}
 
 /* productos */
 #productos .list-product li{border-bottom:1px solid #ccc; float:left; clear:left}
+#productos #main .region .list-product img{
+	border:1px solid #1D8EA4;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    -o-border-radius:10px; 
+    -khtml-border-radius:10px;
+    border-radius:10px
+}
+#productos #main .region #content-bottom img{
+	border:1px solid #1D8EA4;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    -o-border-radius:10px; 
+    -khtml-border-radius:10px;
+    border-radius:10px
+}
+#productos #main .region .list-product h3 a{color:#1A7F98}
+#productos .social span{color:#1A7F98}
 
 /* remover cuando se corrija */
 .list-product li p,
@@ -707,11 +725,11 @@ p{color:#6f7070}
 #productos.show #content-bottom .lightbox{float:left}
 .list-product li a.lightbox{float:left; margin-bottom:5px}
 /* remover cuando se corrija */
-#productos .list-product li .social{width:auto; height:auto; float:right}
-#productos .list-product li .social span{position:relative; top:-8px; margin-right:5px}
-#productos .list-product li .social ul span,
-#productos .list-product li .social ul{display:inline-block; *display:inline; *zoom:1}
-#productos .list-product li .social ul li{border-bottom:0; margin:0; padding:0}
+#productos .social{width:auto; height:auto; float:right}
+#productos .social span{position:relative; top:-8px; margin-right:5px}
+#productos .social ul span,
+#productos .social ul{display:inline-block; *display:inline; *zoom:1}
+#productos .social ul li{border-bottom:0; margin:0; padding:0}
 
 .video-light{position:relative; float:left; margin:20px 15px 10px 0}
 .video-light:nth-of-type(3){margin-right:0}
@@ -1017,6 +1035,67 @@ Crazy stuff
 */
 
 #facebook-widget{float:right}
+#error_explanation{margin:25px 0px 25px 0px}
+#error_explanation li{-moz-border-radius:10px;
+	                  -webkit-border-radius:10px;
+	                  -o-border-radius:10px;
+	                  -khtml-border-radius:10px;
+	                  border-radius:10px;
+	                  background:orange;
+	                  margin:5px;
+	                  color:white;
+	                  padding:5px 0px 5px 10px}
+	
+
+#flash_alert{
+-moz-border-radius:10px;
+-webkit-border-radius:10px;
+-o-border-radius:10px;
+-khtml-border-radius:10px;
+border-radius:10px;
+background:red;
+margin:5px;
+color:white;
+padding:5px 10px 5px 10px;
+width:98%;
+top:0px;
+left:0px;
+position:fixed;
+z-index:501;
+text-align:center;
+}
+
+#flash_notice{
+-moz-border-radius:10px;
+-webkit-border-radius:10px;
+-o-border-radius:10px;
+-khtml-border-radius:10px;
+border-radius:10px;
+background:green;
+margin:5px;
+color:white;
+padding:5px 10px 5px 10px;
+width:98%;
+top:0px;
+left:0px;
+position:fixed;
+z-index:501;
+text-align:center;
+}
+
+#devise_shared{margin-top:25px; border-top:1px solid #ccc; padding-top:5px}
+
+
+
+
+
+
+
+#usuario_submit{margin-top:15px}
+
+
+.pagination{color:#1D8EA4}
+.pagination a{color:#1A7F98}
 
 
 /*

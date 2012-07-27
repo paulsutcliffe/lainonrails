@@ -4,13 +4,13 @@
   <article>
 	<header>
       <h3><%= page_title! @entrada.titulo %></h3>
-      <span class="date"><%= @entrada.created_at.strftime("%A, %d de %B") %></span>
+      <span class="date"><%= l @entrada.created_at, :format => :short %></span>
       <div class="social">
 	    <span class="label">
 	      Compartir en:
 	    </span>
 	  <ul>
-	    <li class="facebook"><a href="http://www.facebook.com/sharer.php?u=<%= request.url %>"></a></li>
+	    <li class="facebook"><a href="http://www.facebook.com/sharer.php?u=<%= request.url %>" target="_blank"></a></li>
 	  </ul>
 	  </div>
       <% if current_admin %>
