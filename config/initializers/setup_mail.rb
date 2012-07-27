@@ -5,7 +5,7 @@
   :user_name            => "info@lainadelgaza.net",
   :password             => "ugEIwjJ9",
   :authentication       => "plain",
-  :enable_starttls_auto => true
+  :enable_starttls_auto => false
 }
 
 ActionMailer::Base.default_url_options[:host] = "localhost"
