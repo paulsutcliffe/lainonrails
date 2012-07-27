@@ -1,6 +1,6 @@
  ActionMailer::Base.smtp_settings = {
-  :address              => "smtp.lainadelgaza.net",
-  :port                 => 587,
+  :address              => "localhost",
+  :port                 => 25,
   :domain               => "lainadelgaza.net",
   :user_name            => "info@lainadelgaza.net",
   :password             => "ugEIwjJ9",
