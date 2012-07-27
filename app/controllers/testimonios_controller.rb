@@ -8,7 +8,7 @@ class TestimoniosController < InheritedResources::Base
     if params[:tipo]
       @testimonios = Testimonio.where("tipo = ? AND pais = ?", params[:tipo], params[:locale]).order("created_at").paginate(:page => params[:page], :per_page => 8)
     else
-      @testimonios = Testimonio.where("pais = ?", params[:locale]).order("created_at").paginate(:page => params[:page], :per_page => 8)
+      @testimonios = Testimonio.where("pais = ?", params[:locale]).order("created_at DESC").paginate(:page => params[:page], :per_page => 8)
     end
   end
 

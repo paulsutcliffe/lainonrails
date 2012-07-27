@@ -14,6 +14,6 @@ class EntradasController < InheritedResources::Base
   
   protected
     def collection
-      @entradas ||= end_of_association_chain.order("created_at").paginate(:page => params[:page], :per_page => 8)
+      @entradas ||= end_of_association_chain.order("created_at DESC").paginate(:page => params[:page], :per_page => 8)
     end
 end
