@@ -1,3 +1,11 @@
-<%= @contacto.nombre %>,
+Hola, <%= @contacto.nombre %> ha enviado el siguiente mensaje por la web de LAIN:
+<%= @contacto.mensaje %>
 
-Gracias por registrarte. LAIN El Salvador.
+Puedes contactar a <%= @contacto.nombre %> con los siguientes datos:
+
+<%= @contacto.nombre %>
+<%= @contacto.apellido %>
+<%= @contacto.email %>
+<%= @contacto.telefono %>
+
+LAIN El Salvador.
