@@ -5,8 +5,8 @@
          <% if I18n.locale == :cr %>
            <%= image_tag '/images/images/sidebar-costarica.png' %> 
          <% else %>
-         <% if !current_usuario %>
-            <img src="/images/images/sidebar-registrate.png" />
+         <% unless current_usuario %>
+            <%= link_to image_tag("/images/images/sidebar-registrate.png"), new_usuario_registration_path %>
           <% end %>
       <% end %>
      </div>
