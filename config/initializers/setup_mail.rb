@@ -8,4 +8,4 @@
   :enable_starttls_auto => false
 }
 
-ActionMailer::Base.default_url_options[:host] = "localhost"
+ActionMailer::Base.default_url_options[:host] = "www.lainadelgaza.net"
