@@ -26,13 +26,18 @@
   </div>  
 
   <div class="field">
-    <%= f.label :email, "E-Mail" %>
-    <%= f.email_field :email %>
+    <%= f.label :pais, "País" %>
+    <%= f.select(:pais, options_for_select( ['pe', 'bo','uy','cr','sv','gt'], 'pe' ) ) %>
   </div>
 
   <div class="field">
     <%= f.label :telefono, "Teléfono" %>
     <%= f.text_field :telefono %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email, "E-Mail" %>
+    <%= f.email_field :email %>
   </div>
 
   <div class="field">

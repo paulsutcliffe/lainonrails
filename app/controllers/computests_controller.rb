@@ -1,5 +1,5 @@
 class ComputestsController < InheritedResources::Base
-  before_filter :authenticate_usuario!, :only => [:index, :destroy]
+  before_filter :authenticate_admin!, :except => [:show, :new, :create]
   before_filter :find_pais
   
   def find_pais
@@ -22,7 +22,7 @@ class ComputestsController < InheritedResources::Base
       if params[:locale]
         @computest.pais = params[:locale]
       end
-      create!(:notice => "Computest guardado correctamente.") 
+      create!(:notice => "Computest guardado correctamente.")
     end
   end
   

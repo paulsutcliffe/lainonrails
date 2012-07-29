@@ -22,6 +22,7 @@ class Usuario < ActiveRecord::Base
                   :hobbies,
                   :fuma,
                   :dondehizodieta,
-                  :sexo
+                  :sexo,
+                  :pais
   
 end

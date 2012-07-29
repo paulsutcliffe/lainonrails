@@ -1,4 +1,5 @@
-<h1>Listing contactos</h1>
+<div id="content" class="region grid_8 omega region">
+<h1>Listando contactos</h1>
 
 <table>
   <tr>
@@ -6,32 +7,23 @@
     <th>Apellido</th>
     <th>Email</th>
     <th>Telefono</th>
-    <th>Direccion</th>
-    <th>Distrito</th>
     <th>Ciudad</th>
-    <th>Provincia</th>
     <th>País</th>
-    <th>Mensaje</th>
-    <th></th>
     <th></th>
     <th></th>
   </tr>
 
 <% @contactos.each do |contacto| %>
-  <tr>
-    <td><%= contacto.nombre %></td>
-    <td><%= contacto.apellido %></td>
-    <td><%= contacto.email %></td>
-    <td><%= contacto.telefono %></td>
-    <td><%= contacto.direccion %></td>
-    <td><%= contacto.distrito %></td>
-    <td><%= contacto.ciudad %></td>
-    <td><%= contacto.provincia %></td>
-    <td><%= contacto.pais %></td>
-    <td><%= contacto.mensaje %></td>
-    <td><%= link_to 'Ver', contacto %></td>
-    <td><%= link_to 'Editar', edit_contacto_path(contacto) %></td>
-    <td><%= link_to 'Eliminar', contacto, :confirm => '¿Estás seguro?', :method => :delete %></td>
+  <tr class="items-list">
+    <td><%= truncate(contacto.nombre, :length => 16) %></td>
+    <td><%= truncate(contacto.apellido, :length => 16) %></td>
+    <td><%= truncate(contacto.email, :length => 16) %></td>
+    <td><%= truncate(contacto.telefono, :length => 12) %></td>
+    <td><%= truncate(contacto.ciudad, :length => 16) %></td>
+    <td><%= image_tag '/images/countries-flags/flag-' + I18n.locale.to_s  + '.jpg', :class => 'flag' %></td>
+    <td><%= link_to 'Ver', contacto, :class => 'btn' %></td>
+    <td><%= link_to 'Eliminar', contacto, :confirm => '¿Estás seguro?', :method => :delete, :class => 'btn' %></td>
   </tr>
 <% end %>
 </table>
+</div>

@@ -31,10 +31,22 @@
       <% end %>
     </li>
     <li class="<% if request.path_parameters[:controller] == 'contactos' %>selectedLava<% end %>">
-      <%= link_to_unless_current 'Contacto', new_contacto_path do %>
+      <%= link_to_unless_current 'Contacto', current_admin ? contactos_path : new_contacto_path do %>
         <span>Contacto</span>
       <% end %>
     </li>
+    <% if current_admin %>
+      <li class="<% if request.path_parameters[:controller] == 'usuarios' %>selectedLava<% end %>">
+      <%= link_to_unless_current 'Usuarios', usuarios_lista_path do %>
+        <span>Usuarios</span>
+      <% end %>
+      </li>
+      <li>
+      <%= link_to_unless_current 'Salir', destroy_admin_session_path do %>
+        <span>Salir</span>
+      <% end %>
+    </li>
+    <% end %>
 
   </ul>
 </nav>

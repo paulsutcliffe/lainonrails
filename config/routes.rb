@@ -17,8 +17,6 @@ Lainonrails::Application.routes.draw do
     resources :cabecera_banners
 
     match '/politicas' => "politicas#index"
-    
-    match '/contacto' => "contactos#new"
 
     resources :contactos
     
@@ -44,11 +42,15 @@ Lainonrails::Application.routes.draw do
 
     resources :slides
 
-    resources :metas
+    resources :metas   
     
     devise_for :usuarios, :path => "usuarios", :path_names => { :sign_in => 'ingresar', :sign_out => 'salir', :password => 'secreto', :confirmation => 'verificacion', :unlock => 'desbloquear', :registration => 'registro', :sign_up => 'inscribirse' }
     
     devise_for :admins, :path => "admins", :path_names => { :sign_in => 'ingresar', :sign_out => 'salir', :password => 'secreto', :confirmation => 'verificacion', :unlock => 'desbloquear', :registration => 'registro', :sign_up => 'inscribirse' }
+
+    get '/usuarios/lista' => "usuarios#lista"
+    
+    match '/usuarios/:id' => "usuarios#ver", :via => :get
 
     authenticated :usuario do
       root :to => 'home#index'
