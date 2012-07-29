@@ -734,7 +734,7 @@ table tr.items-list:hover{background:rgba(26,128,153,0.2)}
 .list-product li p,
 #productos.show #content p{width:600px}
 #productos.show #content-bottom .lightbox{float:left}
-.list-product li a.lightbox{float:left; margin-bottom:5px}
+.list-product li a.lightbox{position:relative; left:-15px; margin-bottom:5px}
 /* remover cuando se corrija */
 #productos .social{width:auto; height:auto; float:right}
 #productos .social span{position:relative; top:-8px; margin-right:5px}
