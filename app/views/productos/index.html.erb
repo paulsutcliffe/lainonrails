@@ -28,6 +28,7 @@
 <ul>
   <% @productos.each do |producto| %>
   <li>
+	<div class="prod">
 	<div class="social">
 	  <span>Compartir en</span>
       <ul>
@@ -35,7 +36,7 @@
 	  </ul>
 	</div>
     <h3><%= link_to producto.nombre, producto %></h3>
-    
+    </div>
 
     <p>
       <%= producto.descripcion %>
