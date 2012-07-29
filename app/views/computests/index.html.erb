@@ -1,21 +1,30 @@
 <div id="content" class="region grid_8 omega region">
-  <h2 class="title"><%= page_title! "Computest" %></h2>
-
+<h1><%= page_title! "Listando computests" %></h1>
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <th>Email</th>
+    <th>Telefono</th>
+    <th>IMC</th>
+    <th>País</th>
+    <th></th>
+    <th></th>
+  </tr>
 
 <% @computests.each do |computest| %>
-  <tr>
-    <td><%= computest.nombre %></td>
-    <td><%= computest.apellido %></td>
-    <td><%= computest.email %></td>
-    <td><%= computest.telefono %></td>
-    <td><%= computest.peso %></td>
-    <td><%= computest.altura %></td>
+  <tr class="items-list">
+    <td><%= truncate(computest.nombre, :length => 16) %></td>
+    <td><%= truncate(computest.apellido, :length => 16) %></td>
+    <td><%= truncate(computest.email, :length => 16) %></td>
+    <td><%= truncate(computest.telefono, :length => 12) %></td>
     <td><%= computest.imc %></td>
-    <td><%= computest.peso_ideal %></td>
-    <td><%= computest.estado %></td>
-    <td><%= computest.pais %></td>
-    <td><%= link_to 'Ver', computest %></td>
-    <td><%= link_to 'Editar', edit_computest_path(computest) %></td>
-    <td><%= link_to 'Eliminar', computest, :confirm => '¿Estás seguro?', :method => :delete %></td>
+    <td><%= image_tag '/images/countries-flags/flag-' + I18n.locale.to_s  + '.jpg', :class => 'flag' %></td>
+    <td><%= link_to 'Ver', computest, :class => 'btn' %></td>
+    <td><%= link_to 'Eliminar', computest, :confirm => '¿Estás seguro?', :method => :delete, :class => 'btn' %></td>
   </tr>
 <% end %>
+
+</table>
+
+</div>

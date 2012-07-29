@@ -7,8 +7,26 @@
   </div>
 
   <div class="field">
-    <p><%= @peso_ideal %><br />Tu estado es <span><%= @estado %></span></p>	
+    <p>Tu estado es <span><%= @estado %></span></p>	
   </div>
+
+  <div class="field">
+    <p><%= @peso_ideal %></p>
+  </div>
+  
+  <% if current_admin %>
+  <div class="field">
+    <p>E-mail: <%= @computest.email %></p>	
+  </div>
+
+  <div class="field">
+    <p>Teléfono: <%= @computest.telefono %></p>	
+  </div>
+
+  <div class="field">
+    <p>Sexo: <%= @computest.sexo %></p>	
+  </div>
+  <% end %>
 
 
 <%= link_to 'Atrás', new_computest_path, :class => 'btn back' %>

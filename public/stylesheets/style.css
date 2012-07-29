@@ -599,6 +599,15 @@ p{color:#6f7070}
 #contactos.new #content form .actions{float:left; clear:left}
 #contactos.new #content form .field input{float:left}
 
+/* tables */
+table{width:auto; margin-bottom:20px; width:100%; border-top:1px solid #ccc}
+table tbody{color:#6f7070; font-size:0.8em; text-align:left}
+table td{padding:5px 2px 5px 2px}
+table th{padding:5px 2px 5px 2px}	
+table b{width:60px; padding:2px 5px; display:inline-block; font-size:14px; 
+	background:#686666; color:black; margin-right:15px}
+table tr.items-list:hover{background:rgba(26,128,153,0.2)}
+
 /* términos de uso */
 #contactos.new #content form .field div input,
 #contactos.new #content form .field div label{width:auto; color:#636363; font-size:12px}
@@ -688,7 +697,7 @@ p{color:#6f7070}
 
 #computests.show .field{width:400px}
 #computests.show .field p{color:#1A7F98; font-size:1em}
-#computests.show .field p span{width:80px; float:right; padding:5px; border:1px solid; text-align:center;
+#computests.show .field p span{width:140px; float:right; padding:5px; border:1px solid; text-align:center;
 	-moz-border-radius:10px; -webkit-border-radius:10px; -o-border-radius:10px; 
 	-khtml-border-radius:10px; border-radius:10px}
 

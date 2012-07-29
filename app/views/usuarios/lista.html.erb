@@ -1,0 +1,23 @@
+<div id="content" class="region grid_8 omega region">
+<h1>Listando usuarios</h1>
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <th>Email</th>
+    <th>Telefono</th>
+    <th></th>
+  </tr>
+
+<% @usuarios.each do |usuario| %>
+  <tr class="items-list">
+    <td><%= truncate(usuario.nombre, :length => 26) %></td>
+    <td><%= truncate(usuario.apellido, :length => 26) %></td>
+    <td><%= truncate(usuario.email, :length => 26) %></td>
+    <td><%= truncate(usuario.telefono, :length => 12) %></td>
+    <td><%= link_to 'Ver', {:action => :ver, :id => usuario.id}, :class => 'btn' %></td>
+  </tr>
+<% end %>
+</table>
+</div>
