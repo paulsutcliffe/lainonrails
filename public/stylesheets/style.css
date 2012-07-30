@@ -349,13 +349,14 @@ font-size:0.6em}
 
 #header-top .actions input{height:22px; background:#ff3f83; border:0; font-size:0.9em; color:white;
 -moz-box-shadow:0 0 5px #333; -webkit-box-shadow:0 0 5px #333; -o-box-shadow:0 0 5px #333;
--khtml-box-shadow:0 0 5px #333; box-shadow:0 0 5px #333}
+-khtml-box-shadow:0 0 5px #333; box-shadow:0 0 5px #333;
+behavior: url(../javascripts/ie-support/PIE-1.0.0/PIE.htc)}
 
 .field input,
 .field textarea,
 .field select,
 #header-top .actions input{-moz-border-radius:5px; -webkit-border-radius:5px; -o-border-radius:5px; /*text-transform:uppercase*/;
--khtml-border-radius:5px; border-radius:5px; behavior: url(/javascripts/libs/ie-support/PIE-1.0.0/PIE.htc);  position:relative}
+-khtml-border-radius:5px; border-radius:5px; behavior: url(../javascripts/ie-support/PIE-1.0.0/PIE.htc);  position:relative}
 
 
 /*
@@ -513,12 +514,14 @@ POSTSCRIPT
 .front #content .block img,
 .front #postscript-top .block img{border:1px solid #1D8EA4;
 -moz-border-radius:10px; -webkit-border-radius:10px; -o-border-radius:10px; 
--khtml-border-radius:10px; border-radius:10px}
+-khtml-border-radius:10px; border-radius:10px;
+behavior: url(../javascripts/ie-support/PIE-1.0.0/PIE.htc)}
 
 .front #postscript-top .block:nth-of-type(2) img{width:234px}
 .front #postscript-top .block:nth-of-type(1n+2) img{border:0; height:103px;
 -moz-border-radius:0px; -webkit-border-radius:0px; -o-border-radius:0px; 
--khtml-border-radius:0px; border-radius:0px}
+-khtml-border-radius:0px; border-radius:0px;
+behavior: url(../javascripts/ie-support/PIE-1.0.0/PIE.htc)}
 .front #postscript-top .block:nth-of-type(3) img{width:193px}
 
 
@@ -556,7 +559,7 @@ CONTENT TYPES
 .list-type ul{width:100%}
 .list-type li{width:300px; height:220px; padding:15px 20px 20px; text-align:center; color:white; float:left; margin:0 12px 30px 0; background:white;
 -moz-box-sizing:border-box; -webkit-box-sizing:border-box; -o-box-sizing:border-box; -ms-box-sizing:box-sizing; box-sizing:border-box;
-*behavior:url(javascripts/ie-support/Schepp-box-sizing-polyfill/boxsizing.htc)}
+*behavior:url(../javascripts/ie-support/Schepp-box-sizing-polyfill/boxsizing.htc)}
 .list-type li:nth-of-type(odd){clear:left}
 .list-type li:nth-of-type(even){margin-right:0}
 .list-type li h3{border-bottom:2px solid}
@@ -672,7 +675,8 @@ table tr.items-list:hover{background:rgba(26,128,153,0.2)}
 #entradas.index #content article{width:601px; float:left; clear:left; border-bottom:1px solid #ccc}
 #entradas #content article img{float:left; margin-right:45px; border:1px solid #1D8EA4;
   -moz-border-radius:15px; -webkit-border-radius:15px; -o-border-radius:15px; 
-  -khtml-border-radius:15px; border-radius:15px}
+  -khtml-border-radius:15px; border-radius:15px;
+behavior: url(../javascripts/ie-support/PIE-1.0.0/PIE.htc)}
 #entradas #content article h3,
 #entradas #content article h3 a{text-transform:uppercase; font-size:1.05em; color:#1D8EA4}
 #entradas.index #content article .date{margin-bottom:20px}
@@ -704,7 +708,8 @@ table tr.items-list:hover{background:rgba(26,128,153,0.2)}
 #sucursales.index #content article{width:601px; float:left; clear:left; border-bottom:1px solid #ccc}
 #sucursales #content article img{float:left; margin-right:45px; border:1px solid #1D8EA4;
   -moz-border-radius:15px; -webkit-border-radius:15px; -o-border-radius:15px; 
-  -khtml-border-radius:15px; border-radius:15px}
+  -khtml-border-radius:15px; border-radius:15px;
+behavior: url(../javascripts/ie-support/PIE-1.0.0/PIE.htc)}
 #sucursales #content article h3,
 #sucursales #content article h3 a{text-transform:uppercase; font-size:1.05em; color:#1D8EA4}
 #sucursales.index #content article .date{margin-bottom:20px}
@@ -751,7 +756,8 @@ table tr.items-list:hover{background:rgba(26,128,153,0.2)}
 #computests.show .field p{color:#1A7F98; font-size:1em}
 #computests.show .field p span{width:140px; float:right; padding:5px; border:1px solid; text-align:center;
 	-moz-border-radius:10px; -webkit-border-radius:10px; -o-border-radius:10px; 
-	-khtml-border-radius:10px; border-radius:10px}
+	-khtml-border-radius:10px; border-radius:10px;
+behavior: url(../javascripts/ie-support/PIE-1.0.0/PIE.htc)}
 
 #computests.show #content{width:580px; border-bottom:1px solid #ccc; margin-right:40px; padding-bottom:20px}
 #computests.show #content h2.title{margin-right:0}
@@ -768,7 +774,8 @@ h2 + .admin-controls{width:100%; float:left; clear:left; margin-bottom:20px}
     -webkit-border-radius:10px;
     -o-border-radius:10px; 
     -khtml-border-radius:10px;
-    border-radius:10px
+    border-radius:10px;
+behavior: url(../javascripts/ie-support/PIE-1.0.0/PIE.htc)
 }
 #productos #main .region #content-bottom img{
 	border:1px solid #1D8EA4;
@@ -776,7 +783,8 @@ h2 + .admin-controls{width:100%; float:left; clear:left; margin-bottom:20px}
     -webkit-border-radius:10px;
     -o-border-radius:10px; 
     -khtml-border-radius:10px;
-    border-radius:10px
+    border-radius:10px;
+behavior: url(../javascripts/ie-support/PIE-1.0.0/PIE.htc)
 }
 #productos #main .region .list-product h3 a{color:#1A7F98}
 #productos .social span{color:#1A7F98}
@@ -1001,7 +1009,7 @@ BUTTONS
   background: -o-linear-gradient(#27bac6, #1b8099);
   background: linear-gradient(#27bac6, #1b8099);
   -pie-background: linear-gradient(#27bac6, #1b8099);
-  behavior: url(/javascripts/libs/ie-support/PIE-1.0.0/PIE.htc);
+  behavior: url(../javascripts/ie-support/PIE-1.0.0/PIE.htc);
   filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#27bac6', endColorstr='#1b8099');  
 }
 .btn:hover,
@@ -1061,13 +1069,19 @@ X fancy (borders, radius, shadows,...)
 
 
 .radius-1,
-.block .inner .content{-moz-border-radius:5px; -webkit-border-radius:5px; -o-border-radius:5px; -khtml-border-radius:5px; border-radius:5px}
+.block .inner .content{-moz-border-radius:5px; -webkit-border-radius:5px; -o-border-radius:5px; -khtml-border-radius:5px; border-radius:5px;
+behavior: url(../javascripts/ie-support/PIE-1.0.0/PIE.htc)}
 .radius-2,
 #block-receta .inner,
-.list-type li{-moz-border-radius:10px; -webkit-border-radius:10px; -o-border-radius:10px; -khtml-border-radius:10px; border-radius:10px}
+.list-type li{-moz-border-radius:10px; -webkit-border-radius:10px; -o-border-radius:10px; -khtml-border-radius:10px; border-radius:10px;
+behavior: url(../javascripts/ie-support/PIE-1.0.0/PIE.htc)}
 .radius-3{-moz-border-radius:15px; -webkit-border-radius:15px; -o-border-radius:15px; -khtml-border-radius:15px; border-radius:15px}
-.radius-4{-moz-border-radius:20px; -webkit-border-radius:20px; -o-border-radius:20px; -khtml-border-radius:20px; border-radius:20px}
-.radius-5{-moz-border-radius:25px; -webkit-border-radius:25px; -o-border-radius:25px; -khtml-border-radius:25px; border-radius:25px}
+.radius-4{-moz-border-radius:20px; -webkit-border-radius:2;
+behavior: url(../javascripts/ie-support/PIE-1.0.0/PIE.htc)0px; -o-border-radius:20px; -khtml-border-radius:20px; border-radius:20px;
+behavior: url(../javascripts/ie-support/PIE-1.0.0/PIE.htc)}
+.radius-5{-moz-border-radius:25px; -webkit-border-radius:25px; -o-border-radius:25px; -khtml-border-radius:25px; border-radius:25px;
+behavior: url(../javascripts/ie-support/PIE-1.0.0/PIE.htc)};
+behavior: url(../javascripts/ie-support/PIE-1.0.0/PIE.htc)
 .radius-6{-moz-border-radius:30px; -webkit-border-radius:30px; -o-border-radius:30px; -khtml-border-radius:30px; border-radius:30px}
 
 /* default color #1 (#bcbec0) */
@@ -1134,6 +1148,7 @@ left:0px;
 position:fixed;
 z-index:501;
 text-align:center;
+behavior: url(../javascripts/ie-support/PIE-1.0.0/PIE.htc)
 }
 
 #flash_notice{
@@ -1152,6 +1167,7 @@ left:0px;
 position:fixed;
 z-index:501;
 text-align:center;
+behavior: url(../javascripts/ie-support/PIE-1.0.0/PIE.htc)
 }
 
 
@@ -1174,5 +1190,5 @@ Y fixes
 /* ie7 */
 #postscript-top.region,
 #postscript-bottom .block{*width:620px}
-
+#sidebar-first .block p{*width:200px}
 
