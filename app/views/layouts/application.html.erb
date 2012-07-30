@@ -76,6 +76,7 @@
 
     <div id="login" class="grid_6 omega">
 	  	<%= form_for("usuario", :url => usuario_session_path) do |f| %>
+	     <fieldset>
 	      <legend>Ingresa a tu cuenta</legend>
 	      <div class="field">
 	        <%= f.label :email %>
@@ -90,6 +91,7 @@
 	      <div class="actions">
 	        <%= f.submit "Ir" %>
 	      </div>
+	     </fieldset>
 	    <% end %>
   
     </div>

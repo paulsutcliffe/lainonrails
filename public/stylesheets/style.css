@@ -1171,3 +1171,8 @@ Y fixes
 #main-menu li{zoom:1; *display:inline}
 #main-menu li a{behavior: url(../PIE.htc)}
 
+/* ie7 */
+#postscript-top.region,
+#postscript-bottom .block{*width:620px}
+
+
