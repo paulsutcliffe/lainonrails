@@ -13,11 +13,6 @@
 	    <li class="facebook"><a href="http://www.facebook.com/sharer.php?u=<%= request.url %>" target="_blank"></a></li>
 	  </ul>
 	  </div>
-      <% if current_admin %>
-        <div class="admin-controls">
-          <%= link_to 'Editar', edit_entrada_path(@entrada), :class => 'btn edit' %>
-        </div>
-      <% end %>
     </header>
     <figure>
 	  <%= image_tag @entrada.foto(:regular) %>

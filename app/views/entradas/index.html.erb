@@ -12,7 +12,7 @@
   <%= link_to image_tag(entrada.foto(:thumb)), entrada %>
   <h3><%= link_to entrada.titulo, entrada %></h3>
   <span class="date"><%= l entrada.created_at, :format => :short %></span>
-  <%= sanitize(simple_format(truncate(entrada.contenido, :length => 250, :omission => '...')), :tags => %w(p i br b)) %>
+  <%= sanitize(simple_format(truncate(entrada.contenido, :length =>116, :omission => '...')), :tags => %w(p i br b)) %>
   <%= link_to 'Leer Más', entrada, :class => 'btn read-more' %>
 
   <% if current_admin %>

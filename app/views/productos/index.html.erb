@@ -17,18 +17,18 @@
     <%= link_to 'Nuevo Producto', new_producto_path, :class => 'btn new' %>
   </div>
 <% end %>
-<p>
+
 	<% if @productos.empty? %>
-    No hay ningún producto.
+    <p>No hay ningún producto.</p>
     <% end %>	
-</p>	
+	
 
 
 <div class="region list-product">
 <ul>
   <% @productos.each do |producto| %>
   <li>
-	<div class="prod">
+	<header>
 	<div class="social">
 	  <span>Compartir en</span>
       <ul>
@@ -36,12 +36,11 @@
 	  </ul>
 	</div>
     <h3><%= link_to producto.nombre, producto %></h3>
-    </div>
+    </header>
 
-    <p>
-      <%= producto.descripcion %>
-    </p>
-    <%= link_to image_tag(producto.picture(:regular)), producto.picture(:facebook), :class => 'lightbox', :rel => 'gallery-' + producto.nombre, :title => producto.nombre  %>
+      <%= sanitize(simple_format(truncate(producto.descripcion, :length => 250, :omission => '...')), :tags => %w(p i br b)) %>
+
+        <%= link_to image_tag(producto.picture(:regular)), producto.picture(:facebook), :class => 'lightbox', :rel => 'gallery-' + producto.nombre, :title => producto.nombre  %>
   
    
     <div class="video-light">

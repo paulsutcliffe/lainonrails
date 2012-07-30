@@ -12,7 +12,7 @@ class SucursalesController < InheritedResources::Base
     @sucursal = Sucursal.new(params[:sucursal])
     @sucursal.pais = params[:locale]
     if @sucursal.valid?
-      create!(:notice => "Sucursal guardada correctamente.")
+      create!(:notice => "Sucursal guardada correctamente.") { sucursales_path }
     end
   end
   

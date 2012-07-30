@@ -57,9 +57,23 @@
     
     </div>
 
-    <% if I18n.locale == :pe  %> 
+    <% if current_admin %>
 
-    <% if !current_usuario %>
+      <div id="user-greeting">
+      <p>
+	    Administrador <%= current_admin.email %> <%= image_tag '/images/countries-flags/flag-' + I18n.locale.to_s  + '.jpg', :class => 'flag' %>
+	  </p>
+	  </div>
+	  <div id="user-controls">
+        <%= link_to 'Cerrar Sesión', {:controller=>"devise/sessions", :action=>"destroy"}, :class => 'btn' %>
+      </div>
+
+    <% else %>
+
+    <% if I18n.locale == :pe  %> 
+    
+    <% unless current_usuario %>
+
     <div id="login" class="grid_6 omega">
 	  	<%= form_for("usuario", :url => usuario_session_path) do |f| %>
 	      <legend>Ingresa a tu cuenta</legend>
@@ -79,20 +93,25 @@
 	    <% end %>
   
     </div>
-    <% end %>
-    <% if current_usuario %>
-      <div id="user-controls">
+
+    <% else %>
+
+      <div id="user-greeting">
+      <p>
+	    Hola, <%= current_usuario.nombre.capitalize %> <%= image_tag '/images/countries-flags/flag-' + I18n.locale.to_s  + '.jpg', :class => 'flag' %>
+	  </p>
+	  </div>
+	  <div id="user-controls">
         <%= link_to 'Cerrar Sesión', {:controller=>"devise/sessions", :action=>"destroy"}, :class => 'btn' %>
       </div>
-      <p>
-	    Hola, <%= current_usuario.nombre %> <%= image_tag '/images/countries-flags/flag-' + I18n.locale.to_s  + '.jpg', :class => 'flag' %>
-	  </p>
     <% end %>
         
     <% else %>
 
 
       <%= image_tag '/images/logospaiseslain/lain-' + I18n.locale.to_s  + '.png', :id => 'foreign-logo' %>
+    <% end %>
+
     <% end %>
 
   </div>
@@ -116,24 +135,22 @@
     </div><!-- END: sidebar-first -->
     
     <div id="content-wrapper" class="grid_9 omega region">
-     <div id="content-wrapper-inner" class="inner">
-      <div id="content-top">M&aacute;s de 100,000 hombres y mujeres de 5 países ya cambiaron su vida. </div>
-      <%= yield %>
-      
-      
-      
-      
-      
-            
-     </div><!-- END: content-wrapper-inner -->
-      
+      <div id="content-wrapper-inner" class="inner">
+        <div id="content-top">M&aacute;s de 100,000 hombres y mujeres de 5 países ya cambiaron su vida. </div>
+          <%= yield %> 
+        </div>           
+      </div><!-- END: content-wrapper-inner -->
     </div><!-- END: content-wrapper -->
-	<footer>
-         <p>Copyright ©<%= Time.now.year %>. Lain Internacional, todos los derechos reservados. | Desarrollado por: <a href="http://www.kosmyka.com" id="kosmyka" target="_blank">Kosmyka</a> | <a href="http://lapost-a.com/" id="laposta" target="_blank">La Post-A</a></p>
-      </footer>
   </div><!-- END: main -->
 </div><!-- END: main-wrapper -->
-
+<footer class="container_12">
+  <p id="copyright">Copyright ©<%= Time.now.year %>. Lain Internacional, todos los derechos reservados. 
+	<a href="/politicas">Políticas de Privacidad</a></p>
+  <p id="autor">
+    <a href="http://www.kosmyka.com" id="kosmyka" target="_blank">Desarrollo web: Kosmyka</a> | 
+    <a href="http://lapost-a.com/" id="laposta" target="_blank">Diseño web: La Post-A</a>
+  </p>
+</footer>
 	
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, :id => "flash_#{name}" %>

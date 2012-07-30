@@ -1,35 +1,34 @@
-<h1>Listando sucursales</h1>
-
-<table>
-  <tr>
-    <th>Nombre</th>
-    <th>Direccion</th>
-    <th>Telefonos</th>
-    <th>País</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @sucursales.each do |sucursal| %>
-  <tr>
-    <td><%= sucursal.nombre %></td>
-    <td><%= sucursal.direccion %></td>
-    <td><%= sucursal.telefonos %></td>
-    <td><%= sucursal.pais %></td>
-    <td><%= link_to image_tag(sucursal.local(:thumb)), sucursal %></td>
-    
-    <% if current_admin %>
-    <td><%= link_to 'Editar', edit_sucursal_path(sucursal) %></td>
-    <td><%= link_to 'Eliminar', sucursal, :confirm => '¿Estás seguro?', :method => :delete %></td>
-    <% end %>
-
-  </tr>
-<% end %>
-</table>
-
-<br />
+<section id="content" class="region">
+<h2 class="title"><%= page_title! 'Sucursales' %></h2>
 
 <% if current_admin %>
-  <%= link_to 'Nueva sucursal', new_sucursal_path %>
+<div class="admin-controls">
+<%= link_to 'Agregar Nueva Sucursal', new_sucursal_path, :class => 'btn new' %>
+</div>
 <% end %>
+
+<% if @sucursales.empty? %>
+No hay ninguna sucursal
+<% else %>
+
+<% @sucursales.each do |sucursal| %>
+<article>
+  <%= image_tag(sucursal.local(:thumb)) %>
+  <h3><%= sucursal.nombre %></h3>
+
+  <%= sucursal.direccion %><br />
+  <%= sucursal.telefonos %>
+
+  <% if current_admin %>
+    <div class="admin-controls">
+      <%= link_to 'Editar', edit_sucursal_path(sucursal), :class => 'btn edit' %>
+      <%= link_to 'Eliminar', sucursal, :confirm => '¿Estás seguro?', :method => :delete, :class => 'btn del' %>
+    </div>
+  <% end %>
+</article>
+<% end %>
+
+<% end %>
+</section>
+
+

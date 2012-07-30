@@ -19,7 +19,7 @@
     <td><%= truncate(computest.email, :length => 16) %></td>
     <td><%= truncate(computest.telefono, :length => 12) %></td>
     <td><%= computest.imc %></td>
-    <td><%= image_tag '/images/countries-flags/flag-' + I18n.locale.to_s  + '.jpg', :class => 'flag' %></td>
+    <td><%= image_tag '/images/countries-flags/flag-' + computest.pais  + '.jpg', :class => 'flag' %></td>
     <td><%= link_to 'Ver', computest, :class => 'btn' %></td>
     <td><%= link_to 'Eliminar', computest, :confirm => '¿Estás seguro?', :method => :delete, :class => 'btn' %></td>
   </tr>

@@ -6,7 +6,7 @@ Feature: Sucursales
   Scenario Outline: creating a new sucursal
   Given I am a new, authenticated admin
   When I visit the "/<country>/sucursales" page
-  And I follow "Nueva sucursal"
+  And I follow "Agregar Nueva Sucursal"
   And I fill in "Nombre" with "<nombre>"
   And I fill in "Dirección" with "<direccion>"
   And I fill in "Teléfonos" with "<telefonos>"

@@ -28,9 +28,11 @@
   </div>
   <% end %>
 
-
-<%= link_to 'Atrás', new_computest_path, :class => 'btn back' %>
-
+<% if current_admin %>
+  <%= link_to 'Atrás', computests_path, :class => 'btn back' %>
+<% else %>
+  <%= link_to 'Atrás', new_computest_path, :class => 'btn back' %>
+<% end %>
 </div>
 
 

@@ -20,21 +20,24 @@
     <%= f.text_area :descripcion %>
   </div>
   <div class="field">
+	<div class="radios">
     <%= f.label :tipo %><br />
-    <%= f.radio_button(:tipo, 'video') %> Video
-    <%= f.radio_button(:tipo, 'antesydespues') %> Antes y Después
+      <span class="video"><%= f.radio_button(:tipo, 'video') %> Video</span>
+      <span><%= f.radio_button(:tipo, 'antesydespues') %> Antes y Después</span>
+    </div>
   </div>
   <br />
-  <legend>Formato: http://www.youtube.com/watch?v=9tBOtSPrNik</legend>
+  
   <div class="field" id="testimonio_video_link">
     <%= f.label :video_link, 'Video Link' %><br />
     <%= f.text_field :video_link %>
+    <i class="formato">Formato: http://www.youtube.com/watch?v=9tBOtSPrNik</i>
   </div>
   <div class="field" id="testimonio_foto">
 	<%= f.label :imagen, 'Foto' %><br />
     <%= f.file_field :imagen %>
   </div>
   <div class="actions">
-    <%= f.submit "Guardar" %>
+    <%= f.submit "Guardar", :class => 'btn' %>
   </div>
 <% end %>

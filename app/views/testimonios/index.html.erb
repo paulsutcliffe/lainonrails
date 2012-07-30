@@ -13,7 +13,12 @@
 	      <a href="/<%= I18n.locale %>/testimonios/?tipo=video"><%= page_title! "Videos y Spots" %></a>
 	      <a href="/<%= I18n.locale %>/testimonios/?tipo=antesydespues">Antes y después</a>
 	    </h2>
-        
+        <% if current_admin %>
+	      <div class="admin-controls">
+            <%= link_to 'Nuevo testimonio', new_testimonio_path, :class => 'btn' %>
+          </div>
+        <% end %>        
+
         <p>
           	Los testimonios aquí mostrados corresponden a pacientes que han seguido el Tratamiento en una
 de nuestras Clínicas. Se debe aclarar que todo Tratamiento es personalizado y los resultados son
@@ -23,9 +28,7 @@ nuestro personal medico. Esto quiere decir que los resultados no son iguales par
       </div>
       
       <div id="content-bottom" class="region list-type">
-	    <% if current_admin %>
-          <%= link_to 'Nuevo testimonio', new_testimonio_path %>
-        <% end %>
+	    
         <ul>
 	      <% @testimonios.each do |testimonio| %>
           <li>
@@ -38,8 +41,8 @@ nuestro personal medico. Esto quiere decir que los resultados no son iguales par
             <%= sanitize(simple_format(truncate(testimonio.descripcion, :length => 50, :omission => '...')), :tags => %w(p i br b)) %>
             <% if current_admin %>
               <div>
-                <%= link_to 'Editar', edit_testimonio_path(testimonio) %>
-                <%= link_to 'Eliminar', testimonio, :confirm => '¿Estás seguro?', :method => :delete %>
+                <%= link_to 'Editar', edit_testimonio_path(testimonio), :class => 'btn' %>
+                <%= link_to 'Eliminar', testimonio, :confirm => '¿Estás seguro?', :method => :delete, :class => 'btn' %>
               </div>
             <% end %>
           </li>

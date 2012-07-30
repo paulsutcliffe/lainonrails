@@ -9,7 +9,7 @@ $(document).ready(function(){
 	==============================================================
 	*/
 
-	$('#testimonio_tipo_testimonio').click(function() {
+	$('#testimonio_tipo_video').click(function() {
 		$('#testimonio_video_link').show();
 	});
 

@@ -199,12 +199,7 @@ h2.title,
 h6.title,
 #sidebar-first .block span{font-size:1.5em; font-weight:lighter}
 
-#computests h2.title,
-#testimonios h2.title,
-#productos h2.title{border-bottom:1px solid #ccc; margin-right:40px; padding-bottom:15px}{border-bottom:1px solid #ccc; margin-right:40px; padding-bottom:15px}
-
-#productos h2.title{border:0}
-
+#content > h2.title{border-bottom:1px solid #ccc; margin-right:0px; padding-bottom:15px; margin-right:19px}
 #testimonios h2.title{margin-right:0px}
 #testimonios h2.title a,
 #testimonios h2.title a{font-size:0.6em; color:#666; margin-right:10px}
@@ -236,8 +231,6 @@ HEADER-TOP
   filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#95e2f6', endColorstr='#ffffff');  
 }
 
-#user-controls{text-align:right; margin-top:7px}
-
 /* LOGIN FORM */
 #header-top #login{float:right; padding-top:20px; text-align:right}
 #header-top #login legend{text-align:left; color:#1D8EA4; padding-left:77px}
@@ -249,7 +242,10 @@ HEADER-TOP
 #header-top .actions input{*width:30px; *text-align:center; background:#ff3f83}
 #header-top .field label{display:none}
 #header-top p,
-#header-top p:visited{color:#22A3B5; float:right; line-height:100px; font-size:1em}
+#header-top p:visited{color:#22A3B5; float:right; font-size:1em}
+
+#user-greeting{float:right; margin-top:5px}
+#user-controls{float:right; clear:right; margin-top:40px; text-align:right}
 
 /*
 =============================================
@@ -266,7 +262,7 @@ header h1{margin:5px 0 0 0; font-size:1em; font-weight:normal}
 
 #foreign-logo{margin-top:8px; float:right !important}
 
-
+#content header{background:none; height:auto}
 
 /*
 =============================================
@@ -313,8 +309,12 @@ FOOTER
 footer,
 footer p,
 footer a{color:#1D8EA4}
-footer{width:100%; float:left; background:#ccc}
-footer p{padding:10px 0 10px 50px;}
+footer{background:#ccc}
+footer p{padding:10px; margin:0}
+footer #copyright{float:left}
+footer #copyright a{margin-left:10px}
+footer #autor{float:right}
+footer #autor a:hover{color:#333}
 
 /*
 =============================================
@@ -322,11 +322,14 @@ form
 =============================================
 */
 
+#devise-sessions #content .field label{line-height:100%; margin-top:5px}
 #devise-registrations #content-wrapper form{width:100%}
 #devise-registrations #content-wrapper form div,
 #devise-registrations #content-wrapper form a{float:left; clear:left}
 #content label,
-#devise-registrations #content-wrapper label{width:120px; float:left; color:#1a7f98}
+#devise-registrations #content-wrapper label{width:120px; float:left; color:#1a7f98; line-height:100%}
+.field_with_errors label{color:red !important}
+#devise-registrations #content-wrapper .field div{float:left; clear:none}
 #devise-registrations #content-wrapper br{display:none}
 .field{width:100%; 	float:left; clear:left}
 .field input,
@@ -337,6 +340,9 @@ form
 #devise-registrations #content-wrapper input[type="email"],
 #devise-registrations #content-wrapper textarea{width:240px; height:20px; padding:0 10px; background:white; border:1px solid #4ab2c0; color:#bcbcbc;
 font-size:0.6em}
+
+#devise-registrations #content-wrapper form .field{position:relative}
+#devise-registrations #content-wrapper form .field i{position:absolute; top:24px; left:120px; font-size:12px; color:#636363}
 .field select{background:white; padding:3px 0 3px 10px; border:1px solid #4ab2c0; color:#bcbcbc; font-size:0.7em}
 
 .field textarea{width:400px; min-height:100px}
@@ -431,7 +437,10 @@ LIGHTBOX
 #productos .jquery-lightbox-buttons .jquery-lightbox-button-right,
 #productos .jquery-lightbox-buttons .jquery-lightbox-buttons-end{background-image:url(../images/icons/jquery-lightbox-theme.png);
 	-moz-transition:none; -webkit-transition:none; -o-transition:none; transition:none}
-#productos.index .head{float:left; clear:left; border-bottom:1px solid #ccc; margin-bottom:10px}
+
+#productos #content header{overflow:hidden; margin-right:17px; background:none; height:auto; border-bottom:1px solid #ccc; border-top:1px solid #ccc; margin-bottom:10px; padding-top:15px}
+#productos #content li:nth-of-type(1) header{border-top:0; padding-top:0}
+#productos #content header h2{width:400px; float:left}
 
 /*
 =============================================
@@ -473,8 +482,11 @@ background:#fff}
 #computest-resultado span#tipo.obeso.ii{color:orange}
 #computest-resultado span#tipo.obeso.iii{color:red}
 
-
-
+#testimonios #content-wrapper form{margin-bottom:20px}
+#testimonios .radios input{width:auto !important}
+#testimonios .radios span.video{margin:0 20px 0 0}
+#testimonios .formato{font-size:12px; color:#bbb}
+#testimonio_foto{margin-bottom:20px}
 
 /*
 =============================================
@@ -498,6 +510,7 @@ POSTSCRIPT
 
 #spectropach img{width:236px}
 
+.front #content .block img,
 .front #postscript-top .block img{border:1px solid #1D8EA4;
 -moz-border-radius:10px; -webkit-border-radius:10px; -o-border-radius:10px; 
 -khtml-border-radius:10px; border-radius:10px}
@@ -506,6 +519,8 @@ POSTSCRIPT
 .front #postscript-top .block:nth-of-type(1n+2) img{border:0; height:103px;
 -moz-border-radius:0px; -webkit-border-radius:0px; -o-border-radius:0px; 
 -khtml-border-radius:0px; border-radius:0px}
+.front #postscript-top .block:nth-of-type(3) img{width:193px}
+
 
 /*
 =============================================
@@ -575,9 +590,14 @@ PAGES
 .index #content-bottom .block{-moz-box-flex:1}
 .index #content-bottom .block:nth-of-type(2){-moz-box-flex:2}*/
 
+#home.index.logged-in #content{padding-top:50px}
 #home.index #postscript-top .block{width:30%; float:left}
 #home.index #postscript-top .block:nth-of-type(even){width:36%; margin:0 10px}
 #home.index #postscript-top .block p{height:80px; overflow:hidden}
+#home.index #sidebar-second .inner{margin-left:10px}
+#home.index #sidebar-second .block{width:100%; float:right; clear:right}
+#home.index #sidebar-second .block img{border:1px solid #4AB2C0; -moz-border-radius:8px; -webkit-border-radius:8px; 
+	-o-border-radius:8px; -khtml-border-radius:8px; border-radius:8px}
 #login .field{width:auto}
 #home.index #postscript-bottom .block{
 background:url(../images/backgrounds/bg-llave-left.png) no-repeat 0 0, 
@@ -600,6 +620,12 @@ p{color:#6f7070}
 #contactos.new #content form .field,
 #contactos.new #content form .actions{float:left; clear:left}
 #contactos.new #content form .field input{float:left}
+#content form .field div input[type="checkbox"]{float:left}
+
+#contactos.create #content form{width:100%; float:left}
+#contactos.create #content form .field,
+#contactos.create #content form .actions{float:left; clear:left}
+#contactos.create #content form .field input{float:left}
 
 /* tables */
 table{width:auto; margin-bottom:20px; width:100%; border-top:1px solid #ccc}
@@ -611,12 +637,19 @@ table b{width:60px; padding:2px 5px; display:inline-block; font-size:14px;
 table tr.items-list:hover{background:rgba(26,128,153,0.2)}
 
 /* términos de uso */
-#contactos.new #content form .field div input,
-#contactos.new #content form .field div label{width:auto; color:#636363; font-size:12px}
-#contactos.new #content form .field div label a{color:#1a7f98}
-#contactos.new #content form .field div label a:hover{text-decoration:underline}
-#contactos.new #content form .field div input{margin:0 10px 0 120px}
-#contactos.new #content form .field div label{width:400px}
+#content form .field div input[type="checkbox"],
+#content form .field div input[type="checkbox"] + label{width:auto; color:#636363; font-size:12px}
+#content form .field div label a{color:#1a7f98}
+#content form .field div label a:hover{text-decoration:underline}
+#content form .field div input[type="checkbox"]{margin:0 10px 0 120px}
+#content form .field div input[type="checkbox"] + label{width:400px}
+
+#contactos.create #content form .field div input[type="checkbox"],
+#contactos.create #content form .field div input[type="checkbox"] + label{width:auto; color:#636363; font-size:12px}
+#contactos.create #content form .field div label a{color:#1a7f98}
+#contactos.create #content form .field div label a:hover{text-decoration:underline}
+#contactos.create #content form .field div input[type="checkbox"]{margin:0 10px 0 120px}
+#contactos.create #content form .field div input[type="checkbox"] + label{width:400px}
 
 /* contact form campos obligatorios */
 #contactos.new #content form .field:nth-of-type(1) label:after,
@@ -636,7 +669,7 @@ table tr.items-list:hover{background:rgba(26,128,153,0.2)}
 #paises.index #main{background:none}
 
 /* entradas */
-#entradas.index #content article{float:left; clear:left; border-bottom:1px solid #6F7070}
+#entradas.index #content article{width:601px; float:left; clear:left; border-bottom:1px solid #ccc}
 #entradas #content article img{float:left; margin-right:45px; border:1px solid #1D8EA4;
   -moz-border-radius:15px; -webkit-border-radius:15px; -o-border-radius:15px; 
   -khtml-border-radius:15px; border-radius:15px}
@@ -652,7 +685,8 @@ table tr.items-list:hover{background:rgba(26,128,153,0.2)}
 #entradas #content article{width:100%}
 
 #entradas.show #content article,
-#entradas.show #content article header{width:100%; float:left; clear:left; border-bottom:1px solid #6F7070; position:relative}
+#entradas.show #content article header{width:100%; float:left; clear:left; border-bottom:1px solid #ccc; position:relative}
+#entradas.show #content article{width:601px}
 #entradas.show #content article header h3{margin-bottom:0}
 #entradas.show #content article header,
 #entradas.show #content article footer{height:auto; background:none; text-align:left}
@@ -665,6 +699,22 @@ table tr.items-list:hover{background:rgba(26,128,153,0.2)}
 #entradas.show #content article header .social{position:absolute; top:15px; right:0; width:auto; height:auto; background:none; text-align:right; vertical-align:bottom}
 #entradas.show #content article header .social *{vertical-align:middle; display:inline-block; *display:inline; *zoom:1; float:none}
 #entradas.show #content article header .social .label{line-height:140%; margin-right:5px; color:#1D8EA4}
+
+/* sucursales */
+#sucursales.index #content article{width:601px; float:left; clear:left; border-bottom:1px solid #ccc}
+#sucursales #content article img{float:left; margin-right:45px; border:1px solid #1D8EA4;
+  -moz-border-radius:15px; -webkit-border-radius:15px; -o-border-radius:15px; 
+  -khtml-border-radius:15px; border-radius:15px}
+#sucursales #content article h3,
+#sucursales #content article h3 a{text-transform:uppercase; font-size:1.05em; color:#1D8EA4}
+#sucursales.index #content article .date{margin-bottom:20px}
+#sucursales #content article .date{display:block; color:#6F7070; margin-bottom:25px}
+#sucursales #content article .date,
+#sucursales #content article p{font-size:0.85em; text-align:justify}
+#sucursales.index #content article .read-more{float:right}
+#sucursales.index #content article .btn:hover{color:white}
+#sucursales #content,
+#sucursales #content article{width:100%}
 
 /* computests */
 #computests.new #new_computest .field:nth-child(2) label:after,
@@ -708,9 +758,10 @@ table tr.items-list:hover{background:rgba(26,128,153,0.2)}
 
 #computests.show .btn.back{float:left; clear:left}
 
+h2 + .admin-controls{width:100%; float:left; clear:left; margin-bottom:20px}
 
 /* productos */
-#productos .list-product li{border-bottom:1px solid #ccc; float:left; clear:left}
+#productos .list-product li{  float:left; clear:left}
 #productos #main .region .list-product img{
 	border:1px solid #1D8EA4;
     -moz-border-radius:10px;
@@ -734,13 +785,15 @@ table tr.items-list:hover{background:rgba(26,128,153,0.2)}
 .list-product li p,
 #productos.show #content p{width:600px}
 #productos.show #content-bottom .lightbox{float:left}
-.list-product li a.lightbox{position:relative; left:-15px; margin-bottom:5px}
+/*.list-product li a.lightbox{position:relative; left:-15px; margin-bottom:5px}*/
 /* remover cuando se corrija */
 #productos .social{width:auto; height:auto; float:right}
 #productos .social span{position:relative; top:-8px; margin-right:5px}
 #productos .social ul span,
 #productos .social ul{display:inline-block; *display:inline; *zoom:1}
 #productos .social ul li{border-bottom:0; margin:0; padding:0}
+#productos.show #content h2 + .region{margin-bottom:5px}
+
 
 .video-light{position:relative; float:left; margin:20px 15px 10px 0}
 .video-light:nth-of-type(3){margin-right:0}
@@ -748,7 +801,8 @@ table tr.items-list:hover{background:rgba(26,128,153,0.2)}
 .video-light a{position:absolute; top:0; left:0; z-index:500; width:190px; height:119px}
 
 /* DEVISE */
-#devise_shared{overflow:auto; margin-top:25px; border-top:1px solid #ccc; padding-top:5px}
+#devise_shared,
+#accout-cancel{width:601px; float:left; clear:left; margin:25px 0 100px; border-top:1px solid #ccc; padding-top:5px}
 body[id^="devise"] #content #usuario_submit{margin-top:15px}
 
 /*
@@ -779,7 +833,8 @@ BLOCKS
 /* user page */
 #block-promociones .content{height:170px; background:url(../images/backgrounds/bg-promociones.png) no-repeat 0 0}
 #block-receta .inner{height:auto !important; height:400px; min-height:400px;  
-background:url(../images/backgrounds/bg-recetas.png) no-repeat 0 -1px; margin-right:9px; margin-left:0}
+background:url(../images/backgrounds/bg-recetas.png) no-repeat 0 -1px; margin-left:0}
+#block-receta .inner .content h2{line-height:100%}
 #block-receta .inner .content{padding:60px 40px 30px}
 #block-receta .inner .content h3{margin:0}
 
@@ -830,7 +885,7 @@ DEFAULT BLOCKS
 .mbottom-1{margin-bottom:5px}
 .mbottom-2, #contacts.index #content form .field textarea{margin-bottom:10px}
 .mbottom-3, p, #computests #content .field, #contactos #content .field, #devise-registrations #content-wrapper form div,
-#productos .list-product li{margin-bottom:15px}
+#productos .list-product li, #devise-sessions #content .field{margin-bottom:15px}
 .mbottom-4, .not-front #content.region, #content-wrapper .block{margin-bottom:20px}
 .mbottom-5{margin-bottom:25px}
 .mbottom-6, #entradas.show #content article header, #entradas.show #content article{margin-bottom:30px}
@@ -859,15 +914,16 @@ DEFAULT BLOCKS
 .mbottom-29{margin-bottom:145px}
 .mbottom-30{margin-bottom:150px}
 
+.ptop-9, #sucursales #content article:nth-of-type(1), #entradas.index #content article:nth-of-type(1){padding-top:0}
 .ptop-1{padding-top:5px}
 .ptop-2{padding-top:10px}
-.ptop-3{padding-top:15px}
+.ptop-3, #sucursales #content article, #entradas.index #content article{padding-top:15px}
 .ptop-4{padding-top:20px}
 .ptop-5, #sidebar-first .block{padding-top:25px}
 .ptop-6{padding-top:30px}
 .ptop-7{padding-top:35px}
 .ptop-8{padding-top:40px}
-.ptop-9, #entradas.index #content article, #productos.index #content article{padding-top:45px}
+.ptop-9, #productos.index #content article{padding-top:45px}
 .ptop-10{padding-top:50px}
 .ptop-11{padding-top:55px}
 .ptop-12{padding-top:60px}
@@ -892,7 +948,7 @@ DEFAULT BLOCKS
 
 .pbottom-1{padding-bottom:5px}
 .pbottom-2{padding-bottom:10px}
-.pbottom-3, #entradas #content article, #entradas.show #content article header, #productos #content article,
+.pbottom-3, #sucursales #content article, #entradas #content article, #entradas.show #content article header, #productos #content article,
 #productos .list-product li{padding-bottom:15px}
 .pbottom-4{padding-bottom:20px}
 .pbottom-5, #logo, #sidebar-first .block{padding-bottom:25px}
