@@ -2,6 +2,41 @@ class ComputestsController < InheritedResources::Base
   before_filter :authenticate_admin!, :except => [:show, :new, :create]
   before_filter :find_pais
   
+  def index
+    @computests = Computest.order("created_at DESC")
+    respond_to do |format|
+      format.html
+      format.xls { send_data @computests.to_xls(:headers => ["Id",
+                   "nombre",
+                   "apellido",
+                   "sexo",
+                   "email",
+                   "telefono",
+                   "altura",
+                   "peso",
+                   "imc",
+                   "estado",
+                   "pais"],
+                   :columns => [:id,
+                   :nombre,
+                   :apellido,
+                   :sexo,
+                   :email,
+                   :telefono,
+                   :altura,
+                   :peso,
+                   :imc,
+                   :estado,
+                   :pais],
+                   :cell_format => {:color => :blue},
+                   :header_format => {:weight => :bold, :color => :red},
+                   :horizontal_align => :center),
+                   :content_type => 'application/vnd.ms-excel',
+                   :filename => 'computests.xls'
+                 }
+    end
+  end
+  
   def find_pais
     if params[:locale]
       @computests = Computest.where("pais = ?", params[:locale])

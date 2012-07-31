@@ -1,5 +1,7 @@
 <div id="content" class="region grid_8 omega region">
-<h1>Listando usuarios</h1>
+<h1><%= page_title! "Listando usuarios" %></h1>
+
+<%= link_to 'Descargar lista en Excel', usuarios_lista_path(request.parameters.merge({:format => :xls})), :class => 'btn' %>
 
 <table>
   <tr>

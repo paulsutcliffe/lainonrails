@@ -24,5 +24,23 @@ class Usuario < ActiveRecord::Base
                   :dondehizodieta,
                   :sexo,
                   :pais
+
+  def as_xls(options = {})
+    {
+        "Id" => id.to_s,
+        "Nombre" => nombre,
+        "Apellido" => apellido,
+        "E-Mail" => email,
+        "Teléfono" => telefono,
+        "Sexo" => sexo,
+        "Altura" => altura,
+        "Peso" => peso,
+        "Hizo Dieta" => hizodieta,
+        "Edad" => edad,
+        "Hobbies" => hobbies,
+        "Fuma" => fuma,
+        "Donde hizo dieta" => dondehizodieta,
+    }
+  end
   
 end

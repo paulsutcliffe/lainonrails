@@ -1,5 +1,6 @@
 <div id="content" class="region grid_8 omega region">
 <h1><%= page_title! "Listando computests" %></h1>
+<%= link_to 'Descargar Computests en Excel', computests_path(request.parameters.merge({:format => :xls})), :class => 'btn' %>
 <table>
   <tr>
     <th>Nombre</th>

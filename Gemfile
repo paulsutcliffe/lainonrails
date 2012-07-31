@@ -24,6 +24,8 @@ gem "globalize3"
 gem "geocoder"
 gem "auto_html"
 gem "page_title_helper"
+gem "spreadsheet", "0.6.5.8"
+gem "to_xls"
 
 # Use unicorn as the web server
 # gem 'unicorn'

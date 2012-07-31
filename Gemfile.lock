@@ -157,6 +157,7 @@ GEM
       activesupport (>= 3.0)
       railties (>= 3.0)
       rspec (~> 2.10.0)
+    ruby-ole (1.2.11.4)
     rubyzip (0.9.9)
     selenium-webdriver (2.24.0)
       childprocess (>= 0.2.5)
@@ -167,9 +168,13 @@ GEM
       multi_json (~> 1.0)
       simplecov-html (~> 0.5.3)
     simplecov-html (0.5.3)
+    spreadsheet (0.6.5.8)
+      ruby-ole (>= 1.0)
     therubyracer (0.10.1)
       libv8 (~> 3.3.10)
     thor (0.14.6)
+    to_xls (1.5.1)
+      spreadsheet
     treetop (1.4.10)
       polyglot
       polyglot (>= 0.3.1)
@@ -206,5 +211,7 @@ DEPENDENCIES
   rake (~> 0.9.2)
   rspec-rails
   simplecov
+  spreadsheet (= 0.6.5.8)
   therubyracer
+  to_xls
   will_paginate
