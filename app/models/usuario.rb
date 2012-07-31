@@ -1,3 +1,4 @@
+#encoding: utf-8
 class Usuario < ActiveRecord::Base
   
   validates :nombre, :apellido, :telefono, :altura, :peso, :presence => true
