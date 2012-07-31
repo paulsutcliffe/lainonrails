@@ -3,7 +3,7 @@ class ComputestsController < InheritedResources::Base
   before_filter :find_pais
   
   def index
-    @computests = Computest.order("created_at DESC")
+    @computests = Computest.where("pais = ?", params[:locale]).order("created_at DESC")
     respond_to do |format|
       format.html
       format.xls { send_data @computests.to_xls(:headers => ["Id",
