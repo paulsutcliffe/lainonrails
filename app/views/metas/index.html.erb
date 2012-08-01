@@ -12,8 +12,8 @@
   <tr>
     <td><%= meta.keywords %></td>
     <td><%= meta.description %></td>
-    <td><%= link_to 'Editar', edit_meta_path(meta) %></td>
-    <td><%= link_to 'Eliminar', meta, :confirm => '¿Estás seguro?', :method => :delete %></td>
+    <td><%= link_to 'Editar', edit_meta_path(meta), :class => 'btn' %></td>
+    <td><%= link_to 'Eliminar', meta, :confirm => '¿Estás seguro?', :method => :delete, :class => 'btn' %></td>
   </tr>
 <% end %>
 </table>
@@ -21,5 +21,5 @@
 <br />
 
 <% if @metas.empty? %>
-  <%= link_to 'Nuevos Metas', new_meta_path %>
+  <%= link_to 'Nuevos Metas', new_meta_path, :class => 'btn' %>
 <% end %>

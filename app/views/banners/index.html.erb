@@ -10,13 +10,13 @@
 <% @banners.each do |banner| %>
   <tr>
     <td><%= image_tag banner.banner(:regular) %></td>
-    <td><%= link_to 'Editar', edit_banner_path(banner) %></td>
-    <td><%= link_to 'Eliminar', banner, :confirm => '¿Estás seguro?', :method => :delete %></td>
+    <td><%= link_to 'Editar', edit_banner_path(banner), :class => 'btn' %></td>
+    <td><%= link_to 'Eliminar', banner, :confirm => '¿Estás seguro?', :method => :delete, :class => 'btn' %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 <% if @banners.empty? %>
-  <%= link_to 'Nuevo banner', new_banner_path %>
+  <%= link_to 'Nuevo banner', new_banner_path, :class => 'btn' %>
 <% end %>

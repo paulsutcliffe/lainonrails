@@ -16,7 +16,7 @@ Scenario: Creating and checking up the metas
   When I visit the "/metas" page
   Then I should not see "Nuevos Metas"
 
-Scenario: Editing the metas
+Scenario: Editando the metas
   Given I am a new, authenticated admin
   Given that I am on the home page
   When I visit the "/metas" page

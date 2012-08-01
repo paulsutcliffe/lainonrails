@@ -10,8 +10,8 @@
 <% @cabecera_banners.each do |cabecera_banner| %>
   <tr>
     <td><%= link_to image_tag(cabecera_banner.cabecera_banner(:thumb)), cabecera_banner %></td>
-    <td><%= link_to 'Editar', edit_cabecera_banner_path(cabecera_banner) %></td>
-    <td><%= link_to 'Eliminar', cabecera_banner, :confirm => '¿Estás seguro?', :method => :delete %></td>
+    <td><%= link_to 'Editar', edit_cabecera_banner_path(cabecera_banner), :class => 'btn' %></td>
+    <td><%= link_to 'Eliminar', cabecera_banner, :confirm => '¿Estás seguro?', :method => :delete, :class => 'btn' %></td>
   </tr>
 <% end %>
 </table>
@@ -19,5 +19,5 @@
 <br />
 
 <% if @cabecera_banners.empty? %>
-  <%= link_to 'Nuevo Banner', new_cabecera_banner_path %>
+  <%= link_to 'Nuevo Banner', new_cabecera_banner_path, :class => 'btn' %>
 <% end %>

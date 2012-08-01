@@ -29,6 +29,6 @@
 
 <% if @recetas.empty? %>
   <% if current_admin %>
-  <%= link_to 'Nueva receta', new_receta_path %>
+  <%= link_to 'Nueva receta', new_receta_path, :class => 'btn' %>
   <% end %>
 <% end %>

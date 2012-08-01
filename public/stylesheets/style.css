@@ -517,6 +517,8 @@ POSTSCRIPT
 -khtml-border-radius:10px; border-radius:10px;
 behavior: url(../javascripts/ie-support/PIE-1.0.0/PIE.htc)}
 
+.block .ad{margin-top:40px}
+
 .front #postscript-top .block:nth-of-type(2) img{width:234px}
 .front #postscript-top .block:nth-of-type(1n+2) img{border:0; height:103px;
 -moz-border-radius:0px; -webkit-border-radius:0px; -o-border-radius:0px; 
@@ -832,6 +834,10 @@ BLOCKS
 #sidebar-first #block-contactanos p{color:white; font-size:1.5em; font-weight:normal}
 
 .pe #sidebar-first #block-contactanos p span.email{font-size:0.7em; margin:0}
+.uy #sidebar-first #block-contactanos p span.email{font-size:0.7em; margin:0}
+.bo #sidebar-first #block-contactanos p span.email{font-size:0.7em; margin:0}
+.sv #sidebar-first #block-contactanos p span.email{font-size:0.7em; margin:0}
+.gt #sidebar-first #block-contactanos p span.email{font-size:0.7em; margin:0}
 .cr #sidebar-first #block-contactanos p span.email{font-size:0.5em; margin:0; margin-top:-20px}
 
 #block-computest span{margin-bottom:25px; display:block}

@@ -10,8 +10,8 @@
 <% @ofertas.each do |oferta| %>
   <tr>
     <td><%= link_to image_tag(oferta.oferta(:thumb)), oferta %></td>
-    <td><%= link_to 'Editar', edit_oferta_path(oferta) %></td>
-    <td><%= link_to 'Eliminar', oferta, :confirm => '¿Estás seguro?', :method => :delete %></td>
+    <td><%= link_to 'Editar', edit_oferta_path(oferta), :class => 'btn' %></td>
+    <td><%= link_to 'Eliminar', oferta, :confirm => '¿Estás seguro?', :method => :delete, :class => 'btn' %></td>
   </tr>
 <% end %>
 </table>
@@ -19,5 +19,5 @@
 <br />
 
 <% if @ofertas.empty? %>
-  <%= link_to 'Nueva oferta', new_oferta_path %>
+  <%= link_to 'Nueva oferta', new_oferta_path, :class => 'btn' %>
 <% end %>

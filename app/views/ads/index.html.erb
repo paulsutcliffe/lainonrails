@@ -1,4 +1,4 @@
-<h1>Listando ads</h1>
+<h1>Listando Anuncios</h1>
 
 <table>
   <tr>
@@ -10,8 +10,8 @@
 <% @ads.each do |ad| %>
   <tr>
     <td><%= link_to image_tag(ad.ad(:thumb)) %></td>
-    <td><%= link_to 'Editar', edit_ad_path(ad) %></td>
-    <td><%= link_to 'Eliminar', ad, :confirm => '¿Estás seguro?', :method => :delete %></td>
+    <td><%= link_to 'Editar', edit_ad_path(ad), :class => 'btn' %></td>
+    <td><%= link_to 'Eliminar', ad, :confirm => '¿Estás seguro?', :method => :delete, :class => 'btn' %></td>
   </tr>
 <% end %>
 </table>
@@ -19,5 +19,5 @@
 <br />
 
 <% if @ads.empty? %>
-  <%= link_to 'Nuevo anuncio', new_ad_path %>
+  <%= link_to 'Nuevo anuncio', new_ad_path, :class => 'btn' %>
 <% end %>

@@ -1,5 +1,5 @@
 <%= image_tag @slide.slide(:regular) %>
 
 
-<%= link_to 'Editar', edit_slide_path(@slide) %> |
-<%= link_to 'Atrás', slides_path %>
+<%= link_to 'Editar', edit_slide_path(@slide), :class => 'btn' %>
+<%= link_to 'Atrás', slides_path, :class => 'btn' %>

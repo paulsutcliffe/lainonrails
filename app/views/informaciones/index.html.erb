@@ -15,14 +15,14 @@
     <td><%= informacion.telefono_fijo %></td>
     <td><%= informacion.llamada_gratuita %></td>
     <td><%= informacion.email %></td>
-    <td><%= informacion.facebook %></td>
-    <td><%= link_to 'Editar', edit_informacion_path(informacion) %></td>
-    <td><%= link_to 'Eliminar', informacion, :confirm => '¿Estás seguro?', :method => :delete %></td>
+    <td><%= truncate(informacion.facebook, :length => 12) %></td>
+    <td><%= link_to 'Editar', edit_informacion_path(informacion), :class => 'btn' %></td>
+    <td><%= link_to 'Eliminar', informacion, :confirm => '¿Estás seguro?', :method => :delete, :class => 'btn' %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 <% if @informaciones.empty? %>
-  <%= link_to 'Ingresar Información', new_informacion_path %>
+  <%= link_to 'Ingresar Información', new_informacion_path, :class => 'btn' %>
 <% end %>

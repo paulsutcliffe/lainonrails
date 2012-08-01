@@ -1,7 +1,5 @@
-
-
 <%= image_tag @ad.ad(:regular) %>
 
 
-<%= link_to 'Editar', edit_ad_path(@ad) %> |
-<%= link_to 'Atrás', ads_path %>
+<%= link_to 'Editar', edit_ad_path(@ad), :class => 'btn' %>
+<%= link_to 'Atrás', ads_path, :class => 'btn' %>

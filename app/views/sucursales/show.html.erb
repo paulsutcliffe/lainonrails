@@ -16,6 +16,6 @@
 </p>
 
 <% if current_admin %>
-<%= link_to 'Editar', edit_sucursal_path(@sucursal) %>
+<%= link_to 'Editar', edit_sucursal_path(@sucursal), :class => 'btn' %>
 <% end %>
-| <%= link_to 'Atrás', sucursales_path %>
+<%= link_to 'Atrás', sucursales_path, :class => 'btn' %>
