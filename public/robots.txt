@@ -4,3 +4,4 @@ Disallow: /stylesheets/
 Disallow: /javascripts/
 Disallow: /libraries/
 Disallow: /usuarios/
+Sitemap: http://www.lainadelgaza.net/sitemap_index.xml.gz

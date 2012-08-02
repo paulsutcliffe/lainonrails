@@ -5,7 +5,6 @@ gem 'rails', '3.0.3'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-#gem "mysql", "~> 2.8.1"
 gem "mysql2", "~> 0.2.7"
 gem "paperclip", "~>2.0"
 gem "will_paginate"
@@ -26,6 +25,7 @@ gem "auto_html"
 gem "page_title_helper"
 gem "spreadsheet", "0.6.5.8"
 gem "to_xls"
+gem "sitemap_generator"
 
 # Use unicorn as the web server
 # gem 'unicorn'
