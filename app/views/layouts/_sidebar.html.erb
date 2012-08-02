@@ -2,12 +2,12 @@
      <!-- block 1 -->
      <div id="block-registrate" class="block">
        <div class="inner grid_4">
-         <% if I18n.locale == :cr %>
-           <%= image_tag '/images/images/sidebar-costarica.png' %> 
+         <% if I18n.locale == :pe %>
+           <%= link_to image_tag("/images/images/sidebar-registrate.png"), new_usuario_registration_path %>
          <% else %>
          <% unless current_usuario %>
-            <%= link_to image_tag("/images/images/sidebar-registrate.png"), new_usuario_registration_path %>
-          <% end %>
+           <%= image_tag '/images/images/sidebar-' + I18n.locale.to_s  + '.png' %>    
+         <% end %>
       <% end %>
      </div>
         </div>
