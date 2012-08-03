@@ -5,6 +5,7 @@ gem 'rails', '3.0.3'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+gem "sinatra"
 gem "mysql2", "~> 0.2.7"
 gem "paperclip", "~>2.0"
 gem "will_paginate"
