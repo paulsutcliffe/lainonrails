@@ -20,7 +20,7 @@
     <td><%= truncate(contacto.email, :length => 16) %></td>
     <td><%= truncate(contacto.telefono, :length => 12) %></td>
     <td><%= truncate(contacto.ciudad, :length => 16) %></td>
-    <td><%= image_tag '/images/countries-flags/flag-' + I18n.locale.to_s  + '.jpg', :class => 'flag' %></td>
+    <td><%= image_tag '/images/countries-flags/flag-' + I18n.locale.to_s  + '.png', :class => 'flag' %></td>
     <td><%= link_to 'Ver', contacto, :class => 'btn' %></td>
     <td><%= link_to 'Eliminar', contacto, :confirm => '¿Estás seguro?', :method => :delete, :class => 'btn' %></td>
   </tr>
