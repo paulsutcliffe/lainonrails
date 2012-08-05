@@ -201,8 +201,9 @@ h6.title,
 
 #content > h2.title{border-bottom:1px solid #ccc; margin-right:0px; padding-bottom:15px; margin-right:19px}
 #testimonios h2.title{margin-right:0px}
-#testimonios h2.title a,
+
 #testimonios h2.title a{font-size:0.6em; color:#666; margin-right:10px}
+#testimonios h2.title a:hover{color:#1D8EA4; font-size:23px; text-decoration:underline}
 
 #testimonios .testimonios-video h2.title a:nth-child(1),
 #testimonios .testimonios-antesydespues h2.title a:nth-child(2){font-size:1em; color:#1D8EA4; margin-right:10px}
@@ -244,7 +245,7 @@ HEADER-TOP
 #header-top p,
 #header-top p:visited{color:#22A3B5; float:right; font-size:1em}
 
-#user-greeting{float:right; margin-top:5px}
+#user-greeting{float:right; position:relative; top:25px}
 #user-controls{float:right; clear:right; margin-top:40px; text-align:right}
 
 /*
@@ -312,7 +313,7 @@ footer a{color:#1D8EA4}
 footer{background:#ccc}
 footer p{padding:10px; margin:0}
 footer #copyright{float:left}
-footer #copyright a{margin-left:10px}
+footer #copyright a{margin-left:88px}
 footer #autor{float:right}
 footer #autor a:hover{color:#333}
 
@@ -838,7 +839,7 @@ BLOCKS
 .bo #sidebar-first #block-contactanos p span.email{font-size:0.53em; margin:0}
 .sv #sidebar-first #block-contactanos p span.email{font-size:0.7em; margin:0}
 .gt #sidebar-first #block-contactanos p span.email{font-size:0.7em; margin:0}
-.cr #sidebar-first #block-contactanos p span.email{font-size:0.5em; margin:0; margin-top:-20px}
+.cr #sidebar-first #block-contactanos p span.email{font-size:0.5em; margin:0}
 
 #block-computest span{margin-bottom:25px; display:block}
 

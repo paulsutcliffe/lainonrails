@@ -18,10 +18,16 @@
         <span>Cont&aacute;ctanos <%= image_tag '/images/countries-flags/flag-' + I18n.locale.to_s  + '.png', :class => 'flag' %></span>
         <div class="content">
           <% if @informacion %>
-          <p>          
-            <%= @informacion.telefono_fijo %><br />
-            <%= @informacion.llamada_gratuita %><br />
-            <span class="email"><%= @informacion.email %></span>
+          <p>
+	        <% unless @informacion.telefono_fijo.blank? %>
+              <%= @informacion.telefono_fijo %><br />
+            <% end %>
+            <% unless @informacion.llamada_gratuita.blank? %>
+              <%= @informacion.llamada_gratuita %><br />
+            <% end %>
+            <% unless @informacion.email.blank? %>
+              <span class="email"><%= @informacion.email %></span>
+            <% end %>
           </p>
           <% end %>
         </div>
