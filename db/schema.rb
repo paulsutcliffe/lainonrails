@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120807174140) do
+ActiveRecord::Schema.define(:version => 20120808035310) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false
@@ -148,6 +148,7 @@ ActiveRecord::Schema.define(:version => 20120807174140) do
     t.string   "video_link1"
     t.string   "video_link2"
     t.string   "video_link3"
+    t.string   "pais"
   end
 
   add_index "productos", ["slug"], :name => "index_productos_on_slug", :unique => true

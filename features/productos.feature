@@ -1,65 +1,36 @@
 #encoding: utf-8
 @javascript
 
-Feature: Creating productos
-  Scenario: creating productos
-  Given I am a new, authenticated admin
-  Given that I am on the home page
-  When I visit the "/productos" page
-  And I follow "Nuevo Producto"
-  And I fill in "Nombre" with "Sacián"
-  And I fill in "Descripción" with "Sonríe en vez de comer."
-  When I attach the file "features/support/picture.jpg" to "Imagen"
-  And I press "Guardar"
-  Then I should see "Producto guardado correctamente."
-  And I should see "Sacián"
-  And I should see "Sonríe en vez de comer."
-  And I should see the image "picture.png"
-  Given I am an admin not authenticated
-  When I visit the "/productos" page
-  Then I should see "Sacián"
-  And I should see "Sonríe en vez de comer."
-  And I should see the image "picture.png"
+Feature: Creating Productos for every country
 
-  
-  Scenario: editing productos
-  Given I am a new, authenticated admin
-  Given that I am on the home page
-  When I visit the "/productos" page
-  And I follow "Nuevo Producto"
-  And I fill in "Nombre" with "Juacián"
-  And I fill in "Descripción" with "Come en vez de sonreir."
-  When I attach the file "features/support/picture.jpg" to "Imagen"
-  And I press "Guardar"
-  Then I should see "Producto guardado correctamente."
-  And I should see the image "picture.png"
-  And I should see "Juacián"
-  And I should see "Come en vez de sonreir."
-  Then I follow "Editar"
-  When I attach the file "features/support/picture.jpg" to "Imagen"
-  And I fill in "Nombre" with "Sacián"
-  And I fill in "Descripción" with "Sonríe en vez de comer."
-  And I press "Guardar"
-  Then I should see "Producto actualizado correctamente."
-  And I should see the image "picture.png"
-  And I should see "Sacián"
-  And I should see "Sonríe en vez de comer."
+  Scenario Outline: creating productos for every same country
+    Given I am a new, authenticated admin
+    Given that I am on the home page
+	When I visit the "/<country>/productos" page
+	And I follow "Nuevo Producto"
+	When I fill in "Nombre" with "<name>"
+	When I fill in "Descripción" with "<description>"
+	When I fill in "Video 1" with "<video>"
+	When I fill in "Video 2" with "<video>"
+	When I fill in "Video 3" with "<video>"
+	And I attach the file "features/support/picture.jpg" to "Imagen"
+	When I press "Guardar"
+	Then I should see "Producto guardado correctamente."
+	And I should see the image "picture.png"
+	And I should see "<name>"
+	And I should see "<description>"
+   
+    Given I am an admin not authenticated
+    When I visit the "/<country>/productos" page
+    Then I should see the image "picture.png"
+    When I visit the "/<other_country>/productos" page
+    Then I should not see the image "picture.png"
 
-  
-  Scenario: deleting productos
-  Given I am a new, authenticated admin
-  Given that I am on the home page
-  When I visit the "/productos" page
-  And I follow "Nuevo Producto"
-  And I fill in "Nombre" with "Sacián"
-  And I fill in "Descripción" with "Sonríe en vez de comer."
-  When I attach the file "features/support/picture.jpg" to "Imagen"
-  And I press "Guardar"
-  Then I should see "Producto guardado correctamente."
-  And I should see the image "picture.png"
-  And I should see "Sacián"
-  And I should see "Sonríe en vez de comer."
-  Then I visit the "/productos" page
-  Then I follow "Eliminar"
-  When I accept the "¿Estás seguro?" alert
-  Then I should see "Producto eliminado correctamente."
+  Examples:
+    | other_country | country | name            | description                      | video                     |
+	| cr            | pe      | 28 de Julio     | Desenvolva com novas tecnologias | http://vimeo.com/45408437 |
+	| bo            | cr      | Día de la madre | Desenvolva com novas tecnologias | http://vimeo.com/45408437 |
+	| sv            | bo      | Fiestas patrias | Desenvolva com novas tecnologias | http://vimeo.com/45408437 |
+	| pe            | sv      | Verano          | Desenvolva com novas tecnologias | http://vimeo.com/45408437 |
+	| gt            | uy      | Invierno        | Desenvolva com novas tecnologias | http://vimeo.com/45408437 |
+	| uy            | gt      | Navidad         | Desenvolva com novas tecnologias | http://vimeo.com/45408437 |

@@ -38,32 +38,12 @@
     <h3><%= link_to producto.nombre, producto %></h3>
     </header>
 
-      <%= sanitize(simple_format(truncate(producto.descripcion, :length => 250, :omission => '...')), :tags => %w(p i br b)) %>
+      <%= sanitize(simple_format(truncate(producto.descripcion, :length => 50, :omission => '...')), :tags => %w(p i br b)) %>
 
-        <%= link_to image_tag(producto.picture(:regular)), producto.picture(:facebook), :class => 'lightbox', :rel => 'gallery-' + producto.nombre, :title => producto.nombre  %>
-  
-   
-    <div class="video-light">
-      <%= producto.video_link1_html %>
-      <%= link_to '', producto.video_link1, :class => 'over lightbox', :rel => 'gallery-' + producto.nombre, :title => producto.nombre  %>
-    </div>
-
-
-
-    <div class="video-light">
-      <%= producto.video_link2_html %>
-      <%= link_to '', producto.video_link1, :class => 'over lightbox', :rel => 'gallery' + producto.nombre, :title => producto.nombre %>
-    </div>
-
-
-
-    <div class="video-light">
-      <%= producto.video_link3_html %>
-      <%= link_to '', producto.video_link1, :class => 'over lightbox', :rel => 'gallery' + producto.nombre, :title => producto.nombre %>
-    </div>
-
+        <%= link_to image_tag(producto.picture(:regular)), producto  %>
 
     <div>
+	  <%= link_to "Ver más", producto, :class => 'btn' %>
       <% if can? :manage, Producto %>
         <%= link_to 'Editar', edit_producto_path(producto), :class => 'btn edit' %>
         <%= link_to 'Eliminar', producto, :confirm => '¿Estás seguro?', :method => :delete, :class => 'btn del' %>
