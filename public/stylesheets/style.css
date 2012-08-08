@@ -1177,8 +1177,24 @@ text-align:center;
 behavior: url(../javascripts/ie-support/PIE-1.0.0/PIE.htc)
 }
 
-
-
+#flash_error{
+-moz-border-radius:10px;
+-webkit-border-radius:10px;
+-o-border-radius:10px;
+-khtml-border-radius:10px;
+border-radius:10px;
+background:red;
+margin:5px;
+color:white;
+padding:5px 10px 5px 10px;
+width:98%;
+top:0px;
+left:0px;
+position:fixed;
+z-index:501;
+text-align:center;
+behavior: url(../javascripts/ie-support/PIE-1.0.0/PIE.htc)
+}
 
 .pagination{color:#1D8EA4}
 .pagination a{color:#1A7F98}

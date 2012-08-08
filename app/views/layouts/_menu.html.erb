@@ -42,7 +42,7 @@
         <span>Contacto</span>
       <% end %>
     </li>
-    <% if current_admin %>
+    <% if can? :manage, Usuario %>
       <li class="<% if request.path_parameters[:controller] == 'usuarios' %>selectedLava<% end %>">
       <%= link_to_unless_current 'Usuarios', usuarios_lista_path do %>
         <span>Usuarios</span>

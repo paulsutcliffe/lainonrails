@@ -12,7 +12,7 @@
 <section id="content" class="region">
 <h2 class="title"><%= page_title! 'Productos' %></h2>
 
-<% if current_admin %>
+<% if can? :manage, Producto %>
   <div class="admin-controls">
     <%= link_to 'Nuevo Producto', new_producto_path, :class => 'btn new' %>
   </div>
@@ -64,7 +64,7 @@
 
 
     <div>
-      <% if current_admin %>
+      <% if can? :manage, Producto %>
         <%= link_to 'Editar', edit_producto_path(producto), :class => 'btn edit' %>
         <%= link_to 'Eliminar', producto, :confirm => '¿Estás seguro?', :method => :delete, :class => 'btn del' %>
        <% end %>

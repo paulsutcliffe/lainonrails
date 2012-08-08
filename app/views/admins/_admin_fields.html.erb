@@ -1,0 +1,9 @@
+<p><%= f.label :email, "E-mail" %></p>
+<p><%= f.text_field :email %></p>
+ 
+<% if can? :read, Role %>
+	<p><%= f.label :role, "Rol" %></p>
+	<ul class="no-pad no-bullets">
+		<%= habtm_checkboxes(@admin, :role_ids, @accessible_roles, :name) %>
+	</ul>
+<% end %>

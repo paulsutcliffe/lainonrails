@@ -1,0 +1,18 @@
+<h2>Registrar nuevo Admin</h2>
+ 
+<%= form_for(@admin) do |f| %>
+ <ul>
+  <% @admin.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+  </ul> 
+  <%= render :partial => 'admin_fields', :locals => { :f => f } %>
+ 
+  <p><%= f.label :password, "Contraseña" %></p>
+  <p><%= f.password_field :password %></p>
+ 
+  <p><%= f.label :password_confirmation, "Confirmar contraseña" %></p>
+  <p><%= f.password_field :password_confirmation %></p>
+ 
+  <p><%= f.submit "Registrar" %></p>
+<% end %>

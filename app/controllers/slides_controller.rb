@@ -1,7 +1,7 @@
 class SlidesController < InheritedResources::Base
   before_filter :authenticate_admin!
   before_filter :find_pais
-  
+  load_and_authorize_resource
   def find_pais
     if params[:locale]
       @slides = Slide.where("pais = ?", params[:locale])

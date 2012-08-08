@@ -1,21 +1,22 @@
 #encoding: utf-8
 @javascript
 
-Feature: Admins
+Feature: Admin create a new admin
 
   Scenario Outline: creating a new admin account
-  Given I am an admin not authenticated
-  When I visit the "/admins/registro/inscribirse" page
+  Given I am a new, authenticated admin
+  When I visit the "/admins" page
+  And I follow "Agregar Administrador"
   And I fill in "E-mail" with "<email>"
   And I fill in "Contraseña" with "<password>"
   And I fill in "Confirmar contraseña" with "<password>"
-  And I press "Inscribirse"
-  Then I should see "¡Bienvenido! Ha ingresado al sistema exitosamente"
+  And I press "Registrar"
+  Then I should see "<email>"
 
   Examples:
     | email              | password  |
     | paulyoyo@gmail.com | chimpance |
-    | iam@milesdavis.com | donalee   |
+    | hola@kosmyka.com   | chimpance |
     
 
   Scenario: Willing to edit my admin account

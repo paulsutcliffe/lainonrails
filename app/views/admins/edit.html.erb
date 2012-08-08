@@ -1,0 +1,25 @@
+<h3><%= @admin == @current_admin ? "La Configuración de tu usuario" : "Editar Admin" %></h3>
+ 
+<%= form_for(@admin, :html => { :method => :put }) do |f| %>
+
+
+<ul>
+  <% @admin.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+  </ul>
+
+	<%= render :partial => 'admin_fields', :locals => { :f => f } %>
+ 
+	<p><%= f.label :password, "Contraseña" %> <i>(déjala en blanco si no quieres cambiarla)</i></p>
+	<p><%= f.password_field :password %></p>
+ 
+	<p><%= f.label :password_confirmation, "Confirmar Contraseña" %></p>
+	<p><%= f.password_field :password_confirmation %></p>
+ 
+	<p><%= f.label :current_password, "Contraseña Actual" %> <i>(necesitamos tu contraseña actual para poder guardar los cambios)</i></p>
+	<p><%= f.password_field :current_password %></p>
+ 
+  <p><%= f.submit "Actualizar" %></p>
+<% end %>
+<%= link_to "Atrás", :back %>

@@ -13,7 +13,7 @@
 	      <a href="/<%= I18n.locale %>/testimonios/?tipo=video"><%= page_title! "Videos y Spots" %></a>
 	      <a href="/<%= I18n.locale %>/testimonios/?tipo=antesydespues">Antes y después</a>
 	    </h2>
-        <% if current_admin %>
+        <% if can? :manage, Testimonio %>
 	      <div class="admin-controls">
             <%= link_to 'Nuevo testimonio', new_testimonio_path, :class => 'btn' %>
           </div>
@@ -39,7 +39,7 @@ nuestro personal medico. Esto quiere decir que los resultados no son iguales par
               <%= link_to image_tag(testimonio.imagen(:thumb)), testimonio.video_link, :class => 'lightbox', :rel => 'gallery' %>
             <% end %>
             <%= sanitize(simple_format(truncate(testimonio.descripcion, :length => 50, :omission => '...')), :tags => %w(p i br b)) %>
-            <% if current_admin %>
+            <% if can? :manage, Testimonio %>
               <div>
                 <%= link_to 'Editar', edit_testimonio_path(testimonio), :class => 'btn' %>
                 <%= link_to 'Eliminar', testimonio, :confirm => '¿Estás seguro?', :method => :delete, :class => 'btn' %>

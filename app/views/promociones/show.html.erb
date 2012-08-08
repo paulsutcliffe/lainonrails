@@ -23,7 +23,7 @@
         <%= link_to image_tag(@promocion.publicidad(:regular)), @promocion.publicidad(:facebook), :class => 'lightbox', :rel => 'gallery' %>
 
         <div>
-	      <% if current_admin %>
+	      <% if can? :manage, Promocion %>
             <%= link_to 'Editar', edit_promocion_path(@promocion), :class => 'btn' %>
            <% end %>
         </div>

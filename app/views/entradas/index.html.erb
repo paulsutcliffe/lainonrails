@@ -1,7 +1,7 @@
 <section id="content" class="region">
 <h2 class="title"><%= page_title! 'Blog' %></h2>
 
-<% if current_admin %>
+<% if can? :manage, Entrada %>
 <div class="admin-controls">
 <%= link_to 'Agregar Nuevo Artículo', new_entrada_path, :class => 'btn new' %>
 </div>
@@ -15,7 +15,7 @@
   <%= sanitize(simple_format(truncate(entrada.contenido, :length =>116, :omission => '...')), :tags => %w(p i br b)) %>
   <%= link_to 'Leer Más', entrada, :class => 'btn read-more' %>
 
-  <% if current_admin %>
+  <% if can? :manage, Entrada %>
     <div class="admin-controls">
       <%= link_to 'Editar', edit_entrada_path(entrada), :class => 'btn edit' %>
       <%= link_to 'Eliminar', entrada, :confirm => '¿Estás seguro?', :method => :delete, :class => 'btn del' %>

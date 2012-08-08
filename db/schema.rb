@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120727042050) do
+ActiveRecord::Schema.define(:version => 20120807174140) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false
@@ -29,6 +29,11 @@ ActiveRecord::Schema.define(:version => 20120727042050) do
 
   add_index "admins", ["email"], :name => "index_admins_on_email", :unique => true
   add_index "admins", ["reset_password_token"], :name => "index_admins_on_reset_password_token", :unique => true
+
+  create_table "admins_roles", :id => false, :force => true do |t|
+    t.integer "admin_id"
+    t.integer "role_id"
+  end
 
   create_table "ads", :force => true do |t|
     t.datetime "created_at"
@@ -177,6 +182,17 @@ ActiveRecord::Schema.define(:version => 20120727042050) do
 
   add_index "recetas", ["slug"], :name => "index_recetas_on_slug", :unique => true
 
+  create_table "roles", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "roles_admins", :id => false, :force => true do |t|
+    t.integer "role_id"
+    t.integer "admin_id"
+  end
+
   create_table "slides", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -218,8 +234,8 @@ ActiveRecord::Schema.define(:version => 20120727042050) do
   add_index "testimonios", ["slug"], :name => "index_testimonios_on_slug", :unique => true
 
   create_table "usuarios", :force => true do |t|
-    t.string   "email",                                 :default => "", :null => false
-    t.string   "encrypted_password",     :limit => 128, :default => "", :null => false
+    t.string   "email",                                 :default => "",    :null => false
+    t.string   "encrypted_password",     :limit => 128, :default => "",    :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -245,6 +261,7 @@ ActiveRecord::Schema.define(:version => 20120727042050) do
     t.datetime "confirmation_sent_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "blogger",                               :default => false
   end
 
   add_index "usuarios", ["confirmation_token"], :name => "index_usuarios_on_confirmation_token", :unique => true

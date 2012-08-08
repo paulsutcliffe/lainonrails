@@ -1,7 +1,7 @@
 <section id="content" class="region">
 <h2 class="title"><%= page_title! 'Sucursales' %></h2>
 
-<% if current_admin %>
+<% if can? :manage, Sucursal %>
 <div class="admin-controls">
 <%= link_to 'Agregar Nueva Sucursal', new_sucursal_path, :class => 'btn new' %>
 </div>
@@ -19,7 +19,7 @@ No hay ninguna sucursal
   <%= sucursal.direccion %><br />
   <%= sucursal.telefonos %>
 
-  <% if current_admin %>
+  <% if can? :manage, Sucursal %>
     <div class="admin-controls">
       <%= link_to 'Editar', edit_sucursal_path(sucursal), :class => 'btn edit' %>
       <%= link_to 'Eliminar', sucursal, :confirm => '¿Estás seguro?', :method => :delete, :class => 'btn del' %>

@@ -18,7 +18,7 @@
       <li>
         <h3><%= promocion.nombre %></h3>
         <%= link_to image_tag(promocion.publicidad(:regular)), promocion %>
-        <% if current_admin %>
+        <% if can? :manage, Promocion %>
         <div>
           <%= link_to 'Editar', edit_promocion_path(promocion), :class => 'btn' %>
           <%= link_to 'Eliminar', promocion, :confirm => '¿Estás seguro?', :method => :delete, :class => 'btn' %>

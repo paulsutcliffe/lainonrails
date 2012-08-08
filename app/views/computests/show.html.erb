@@ -14,7 +14,7 @@
     <p><%= @peso_ideal %></p>
   </div>
   
-  <% if current_admin %>
+  <% if can? :manage, Computest %>
   <div class="field">
     <p>E-mail: <%= @computest.email %></p>	
   </div>
@@ -28,7 +28,7 @@
   </div>
   <% end %>
 
-<% if current_admin %>
+<% if can? :manage, Computest %>
   <%= link_to 'Atrás', computests_path, :class => 'btn back' %>
 <% else %>
   <%= link_to 'Atrás', new_computest_path, :class => 'btn back' %>

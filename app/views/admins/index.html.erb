@@ -1,0 +1,28 @@
+<div id="content" class="region grid_8 omega region">
+<h1><%= page_title! "Listando administradores" %></h1>
+
+
+
+<table>
+  <tr>
+    <th>E-mail</th>
+    <th>Privilegios</th>
+    <th></th>
+    <th></th>
+  </tr>
+<% @admins.each do |u| %>
+  <tr>
+    <td><%= link_to_if(can?(:read, Admin), "#{u.email}", admin_path(u.id)) {} %></td>
+    <td><%= "#{u.roles.collect{|r| r.name}}" %></td>
+    <td><%= link_to_if(can?(:edit, Admin), "Editar", edit_admin_path(u.id), :class => 'btn') {} %></td>
+    <td><%= link_to_if(can?(:delete, u), "Eliminar", u, :confirm => "¿Estás seguro?", :method => :delete, :class => 'btn') {} %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<% if can? :manage, @admins %>
+  <%= link_to 'Agregar Administrador', new_admin_path, :class => 'btn' %>
+<% end %>
+
+</div>

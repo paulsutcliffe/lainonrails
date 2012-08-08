@@ -21,7 +21,7 @@
     
 	<footer>
 	  <%= link_to 'Volver', entradas_path, :class => 'btn back' %>
-	  <% if current_admin %>
+	  <% if can? :manage, Entrada %>
         <div class="admin-controls">
           <%= link_to 'Editar', edit_entrada_path(@entrada), :class => 'btn edit' %>
         </div>

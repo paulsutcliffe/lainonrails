@@ -1,7 +1,7 @@
 class TestimoniosController < InheritedResources::Base
   
   before_filter :authenticate_admin!, :except => [ :index, :show ]
-  
+  load_and_authorize_resource :except => [ :index, :show ]
   before_filter :find_tipo
   
   def find_tipo

@@ -46,7 +46,7 @@
 	      <%= link_to '', @producto.video_link1, :class => 'over lightbox', :rel => 'gallery' %>
         </div>
         <div>
-	      <% if current_admin %>
+	      <% if can? :manage, Producto %>
             <%= link_to 'Editar', edit_producto_path(@producto), :class => 'btn' %>  
           <% end %>
           <%= link_to 'Atrás', productos_path, :class => 'btn' %>

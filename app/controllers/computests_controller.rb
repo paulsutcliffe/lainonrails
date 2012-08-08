@@ -1,7 +1,7 @@
 class ComputestsController < InheritedResources::Base
   before_filter :authenticate_admin!, :except => [:show, :new, :create]
   before_filter :find_pais
-  
+  load_and_authorize_resource :except => [:show, :new, :create]
   def index
     @computests = Computest.where("pais = ?", params[:locale]).order("created_at DESC")
     respond_to do |format|

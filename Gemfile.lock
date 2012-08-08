@@ -35,6 +35,7 @@ GEM
       rinku (~> 1.5.0)
     bcrypt-ruby (3.0.1)
     builder (2.1.2)
+    cancan (1.6.8)
     capistrano (2.12.0)
       highline
       net-scp (>= 1.0.0)
@@ -196,6 +197,7 @@ PLATFORMS
 
 DEPENDENCIES
   auto_html
+  cancan
   capistrano
   client_side_validations
   cucumber-rails

@@ -1,6 +1,6 @@
 class UsuariosController < ApplicationController
   before_filter :authenticate_admin!, :only => [ :lista, :ver ]
-  
+  load_and_authorize_resource :only => [ :lista, :ver ]
   def lista
     @usuarios = Usuario.order("created_at DESC")
     respond_to do |format|

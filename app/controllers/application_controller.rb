@@ -1,3 +1,4 @@
+#encofing: utf-8
 class ApplicationController < ActionController::Base
 
   before_filter :set_i18n_locale_from_params 
@@ -11,6 +12,15 @@ class ApplicationController < ActionController::Base
     @meta_tags = Meta.first
   end
     
+  rescue_from CanCan::AccessDenied do |exception|
+    exception.default_message = "No estas autorizado para acceder a estar página"
+    flash[:error] = exception.message
+    redirect_to root_url
+  end
+  
+  def current_ability
+    @current_ability ||= Ability.new(current_admin)
+  end
     
   protected
   

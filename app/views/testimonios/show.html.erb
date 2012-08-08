@@ -20,7 +20,7 @@
   <%= @testimonio.tipo %>
 </p>
 
-<% if current_admin %>
+<% if can? :manage, Testimonio %>
 <%= link_to 'Editar', edit_testimonio_path(@testimonio), :class => 'btn' %>
 <% end %>
 <%= link_to 'Atrás', testimonios_path, :class => 'btn' %>

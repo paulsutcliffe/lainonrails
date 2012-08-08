@@ -3,7 +3,7 @@ class PromocionesController < InheritedResources::Base
   
   before_filter :authenticate_admin!, :except => [ :index, :show ]
   before_filter :find_pais
-  
+  load_and_authorize_resource :except => [ :index, :show ]
   def find_pais
     if params[:locale]
       @promociones = Promocion.where("pais = ?", params[:locale])

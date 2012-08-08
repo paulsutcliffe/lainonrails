@@ -1,5 +1,6 @@
 class MetasController < InheritedResources::Base
   before_filter :authenticate_admin!
+  load_and_authorize_resource
   def create
       create!(:notice => "Metas guardados correctamente.")
   end

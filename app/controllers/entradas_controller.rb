@@ -1,5 +1,6 @@
 class EntradasController < InheritedResources::Base
   before_filter :authenticate_admin!, :except => [ :index, :show ]
+  load_and_authorize_resource :except => [ :index, :show ]
   def create
       create!(:notice => "Entrada publicada correctamente.")
   end

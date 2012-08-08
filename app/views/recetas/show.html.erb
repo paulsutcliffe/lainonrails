@@ -13,7 +13,7 @@
   <%= @receta.preparacion %>
 </p>
 
-<% if current_admin %>
+<% if can? :manage, Receta %>
 <%= link_to 'Editar', edit_receta_path(@receta), :class => 'btn' %>
 <% end %>
 <%= link_to 'Atrás', recetas_path, :class => 'btn' %>

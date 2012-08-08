@@ -15,7 +15,7 @@
   <%= @sucursal.telefonos %>
 </p>
 
-<% if current_admin %>
+<% if can? :manage, Sucursal %>
 <%= link_to 'Editar', edit_sucursal_path(@sucursal), :class => 'btn' %>
 <% end %>
 <%= link_to 'Atrás', sucursales_path, :class => 'btn' %>

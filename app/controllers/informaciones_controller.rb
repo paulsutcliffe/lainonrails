@@ -2,7 +2,7 @@
 class InformacionesController < InheritedResources::Base
   before_filter :authenticate_admin!
   before_filter :find_pais
-  
+  load_and_authorize_resource
   def find_pais
     if params[:locale]
       @informaciones = Informacion.where("pais = ?", params[:locale])
