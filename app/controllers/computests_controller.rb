@@ -1,7 +1,12 @@
-class ComputestsController < InheritedResources::Base
+class ComputestsController < ApplicationController
   before_filter :authenticate_admin!, :except => [:show, :new, :create]
   before_filter :find_pais
   load_and_authorize_resource :except => [:show, :new, :create]
+  
+  def new
+    @computest = Computest.new
+  end
+  
   def index
     @computests = Computest.where("pais = ?", params[:locale]).order("created_at DESC")
     respond_to do |format|
@@ -53,11 +58,16 @@ class ComputestsController < InheritedResources::Base
   
   def create
     @computest = Computest.new(params[:computest])
-    if @computest.valid?
+    
+    respond_to do |format|
       if params[:locale]
         @computest.pais = params[:locale]
       end
-      create!(:notice => "Computest guardado correctamente.")
+      if @computest.save
+        format.html { redirect_to(@computest, :notice => 'Computest guardado correctamente.') }
+      else
+        format.html { render :action => "new" }
+      end
     end
   end
   
@@ -99,5 +109,15 @@ class ComputestsController < InheritedResources::Base
       end
     end
     @computest.update_attributes(:imc => @imc, :peso_ideal => @peso_ideal, :estado => @estado)
+  end
+  
+  
+  def destroy
+    @computest = Computest.find(params[:id])
+    @computest.destroy
+
+    respond_to do |format|
+      format.html { redirect_to computests_path }
+    end
   end
 end

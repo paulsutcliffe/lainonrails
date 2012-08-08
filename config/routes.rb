@@ -33,7 +33,7 @@ Lainonrails::Application.routes.draw do
     match '/nosotros' => "nosostros#index"
     
     resources :computests
-
+    
     resources :informaciones
 
     resources :ads

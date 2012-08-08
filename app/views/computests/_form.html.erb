@@ -1,7 +1,7 @@
 <%= form_for(@computest) do |f| %>
   <% if @computest.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@computest.errors.count, "error") %> prohibited this contacto from being saved:</h2>
+      <h2><%= pluralize(@computest.errors.count, "error") %> impidieron realizar el computest:</h2>
 
       <ul>
       <% @computest.errors.full_messages.each do |msg| %>

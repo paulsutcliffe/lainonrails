@@ -15,13 +15,11 @@
         <span>Testimonios</span>
       <% end %>
     </li>
-    <% if I18n.locale == :pe or I18n.locale == :bo or I18n.locale == :cr %>
     <li class="<% if request.path_parameters[:controller] == 'productos' %>selectedLava<% end %>">
       <%= link_to_unless_current 'Productos', productos_path do %>
         <span>Productos</span>
       <% end %>
     </li>
-    <% end %>
     <li class="<% if request.path_parameters[:controller] == 'metodo' %>selectedLava<% end %>">
       <%= link_to_unless_current 'Método', metodo_path do %>
         <span>Método</span>
