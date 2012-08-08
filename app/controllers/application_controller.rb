@@ -1,4 +1,4 @@
-#encofing: utf-8
+#encoding: utf-8
 class ApplicationController < ActionController::Base
 
   before_filter :set_i18n_locale_from_params 
