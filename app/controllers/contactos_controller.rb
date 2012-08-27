@@ -8,7 +8,7 @@ class ContactosController < InheritedResources::Base
       @contactos = Contacto.where("pais = ?", params[:locale])
     end
   end
-  
+
   def create
     @contacto = Contacto.new(params[:contacto])
     @contacto.pais = params[:locale]
@@ -31,4 +31,39 @@ class ContactosController < InheritedResources::Base
       create!(:notice => "Su mensaje fue enviado con éxito.") { new_contacto_path }
     end
   end
+  def index
+    @contactos = Contacto.order("created_at DESC")
+    respond_to do |format|
+      format.html
+      format.xls { send_data @contactos.to_xls(:headers => ["Id",
+                   "nombre",
+                   "apellido",
+                   "email",
+                   "telefono",
+                   "direccion",
+                   "distrito",
+                   "ciudad",
+                   "provincia",
+                   "mensaje",
+                   "pais"],
+                   :columns => [:id,
+                   :nombre,
+                   :apellido,
+                   :email,
+                   :telefono,
+                   :direccion,
+                   :distrito,
+                   :ciudad,
+                   :provincia,
+                   :mensaje,
+                   :pais],
+                   :cell_format => {:color => :blue},
+                   :header_format => {:weight => :bold, :color => :red},
+                   :horizontal_align => :center),
+                   :content_type => 'application/vnd.ms-excel',
+                   :filename => 'contactos.xls'
+                 }
+    end
+  end
+
 end

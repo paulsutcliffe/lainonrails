@@ -5,7 +5,7 @@ Feature: Contactos
 
   Scenario Outline: creating a new contact
   Given I am not authenticated
-  When I visit the "/<country>/contacto" page
+  When I visit the "/<country>/contactos/new" page
   And I fill in "Nombre" with "<nombre>"
   And I fill in "Apellido" with "<apellido>"
   And I fill in "Telefono" with "<telefono>"
@@ -29,7 +29,7 @@ Feature: Contactos
   Then I should see "<provincia>"
   Then I should see "<country>"
   Then I should see "<mensaje>"
-  
+
 
   Examples:
     | country | nombre | apellido | telefono  | email             | direccion      | distrito  | ciudad      | provincia | mensaje         |

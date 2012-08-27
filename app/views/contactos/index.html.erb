@@ -1,6 +1,6 @@
 <div id="content" class="region grid_8 omega region">
 <h1>Listando contactos</h1>
-
+<%= link_to 'Descargar Contactos en Excel', contactos_path(request.parameters.merge({:format => :xls})), :class => 'btn' %>
 <table>
   <tr>
     <th>Nombre</th>

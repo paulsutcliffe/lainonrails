@@ -6,13 +6,13 @@
            <%= link_to image_tag("/images/images/sidebar-registrate.png"), new_usuario_registration_path %>
          <% else %>
          <% unless current_usuario %>
-           <%= image_tag '/images/images/sidebar-' + I18n.locale.to_s  + '.png' %>    
+           <%= image_tag '/images/images/sidebar-' + I18n.locale.to_s  + '.png' %>
          <% end %>
       <% end %>
      </div>
         </div>
     <% end %>
-      
+
       <!-- block 2 -->
       <div id="block-contactanos" class="block">
         <span>Cont&aacute;ctanos <%= image_tag '/images/countries-flags/flag-' + I18n.locale.to_s  + '.png', :class => 'flag' %></span>
@@ -32,7 +32,7 @@
           <% end %>
         </div>
       </div>
-      
+
       <!-- block 3 -->
       <div id="block-computest" class="block">
         <span>Computest</span>
@@ -40,19 +40,23 @@
           <%= link_to image_tag('/images/images/sidebar-computest.png'), current_admin ? computests_path : new_computest_path %>
         </div>
       </div>
-      
+
       <% if I18n.locale == :pe %>
       <!-- block 4 -->
       <div id="block-info-provincias" class="block">
 	    <%= link_to image_tag('/images/images/sidebar-info-provincias.png'), 'http://www.summerkit.net', :target => '_blank' %>
       </div>
       <% end %>
-      
+
       <!-- block 5 -->
       <div id="block-lain-anios" class="block">
-        <%= image_tag('/images/images/sidebar-26-anios.png') %>
+        <% if I18n.locale == :bo %>
+          <%= image_tag '/images/images/' + (Time.now.year - 1994).to_s + '.png' %>
+        <% else %>
+          <%= image_tag '/images/images/' + (Time.now.year - 1986).to_s + '.png' %>
+        <% end %>
       </div>
-      
+
       <!-- block 6 -->
       <% if @informacion %>
       <% unless @informacion.facebook.blank? %>
