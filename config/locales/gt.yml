@@ -1,4 +1,6 @@
 gt:
+  app:
+    name: LAIN Guatemala
   title: Lain Adelgaza
   pages:
     index:

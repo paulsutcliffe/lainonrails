@@ -1,4 +1,6 @@
 cr:
+  app:
+    name: LAIN Costa Rica
   title: Lain Adelgaza
   pages:
     index:

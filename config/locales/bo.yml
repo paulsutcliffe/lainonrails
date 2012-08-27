@@ -1,4 +1,6 @@
 bo:
+  app:
+    name: LAIN Bolivia
   title: Lain Adelgaza
   pages:
     index:

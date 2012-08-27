@@ -1,4 +1,6 @@
 pe:
+  app:
+    name: LAIN Perú
   title: Lain Adelgaza
   pages:
     index:
