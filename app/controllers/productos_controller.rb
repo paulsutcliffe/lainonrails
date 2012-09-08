@@ -1,14 +1,14 @@
 class ProductosController < InheritedResources::Base
   before_filter :authenticate_admin!, :except => [ :index, :show ]
   load_and_authorize_resource :except => [ :index, :show ]
-  
+
   before_filter :find_pais
   def find_pais
     if params[:locale]
       @productos = Producto.where("pais = ?", params[:locale])
     end
   end
-  
+
   def create
     @producto = Producto.new(params[:producto])
     if @producto.valid?
@@ -22,4 +22,8 @@ class ProductosController < InheritedResources::Base
   def destroy
     destroy!(:notice => "Producto eliminado correctamente.")
   end
+  protected
+    def collection
+      @productos ||= end_of_association_chain.order("created_at DESC")
+    end
 end
