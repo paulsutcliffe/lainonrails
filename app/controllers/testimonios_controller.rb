@@ -1,12 +1,12 @@
 class TestimoniosController < InheritedResources::Base
-  
+
   before_filter :authenticate_admin!, :except => [ :index, :show ]
   load_and_authorize_resource :except => [ :index, :show ]
   before_filter :find_tipo
-  
+
   def find_tipo
     if params[:tipo]
-      @testimonios = Testimonio.where("tipo = ? AND pais = ?", params[:tipo], params[:locale]).order("created_at").paginate(:page => params[:page], :per_page => 8)
+      @testimonios = Testimonio.where("tipo = ? AND pais = ?", params[:tipo], params[:locale]).order("created_at DESC").paginate(:page => params[:page], :per_page => 8)
     else
       @testimonios = Testimonio.where("pais = ?", params[:locale]).order("created_at DESC").paginate(:page => params[:page], :per_page => 8)
     end
@@ -19,13 +19,13 @@ class TestimoniosController < InheritedResources::Base
       create!(:notice => "Testimonio guardado correctamente.") { testimonios_path }
     end
   end
-  
+
   def update
     update!(:notice => "Testimonio actualizado correctamente.") { testimonios_path }
   end
-  
+
   def destroy
     destroy!(:notice => "Testimonio eliminado correctamente.")
   end
-  
+
 end
