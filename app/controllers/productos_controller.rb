@@ -5,7 +5,7 @@ class ProductosController < InheritedResources::Base
   before_filter :find_pais
   def find_pais
     if params[:locale]
-      @productos = Producto.where("pais = ?", params[:locale])
+      @productos = Producto.where("pais = ?", params[:locale]).order("created_at DESC")
     end
   end
 
