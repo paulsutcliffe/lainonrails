@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120808035310) do
+ActiveRecord::Schema.define(:version => 20121210202001) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false
@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(:version => 20120808035310) do
     t.string   "cabecera_banner_content_type"
     t.integer  "cabecera_banner_file_size"
     t.datetime "cabecera_banner_updated_at"
+    t.string   "video_link"
   end
 
   create_table "computests", :force => true do |t|
@@ -163,6 +164,7 @@ ActiveRecord::Schema.define(:version => 20120808035310) do
     t.string   "publicidad_content_type"
     t.integer  "publicidad_file_size"
     t.datetime "publicidad_updated_at"
+    t.string   "video_link"
   end
 
   add_index "promociones", ["slug"], :name => "index_promociones_on_slug", :unique => true

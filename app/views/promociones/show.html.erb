@@ -13,19 +13,22 @@
 	      <%= page_title! @promocion.nombre %>
 	    </h2>
         <p>
-	    
+
 	    </p>
-        
+
       </div>
-      
+
       <div id="content-bottom" class="region list-type">
 
-        <%= link_to image_tag(@promocion.publicidad(:regular)), @promocion.publicidad(:facebook), :class => 'lightbox', :rel => 'gallery' %>
-
+        <% if @promocion.video_link.blank? %>
+          <%= link_to image_tag(@promocion.publicidad(:regular)), @promocion.publicidad(:facebook), :class => 'lightbox', :rel => 'gallery' %>
+        <% else %>
+          <%= @promocion.video_link_html %>
+        <% end %>
         <div>
 	      <% if can? :manage, Promocion %>
             <%= link_to 'Editar', edit_promocion_path(@promocion), :class => 'btn' %>
            <% end %>
         </div>
-    
+
       </div>

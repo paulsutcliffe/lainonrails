@@ -19,6 +19,11 @@
     <%= f.label :publicidad, "Imagen" %><br />
     <%= f.file_field :publicidad %>
   </div>
+  <div class="field">
+    <%= f.label :video_link, 'Video Link' %><br />
+    <%= f.text_field :video_link %>
+    <i class="formato">Formato: http://www.youtube.com/watch?v=9tBOtSPrNik</i>
+  </div>
   <div class="actions">
     <%= f.submit "Guardar", :class => 'btn' %>
   </div>
