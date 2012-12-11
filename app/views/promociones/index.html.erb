@@ -3,12 +3,12 @@
     <%= page_title! 'Promociones' %>
   </h2>
   <% if @promociones.empty? %>
-  <p>	
+  <p>
     No hay ninguna promoción.
   </p>
   <% end %>
 </div>
-      
+
 <div id="content-bottom" class="region">
   <% if @promociones.empty? and current_admin %>
     <%= link_to 'Nueva Promoción', new_promocion_path, :class => 'btn' %>
@@ -17,7 +17,11 @@
     <% @promociones.each do |promocion| %>
       <li>
         <h3><%= promocion.nombre %></h3>
-        <%= link_to image_tag(promocion.publicidad(:regular)), promocion %>
+        <% if promocion.video_link.empty? %>
+          <%= link_to image_tag(promocion.publicidad(:regular)), promocion %>
+        <% else %>
+          <%= promocion.video_link_html %>
+        <% end %>
         <% if can? :manage, Promocion %>
         <div>
           <%= link_to 'Editar', edit_promocion_path(promocion), :class => 'btn' %>
