@@ -17,7 +17,7 @@ Feature: Admin create a new admin
     | email              | password  |
     | paulyoyo@gmail.com | chimpance |
     | hola@kosmyka.com   | chimpance |
-    
+
 
   Scenario: Willing to edit my admin account
   Given I am a new, authenticated admin

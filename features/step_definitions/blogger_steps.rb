@@ -1,3 +1,4 @@
+# encoding: utf-8
 Given /^I am an blogger admin$/ do
   email = 'iam@milesdavis.com'
   password = 'donalee'

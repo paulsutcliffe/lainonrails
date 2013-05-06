@@ -16,8 +16,7 @@ Feature: Creating Ads to be displayed on the home page
   Given I am an admin not authenticated
   Given that I am on the home page
   Then I should see the image "picture.png"
-  
-  
+
   Scenario: editing ads
   Given I am a new, authenticated admin
   Given that I am on the home page
@@ -34,8 +33,8 @@ Feature: Creating Ads to be displayed on the home page
   And I should see the image "picture.png"
   Given that I am on the home page
   Then I should see the image "picture.png"
-  
-  
+
+
   Scenario: deleting ads
   Given I am a new, authenticated admin
   Given that I am on the home page

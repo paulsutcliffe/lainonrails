@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121210202001) do
+ActiveRecord::Schema.define(:version => 20130504210549) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false
@@ -62,7 +62,6 @@ ActiveRecord::Schema.define(:version => 20121210202001) do
     t.string   "cabecera_banner_content_type"
     t.integer  "cabecera_banner_file_size"
     t.datetime "cabecera_banner_updated_at"
-    t.string   "video_link"
   end
 
   create_table "computests", :force => true do |t|
@@ -191,11 +190,6 @@ ActiveRecord::Schema.define(:version => 20121210202001) do
     t.datetime "updated_at"
   end
 
-  create_table "roles_admins", :id => false, :force => true do |t|
-    t.integer "role_id"
-    t.integer "admin_id"
-  end
-
   create_table "slides", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -204,6 +198,7 @@ ActiveRecord::Schema.define(:version => 20121210202001) do
     t.integer  "slide_file_size"
     t.datetime "slide_updated_at"
     t.string   "pais"
+    t.string   "link"
   end
 
   create_table "sucursales", :force => true do |t|
@@ -237,8 +232,8 @@ ActiveRecord::Schema.define(:version => 20121210202001) do
   add_index "testimonios", ["slug"], :name => "index_testimonios_on_slug", :unique => true
 
   create_table "usuarios", :force => true do |t|
-    t.string   "email",                                 :default => "",    :null => false
-    t.string   "encrypted_password",     :limit => 128, :default => "",    :null => false
+    t.string   "email",                                 :default => "", :null => false
+    t.string   "encrypted_password",     :limit => 128, :default => "", :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -264,7 +259,6 @@ ActiveRecord::Schema.define(:version => 20121210202001) do
     t.datetime "confirmation_sent_at"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "blogger",                               :default => false
   end
 
   add_index "usuarios", ["confirmation_token"], :name => "index_usuarios_on_confirmation_token", :unique => true
