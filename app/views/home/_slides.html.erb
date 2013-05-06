@@ -4,7 +4,7 @@
 	          <% if @slides %>
                 <% @slides.each do |slide| %>
                   <li class="royalSlide">
-		            <%= link_to slide.link, (image_tag slide.slide(:regular)) %>
+		            <%= link_to (image_tag slide.slide(:regular)), slide.link %>
 		          </li>
                 <% end %>
               <% end%>
