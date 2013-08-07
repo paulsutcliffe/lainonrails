@@ -6,6 +6,8 @@ Lainonrails::Application.routes.draw do
 
     match '/home' => "home#index"
 
+    match '/llamada-gratuita' => "llamada_gratuita#index"
+
     resources :promociones
 
     resources :ofertas
