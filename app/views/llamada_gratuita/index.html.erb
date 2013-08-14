@@ -1,2 +1,14 @@
-<h1>LlamadaGratuita#index</h1>
-<p>Find me in app/views/llamada_gratuita/index.html.erb</p>
+<h1>Llamada Gratuita</h1>
+
+  <form action="https://sv1.soamisa.com:8901/cgi/web/receive.pl" method="post" name="main">
+    <input type="hidden" name="Account" value="0125632145">
+    <input type="hidden" id="Password" name="Password" value="are7regl">
+    <table>
+      <tr>
+        <td>Numero:</td>
+        <td><input type="text" id="First_Phone_Number" name="First_Phone_Number" size="15"></td>
+      </tr>
+    </table>
+    <input type="hidden" name="Second_Phone_Number" value="01730">
+    <input type="button" onClick="sendRequest();" value="Llame Ahora!">
+  </form>
