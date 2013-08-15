@@ -1,14 +1,11 @@
 <h1>Llamada Gratuita</h1>
 
-  <form action="https://sv1.soamisa.com:8901/cgi/web/receive.pl" method="post" name="main">
-    <input type="hidden" name="Account" value="0125632145">
-    <input type="hidden" id="Password" name="Password" value="are7regl">
-    <table>
-      <tr>
-        <td>Numero:</td>
-        <td><input type="text" id="First_Phone_Number" name="First_Phone_Number" size="15"></td>
-      </tr>
-    </table>
-    <input type="hidden" name="Second_Phone_Number" value="01730">
-    <input type="button" onClick="sendRequest();" value="Llame Ahora!">
-  </form>
+<%= form_tag(hacer_llamada_path, :method => 'post') do %>
+  <%= hidden_field_tag(:account, "0125632145") %>
+  <%= hidden_field_tag(:password, "are7regl") %>
+  <%= hidden_field_tag(:second_phone_number, "01730") %>
+  <%= label_tag(:first_phone_number, "Número") %>
+  <%= text_field_tag(:first_phone_number) %>
+  <%= submit_tag("Llame Ahora!")%>
+<% end %>
+
