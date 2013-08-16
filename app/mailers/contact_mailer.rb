@@ -34,7 +34,7 @@ class ContactMailer < ActionMailer::Base
 
   def contact_registration_sv(contact)
     @contacto = contact
-    mail(:to => "lainelsalvador@amnetsal.com", :subject => "Mensaje desde la web de LAIN El Salvador")
+    mail(:to => "info.elsalvador@laininternacional.com, :subject => "Mensaje desde la web de LAIN El Salvador")
   end
 
 end
