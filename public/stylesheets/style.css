@@ -60,7 +60,7 @@ td { vertical-align: top; }
 
 
 /* ==|== primary styles =====================================================
-   Author: 
+   Author:
    ========================================================================== */
 
 
@@ -104,13 +104,13 @@ td { vertical-align: top; }
 
 
 /* ==|== print styles ======================================================= */
- 
+
 @media print {
-  * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } 
+  * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; }
   a, a:visited { text-decoration: underline; }
   a[href]:after { content: " (" attr(href) ")"; }
   abbr[title]:after { content: " (" attr(title) ")"; }
-  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; } 
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }
   pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
   thead { display: table-header-group; }
   tr, img { page-break-inside: avoid; }
@@ -141,7 +141,7 @@ a{
   -moz-transition: all 0.3s ease-out;  /* FF3.7+ */
   -o-transition: all 0.3s ease-out;  /* Opera 10.5 */
   -webkit-transition: all 0.3s ease-out;  /* Saf3.2+, Chrome */
-  transition: all 0.3s ease-out; 
+  transition: all 0.3s ease-out;
 }
 
 li{list-style:none}
@@ -229,7 +229,7 @@ HEADER-TOP
   background: linear-gradient(#95e2f6, #ffffff);
   -pie-background: linear-gradient(#95e2f6, #ffffff);
   behavior: url(/javascripts/libs/ie-support/PIE-1.0.0/PIE.htc);
-  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#95e2f6', endColorstr='#ffffff');  
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#95e2f6', endColorstr='#ffffff');
 }
 
 /* LOGIN FORM */
@@ -281,7 +281,7 @@ nav{width:100%; display:block}
 #menu{margin:0}
 #menu li{float:left}
 #menu li a,
-#menu li span{font-family:Tahoma, Verdana, Arial, sans-serif; font-weight:normal; padding:10px 15px 0; float:left; color:#fff; 
+#menu li span{font-family:Tahoma, Verdana, Arial, sans-serif; font-weight:normal; padding:10px 15px 0; float:left; color:#fff;
 font-size:1em; line-height:100%; text-transform:uppercase; position:relative; z-index:50}
 #menu li span{color:#1D8EA4}
 
@@ -370,7 +370,7 @@ MAIN
 #main-wrapper{line-height:0}
 #main-wrapper *{line-height:145%}
 #main-wrapper.container_12{}
- 
+
 #main{width:100%;
   background: #1a8099;
   background: -webkit-gradient(linear, 0 0, 0 bottom, from(#28c0ca), to(#1a7f98));
@@ -381,7 +381,7 @@ MAIN
   background: linear-gradient(#28c0ca, #1a7f98);
   -pie-background: linear-gradient(#28c0ca, #1a7f98);
   behavior: url(/javascripts/libs/ie-support/PIE-1.0.0/PIE.htc);
-  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#28c0ca', endColorstr='#1a7f98'); } 
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#28c0ca', endColorstr='#1a7f98'); }
 
 /*
 =============================================
@@ -453,7 +453,7 @@ CONTENT
 
 #content{width:100%}
 
-#content-wrapper{height:auto !important; height:800px; min-height:800px; float:right; position:relative; z-index:50; margin-bottom:0; 
+#content-wrapper{height:auto !important; height:800px; min-height:800px; float:right; position:relative; z-index:50; margin-bottom:0;
 background:#fff}
 #content-wrapper-inner{height:auto !important; height:800px; min-height:800px; margin:0 30px 0 50px; padding-top:20px; float:right}
 .not-front #content-wrapper-inner{width:620px; padding-top:60px}
@@ -514,7 +514,7 @@ POSTSCRIPT
 
 .front #content .block img,
 .front #postscript-top .block img{border:1px solid #1D8EA4;
--moz-border-radius:10px; -webkit-border-radius:10px; -o-border-radius:10px; 
+-moz-border-radius:10px; -webkit-border-radius:10px; -o-border-radius:10px;
 -khtml-border-radius:10px; border-radius:10px;
 behavior: url(../javascripts/ie-support/PIE-1.0.0/PIE.htc)}
 
@@ -522,7 +522,7 @@ behavior: url(../javascripts/ie-support/PIE-1.0.0/PIE.htc)}
 
 .front #postscript-top .block:nth-of-type(2) img{width:234px}
 .front #postscript-top .block:nth-of-type(1n+2) img{border:0; height:103px;
--moz-border-radius:0px; -webkit-border-radius:0px; -o-border-radius:0px; 
+-moz-border-radius:0px; -webkit-border-radius:0px; -o-border-radius:0px;
 -khtml-border-radius:0px; border-radius:0px;
 behavior: url(../javascripts/ie-support/PIE-1.0.0/PIE.htc)}
 .front #postscript-top .block:nth-of-type(3) img{width:193px}
@@ -581,7 +581,7 @@ box-shadow:4px 4px 0 #363636, -4px -4px 0 #363636, 4px -4px 0 #363636, -4px 4px 
 /*
 #content.tab{overflow:hidden}
 #content.tab h2.title{padding:0 20px; border-bottom:0; display:inline-block; *display:inline; *zoom:1; position:relative;
--moz-border-radius:10px 10px 0 0; -webkit-border-radius:10px 10px 0 0; -o-border-radius:10px 10px 0 0; 
+-moz-border-radius:10px 10px 0 0; -webkit-border-radius:10px 10px 0 0; -o-border-radius:10px 10px 0 0;
 -khtml-border-radius:10px 10px 0 0; border-radius:10px 10px 0 0 }
 #content.tab h2.title:after{content:""; width:448px; height:2px; background:#1B6F7E;
 position:absolute; bottom:0px; left:185px}*/
@@ -602,11 +602,11 @@ PAGES
 #home.index #postscript-top .block p{height:80px; overflow:hidden}
 #home.index #sidebar-second .inner{margin-left:10px}
 #home.index #sidebar-second .block{width:100%; float:right; clear:right}
-#home.index #sidebar-second .block img{border:1px solid #4AB2C0; -moz-border-radius:8px; -webkit-border-radius:8px; 
+#home.index #sidebar-second .block img{border:1px solid #4AB2C0; -moz-border-radius:8px; -webkit-border-radius:8px;
 	-o-border-radius:8px; -khtml-border-radius:8px; border-radius:8px}
 #login .field{width:auto}
 #home.index #postscript-bottom .block{
-background:url(../images/backgrounds/bg-llave-left.png) no-repeat 0 0, 
+background:url(../images/backgrounds/bg-llave-left.png) no-repeat 0 0,
 url(../images/backgrounds/bg-llave-right.png) no-repeat 100% 0;
 *-pie-background:url(../images/backgrounds/bg-llave-left.png) no-repeat top left,
 url(../images/backgrounds/bg-llave-right.png) no-repeat top right;
@@ -637,8 +637,8 @@ p{color:#6f7070}
 table{width:auto; margin-bottom:20px; width:100%; border-top:1px solid #ccc}
 table tbody{color:#6f7070; font-size:0.8em; text-align:left}
 table td{padding:5px 2px 5px 2px}
-table th{padding:5px 2px 5px 2px}	
-table b{width:60px; padding:2px 5px; display:inline-block; font-size:14px; 
+table th{padding:5px 2px 5px 2px}
+table b{width:60px; padding:2px 5px; display:inline-block; font-size:14px;
 	background:#686666; color:black; margin-right:15px}
 table tr.items-list:hover{background:rgba(26,128,153,0.2)}
 
@@ -677,7 +677,7 @@ table tr.items-list:hover{background:rgba(26,128,153,0.2)}
 /* entradas */
 #entradas.index #content article{width:601px; float:left; clear:left; border-bottom:1px solid #ccc}
 #entradas #content article img{float:left; margin-right:45px; border:1px solid #1D8EA4;
-  -moz-border-radius:15px; -webkit-border-radius:15px; -o-border-radius:15px; 
+  -moz-border-radius:15px; -webkit-border-radius:15px; -o-border-radius:15px;
   -khtml-border-radius:15px; border-radius:15px;
 behavior: url(../javascripts/ie-support/PIE-1.0.0/PIE.htc)}
 #entradas #content article h3,
@@ -710,7 +710,7 @@ behavior: url(../javascripts/ie-support/PIE-1.0.0/PIE.htc)}
 /* sucursales */
 #sucursales.index #content article{width:601px; float:left; clear:left; border-bottom:1px solid #ccc}
 #sucursales #content article img{float:left; margin-right:45px; border:1px solid #1D8EA4;
-  -moz-border-radius:15px; -webkit-border-radius:15px; -o-border-radius:15px; 
+  -moz-border-radius:15px; -webkit-border-radius:15px; -o-border-radius:15px;
   -khtml-border-radius:15px; border-radius:15px;
 behavior: url(../javascripts/ie-support/PIE-1.0.0/PIE.htc)}
 #sucursales #content article h3,
@@ -734,7 +734,7 @@ behavior: url(../javascripts/ie-support/PIE-1.0.0/PIE.htc)}
 #computests.new #new_computest .field:nth-child(4) input, /* nombre */
 #computests.new #new_computest .field:nth-child(2) input  /* apellido */
 {width:235px}
-	
+
 #computests.new #new_computest .field:nth-child(5) input, /* email */
 #computests.new #new_computest .field:nth-child(6) input  /* teléfonos */
 {width:160px}
@@ -758,7 +758,7 @@ behavior: url(../javascripts/ie-support/PIE-1.0.0/PIE.htc)}
 #computests.show .field{width:400px}
 #computests.show .field p{color:#1A7F98; font-size:1em}
 #computests.show .field p span{width:140px; float:right; padding:5px; border:1px solid; text-align:center;
-	-moz-border-radius:10px; -webkit-border-radius:10px; -o-border-radius:10px; 
+	-moz-border-radius:10px; -webkit-border-radius:10px; -o-border-radius:10px;
 	-khtml-border-radius:10px; border-radius:10px;
 behavior: url(../javascripts/ie-support/PIE-1.0.0/PIE.htc)}
 
@@ -775,7 +775,7 @@ h2 + .admin-controls{width:100%; float:left; clear:left; margin-bottom:20px}
 	border:1px solid #1D8EA4;
     -moz-border-radius:10px;
     -webkit-border-radius:10px;
-    -o-border-radius:10px; 
+    -o-border-radius:10px;
     -khtml-border-radius:10px;
     border-radius:10px;
 behavior: url(../javascripts/ie-support/PIE-1.0.0/PIE.htc)
@@ -784,7 +784,7 @@ behavior: url(../javascripts/ie-support/PIE-1.0.0/PIE.htc)
 	border:1px solid #1D8EA4;
     -moz-border-radius:10px;
     -webkit-border-radius:10px;
-    -o-border-radius:10px; 
+    -o-border-radius:10px;
     -khtml-border-radius:10px;
     border-radius:10px;
 behavior: url(../javascripts/ie-support/PIE-1.0.0/PIE.htc)
@@ -837,7 +837,7 @@ BLOCKS
 .pe #sidebar-first #block-contactanos p span.email{font-size:0.7em; margin:0}
 .uy #sidebar-first #block-contactanos p span.email{font-size:0.7em; margin:0}
 .bo #sidebar-first #block-contactanos p span.email{font-size:0.53em; margin:0}
-.sv #sidebar-first #block-contactanos p span.email{font-size:0.7em; margin:0}
+.sv #sidebar-first #block-contactanos p span.email{font-size:0.5em; margin:0}
 .gt #sidebar-first #block-contactanos p span.email{font-size:0.7em; margin:0}
 .cr #sidebar-first #block-contactanos p span.email{font-size:0.5em; margin:0}
 
@@ -847,7 +847,7 @@ BLOCKS
 
 /* user page */
 #block-promociones .content{height:170px; background:url(../images/backgrounds/bg-promociones.png) no-repeat 0 0}
-#block-receta .inner{height:auto !important; height:400px; min-height:400px;  
+#block-receta .inner{height:auto !important; height:400px; min-height:400px;
 background:url(../images/backgrounds/bg-recetas.png) no-repeat 0 -1px; margin-left:0}
 #block-receta .inner .content h2{line-height:100%}
 #block-receta .inner .content{padding:60px 40px 30px}
@@ -1017,7 +1017,7 @@ BUTTONS
   background: linear-gradient(#27bac6, #1b8099);
   -pie-background: linear-gradient(#27bac6, #1b8099);
   behavior: url(../javascripts/ie-support/PIE-1.0.0/PIE.htc);
-  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#27bac6', endColorstr='#1b8099');  
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#27bac6', endColorstr='#1b8099');
 }
 .btn:hover,
 #content .actions input:hover{background:#1A7F98; color:white}
@@ -1026,7 +1026,7 @@ BUTTONS
 
 /*
 .btn{
-*zoom: expression( 
+*zoom: expression(
           this.runtimeStyle.zoom="1",
           this.appendChild( document.createElement("small") ).className="after"
          )}
@@ -1137,7 +1137,7 @@ Crazy stuff
 	                  margin:5px;
 	                  color:white;
 	                  padding:5px 0px 5px 10px}
-	
+
 
 #flash_alert{
 -moz-border-radius:10px;
