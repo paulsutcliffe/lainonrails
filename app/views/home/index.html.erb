@@ -9,6 +9,9 @@
     <h2 class="title">Lanzamientos LAIN</h2>
     <%= render 'home/banner' %>
     <%= render 'home/ad' %>
+
+    <%= render 'home/llamadas' %>
+
   </div>
 </div>
 
@@ -21,7 +24,7 @@
     <img src="/images/images/box-4.png" />
     <h2>SPECTROPACH</h2>
           <p>
-            El "parche", es nuestro exclusivo gel fitoactivo que complementa 
+            El "parche", es nuestro exclusivo gel fitoactivo que complementa
             el adelgazamiento coordinado por nuestro equipo profesional...
           </p>
           <%= link_to 'Leer Más', metodo_path, :class => 'btn read-more' %>
@@ -29,8 +32,8 @@
   <div class="block">
           <img src="/images/images/box-5.png" />
           <h2>THERMOGÉNESIS</h2>
-          <p>            
-            Es una solución criogénica de acción residual, que opera el día 
+          <p>
+            Es una solución criogénica de acción residual, que opera el día
             de su aplicación disminuyendo las zonas...
           </p>
           <%= link_to 'Leer Más', metodo_path, :class => 'btn read-more' %>
@@ -45,7 +48,7 @@
 	<% if current_usuario %>
     <div id="block-promociones" class="block">
       <h2 class="title">Promociones</h2>
-      <div class="content">      
+      <div class="content">
       </div>
     </div>
     <% end %>
@@ -87,9 +90,9 @@
     <% unless @informacion.facebook.blank? %>
 	<div id="facebook-widget" class="block">
       <h2 class="title">Socializemos</h2>
-	
+
 	  <div class="fb-like-box" data-href="<%= @informacion.facebook %>" data-width="237" data-height="472" data-show-faces="true" data-stream="false" data-header="true"></div>
-    
+
     </div>
 
     <% content_for :javascript do %>
@@ -114,15 +117,15 @@
   <div class="block">
 	<div class="inner">
     <p>
-      LAIN, es un Centro Médico que realiza tratamientos contra la obesidad. 
-      La obesidad es una patología médica que se define como un exceso de tejido 
-      graso en el organismo de una persona. En esta acumulación de tejido graso influyen dos 
-      factores que son determinantes en esta condición; que son la predisposición genética a ser 
-      obeso y un desajuste en los hábitos alimenticios del individuo que le hace perder el equilibrio 
-      necesario que debe existir entre el volumen (cantidad) y la composición (variedad de nutrientes) 
-      que debe existir en la alimentación de cualquier persona.          
+      LAIN, es un Centro Médico que realiza tratamientos contra la obesidad.
+      La obesidad es una patología médica que se define como un exceso de tejido
+      graso en el organismo de una persona. En esta acumulación de tejido graso influyen dos
+      factores que son determinantes en esta condición; que son la predisposición genética a ser
+      obeso y un desajuste en los hábitos alimenticios del individuo que le hace perder el equilibrio
+      necesario que debe existir entre el volumen (cantidad) y la composición (variedad de nutrientes)
+      que debe existir en la alimentación de cualquier persona.
     </p>
     </div>
   </div>
-</div>  
+</div>
 <% end %>
