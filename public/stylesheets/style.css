@@ -1219,6 +1219,7 @@ Y fixes
 #sidebar-first .block p{*width:200px}
 
 
+.block .banner{margin-top:20px;}
 .block form{ 
     margin-left: 18px;
     margin-top: -40px;  
