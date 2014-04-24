@@ -54,3 +54,9 @@ div.field, div.actions {
   font-size: 12px;
   list-style: square;
 }
+
+.text-box{
+    margin-left: 18px;
+    margin-top: -38px;
+    position: absolute;
+}

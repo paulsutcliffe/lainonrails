@@ -1,8 +1,12 @@
+<img src="/images/banner_llamada.jpg" />
+
+
+
 <% form_tag('http://proxy.lemmor.com/VSServices/callback.aspx?', :authenticity_token => false) do %>
-  <%= text_field_tag 'source', :numero %>
-  <%= hidden_field_tag 'dest', '00001825' %>
+  <%= hidden_field_tag 'source', '00001825' %>
+  <%= text_field_tag 'dest', :numero, :class => 'text-box' %>
   <%= hidden_field_tag 'login', '012365' %>
   <%= hidden_field_tag 'password', '1653$' %>
   <%= hidden_field_tag 'type', '1' %>
-  <%= submit_tag 'Llamar' %>
+  <%= image_submit_tag 'boton_llamar.png', :class => 'call-button' %>
 <% end %>

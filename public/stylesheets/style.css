@@ -1218,3 +1218,13 @@ Y fixes
 #postscript-bottom .block{*width:620px}
 #sidebar-first .block p{*width:200px}
 
+
+.block form{ 
+    margin-left: 18px;
+    margin-top: -40px;  
+    position: absolute;
+  }
+.block .call-button{
+vertical-align: middle;
+    margin-left: 32px;
+}

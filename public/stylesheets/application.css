@@ -73,3 +73,15 @@ a {
 .error_messages ul {
   margin: 0;
 }
+
+#content-wrapper .block form{
+  margin: -37px 0 0 18px;
+  position: absolute;
+}
+
+.block input{
+vertical-align: middle;
+}
+
+
+
