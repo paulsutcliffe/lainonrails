@@ -74,14 +74,18 @@ a {
   margin: 0;
 }
 
-#content-wrapper .block form{
-  margin: -37px 0 0 18px;
+.block form{
+  margin: -9em 0 0 17.6em;
   position: absolute;
 }
 
-.block input{
-vertical-align: middle;
+.text-box{
+    margin-top: 4em;
 }
-
+.block .call-button{
+    float: right;
+    margin-left: 5.4em;
+    margin-top: 6.4em;
+}
 
 
