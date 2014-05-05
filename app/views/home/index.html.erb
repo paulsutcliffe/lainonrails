@@ -10,8 +10,9 @@
     <%= render 'home/banner' %>
     <%= render 'home/ad' %>
 
-    <%= render 'home/llamadas' %>
-
+    <% if I18n.locale == :pe %>
+      <%= render 'home/llamadas' %>
+    <% end %>
   </div>
 </div>
 
