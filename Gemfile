@@ -28,6 +28,7 @@ gem "spreadsheet", "0.6.5.8"
 gem "to_xls"
 gem "sitemap_generator"
 gem "cancan"
+gem "httparty"
 
 # Use unicorn as the web server
 # gem 'unicorn'

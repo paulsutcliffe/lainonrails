@@ -2,11 +2,7 @@
 
 
 
-<% form_tag('http://proxy.lemmor.com/VSServices/callback.aspx?', :authenticity_token => false) do %>
-  <%= hidden_field_tag 'source', '00001825' %>
-  <%= text_field_tag 'dest', :numero, :class => 'text-box', :size => '18', :placeholder => "número"%>
-  <%= hidden_field_tag 'login', '012365' %>
-  <%= hidden_field_tag 'password', '1653$' %>
-  <%= hidden_field_tag 'type', '1' %>
+<% form_tag(home_path) do %>
+  <%= text_field_tag 'dest', :número, :class => 'text-box', :size => '18', :placeholder => "número"%>
   <%= image_submit_tag 'boton_llamar.png', :class => 'call-button' %>
 <% end %>
