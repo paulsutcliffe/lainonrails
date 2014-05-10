@@ -1218,20 +1218,26 @@ Y fixes
 #postscript-bottom .block{*width:620px}
 #sidebar-first .block p{*width:200px}
 
-
-.block .banner{margin-top:20px;}
-
+#postscript-top{margin-top: 100px;}
+.block .banner{
+ position:absolute;
+ z-index:2;
+ margin-top:15px;
+}
 
 .block form{
-  margin: -9em 0 0 17.6em;
   position: absolute;
+  z-index: 20;
 }
 
+
 .text-box{
-    margin-top: 4em;
+   margin-left: 280px;
+   margin-top: 30px;
+   line-height: 1,5;
+   height: 20px;
 }
 .block .call-button{
-    float: right;
-    margin-left: 5.4em;
-    margin-top: 6.4em;
+margin-top: 20px;
+margin-left: 540px;
 }
