@@ -39,7 +39,6 @@
     <%= yield(:head) %>
   </head>
   <body id="<%= body_id %>" class="<%= body_class + " " + I18n.locale.to_s %>">
-    <div id="header-top">
   <div class="container_12">
     <div id="banner" class="grid_6 alpha">
      
@@ -54,9 +53,9 @@
       <div id="user-greeting">
       <p>
 	    Administrador <%= current_admin.email %> <%= image_tag '/images/countries-flags/flag-' + I18n.locale.to_s  + '.png', :class => 'flag' %>
-	  </p>
-	  </div>
-	  <div id="user-controls">
+	    </p>
+	    </div>
+	    <div id="user-controls">
         <%= link_to 'Cerrar Sesión', {:controller=>"devise/sessions", :action=>"destroy"}, :class => 'btn' %>
       </div>
 
@@ -66,36 +65,14 @@
     
     <% unless current_usuario %>
 
-    <div id="login" class="grid_6 omega">
-	  	<%= form_for("usuario", :url => usuario_session_path) do |f| %>
-	     <fieldset>
-	      <legend>Ingresa a tu cuenta</legend>
-	      <div class="field">
-	        <%= f.label :email %>
-	        <%= f.email_field :email, :placeholder => 'Email' %>
-	        <%= link_to 'Crear Cuenta', '/usuarios/registro/inscribirse' %>
-	      </div>
-	      <div class="field">
-	        <%= f.label :password %>
-	        <%= f.password_field :password, :placeholder => 'Contraseña' %>
-	        <%= link_to "¿Te olvidaste tu contraseña?", '/usuarios/secreto/new' %>
-	      </div>
-	      <div class="actions">
-	        <%= f.submit "Ir" %>
-	      </div>
-	     </fieldset>
-	    <% end %>
-  
-    </div>
-
     <% else %>
 
       <div id="user-greeting">
       <p>
 	    Hola, <%= current_usuario.nombre.capitalize %> <%= image_tag '/images/countries-flags/flag-' + I18n.locale.to_s  + '.png', :class => 'flag' %>
-	  </p>
-	  </div>
-	  <div id="user-controls">
+	    </p>
+	    </div>
+	    <div id="user-controls">
         <%= link_to 'Cerrar Sesión', {:controller=>"devise/sessions", :action=>"destroy"}, :class => 'btn' %>
       </div>
     <% end %>
