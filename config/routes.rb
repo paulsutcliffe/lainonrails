@@ -2,6 +2,8 @@ Lainonrails::Application.routes.draw do
 
   match '/paises' => "paises#index"
 
+  match '/llamadas' => "home#llamadas"
+
   scope '(:locale)', :locale => /#{I18n.available_locales.join("|")}/ do
 
     match '/home' => "home#index"

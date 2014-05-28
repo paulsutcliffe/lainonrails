@@ -1,6 +1,8 @@
 # encoding: utf-8
 class HomeController < ApplicationController
 
+  #layout 'clean', :only => :llamadas
+
   protect_from_forgery
 
   def index
@@ -21,5 +23,9 @@ class HomeController < ApplicationController
         @testimonio = Testimonio.where("pais = ?", params[:locale]).random
       end
     end
+  end
+
+  def llamadas
+    render(:layout => "layouts/clean")
   end
 end
