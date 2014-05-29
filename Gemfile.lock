@@ -204,7 +204,7 @@ PLATFORMS
 DEPENDENCIES
   auto_html
   cancan
-  capistrano
+  capistrano (~> 2.12.0)
   client_side_validations
   cucumber-rails
   database_cleaner

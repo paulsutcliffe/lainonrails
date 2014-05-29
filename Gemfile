@@ -34,7 +34,7 @@ gem "httparty"
 # gem 'unicorn'
 
 # Deploy with Capistrano
-gem 'capistrano'
+gem 'capistrano', '~> 2.12.0'
 
 group :test do
   gem 'cucumber-rails'
