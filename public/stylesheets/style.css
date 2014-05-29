@@ -1019,8 +1019,7 @@ BUTTONS
   behavior: url(../javascripts/ie-support/PIE-1.0.0/PIE.htc);
   filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#27bac6', endColorstr='#1b8099');
 }
-.btn:hover,
-#content .actions input:hover{background:#1A7F98; color:white}
+
 
 .btn:visited{color:white}
 
@@ -1242,3 +1241,28 @@ Y fixes
 margin-top: 20px;
 margin-left: 540px;
 }
+#content-wrapper-fb{
+width: 100%;
+}
+
+#content-wrapper-inner-fb{
+margin: 50px auto;
+width: 633px;
+}
+#content-wrapper-inner-fb input{
+position: absolute;
+z-index: 20;
+margin-top: -120px;
+}
+
+#content-wrapper-inner-fb .text-box{
+margin-top: -190px;
+margin-left: 266px;
+}
+
+#content-wrapper-inner-fb .call-button{
+margin-left: 250px;
+}
+
+
+

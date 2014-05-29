@@ -1,1 +1,7 @@
-<%= render 'llamadas' %>
+<img class="face-banner" src="/images/facebook_banner.jpg" />
+
+
+<% form_tag(home_path) do %>
+  <%= text_field_tag 'dest', nil , :class => 'text-box', :size => '19', :placeholder => "Ingresar número"%>
+  <%= image_submit_tag 'boton_llamada.png', :class => 'call-button' %>
+<% end %>
